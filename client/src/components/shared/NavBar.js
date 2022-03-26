@@ -9,20 +9,32 @@ const Navbar = () => {
   //    if(!user) => login/register
   const renderRightNav = () => {
     if (auth.user) {
-      return <Link to="/">Logout'TODO'</Link>;
+      return <button onClick={auth.handleLogout}>Logout</button>;
     }
     return (
       <>
-        <Link to="/">Home </Link> -  
+        
         <Link to="/login">Login</Link> -  
         <Link to="/register">Register</Link> 
 
       </>
     );
   };
+
+
+  const renderLeft = () =>{
+    if (auth.user) {
+      return <Link to='/'>Home Protected</Link>;
+    }
+
+  }
   return (
     <div style={{display:'flex', justifyContent:'space-between'}}>
-    <div></div>
+    <div>
+    <Link to="/">Home </Link> -  
+    {renderLeft()}
+
+    </div>
       <div>{renderRightNav()}</div>
     </div>
   );

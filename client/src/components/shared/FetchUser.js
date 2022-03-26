@@ -11,7 +11,7 @@ const FetchUser = (props) => {
     checkUser();
   }, []);
   const checkUser = async () => {
-    // if user is authentecated or doesn't not have acces token
+    // if user is authenticated or doesn't have acces token
     // we can setloaded to true and return from the function call
     if (user || !localStorage.getItem("access-token")) {
       setLoaded(true);
