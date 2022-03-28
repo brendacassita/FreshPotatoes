@@ -7,7 +7,7 @@ const Home = ()=>{
         <div>
             <h1>Home</h1>
             <p> Welcome to Starter Project!</p>
-            <p>This is meant to as a starting point for other projects</p>
+            <p>This is meant to be as a starting point for other projects</p>
         </div>
     )
 }
