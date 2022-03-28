@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const auth = useContext(AuthContext);
-  //   const {user} = useContext(AuthContext); 
+  //   const {user} = useContext(AuthContext);
   //    if(user) => logout
   //    if(!user) => login/register
   const renderRightNav = () => {
@@ -13,28 +13,28 @@ const Navbar = () => {
     }
     return (
       <>
-        
-        <Link to="/login">Login</Link> -  
+        <Link to="/login">Login</Link> - 
         <Link to="/register">Register</Link> 
-
       </>
     );
   };
 
-
-  const renderLeft = () =>{
+  const renderLeft = () => {
     if (auth.user) {
-      return <Link to='/'>Home Protected</Link>;
+      return (
+        <>
+          <Link to="/home">Home Protected</Link> 
+        </>
+      );
     }
-
-  }
+  };
   return (
-    <div style={{display:'flex', justifyContent:'space-between'}}>
-    <div>
-    <Link to="/">Home </Link> -  
-    {renderLeft()}
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
+        <Link to="/">Home</Link> - 
+        {renderLeft()}
 
-    </div>
+      </div>
       <div>{renderRightNav()}</div>
     </div>
   );
