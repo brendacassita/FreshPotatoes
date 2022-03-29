@@ -10,7 +10,14 @@ import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 
-// Fetch user: it is going to see if the user is logged in(valid user)
+//Fetch User: going to see if the user is logged in(valid user?)
+//before we render our routes, it's going to check for user.
+//prevents routes from getting rendered until check is done 
+
+//if fetchUser is in progress of checking App returns null; 
+//it doesn't care whether we have a user or not, it's just checking
+//after done checking it will proceed with render 
+
 function App() {
   return (
     <div>

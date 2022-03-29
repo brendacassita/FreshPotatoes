@@ -1,5 +1,10 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
+import Button from "react-bootstrap/esm/Button"
+import { Card } from "react-bootstrap"
+// import Card from "../shared/./Card"
+
+
 
 const Login = ()=>{
     const [email, setEmail] = useState('test1@test.com')
@@ -18,14 +23,16 @@ const Login = ()=>{
     // with devise these are required
     return (
         <div>
+            <Card>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <p>Email: </p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 <p>Password: </p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <button>Login:</button>
+                <Button variant="primary" size="sm" onClick={handleSubmit}>Login</Button>
             </form>
+            </Card>
         </div>
     )
 }
