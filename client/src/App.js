@@ -40,7 +40,7 @@ function App() {
           </Routes>
         </>
       </FetchUser>
-      <p>Footer for all pages</p>
+      {/* <p>Footer for all pages</p> */}
     </div>
   );
 }

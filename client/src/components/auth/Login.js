@@ -28,6 +28,8 @@ const Login = ()=>{
             <form onSubmit={handleSubmit}>
                 <p>Email: </p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                <br/>
+                <br/>
                 <p>Password: </p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
                 <Button variant="primary" size="sm" onClick={handleSubmit}>Login</Button>
