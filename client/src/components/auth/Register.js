@@ -1,7 +1,5 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
-import Badge from "react-bootstrap/esm/Badge"
-import Button from "react-bootstrap/esm/Button"
 
 const Register = ()=>{
     const [email, setEmail] = useState('test1@test.com')
@@ -26,7 +24,7 @@ const Register = ()=>{
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 <p>Password: </p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <Button variant="primary" size="sm" onClick={handleSubmit}>Register</Button>
+                <button variant="primary" size="sm" onClick={handleSubmit}>Register</button>
             </form>
         </div>
     )

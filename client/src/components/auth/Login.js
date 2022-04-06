@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
-import Button from "react-bootstrap/esm/Button"
-import { Card } from "react-bootstrap"
+
 // import Card from "../shared/./Card"
 
 
@@ -23,7 +22,7 @@ const Login = ()=>{
     // with devise these are required
     return (
         <div>
-            <Card>
+           
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <p>Email: </p>
@@ -32,9 +31,9 @@ const Login = ()=>{
                 <br/>
                 <p>Password: </p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <Button variant="primary" size="sm" onClick={handleSubmit}>Login</Button>
+                <button variant="primary" size="sm" onClick={handleSubmit}>Login</button>
             </form>
-            </Card>
+           
         </div>
     )
 }

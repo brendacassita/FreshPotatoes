@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import Badge from "react-bootstrap/esm/Badge";
-import Button from "react-bootstrap/esm/Button";
+
 
 const Navbar = () => {
   const auth = useContext(AuthContext);
@@ -11,7 +10,7 @@ const Navbar = () => {
   //    if(!user) => login/register
   const renderRightNav = () => {
     if (auth.user) {
-      return <Button variant="primary" size="sm" onClick={auth.handleLogout}>Logout</Button>;
+      return <button variant="primary" size="sm" onClick={auth.handleLogout}>Logout</button>;
     }
     return (
       <>
