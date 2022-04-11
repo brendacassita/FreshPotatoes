@@ -5,6 +5,10 @@ class Api::CastsController < ApplicationController
         render json: Cast.all
     end
 
+    def show
+        render json: @cast
+    end
+
     def create
         cast = Cast.new(cast_params)
         if(cast.save)

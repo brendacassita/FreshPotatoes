@@ -5,6 +5,10 @@ class Api::ReviewsController < ApplicationController
         render json: Review.all
     end
 
+    def show
+        render json: @review
+    end
+
     def create
         review = Review.new(review_params)
         if(review.save)
@@ -15,7 +19,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        if(@review.update(reivew_params))
+        if(@review.update(review_params))
             render json: @review
         else
             render json: {error:@review.errors.full_messages}, status: 422
@@ -34,7 +38,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:rating, :watched)
+        params.require(:review).permit(:rating, :watched, :user_id, :movie_id)
     end
 
 end

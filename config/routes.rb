@@ -4,5 +4,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
    namespace :api do 
      put 'users/update_image', to: "users#update_image"
+
+    #  get '/reviews', to: 'reviews#index'
+     resources :reviews do
+     end
+
+     resources :casts do
+     end
+     
+     resources :movies do
+     end
+
    end
 end
