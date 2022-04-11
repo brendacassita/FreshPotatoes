@@ -14,7 +14,6 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import axios from "axios";
-import { Button } from "react-bootstrap";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -49,25 +48,22 @@ function Profile() {
   return (
     <div className="App">
       <h1>Profile Page</h1>
-      <p>image: </p>
+      <p>image</p>
       {user.image && <img src={user.image} width={300} />}
       {!user.image && <p>no image</p>}
-      < br/>
-      < br/>
-
-      {/* <p>{JSON.stringify(user)}</p> */}
+      <p>{JSON.stringify(user)}</p>
       <form onSubmit={handleSubmit} style={{width:'600px',margin:'auto', padding:'20px', border:'1px solid'}}>
         <h1>Update User</h1>
-        <p>name:</p>
+        <p>name</p>
         <input value={name} onChange={(e)=> setName(e.target.value)} />        
-        <p>image:</p>
+        <p>image</p>
         <FilePond
             files={files}
             allowMultiple={false}
             onupdatefiles={handleUpdate}
             labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
         />
-        <Button>update user</Button>
+        <button type='submit'>update user</button>
       </form>
     </div>
   );
