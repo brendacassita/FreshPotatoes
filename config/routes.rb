@@ -10,5 +10,16 @@ Rails.application.routes.draw do
 
 
      put 'users/update_image', to: "users#update_image"
+
+    #  get '/reviews', to: 'reviews#index'
+     resources :reviews do
+     end
+
+     resources :casts do
+     end
+     
+     resources :movies do
+     end
+
    end
 end
