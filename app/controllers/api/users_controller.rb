@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
               # binding.pry
               puts '===cloud_image==='
               puts cloud_image
-              current_user.image = cloud_image['secure_url']
+              current_user.avatar = cloud_image['secure_url']
           rescue => e
               # image did not save to cloudinary
               render json: {errors:e}, status: 422

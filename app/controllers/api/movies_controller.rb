@@ -31,20 +31,19 @@ end
 # end 
 
 def create 
-  @movie = Movie.new(movie_params)
-  if(@movie.save)
-    render json: @movie
+  movie = Movie.new(movie_params)
+  if(movie.save)
+    render json: movie
   else
-    render json: {error: @movie.errors.full_message}, status: 422
+    render json: {error: movie.errors.full_messages}, status: 422
   end 
 end 
 
 def update
-  movie = Movie.find(params[:id])
   if (@movie.update(movie_params))
     render json: @movie
   else
-    render json: {errors: @movie.errors.full_message, status: 422}
+    render json: {errors: @movie.errors.full_messages}, status: 422
   end
 end 
 
@@ -62,16 +61,15 @@ def set_movie
 end
 
 def movie_params
-  params.require
-  (:movie).permit(
-     :name
-    #  :genre, 
-    #  :poster, 
-    #  :trailer, 
-    #  :plot, 
-    #  :runtime, 
-    #  :year, 
-    #  :user_id
+  params.require(:movie).permit(
+     :name,
+     :genre, 
+     :poster, 
+     :trailer, 
+     :plot, 
+     :runtime, 
+     :year, 
+     :user_id
      )
 end
 
