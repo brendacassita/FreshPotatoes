@@ -32,5 +32,16 @@ class Api::RolesController < ApplicationController
       def destroy
         @role.destroy
       end
-    
+
+      private
+
+    def set_role
+        @role = role.find(params[:id])
+    end
+
+    def role_params
+        params.require(:role).permit(:title, :cast_id, :movie_id)
+    end
+
 end
+    
