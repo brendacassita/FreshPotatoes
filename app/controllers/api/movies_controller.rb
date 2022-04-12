@@ -32,8 +32,8 @@ end
 
 def show
   # Movie.find(params[:id])
-  puts 'Looking at movie'
-  puts @movie.id
+  # puts 'Looking at movie'
+  # puts @movie.id
   render json: Movie.details(@movie.id)
   
 end
