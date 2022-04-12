@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
 
      put 'users/update_image', to: "users#update_image"
-     
-     
-     get 'all_users', to: 'movies#all_users'
-   end
 
      
+     get 'all_users', to: 'movies#all_users'
+
+    #  get 'movies/:id/details', to: 'movies#details'
+   
+    end  
     
 end

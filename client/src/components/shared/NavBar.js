@@ -19,7 +19,7 @@ const Navbar = () => {
       </>
     );
   };
-
+  
   const renderLeft = () => {
     //if we have a user, return the links we want to show(if logged in)
     if (auth.user) {
@@ -39,6 +39,8 @@ const Navbar = () => {
       <div>
       
         <Link className="Nav-link" to="/">Home</Link>
+        <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="Nav-link" to="/search">Search </Link>
         {renderLeft()}
 
       </div>
