@@ -20,24 +20,31 @@ const Categories = () => {
     }
   }
 
-  const getUniqueCategories = () =>{
-    return movies.reduce((accum, current)=>{
-      if(!accum.includes(current.genre)){
-        accum.push(current.genre)
-      }
-      return accum
-    }, [])
+  const getCategories = () =>{
+   return movies.reduce((accum, movie)=>{
+     if(!accum.includes(movie.genre)){
+       accum.push(movie.genre)
+     }
+     return accum
+   },[])
   }
 
-  // const renderFilteredCategoryMovies = ()=>{
-  //   if(!filteredCategories){
-  //     return<p>No movies in genre found </p>
-  //   }
-  //   return(
-  //     {filteredCategories.map((m) => (
-  //       <p>{m.genre}</p>
-  //     ))}
-  //   )}
+  const renderSelect = (categories)=> {
+    console.log(categories)
+    
+  }
+
+  const getSelect =()=>{
+  let uniqueCategories = getCategories()
+  return (uniqueCategories)
+  console.log(uniqueCategories)
+}
+
+const renderFilteredCategories =() =>{
+  if(!filteredCategories){
+    return<p>no movies matching category, select a category</p>
+  }
+}
   
   
   
@@ -53,7 +60,8 @@ const Categories = () => {
           <div key = {movie.id}>
             <h5>{movie.genre}</h5>
             <img src={movie.poster} width={150} />
-            {/* {renderFilteredCategoryMovies()} */}
+            {getSelect()}
+            {renderFilteredCategories()}
             </div>
         )
       })}

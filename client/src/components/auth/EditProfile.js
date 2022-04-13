@@ -48,8 +48,7 @@ function EditProfile() {
       setFiles(files)      
   }
 
-  const handleSubmit= async (e)=>{
-      e.preventDefault()
+  const handleImage = async (e)=>{
       let data = new FormData()
       data.append('fileYO', files[0].file)
       data.append('name', name)
@@ -57,22 +56,29 @@ function EditProfile() {
      // axios call
      try{
         console.log('trying to update with data:')
-       let res = await axios.put('/api/users/update_image', data)
+       let res = await axios.put('/api/update_image', data)
        setUser(res.data)
      } catch(err){
-         alert('error occured updating')
+         alert('error occured updating image')
      }
   }
 
-//   const handleSubmit = async (e)=>{
-//     e.preventDefault()
-//    try{
-//       console.log('trying to update with data:')
-//      let res = await axios.put('/api/users')
-//    } catch(err){
-//        alert('error occured updating')
-//    }
-// }
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+   try{
+      console.log('trying to update with data:')
+     let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
+   } catch(err){
+       alert('error occured updating user info')
+   } finally {
+     console.log(files)
+     if(!files[0]){
+       console.log('ffff')
+       return 
+     }
+     handleImage()
+   }
+}
 
 
   return (
