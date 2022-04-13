@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     resources :reviews
     resources :casts
     resources :roles
+    resources :users
 
-    put 'users/update_image', to: "users#update_image"
+    put '/update_image', to: "users#update_image"
 
     get 'all_users', to: 'movies#all_users'
     get 'movies/:id/watched', to: 'movies#watched'
