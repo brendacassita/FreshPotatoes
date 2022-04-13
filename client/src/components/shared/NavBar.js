@@ -27,8 +27,9 @@ const Navbar = () => {
         <>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
-          <Link to='/profile'>Profile</Link>
-          <Link to='/SearchResults'>Search</Link>
+          <Link className="Nav-link" to='/profile'>Profile</Link>
+          
+          <Link className="Nav-link" to='/SearchResults'>Search</Link>
           
 
         </>
@@ -42,7 +43,6 @@ const Navbar = () => {
       
         <Link className="Nav-link" to="/">Home</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
-        <Link className="Nav-link" to="/search">Search </Link>
         {renderLeft()}
 
       </div>

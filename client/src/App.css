@@ -27,6 +27,7 @@
 
 .Nav-link {
   margin: 5px; 
+text-decoration: none;
 }
 
 .App-link {

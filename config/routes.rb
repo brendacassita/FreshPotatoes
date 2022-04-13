@@ -10,13 +10,6 @@ Rails.application.routes.draw do
 
 
      put 'users/update_image', to: "users#update_image"
-<<<<<<< HEAD
-   
-     
-     get 'all_users', to: 'movies#all_users'
-   end
-=======
->>>>>>> fd4db8adc64ae3dfd94201cdbf69b131ebd8c5a1
 
      
      get 'all_users', to: 'movies#all_users'
