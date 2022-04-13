@@ -10,7 +10,7 @@ import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
-
+import Footer from './components/pages/Footer';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
 //prevents routes from getting rendered until check is done 
@@ -42,7 +42,8 @@ function App() {
           </Routes>
         </>
       </FetchUser>
-      {/* <p>Footer for all pages</p> */}
+      <Footer />
+
     </div>
   );
 }
