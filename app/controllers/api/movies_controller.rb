@@ -1,5 +1,5 @@
 class Api::MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :details, :update, :destroy]
+  before_action :set_movie, only: [:show, :details, :watched, :update, :destroy]
 
 #authenticate_user! - anyone can go there, even if not signed in
  # before_action :authenticate_user!, except: [:all_users]
@@ -35,7 +35,10 @@ def show
   # puts 'Looking at movie'
   # puts @movie.id
   render json: Movie.details(@movie.id)
-  
+end
+
+def watched
+  render json: Movie.watched_score(@movie.id)
 end
 
 def create 

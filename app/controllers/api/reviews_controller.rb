@@ -9,6 +9,10 @@ class Api::ReviewsController < ApplicationController
         render json: @review
     end
 
+    # def watched
+    #     render json: Review.watched_score(@review.movie_id)
+    # end
+
     def create
         review = Review.new(review_params)
         if(review.save)
