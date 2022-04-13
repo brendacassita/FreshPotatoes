@@ -68,6 +68,10 @@ def destroy
   @movie.destroy
 end
 
+def set_page
+  @page = params[:page] || 1
+end 
+
 
 
 private 
