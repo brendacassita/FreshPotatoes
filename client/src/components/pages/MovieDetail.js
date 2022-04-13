@@ -13,15 +13,13 @@ const MovieDetail = () => {
 
   useEffect(()=>{
     getMovies()
-    getCasts()
-    getRoles()
-    getReviews()
+   
 
   },[])
  
   const getMovies = async () =>{
     try{
-      let res = await axios.get('/api/movies')
+      let res = await axios.get('/api/movies/:id')
       setMovies(res.data)
       console.log(res.data)
     }catch(err){
@@ -29,40 +27,8 @@ const MovieDetail = () => {
     }
   }
 
-  const getCasts = async () =>{
-    try{
-      let res = await axios.get('/api/casts')
-      setCasts(res.data)
-      console.log(res.data)
-    }catch(err){
-    alert('error in getting cast')
-    }
-  }
-      
-  const getRoles = async () =>{
-    try{
-      let res = await axios.get('/api/roles')
-      setRoles(res.data)
-      console.log(res.data)
-    }catch(err){
-    alert('error in getting roles')
-    }
-  }
 
-  const getReviews = async () =>{
-    try{
-      let res = await axios.get('/api/reviews')
-      setReviews(res.data)
-      console.log(res.data)
-    }catch(err){
-    alert('error in getting reviews')
-    }
-  }
-  
 
-  
-
-  
   
   return(
     <div className='App'>

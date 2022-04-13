@@ -14,7 +14,7 @@ import EditProfile from './components/auth/EditProfile';
 import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
-
+import Review from './components/pages/Review';
 
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -35,6 +35,7 @@ function App() {
             {/* Unprotected */}
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
+            <Route path='/review' element={<Review />}/>
             <Route path='/' element={<Home />}/>
            
                 {/* protected in routes inside of here you need to logged in*/}

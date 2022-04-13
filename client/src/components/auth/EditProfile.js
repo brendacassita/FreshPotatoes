@@ -91,7 +91,7 @@ function EditProfile() {
         {/* to do have *name already exists pop up if there is already a name */}
         <h6>*name already exists</h6> 
         <h5>Email:</h5><input value={email} onChange={(e)=> setEmail(e.target.value)} /> 
-        <h5>Password:</h5><input value={password} onChange={(e)=> setPassword(e.target.value)} />  
+        <h5></h5><input placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} />  
         <h5>Phone number:</h5><input value={phone} onChange={(e)=> setPhone(e.target.value)} />   
         <br/>   
         <br/>   
