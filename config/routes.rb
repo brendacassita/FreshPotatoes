@@ -11,8 +11,7 @@ Rails.application.routes.draw do
     put 'users/update_image', to: "users#update_image"
 
     get 'all_users', to: 'movies#all_users'
-    get 'movies/:id/watched', to: 'movies#watched'
-    #  get 'movies/:id/details', to: 'movies#details'
+    get 'movies/:id/scores', to: 'movies#scores'
    
     end  
     

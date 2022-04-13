@@ -27,6 +27,7 @@ function EditProfile() {
   const [email, setEmail] = useState(user.email)
   const [phone, setPhone] = useState(user.phone)
   const [password, setPassword] = useState(user.password)
+  const [username, setUserName] = useState(user.username)
 
 
   const [showUpload, setShowUpload] = useState(false)
@@ -47,7 +48,7 @@ function EditProfile() {
       setFiles(files)      
   }
 
-  const handleImage = async (e)=>{
+  const handleSubmit= async (e)=>{
       e.preventDefault()
       let data = new FormData()
       data.append('fileYO', files[0].file)
@@ -63,15 +64,15 @@ function EditProfile() {
      }
   }
 
-  const handleSubmit = async (e)=>{
-    e.preventDefault()
-   try{
-      console.log('trying to update with data:')
-     let res = await axios.put('/api/users')
-   } catch(err){
-       alert('error occured updating')
-   }
-}
+//   const handleSubmit = async (e)=>{
+//     e.preventDefault()
+//    try{
+//       console.log('trying to update with data:')
+//      let res = await axios.put('/api/users')
+//    } catch(err){
+//        alert('error occured updating')
+//    }
+// }
 
 
   return (
@@ -86,20 +87,26 @@ function EditProfile() {
         < br/>
       <p>{JSON.stringify(user)}</p>
         <h5>Full name:</h5><input value={name} onChange={(e)=> setName(e.target.value)} /> 
+        <h5>Username: </h5><input value={username} onChange={(e)=> setUserName(e.target.value)} /> 
         {/* to do have *name already exists pop up if there is already a name */}
         <h6>*name already exists</h6> 
         <h5>Email:</h5><input value={email} onChange={(e)=> setEmail(e.target.value)} /> 
         <h5>Password:</h5><input value={password} onChange={(e)=> setPassword(e.target.value)} />  
-        <h5>Phone number:</h5><input value={phone} onChange={(e)=> setPhone(e.target.value)} />      
-        <p>image:</p>
+        <h5>Phone number:</h5><input value={phone} onChange={(e)=> setPhone(e.target.value)} />   
+        <br/>   
+        <br/>   
+
+        {/* <p>image:</p> */}
         {showUpload && <FilePond
             files={files}
             allowMultiple={false}
             onupdatefiles={handleUpdate}
             labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
         />}
-        <button type = 'button' onClick={()=>setShowUpload(!showUpload)}>click to update profile image</button>
         <button type = 'submit'>Save Changes</button>
+        <br/>
+        <button type = 'button' onClick={()=>setShowUpload(!showUpload)}>Click to update profile image</button>
+        
       </form>
     </div>
   );
