@@ -38,6 +38,10 @@ def scores
   render json: Movie.scores(@movie.id)
 end
 
+def categories
+  render json: Movie.categories
+end
+
 def create 
   movie = Movie.new(movie_params)
   if(movie.save)

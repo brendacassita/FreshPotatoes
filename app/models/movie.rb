@@ -27,4 +27,10 @@ class Movie < ApplicationRecord
     GROUP BY m.id, m.name, rev.watched", id])
   end
 
+  def self.categories
+    select("m.genre")
+    .from("movies AS m")
+    .group("m.genre")
+  end
+
 end

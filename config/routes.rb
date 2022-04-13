@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
     get 'all_users', to: 'movies#all_users'
     get 'movies/:id/scores', to: 'movies#scores'
+    get '/categories', to: 'movies#categories'
    
     end  
     
