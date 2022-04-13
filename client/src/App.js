@@ -11,6 +11,8 @@ import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
 import EditProfile from './components/auth/EditProfile';
+import Categories from './components/pages/Categories';
+import MovieDetail from './components/pages/MovieDetail';
 
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -39,6 +41,10 @@ function App() {
               <Route path='/home' element={<HomeClass yo={'yoyo'} />}/>
               <Route path='/profile' element={<Profile yo={'Profile'} />}/>
               <Route path='/edit_profile' element={<EditProfile yo={'Edit Profile'} />}/>
+              <Route path='/categories' element={<Categories yo={'Categories'} />}/>
+              <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
+
+
 
             </Route>  
             <Route path='*' element={<NoMatch />}/>
