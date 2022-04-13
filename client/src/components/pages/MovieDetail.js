@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import YouTube from 'react-youtube'
+import '../../App.css'
+
 
 const MovieDetail = () => {
   const [movies, setMovies] =  useState([])
@@ -60,9 +62,16 @@ const MovieDetail = () => {
     }
   }
 
+ 
+  const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 0,
+      },
+    };
   
-  
-
   
 
   
@@ -70,12 +79,15 @@ const MovieDetail = () => {
   return(
     <div className='App'>
       <h1>Movie Detail </h1>
-      {movies.map((movie)=>{
+      {movies.map((movie) => {
+        console.log('movie name:', movie.name, movie.trailer)
         return(
-          <div key = {movie.id}>
-            <img src={movie.poster} width={150} />
-            <img src={movie.trailer} width={500} /> 
+          <div key={movie.id}>
             <h3>{movie.name}</h3>
+            <div className='movieCard'>
+            <img src={movie.poster} width={250} />
+            <YouTube videoId={movie.trailer} opts={opts} width={500} /> 
+            </div>
             <h6> {movie.year} | {movie.runtime} | {movie.genre}</h6>
             <h6>pre: {reviews.rating} {reviews.rating} post:</h6>
             <h4>Story Line: </h4>
