@@ -176,6 +176,7 @@ m18 = u1.movies.create(
 Review.create(
   rating:5,
   watched:'false',
+  comment:'comment goes here!',
   user_id:1,
   movie_id:1,
 )
@@ -183,13 +184,47 @@ Review.create(
 Review.create(
   rating:3,
   watched:'true',
+  comment:'comment goes here!',
   user_id:1,
   movie_id:1,
 )
 
 Review.create(
+  rating:2,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:1,
+)
+
+Review.create(
+  rating:4,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:1,
+)
+
+Review.create(
+  rating:1,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:2,
+)
+
+Review.create(
+  rating:3,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:2,
+)
+
+Review.create(
   rating:3,
   watched:'false',
+  comment:'comment goes here!',
   user_id:2,
   movie_id:2,
 )
@@ -197,9 +232,35 @@ Review.create(
 Review.create(
   rating:4,
   watched:'true',
+  comment:'comment goes here!',
   user_id:2,
   movie_id:2,
 )
+
+Review.create(
+  rating:4,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:3,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:3,
+)
+
+Review.create(
+  rating:2,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:3,
+)
+
 
 Cast.create(
   headshot:'https://m.media-amazon.com/images/M/MV5BMTQ0NjgzNzcwNV5BMl5BanBnXkFtZTcwODExMDYxOQ@@._V1_.jpg',

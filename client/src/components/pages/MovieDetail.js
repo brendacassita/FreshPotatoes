@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import YouTube from 'react-youtube'
 
 const MovieDetail = () => {
   const [movies, setMovies] =  useState([])
@@ -27,7 +28,19 @@ const MovieDetail = () => {
     }
   }
 
+//TODO: need to make 2 separate api calls, one for watched and one for unwatched
+  const getReviews = async () =>{
+    try{
+      let res = await axios.get('/api/reviews')
+      setReviews(res.data)
+      console.log(res.data)
+    }catch(err){
+    alert('error in getting reviews')
+    }
+  }
 
+  
+  
 
   
   return(
