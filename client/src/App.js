@@ -10,7 +10,12 @@ import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
+
 import Footer from './components/pages/Footer';
+
+import MovieDetail from './components/pages/MovieDetail';
+
+
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
 //prevents routes from getting rendered until check is done 
@@ -37,6 +42,8 @@ function App() {
             <Route element={<ProtectedRoute />}>
               <Route path='/home' element={<HomeClass yo={'yoyo'} />}/>
               <Route path='/profile' element={<Profile yo={'Profile'} />}/>
+              <Route path='/movieDetail' element={<MovieDetail yo={'MovieDetail'} />}/>
+
             </Route>  
             <Route path='*' element={<NoMatch />}/>
           </Routes>
