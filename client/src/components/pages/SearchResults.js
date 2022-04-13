@@ -24,6 +24,7 @@ const SearchResults = () => {
  
   
   const getMoviesFromApi = async () => {
+    
     try {
       let res = await axios.get('/api/movies')
       setAllMovies(res.data)
@@ -41,8 +42,8 @@ const SearchResults = () => {
    
     // Mapping through the results and displaying only y.item
     let MovieData = result.map(findMovie => findMovie.item)
-   
     setFilteredMovies(MovieData)
+ 
     
   }
   
@@ -53,6 +54,7 @@ const SearchResults = () => {
       <h1> Search Result Page</h1>
       <p>Search:</p>
       <input onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies'></input>
+      
         <p>{JSON.stringify(filteredMovies)}</p>
       
       <hr></hr>
