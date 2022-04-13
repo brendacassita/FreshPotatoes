@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const Categories = () => {
   const [movies, setMovies] =  useState([])
+  const [filteredCategories, setFilteredCategories] = useState([])
 
   useEffect(()=>{
     getMovies()
@@ -19,7 +20,31 @@ const Categories = () => {
     }
   }
 
+  const getCategories = () =>{
+   return movies.reduce((accum, movie)=>{
+     if(!accum.includes(movie.genre)){
+       accum.push(movie.genre)
+     }
+     return accum
+   },[])
+  }
 
+  const renderSelect = (categories)=> {
+    console.log(categories)
+    
+  }
+
+  const getSelect =()=>{
+  let uniqueCategories = getCategories()
+  return (uniqueCategories)
+  console.log(uniqueCategories)
+}
+
+const renderFilteredCategories =() =>{
+  if(!filteredCategories){
+    return<p>no movies matching category, select a category</p>
+  }
+}
   
   
   
@@ -35,7 +60,8 @@ const Categories = () => {
           <div key = {movie.id}>
             <h5>{movie.genre}</h5>
             <img src={movie.poster} width={150} />
-            
+            {getSelect()}
+            {renderFilteredCategories()}
             </div>
         )
       })}
