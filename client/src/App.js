@@ -52,7 +52,7 @@ function App() {
               <Route path='/profile' element={<Profile yo={'Profile'} />}/>
               <Route path='/edit_profile' element={<EditProfile yo={'Edit Profile'} />}/>
               <Route path='/categories' element={<Categories yo={'Categories'} />}/>
-              <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
+              <Route path='/movies/:id' element={<MovieDetail yo={'MovieDetail'} />}/>
               <Route path= '/popular_potatoes' element={<PopularPotatoes yo={'PopularPotatoes'}/>}>
 
               </Route>

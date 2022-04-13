@@ -20,7 +20,7 @@ const MovieDetail = () => {
  
   const getMovies = async () =>{
     try{
-      let res = await axios.get('/api/movies/:id')
+      let res = await axios.get(`/api/movies/${id}`)
       setMovies(res.data)
       console.log(res.data)
     }catch(err){
