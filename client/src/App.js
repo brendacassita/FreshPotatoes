@@ -13,10 +13,7 @@ import Profile from './components/auth/Profile';
 import EditProfile from './components/auth/EditProfile';
 import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
-
 import Footer from './components/pages/Footer';
-
-import MovieDetail from './components/pages/MovieDetail';
 
 
 //Fetch User: going to see if the user is logged in(valid user?)
