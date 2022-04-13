@@ -13,6 +13,8 @@ import Profile from './components/auth/Profile';
 import EditProfile from './components/auth/EditProfile';
 import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
+import Footer from './components/pages/Footer';
+
 
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -51,7 +53,8 @@ function App() {
           </Routes>
         </>
       </FetchUser>
-      {/* <p>Footer for all pages</p> */}
+      <Footer />
+
     </div>
   );
 }

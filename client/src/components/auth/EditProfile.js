@@ -28,6 +28,8 @@ function EditProfile() {
   const [phone, setPhone] = useState(user.phone)
   const [password, setPassword] = useState(user.password)
   const [username, setUserName] = useState(user.username)
+
+
   const [showUpload, setShowUpload] = useState(false)
 
 

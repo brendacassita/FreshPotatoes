@@ -211,7 +211,21 @@ Cast.create(
   name:'James Franco',
 )
 
+Role.create(
+  title:'Dale Denton',
+  cast_id:1,
+  movie_id:1,
+)
+
+Role.create(
+  title:'Saul Silver',
+  cast_id:2,
+  movie_id:1,
+)
+
+
 
 puts "Movies: #{Movie.all.length}"
 puts "Reviews: #{Review.all.length}"
 puts "Cast: #{Cast.all.length}"
+puts "Role: #{Role.all.length}"
