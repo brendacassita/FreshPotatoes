@@ -2,9 +2,6 @@ const MovieDetail = () =>{
   
   
   
-  
-  
-  
   return(
     <div>
       <h1>Movie Detail</h1>
