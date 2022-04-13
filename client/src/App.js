@@ -15,6 +15,7 @@ import EditProfile from './components/auth/EditProfile';
 import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
+import PopularPotatoes from './components/pages/PopularPotatoes';
 
 
 //Fetch User: going to see if the user is logged in(valid user?)
@@ -50,6 +51,9 @@ function App() {
               <Route path='/edit_profile' element={<EditProfile yo={'Edit Profile'} />}/>
               <Route path='/categories' element={<Categories yo={'Categories'} />}/>
               <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
+              <Route path= '/popular_potatoes' element={<PopularPotatoes yo={'PopularPotatoes'}/>}>
+
+              </Route>
 
 
 

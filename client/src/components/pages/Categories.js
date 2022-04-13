@@ -31,7 +31,8 @@ const Categories = () => {
 
   const renderSelect = (categories)=> {
     console.log(categories)
-    
+    return categories.map((category)=>{
+    })
   }
 
   const getSelect =()=>{
@@ -61,7 +62,7 @@ const renderFilteredCategories =() =>{
             <h5>{movie.genre}</h5>
             <img src={movie.poster} width={150} />
             {getSelect()}
-            {renderFilteredCategories()}
+            {/* {renderFilteredCategories()} */}
             </div>
         )
       })}

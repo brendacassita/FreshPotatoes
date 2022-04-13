@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     get 'all_users', to: 'movies#all_users'
     get 'movies/:id/watched', to: 'movies#watched'
     get 'movies/:id/unwatched', to: 'movies#unwatched'
+    get 'top3/potatoes', to: 'movies#top3_potatoes'
+    get 'top10/potatoes', to: 'movies#top10_potatoes'
+    get 'top3/fries', to: 'movies#top3_fries'
+    get 'top10/fries', to: 'movies#top10_fries'
     get '/categories', to: 'movies#categories'
    
     end  

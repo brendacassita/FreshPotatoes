@@ -90,7 +90,7 @@ m9 = u2.movies.create(
   plot:'Sixteen-year-old Sarah is given thirteen hours to solve a labyrinth and rescue her baby brother Toby when her wish for him to be taken away is granted by the Goblin King Jareth.', 
   runtime:'1h 41m', 
   poster:'https://m.media-amazon.com/images/I/619yt12HbSL._AC_SL1001_.jpg', 
-  trailer:'https://www.imdb.com/video/vi3636961561?playlistId=tt0091369&ref_=tt_ov_vi')
+  trailer:'G6C2p6H4TQ8')
 
 m10 = u2.movies.create(
   name:'Romeo and Juliet' , 
@@ -99,7 +99,7 @@ m10 = u2.movies.create(
   plot:'Shakespeares famous play is updated to the hip modern suburb of Verona still retaining its original dialogue.', 
   runtime:'2h', 
   poster:'https://m.media-amazon.com/images/I/81xn4q+XdeL._AC_SL1500_.jpg',  
-  trailer:'https://www.imdb.com/video/vi58720537?playlistId=tt0117509&ref_=tt_pr_ov_vi')
+  trailer:'jTGWNHa1wIQ')
 
 m11 = u1.movies.create(
   name:'The Three Amigos!',
@@ -108,7 +108,7 @@ m11 = u1.movies.create(
   plot:'Three actors accept an invitation to a Mexican village to perform their onscreen bandit fighter roles, unaware that it is the real thing.', 
   runtime:'1h 44m', 
   poster:'https://m.media-amazon.com/images/I/51pC6YFqfqL._AC_.jpg', 
-  trailer:'https://www.youtube.com/watch?v=g9OAjqs6dOo')
+  trailer:'g9OAjqs6dOo')
 
 m12 = u1.movies.create(
   name:'The Neverending Story',
@@ -117,7 +117,7 @@ m12 = u1.movies.create(
   plot:'A troubled boy dives into a wondrous fantasy world through the pages of a mysterious book.', 
   runtime:'1h 42m', 
   poster:'https://m.media-amazon.com/images/I/710R6Go8u0L._AC_SY679_.jpg', 
-  trailer:'https://www.youtube.com/watch?v=UeFni9dOv7c')
+  trailer:'YKGYgFPAP14')
 
 m13 = u2.movies.create(
   name:'Earth Girls are Easy', 
@@ -126,7 +126,7 @@ m13 = u2.movies.create(
   plot:'A Southern California girl befriends three furry aliens after their spaceship lands in her swimming pool.', 
   runtime:'1h 40m', 
   poster:'https://m.media-amazon.com/images/I/51Bw3Zfm97L.jpg', 
-  trailer:'https://www.youtube.com/watch?v=3TnO5gz-1Wk')
+  trailer:'3TnO5gz-1Wk')
 
 m14 = u2.movies.create(
   name:'Muppet Treasure Island', 
@@ -135,7 +135,7 @@ m14 = u2.movies.create(
   plot:'The Muppets twist on the classic tale.', 
   runtime:'1h 39m', 
   poster:'https://m.media-amazon.com/images/I/61ZWo59PYKL._AC_.jpg', 
-  trailer:'https://www.youtube.com/watch?v=KLUdKoCganU')
+  trailer:'KLUdKoCganU')
 
 m15 = u1.movies.create(
   name:'Man of Steel', 
@@ -144,7 +144,7 @@ m15 = u1.movies.create(
   plot:'An alien child is evacuated from his dying world and sent to Earth to live among humans. His peace is threatened when other survivors of his home planet invade Earth.', 
   runtime:'2h 23m', 
   poster:'https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg', 
-  trailer:'https://www.imdb.com/video/vi705668633?playlistId=tt0770828&ref_=tt_ov_vi')
+  trailer:'wArmHSPIvlQ')
 
 m16 = u1.movies.create(
   name:'What Dreams May Come', 
@@ -153,7 +153,7 @@ m16 = u1.movies.create(
   plot:'Chris Nielsen dies in an accident, and enters Heaven. But when he discovers that his beloved wife Annie has killed herself out of grief over the loss, he embarks on an afterlife adventure to reunite with her.', 
   runtime:'1h 53m', 
   poster:'https://m.media-amazon.com/images/I/61-j8oLV9nL._AC_SL1500_.jpg', 
-  trailer:'https://www.imdb.com/video/vi4110156057?playlistId=tt0120889&ref_=tt_pr_ov_vi')
+  trailer:'RmZ-FuBThuQ')
 
 m17 = u1.movies.create(
   name:'Gladiator', 
@@ -162,7 +162,7 @@ m17 = u1.movies.create(
   plot:'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', 
   runtime:'2h 35m', 
   poster:'https://m.media-amazon.com/images/I/51a-Iz7wwCL._AC_.jpg', 
-  trailer:'https://www.imdb.com/video/vi2628367897?playlistId=tt0172495&ref_=tt_pr_ov_vi')
+  trailer:'owK1qxDselE')
 
 m18 = u1.movies.create(
   name:'The Count of Monte Cristo',
@@ -171,7 +171,7 @@ m18 = u1.movies.create(
   plot:'A young man, falsely imprisoned by his jealous "friend", escapes and uses a hidden treasure to exact his revenge.',
   runtime:'2h 11m',
   poster:'https://m.media-amazon.com/images/I/41Byr2iM4mL._AC_.jpg',
-  trailer:'https://www.imdb.com/video/vi2628367897?playlistId=tt0172495&ref_=tt_pr_ov_vi')
+  trailer:'qesn8pV9yu8')
 
 Review.create(
   rating:5,

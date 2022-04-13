@@ -6,12 +6,11 @@ class Movie < ApplicationRecord
   def self.details(id)
     # puts movie.id
     # id = movie.id
-    select("m.name AS movie_name, m.genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title, c.headshot, c.name AS cast_name")
-    .from("movies AS m")
-    .joins("INNER JOIN roles AS r ON m.id = r.movie_id
-    INNER JOIN casts AS c ON c.id = r.cast_id")
-    .group("m.name, m.genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title, c.headshot, c.name")
-    .where("m.id = ?", id)
+    Movie.find_by_sql(["SELECT m.name AS movie_name, m.genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title, c.headshot, c.name AS cast_name
+    FROM movies AS m
+    LEFT JOIN roles AS r ON m.id = r.movie_id
+    LEFT JOIN casts AS c ON c.id = r.cast_id
+    WHERE m.id = ?", id])
   end
 
   def self.unwatched(id)
@@ -32,6 +31,46 @@ class Movie < ApplicationRecord
     WHERE m.id = ? AND rev.watched = 'true'
     GROUP BY m.id, rev.watched
     ORDER BY m.id", id])
+  end
+
+  def self.top3_potatoes
+    Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
+    FROM movies AS m
+    INNER JOIN reviews AS rev ON m.id = rev.movie_id
+    WHERE rev.watched = 'false'
+    GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
+    ORDER BY unwatched_rating DESC
+    LIMIT 3")
+  end
+
+  def self.top10_potatoes
+    Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
+    FROM movies AS m
+    INNER JOIN reviews AS rev ON m.id = rev.movie_id
+    WHERE rev.watched = 'false'
+    GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
+    ORDER BY unwatched_rating DESC
+    LIMIT 10")
+  end
+
+  def self.top3_fries
+    Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
+    FROM movies AS m
+    INNER JOIN reviews AS rev ON m.id = rev.movie_id
+    WHERE rev.watched = 'true'
+    GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
+    ORDER BY unwatched_rating DESC
+    LIMIT 3")
+  end
+
+  def self.top10_fries
+    Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
+    FROM movies AS m
+    INNER JOIN reviews AS rev ON m.id = rev.movie_id
+    WHERE rev.watched = 'true'
+    GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
+    ORDER BY unwatched_rating DESC
+    LIMIT 10")
   end
 
   def self.categories
