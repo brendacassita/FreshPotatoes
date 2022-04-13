@@ -8,13 +8,11 @@ Rails.application.routes.draw do
     resources :casts
     resources :roles
 
+    put 'users/update_image', to: "users#update_image"
 
-     put 'users/update_image', to: "users#update_image"
-
-     
-     get 'all_users', to: 'movies#all_users'
-
-    #  get 'movies/:id/details', to: 'movies#details'
+    get 'all_users', to: 'movies#all_users'
+    get 'movies/:id/scores', to: 'movies#scores'
+    get '/categories', to: 'movies#categories'
    
     end  
     
