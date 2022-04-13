@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2022_04_07_210621) do
   create_table "reviews", force: :cascade do |t|
     t.float "rating"
     t.boolean "watched"
+    t.text "comment"
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false

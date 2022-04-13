@@ -12,15 +12,32 @@ class Movie < ApplicationRecord
     INNER JOIN casts AS c ON c.id = r.cast_id")
     .group("m.name, m.genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title, c.headshot, c.name")
     .where("m.id = ?", id)
-   
   end
 
-  # SELECT DISTINCT m.name AS "movie_name", m.genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title, c.headshot, c.name AS "cast_name"
-  # FROM movies AS m
-  # INNER JOIN roles AS r ON m.id = r.movie_id
-  # INNER JOIN casts AS c ON r.cast_id = c.id
-  # INNER JOIN reviews AS rev ON m.id = rev.movie_id
+  def self.unwatched(id)
+    Movie.find_by_sql(["SELECT m.id, m.name
+    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
+    FROM movies m
+    INNER JOIN reviews rev ON m.id = rev.movie_id
+    WHERE m.id = ? AND rev.watched = 'false'
+    GROUP BY m.id, rev.watched
+    ORDER BY m.id", id])
+  end
 
-  # GROUP BY m.name, m.genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.  title, c.headshot, c.name
+  def self.watched(id)
+    Movie.find_by_sql(["SELECT m.id, m.name
+    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
+    FROM movies m
+    INNER JOIN reviews rev ON m.id = rev.movie_id
+    WHERE m.id = ? AND rev.watched = 'true'
+    GROUP BY m.id, rev.watched
+    ORDER BY m.id", id])
+  end
+
+  def self.categories
+    select("m.genre")
+    .from("movies AS m")
+    .group("m.genre")
+  end
 
 end
