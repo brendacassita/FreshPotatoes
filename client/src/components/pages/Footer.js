@@ -53,17 +53,17 @@ const Footer = () => {
         <Box borderBottom={1}>Messages</Box>
         <Box>
             <Link href="/" color="inherit">
-              *Insert Link*
+              *Link
             </Link> 
         </Box>
         <Box>
             <Link href="/" color="inherit">
-              *Insert Link*
+              *Link
             </Link> 
         </Box>
         <Box>
             <Link href="/" color="inherit">
-               *Insert Link*
+               *Link
             </Link> 
         </Box>
   </Grid>
