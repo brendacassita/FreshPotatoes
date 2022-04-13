@@ -10,11 +10,8 @@ import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
-<<<<<<< HEAD
 import SearchResults from './components/pages/SearchResults';
-=======
 import MovieDetail from './components/pages/MovieDetail';
->>>>>>> fd4db8adc64ae3dfd94201cdbf69b131ebd8c5a1
 
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -41,15 +38,11 @@ function App() {
                 {/* else you go to login page*/}
             <Route element={<ProtectedRoute />}>
               <Route path='/home' element={<HomeClass yo={'yoyo'} />}/>
-<<<<<<< HEAD
               <Route path='/profile' element={<Profile yo={'Profile'} />} />
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
               
-=======
-              <Route path='/profile' element={<Profile yo={'Profile'} />}/>
               <Route path='/movieDetail' element={<MovieDetail yo={'MovieDetail'} />}/>
 
->>>>>>> fd4db8adc64ae3dfd94201cdbf69b131ebd8c5a1
             </Route>  
             <Route path='*' element={<NoMatch />}/>
           </Routes>
