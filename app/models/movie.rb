@@ -14,17 +14,24 @@ class Movie < ApplicationRecord
     .where("m.id = ?", id)
   end
 
-  def self.scores(id)
+  def self.unwatched(id)
     Movie.find_by_sql(["SELECT m.id, m.name
-    , COUNT(rev.id) AS review_num
-    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)
-        WHERE rev.watched = 'true') AS watched_rating
-    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)
-        WHERE rev.watched = 'false') AS unwatched_rating
+    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
     FROM movies m
     INNER JOIN reviews rev ON m.id = rev.movie_id
-    WHERE m.id = ?
-    GROUP BY m.id, m.name, rev.watched", id])
+    WHERE m.id = ? AND rev.watched = 'false'
+    GROUP BY m.id, rev.watched
+    ORDER BY m.id", id])
+  end
+
+  def self.watched(id)
+    Movie.find_by_sql(["SELECT m.id, m.name
+    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
+    FROM movies m
+    INNER JOIN reviews rev ON m.id = rev.movie_id
+    WHERE m.id = ? AND rev.watched = 'true'
+    GROUP BY m.id, rev.watched
+    ORDER BY m.id", id])
   end
 
   def self.categories
