@@ -48,10 +48,9 @@ const PrivacyPolicy = () => {
       5. HOWE DO WE KEEP YOUR INFORMATION SAFE?
       6. WHAT ARE YOUR PRIVACY RIGHTS?
       7. CONTROLS FOR DO-NOT-TRACK FEATURES
-      8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
-      9. DO WE MAKE UPDATES TO THIS NOTICE?
-      10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
-      11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
+      8. DO WE MAKE UPDATES TO THIS NOTICE?
+      9. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
+      10. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
     </p>
 
     <h2>1. WHAT INFORMATION DO WE COLLECT?</h2>
@@ -138,17 +137,21 @@ const PrivacyPolicy = () => {
       Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about the practice in a revised version of this privacy notice.
     </p>
 
-    <h2>8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
+    <h2>8. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
 
     <p>
-      In Short: Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.
+      In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws.
 
-      California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us using the contact information provided.
-
-      If you are under 18 years of age, reside in California, and have a registered account with Service, you have the right to request removal of unwanted data that you publicly post on the Services. To request removal of such data, please contact us using the contact information provided and include the email address associated with your account and a statement that your reside in California. We will make sure the data is not publicly displayed on the Services, but please be aware that the data may not be completely or comprehensively removed from all our systems (e.g., backups, etc.).
+      We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.
     </p>
 
-    <h3>CCPA Privacy Notice</h3>
+    <h2>9. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
+
+    <p>If you have questions or comments about this notice, you mail contact us.</p>
+
+    <h2>10. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
+
+    <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please contact us.</p>
 
     </>
   )
