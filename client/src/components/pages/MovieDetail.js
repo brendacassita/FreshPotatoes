@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -87,6 +88,7 @@ const MovieDetail = () => {
       })}
       {/* {JSON.stringify(movies)} */}
       
+
     </div>
   )
 }

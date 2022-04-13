@@ -23,7 +23,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.copyright {
+  font-size: .75rem;
+  padding: 20px 0 5px 0;
+}
 
+.footer {
+  background-color: rgb(115, 0, 128);
+  border-top:2px solid rgb(11, 11, 11);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  font-size: 25px;
+}
 
 .Nav-link {
   margin: 5px; 

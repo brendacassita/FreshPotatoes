@@ -14,6 +14,11 @@ import EditProfile from './components/auth/EditProfile';
 import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
 
+import Footer from './components/pages/Footer';
+
+import MovieDetail from './components/pages/MovieDetail';
+
+
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
 //prevents routes from getting rendered until check is done 
@@ -44,14 +49,13 @@ function App() {
               <Route path='/categories' element={<Categories yo={'Categories'} />}/>
               <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
 
-
-
             </Route>  
             <Route path='*' element={<NoMatch />}/>
           </Routes>
         </>
       </FetchUser>
-      {/* <p>Footer for all pages</p> */}
+      <Footer />
+
     </div>
   );
 }
