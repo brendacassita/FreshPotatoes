@@ -8,8 +8,16 @@
 Movie.destroy_all
 User.destroy_all
 
+########## USERS ##########
+
 u1 = User.create(email:'test1@test.com', password:123456, name:'Beyonce', username:'user1', avatar:'https://static.wikia.nocookie.net/ladygaga/images/2/2e/Beyonc%C3%A9.jpg/revision/latest?cb=20200718185948', phone:'8018889888', role:'user')
+
 u2 = User.create(email:'test2@test.com', password:123456, name:'Michael Meyers', username:'user2', avatar:'https://upload.wikimedia.org/wikipedia/en/e/e9/MichaelMyers2018.jpg', phone:'801777777', role:'admin')
+
+u3 = User.create(email:'test2@test.com', password:123456, name:'Ellen Ripley', username:'alien_slayer', avatar:'https://static.wikia.nocookie.net/avp/images/4/48/Ellen_Ripley.png/revision/latest?cb=20130410133154', phone:'801777777', role:'admin')
+
+
+########## MOVIES ##########
 
 m1 = u1.movies.create(
   name:'Pineapple Express',
@@ -173,6 +181,8 @@ m18 = u1.movies.create(
   poster:'https://m.media-amazon.com/images/I/41Byr2iM4mL._AC_.jpg',
   trailer:'qesn8pV9yu8')
 
+########## REVIEWS ##########
+
 Review.create(
   rating:5,
   watched:'false',
@@ -261,6 +271,7 @@ Review.create(
   movie_id:3,
 )
 
+########## CAST ##########
 
 Cast.create(
   headshot:'https://m.media-amazon.com/images/M/MV5BMTQ0NjgzNzcwNV5BMl5BanBnXkFtZTcwODExMDYxOQ@@._V1_.jpg',
@@ -271,6 +282,8 @@ Cast.create(
   headshot:'https://m.media-amazon.com/images/M/MV5BMjA4MzMzNDM5MF5BMl5BanBnXkFtZTgwMjQ0MDk0NDM@._V1_.jpg',
   name:'James Franco',
 )
+
+########## ROLE ##########
 
 Role.create(
   title:'Dale Denton',
