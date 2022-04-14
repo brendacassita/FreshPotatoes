@@ -43,7 +43,6 @@ const SearchResults = () => {
     // Mapping through the results and displaying only y.item
     let MovieData = result.map(findMovie => findMovie.item)
     setFilteredMovies(MovieData)
- 
     
   }
   
