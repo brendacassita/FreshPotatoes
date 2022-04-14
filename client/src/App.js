@@ -41,12 +41,12 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/review' element={<Review />}/>
             <Route path='/movies' element={<Movies />}/>
-            <Route path='/' element={<Movies />}/>
+            <Route path='/' element={<Home />}/>
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
             <Route element={<ProtectedRoute />}>
-              <Route path='/home' element={<Movies/>}/>
+              <Route path='/home' element={<Home/>}/>
             
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
               
