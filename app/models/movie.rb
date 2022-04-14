@@ -73,6 +73,13 @@ class Movie < ApplicationRecord
     LIMIT 10")
   end
 
+  def self.newest
+    Movie.find_by_sql("SELECT m.name, m.poster, m.genre, m.runtime, m.year
+    FROM movies AS m
+    ORDER BY m.year DESC
+    LIMIT 5")
+  end
+
   def self.categories
     select("m.genre")
     .from("movies AS m")
