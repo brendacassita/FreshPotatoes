@@ -18,7 +18,7 @@ m1 = u1.movies.create(
   plot:'A process server and his marijuana dealer wind up on the run from hitmen and a corrupt police officer after he witnesses his dealers boss murder a competitor while trying to serve papers on him.',
   runtime:'1h 45m',
   poster:'https://m.media-amazon.com/images/I/5149l+O+P4L._AC_.jpg',
-  trailer:'https://www.youtube.com/watch?v=BWZt4v6b1hI')
+  trailer:'BWZt4v6b1hI')
 
 m2 = u1.movies.create(
   name:'The Interview',
@@ -27,7 +27,7 @@ m2 = u1.movies.create(
   plot:'Dave Skylark and his producer Aaron Rapaport run the celebrity tabloid show "Skylark Tonight". When they land an interview with a surprise fan, North Korean dictator Jong-Un Kim, they are recruited by the CIA to assassinate him.', 
   runtime:'1h 52m', 
   poster:'https://m.media-amazon.com/images/I/81R2FrgnfZL._AC_SL1000_.jpg', 
-  trailer:'https://www.imdb.com/video/vi1114222361?playlistId=tt2788710&ref_=tt_ov_vi')
+  trailer:'frsvWVEHowg')
 
 m3 = u2.movies.create(
   name:'National Treasure', 
@@ -36,7 +36,7 @@ m3 = u2.movies.create(
   plot:'A historian races to find the legendary Templar Treasure before a team of mercenaries.', 
   runtime:'2h 25m', 
   poster:'https://m.media-amazon.com/images/I/516L7A1oXZL._AC_.jpg', 
-  trailer:'https://www.imdb.com/video/vi3890151705?playlistId=tt0368891&ref_=tt_ov_vi')
+  trailer:'mcf4tXYjaxo')
 
 m4 = u2.movies.create(
   name:'Knives Out', 
@@ -45,7 +45,7 @@ m4 = u2.movies.create(
   plot:'A detective investigates the death of the patriarch of an eccentric, combative family.', 
   runtime:'2h 10m', 
   poster:'https://m.media-amazon.com/images/I/71enm1zeBvL._AC_SL1500_.jpg', 
-  trailer:'https://www.imdb.com/video/vi2464857881?playlistId=tt8946378&ref_=tt_ov_vi')
+  trailer:'xi-1NchUqMA')
 
 m5 = u1.movies.create(
   name:'Jason and the Argonauts',
@@ -54,7 +54,7 @@ m5 = u1.movies.create(
   plot:'The legendary Greek hero leads a team of intrepid adventurers in a perilous quest for the legendary Golden Fleece.',
   runtime:'1h 44m', 
   poster:'https://m.media-amazon.com/images/I/71J-SyixPsL._AC_SL1000_.jpg', 
-  trailer:'https://www.imdb.com/video/vi4187095321/?ref_=tt_vi_i_1')
+  trailer:'C-ZQGRM7GW0')
 
 m6 = u1.movies.create(
   name:'Crazy Rich Asians',
@@ -63,7 +63,7 @@ m6 = u1.movies.create(
   plot:'This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachel Chu to Singapore to meet her boyfriends family.', 
   runtime:'2h 1m', 
   poster:'https://m.media-amazon.com/images/I/91RSvcwSX+L._AC_SL1500_.jpg', 
-  trailer:'https://www.youtube.com/watch?v=ZQ-YX-5bAs0')
+  trailer:'ZQ-YX-5bAs0')
 
 m7 = u1.movies.create(
   name:'Beetlejuice', 
@@ -72,7 +72,7 @@ m7 = u1.movies.create(
   plot:'The spirits of a deceased couple are harassed by an unbearable family that has moved into their home, and hire a malicious spirit to drive them out.', 
   runtime:'1h 32m', 
   poster:'https://m.media-amazon.com/images/I/7134I6+ZJmL._AC_SL1000_.jpg', 
-  trailer:'https://www.imdb.com/video/vi4170302233?playlistId=tt0094721&ref_=tt_pr_ov_vi')
+  trailer:'ickbVzajrk0')
 
 m8 = u1.movies.create(
   name:'The Crow', 
@@ -81,7 +81,7 @@ m8 = u1.movies.create(
   plot:'A man brutally murdered comes back to life as an undead avenger of his and his fiancées murder.', 
   runtime:'1h 42m', 
   poster:'https://m.media-amazon.com/images/I/71pdrpHZUfL._AC_SL1500_.jpg', 
-  trailer:'https://www.imdb.com/video/vi404404249?playlistId=tt0109506&ref_=tt_ov_vi')
+  trailer:'N5uPZ7ocsqA')
 
 m9 = u2.movies.create(
   name:'Labyrinth', 

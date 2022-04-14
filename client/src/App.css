@@ -1,9 +1,28 @@
+<<<<<<< HEAD
 
 .container {
   display: flex; 
   flex-direction: column;/* or inline-flex */
   
   justify-content: space-evenly;
+=======
+.movieCard {
+display: flex;
+justify-content: center;
+}
+.card {
+display: flex;
+flex-wrap: wrap;
+width: auto;
+justify-content: center;
+align-items: center;
+}
+
+.container {
+  display: flex; 
+  flex-direction: row;/* or inline-flex */
+  flex-wrap: wrap;
+>>>>>>> 89737ac10fbd3c6c4f0ba6fa5985bbc2e79a7979
 }
 
 
