@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 
 .container2 {
-=======
-.container {
->>>>>>> a51dfb23c49aae215c29706f1b43cbc96b3fa73e
   display: flex; 
   flex-direction: column;/* or inline-flex */
   justify-content: space-evenly;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> a51dfb23c49aae215c29706f1b43cbc96b3fa73e
 .movieCard {
 display: flex;
 justify-content: center;
@@ -28,13 +20,10 @@ align-items: center;
   display: flex; 
   flex-direction: row;/* or inline-flex */
   flex-wrap: wrap;
-<<<<<<< HEAD
 }
 .top10{
   height: 300px;
   width: auto;
-=======
->>>>>>> a51dfb23c49aae215c29706f1b43cbc96b3fa73e
 }
 
 
