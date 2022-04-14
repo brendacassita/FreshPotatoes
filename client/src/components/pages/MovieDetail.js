@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import YouTube from 'react-youtube'
 import '../../App.css'
+import '../CssFIles/container.css'
 
 
 const MovieDetail = () => {
@@ -88,17 +89,24 @@ const MovieDetail = () => {
             <img src={movie.poster} width={250} />
             <YouTube videoId={movie.trailer} opts={opts} width={500} /> 
             </div>
-            
+            <div>
             <h6> {movie.year} | {movie.runtime} | {movie.genre}</h6>
-            <h6>pre: {reviews.rating} {reviews.rating} post:</h6> 
-            <div className='card'>
-            <h4>Story Line: </h4>
-              <p>{movie.plot}</p>
+              <h6>pre: {reviews.rating} {reviews.rating} post:</h6> 
+            
+            <div id='container'>
+            <h4>Story Line</h4>
+              <p className='information'>{movie.plot}</p>
               <h6>Cast & Crew</h6>
               <p>{casts.name}</p>
-              <img href={casts.headshot} width={150} /> 
-              <p>{roles.title}</p>
-</div>       
+              <img href={casts.headshot} width={50} /> 
+                <p>{roles.title}</p>
+              </div>
+              <div className="control">
+	
+	
+	
+</div>
+            </div>       
             </div>
         )
       })}
