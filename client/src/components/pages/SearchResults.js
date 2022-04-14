@@ -63,8 +63,8 @@ const SearchResults = () => {
         filteredMovies.map((movies) => {
           return (
             <div key={movies.id}>
+              <h4>{movies.name}</h4>
               <img src={movies.poster} width={150} />
-
             </div>
           )
         })
