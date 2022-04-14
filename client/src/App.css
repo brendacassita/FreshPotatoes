@@ -1,11 +1,11 @@
-<<<<<<< HEAD
 
-.container {
+.container2 {
   display: flex; 
   flex-direction: column;/* or inline-flex */
   
   justify-content: space-evenly;
-=======
+}
+
 .movieCard {
 display: flex;
 justify-content: center;
@@ -22,7 +22,10 @@ align-items: center;
   display: flex; 
   flex-direction: row;/* or inline-flex */
   flex-wrap: wrap;
->>>>>>> 89737ac10fbd3c6c4f0ba6fa5985bbc2e79a7979
+}
+.top10{
+  height: 300px;
+  width: auto;
 }
 
 

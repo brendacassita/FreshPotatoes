@@ -47,9 +47,9 @@ def top3_potatoes
   render json: Movie.top3_potatoes
 end
 
-def top10_potatoes
-  render json: Movie.top10_potatoes
-end
+# def top10_potatoes
+#   render json: Movie.top10_potatoes
+# end
 
 def top3_fries
   render json: Movie.top3_fries
@@ -85,13 +85,17 @@ def destroy
   @movie.destroy
 end
 
-def set_page
-  @page = params[:page] || 1
-end 
 
-def pageMovies
-  count = Movie.count
-  render json: {movie: Movie.page(@page).per(@per), count:count, per:@per}
+def pageTopPotatoes
+  count = Movie.top10_potatoes.count
+  movies = Movie.top10_potatoes
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:3}
+end
+
+def pageTopFries
+  count = Movie.top10_fries.count
+  movies = Movie.top10_fries
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:3}
 end
 
 private 
@@ -115,7 +119,7 @@ end
 
 def page
   @page = params[:page] || 1
-  @per = params || 30
+  @per = params[:per] || 2
 end
 
 end
