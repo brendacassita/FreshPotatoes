@@ -1,5 +1,6 @@
 class Api::MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :details, :watched, :unwatched, :update, :destroy]
+  before_action :page, only: [:pageMovies]
 
 #authenticate_user! - anyone can go there, even if not signed in
  # before_action :authenticate_user!, except: [:all_users]
@@ -88,7 +89,10 @@ def set_page
   @page = params[:page] || 1
 end 
 
-
+def pageMovies
+  count = Movie.count
+  render json: {movie: Movie.page(@page).per(@per), count:count, per:@per}
+end
 
 private 
 
@@ -109,5 +113,9 @@ def movie_params
      )
 end
 
+def page
+  @page = params[:page] || 1
+  @per = params || 30
+end
 
 end

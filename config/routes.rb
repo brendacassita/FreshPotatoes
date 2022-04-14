@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     get 'top3/fries', to: 'movies#top3_fries'
     get 'top10/fries', to: 'movies#top10_fries'
     get '/categories', to: 'movies#categories'
+
+    get'pagemovies', to: 'movies#pageMovies'
    
     end  
     
