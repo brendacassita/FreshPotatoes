@@ -1,5 +1,13 @@
 .movieCard {
 display: flex;
+justify-content: center;
+}
+.card {
+display: flex;
+flex-wrap: wrap;
+width: auto;
+justify-content: center;
+align-items: center;
 }
 
 .container {
