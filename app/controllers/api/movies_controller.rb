@@ -58,6 +58,10 @@ def top10_fries
   render json: Movie.top10_fries
 end
 
+def newest
+  render json: Movie.newest
+end
+
 def categories
   render json: Movie.categories
 end
