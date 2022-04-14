@@ -51,9 +51,9 @@ end
 #   render json: Movie.top10_potatoes
 # end
 
-def top3_fries
-  render json: Movie.top3_fries
-end
+# def top3_fries
+#   render json: Movie.top3_fries
+# end
 
 def top10_fries
   render json: Movie.top10_fries

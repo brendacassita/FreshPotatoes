@@ -52,8 +52,11 @@ function App() {
               <Route path='/categories' element={<Categories yo={'Categories'} />}/>
               <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
               <Route path= '/popular_potatoes' element={<PopularPotatoes yo={'PopularPotatoes'}/>}>
+                
+                
 
               </Route>
+              
 
 
 
