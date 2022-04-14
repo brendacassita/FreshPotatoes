@@ -17,6 +17,7 @@ import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
 import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
+import Movies from './components/pages/Movies';
 
 
 //Fetch User: going to see if the user is logged in(valid user?)
@@ -39,21 +40,22 @@ function App() {
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
             <Route path='/review' element={<Review />}/>
-            <Route path='/' element={<Home />}/>
+            <Route path='/movies' element={<Movies />}/>
+            <Route path='/' element={<Movies />}/>
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
             <Route element={<ProtectedRoute />}>
-              <Route path='/home' element={<HomeClass yo={'yoyo'} />}/>
+              <Route path='/home' element={<Movies/>}/>
             
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
               
-              <Route path='/movieDetail' element={<MovieDetail yo={'MovieDetail'} />}/>
-              <Route path='/profile' element={<Profile yo={'Profile'} />}/>
-              <Route path='/edit_profile' element={<EditProfile yo={'Edit Profile'} />}/>
-              <Route path='/categories' element={<Categories yo={'Categories'} />}/>
-              <Route path='/movies/:id' element={<MovieDetail yo={'MovieDetail'} />}/>
-              <Route path= '/popular_potatoes' element={<PopularPotatoes yo={'PopularPotatoes'}/>}>
+              <Route path='/movieDetail' element={<MovieDetail />}/>
+              <Route path='/profile' element={<Profile />}/>
+              <Route path='/edit_profile' element={<EditProfile />}/>
+              <Route path='/categories' element={<Categories />}/>
+              <Route path='/movies/:id' element={<MovieDetail  />}/>
+              <Route path= '/popular_potatoes' element={<PopularPotatoes/>}>
 
               </Route>
 

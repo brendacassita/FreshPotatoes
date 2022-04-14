@@ -46,8 +46,7 @@ function Item(props) {
   return (
     <Paper className={classes.root}>
       <div className={classes.sec}>
-        {/* <Typography variant="h3">{props.item.name}</Typography> */}
-        {/* <Typography variant="subtitle1">{props.item.description}</Typography> */}
+        
         <Button
           sx={{
             ":hover": {
@@ -62,7 +61,6 @@ function Item(props) {
         </Button>
       </div>
 
-      {/* <img className={classes.img_responsive} src={props.item.img_src} /> */}
     </Paper>
   );
 }
