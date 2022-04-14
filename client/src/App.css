@@ -2,6 +2,13 @@
 display: flex;
 }
 
+.container {
+  display: flex; 
+  flex-direction: row;/* or inline-flex */
+  flex-wrap: wrap;
+}
+
+
 .App {
   text-align: center;
 }
