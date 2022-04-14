@@ -28,7 +28,7 @@ const SearchResults = () => {
     try {
       let res = await axios.get('/api/movies')
       setAllMovies(res.data)
-      setFilteredMovies(res.data)
+      
     } catch(err) {
       alert('error getting movies')
     }
@@ -36,14 +36,14 @@ const SearchResults = () => {
   
   
   
-  const handleSearchTermChange = (e)=>{
-     setSearchTerm(e.target.value)
+  const handleSearchTermChange = (e) => {
+    setSearchTerm(e.target.value)
     const result = fuse.search(e.target.value)
    
     // Mapping through the results and displaying only y.item
     let MovieData = result.map(findMovie => findMovie.item)
     setFilteredMovies(MovieData)
-    
+
   }
   
   
@@ -54,17 +54,19 @@ const SearchResults = () => {
       <p>Search:</p>
       <input onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies'></input>
       
-        <p>{JSON.stringify(filteredMovies)}</p>
+        {/* <p>{JSON.stringify(filteredMovies)}</p> */}
       
       <hr></hr>
-      {allMovies.map((movies) => {
-        return (
-          <div key = {movies.id}>
-          <img src={movies.poster} width={150} />
-
-       </div>
-        )  
-      })}
+      {filteredMovies ? 
+        filteredMovies.map((movies) => {
+          return (
+            <div key={movies.id}>
+              <h4>{movies.name}</h4>
+              <img src={movies.poster} width={150} />
+            </div>
+          )
+        })
+      :<p>Not searching yet</p>}
     
         
         
