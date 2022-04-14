@@ -21,5 +21,5 @@ Rails.application.routes.draw do
     get '/categories', to: 'movies#categories'
    
     end  
-    
+    get '*other', to: 'static#index'
 end
