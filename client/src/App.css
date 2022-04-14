@@ -1,3 +1,12 @@
+
+.container {
+  display: flex; 
+  flex-direction: column;/* or inline-flex */
+  
+  justify-content: space-evenly;
+}
+
+
 .App {
   text-align: center;
 }
