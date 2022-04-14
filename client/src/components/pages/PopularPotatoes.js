@@ -47,13 +47,9 @@ const PopularPotatoes = ()=>{
 
   return(
       <div>
-      <h1>Popular Potatoes </h1>
-      
+      <h1>Popular Potatoes </h1>  
       {renderMovies()}
-    
-      
-      
-      <div>{renderButtons()}</div>
+      {/* <div>{renderButtons()}</div> */}
     </div>
   )
 }

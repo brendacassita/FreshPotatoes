@@ -47,9 +47,9 @@ def top3_potatoes
   render json: Movie.top3_potatoes
 end
 
-# def top10_potatoes
-#   render json: Movie.top10_potatoes
-# end
+def top10_potatoes
+  render json: Movie.top10_potatoes
+end
 
 def top3_fries
   render json: Movie.top3_fries
@@ -93,6 +93,7 @@ end
 def pageTopPotatoes
   count = Movie.top10_potatoes.count
   movies = Movie.top10_potatoes
+  puts json: movies
   render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:3}
 end
 
