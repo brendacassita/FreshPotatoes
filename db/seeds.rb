@@ -327,6 +327,150 @@ Review.create(
   movie_id:2,
 )
 
+
+Review.create(
+  rating:4.5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:17,
+)
+
+Review.create(
+  rating:1,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:17,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:17,
+)
+
+Review.create(
+  rating:4.5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:17,
+)
+
+Review.create(
+  rating:5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:17,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:17,
+)
+
+Review.create(
+  rating:3,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:6,
+)
+
+
+Review.create(
+  rating:4.5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:6,
+)
+
+Review.create(
+  rating:2,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:6,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:6,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:6,
+)
+
+Review.create(
+  rating:5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:6,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:6,
+)
+Review.create(
+  rating:5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:4,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:4,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:4,
+)
+
+Review.create(
+  rating:2.5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:4,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:6,
+)
 ########## CAST ##########
 
 Cast.create(
