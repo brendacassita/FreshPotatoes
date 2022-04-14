@@ -24,7 +24,7 @@ const MovieDetail = () => {
  
   const getMovies = async () =>{
     try{
-      let res = await axios.get('/api/movies/id')
+      let res = await axios.get('/api/movies')
       setMovies(res.data)
       console.log(res.data)
     }catch(err){
@@ -85,7 +85,7 @@ const MovieDetail = () => {
           <div key={movie.id}>
             <h3>{movie.name}</h3>
             <div className='movieCard'>
-            <img src={movie.poster} width={250} />
+            <img src={movie.poster} width={266} />
             <YouTube videoId={movie.trailer} opts={opts} width={500} /> 
             </div>
             <h6> {movie.year} | {movie.runtime} | {movie.genre}</h6>

@@ -1,5 +1,7 @@
 .movieCard {
 display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .App {
