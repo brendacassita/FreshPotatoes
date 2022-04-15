@@ -1,75 +1,66 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
+import useAxios from 'axios-hooks'
 
-import { useEffect, useState } from 'react'
-import axios from 'axios'
 
-const Categories = () => {
-  const [movies, setMovies] =  useState([])
-  const [filteredCategories, setFilteredCategories] = useState([])
+const Categories = ()=>{
 
-  useEffect(()=>{
-    getMovies()
-  },[])
- 
-  const getMovies = async () =>{
-    try{
-      let res = await axios.get('/api/movies')
-      setMovies(res.data)
-      console.log(res.data)
-    }catch(err){
-    alert('error in getting movies')
+    const[{data: movies, loading, error}] = useAxios('/api/movies')
+    
+    const [filteredCategories, setFilteredCategories] = useState([])
+    
+      if(error) return <p>Error</p>
+      if(loading) return <p>Loading</p>
+
+    const getUniqueCategories = ()=>{ 
+      return movies.reduce((accum, movie) =>{
+        if(!accum.includes(movie.genre)){
+          accum.push(movie.genre)
+        }
+          return accum
+        },[])
     }
-  }
 
-  const getCategories = () =>{
-   return movies.reduce((accum, movie)=>{
-     if(!accum.includes(movie.genre)){
-       accum.push(movie.genre)
-     }
-     return accum
-   },[])
-  }
 
-  const renderSelect = (categories)=> {
-    console.log(categories)
-    return categories.map((category)=>{
-    })
-  }
+    const showSelect = (event) => {
+        let selectedCategory = event.target.value;
+        setFilteredCategories(movies.filter((movie) => movie.genre === selectedCategory))
+    }
 
-  const getSelect =()=>{
-  let uniqueCategories = getCategories()
-  return (uniqueCategories)
-  console.log(uniqueCategories)
-}
 
-const renderFilteredCategories =() =>{
-  if(!filteredCategories){
-    return<p>no movies matching category, select a category</p>
-  }
-}
-  
-  
-  
-  
-  
-  
-  
-  return(
-    <div>
-      <h1>Categories</h1>
-      {movies.map((movie)=>{
-        return(
-          <div key = {movie.id}>
-            <h5>{movie.genre}</h5>
-            <img src={movie.poster} width={150} />
-            {getSelect()}
-            {/* {renderFilteredCategories()} */}
+      const getSelect = () => {
+        let uniqueCategories = getUniqueCategories()
+        return(uniqueCategories)
+        
+      }
+
+      const renderFilteredCategoryMovies = () => {
+        if (!filteredCategories) {
+          return <p> No movies, or select a category </p>
+      }
+    
+        return (
+          filteredCategories.map((m) => (
+            <div key={m.id}>
+                 <p>  {m.genre  }{''} </p> 
+                 
+
             </div>
+          ))  
         )
-      })}
-      {/* {JSON.stringify(movies)} */}
+      }
+    
+      return(
+        <div>
+        <h1>Categories</h1>   
+          {showSelect && getSelect()}
+          
+        </div>
       
-    </div>
-  )
-}
+      )
+  }
+
+
+    
 
 export default Categories
