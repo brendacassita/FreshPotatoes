@@ -120,9 +120,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
+      
+        <Link className="Nav-link" to="/">Home</Link>
+        <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
+        {renderLeft()}
 
         
-        <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+        
 
       
     
@@ -172,8 +177,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
               >
-                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
+                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
               <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
