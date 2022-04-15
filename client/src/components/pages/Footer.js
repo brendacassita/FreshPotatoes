@@ -26,12 +26,12 @@ const Footer = () => {
             </Link> 
         </Box>
         <Box>
-            <Link href="/" color="inherit">
-              Support
+            <Link href="/about" color="inherit">
+              About
             </Link> 
         </Box>
         <Box>
-            <Link href="/" color="inherit">
+            <Link href="/privacy_policy" color="inherit">
               Privacy Policy
             </Link> 
         </Box>
