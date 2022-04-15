@@ -100,7 +100,7 @@ end
 def pageTopFries
   count = Movie.top10_fries.count
   movies = Movie.top10_fries
-  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:3}
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
 end
 
 private 
