@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './carousel.css'
 
 const Carousel = (props) => {
+    //add a prop, this is the content that will be displayed on the carousel
     const {children, show, infiniteLoop} = props
-
+    //define a state for the current active index and the total items passed
+    //to the carousel (length)
     const [currentIndex, setCurrentIndex] = useState(infiniteLoop ? show : 0)
     const [length, setLength] = useState(children.length)
     
@@ -38,31 +40,7 @@ const Carousel = (props) => {
         }
     }
 
-    // const handleTouchStart = (e) => {
-    //     const touchDown = e.touches[0].clientX
-    //     setTouchPosition(touchDown)
-    // }
 
-    // const handleTouchMove = (e) => {
-    //     const touchDown = touchPosition
-
-    //     if(touchDown === null) {
-    //         return
-    //     }
-
-    //     const currentTouch = e.touches[0].clientX
-    //     const diff = touchDown - currentTouch
-
-    //     if (diff > 5) {
-    //         next()
-    //     }
-
-    //     if (diff < -5) {
-    //         prev()
-    //     }
-
-    //     setTouchPosition(null)
-    // }
 
     const handleTransitionEnd = () => {
         if (isRepeating) {
@@ -99,14 +77,14 @@ const Carousel = (props) => {
                 {/* You can alwas change the content of the button to other things */}
                 {
                     (isRepeating || currentIndex > 0) &&
+                    //buttons added for user to interact with; previous and next buttons
                     <button onClick={prev} className="left-arrow">
                         &lt;
                     </button>
                 }
                 <div
                     className="carousel-content-wrapper"
-                    // onTouchStart={handleTouchStart}
-                    // onTouchMove={handleTouchMove}
+                
                 >
                     <div
                         className={`carousel-content show-${show}`}
