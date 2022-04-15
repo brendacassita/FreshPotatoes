@@ -17,8 +17,6 @@ import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
 import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
-import Movies from './components/pages/Movies';
-
 
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -40,7 +38,6 @@ function App() {
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
             <Route path='/review' element={<Review />}/>
-            <Route path='/movies' element={<Movies />}/>
             <Route path='/' element={<Home />}/>
            
                 {/* protected in routes inside of here you need to logged in*/}

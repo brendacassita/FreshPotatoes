@@ -1,6 +1,8 @@
-import { AuthContext } from "../../providers/AuthProvider"
+
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+//import MovieCarousel from '../pages/MovieCarousel'
+import Carousel from '../pages/Carousel'
 
 
 const Home = ()=>{
@@ -24,29 +26,113 @@ const Home = ()=>{
         alert('error in getting movies')
         }
       }
-  
-      return(
 
 
-        <div className='container'>
-    
-          {movies.map((movie)=>{
-            return(
-              <div key = {movie.id}>
-                {!loading && <img src={movie.poster} width={150} />}
-                {loading && <p>Loading...</p>}
-           
-         
-                
-               
-    
+
+       return (
+        <div style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}>
+            <Carousel
+                show={4}
+                infiniteLoop
+            >
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
                 </div>
-            )
-          })}
-          {/* {JSON.stringify(movies)} */}
-          
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+            </Carousel>
         </div>
-      )
-    }
+    )
+}
 
     export default Home
+
+
+    // const Home = () => {
+//     return (
+//         <div style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}>
+//             <Carousel
+//                 show={4}
+//                 infiniteLoop
+//             >
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div style={{padding: 8}}>
+//                         <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+//                     </div>
+//                 </div>
+//             </Carousel>
+//         </div>
+//     )
+// }
+
+// export default Home;

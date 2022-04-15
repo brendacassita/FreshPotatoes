@@ -44,6 +44,7 @@ const MovieDetail = () => {
 
   
   return(
+  
     <div className='App'>
       <h1>Movie Detail </h1>
       {movies.map((movie)=>{
