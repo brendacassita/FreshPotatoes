@@ -1,3 +1,4 @@
+import Logo from '../../Images/FpLogo.png'
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -5,10 +6,10 @@ import Button from '@mui/material/Button';
 import {styled,alpha} from '@mui/material/styles'
 import {AppBar,IconButton,InputBase,Toolbar,Box} from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
+
 import '../CssFIles/Navbar.css'
 
 const Navbar = () => {
@@ -108,10 +109,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   return (
     <AppBar position='static' sx={{background: 'red'}}>
       <Toolbar>
-        {/* Logo goes here */}
-        <img></img>
-        <br/>
         
+       
+        <img className='logo' scr={Logo} width='120px' ></img>
+       
+      
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
         <Link className="btn1" to="/">Home</Link>
