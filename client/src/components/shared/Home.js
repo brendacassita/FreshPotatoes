@@ -28,31 +28,6 @@ const Home = ()=>{
         }
       }
 
-    // WILL DELETE LATER
-    const movs = () => {
-      const navigate = useNavigate()
-      const [movs, setMovs] = useState([])
-      useEffect(() => {
-          console.log('mounted and doing api to get movs')
-          getMovs()
-      },[])
-    }
-
-    const getMovs = async() => {
-        try {
-            let res = await axios.get('/api/newest')
-            setMovs(res.data)
-        }catch(err){
-            alert('error in getMovs')
-        }
-    }
-
-    const renderMovs = () => {
-        return movs.map(mov => {
-            return <MovieDetail key={mov.name} />
-        })
-    }
-    // WILL DELETE LATER
 
     const renderPosters = () => {
      
@@ -154,7 +129,6 @@ const Home = ()=>{
                     </div>
                 </div>
             </Carousel>
-            {renderMovs()}
         </div>
     )
 }
