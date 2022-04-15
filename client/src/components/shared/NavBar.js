@@ -56,13 +56,9 @@ const Navbar = () => {
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
          
           
-          <Link className="Nav-link" to='/SearchResults'>Search</Link>
-          <Link className="Nav-link" to='/profile'>Profile</Link> 
-          <Link className="Nav-link" to='/edit_profile'>EditProfile</Link> 
-          <Link className="Nav-link" to='/genres'>Genres</Link> 
           
-
-
+           
+          <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
           <Link className="btn1" to='/movie_detail'>Movie Detail</Link> {''}
 
