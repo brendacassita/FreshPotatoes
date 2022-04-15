@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/shared/NavBar';
 import { Routes, Route, useParams} from 'react-router-dom';
@@ -6,7 +5,6 @@ import Home from './components/shared/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import NoMatch from './components/shared/NoMatch';
-import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
@@ -19,7 +17,6 @@ import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
-
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
 //prevents routes from getting rendered until check is done 

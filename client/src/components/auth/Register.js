@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
+import {Button} from "../Button"
 
 const Register = ()=>{
     const [email, setEmail] = useState('test1@test.com')
@@ -24,7 +25,7 @@ const Register = ()=>{
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 <p>Password: </p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <button variant="primary" size="sm" onClick={handleSubmit}>Register</button>
+                <Button variant="primary" size="sm" onClick={handleSubmit}>Register</Button>
             </form>
         </div>
     )

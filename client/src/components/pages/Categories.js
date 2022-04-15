@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+
 const Categories = () => {
   const [movies, setMovies] =  useState([])
   const [filteredCategories, setFilteredCategories] = useState([])
@@ -55,6 +56,7 @@ const renderFilteredCategories =() =>{
   
   return(
     <div>
+    
       <h1>Categories</h1>
       {movies.map((movie)=>{
         return(

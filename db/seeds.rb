@@ -22,7 +22,6 @@ u3 = User.create(email:'test2@test.com', password:123456, name:'Ellen Ripley', u
 m1 = u1.movies.create(
   name:'Pineapple Express',
   year:'2008', 
-  genre:'Comedy', 
   plot:'A process server and his marijuana dealer wind up on the run from hitmen and a corrupt police officer after he witnesses his dealers boss murder a competitor while trying to serve papers on him.',
   runtime:'1h 45m',
   poster:'https://m.media-amazon.com/images/I/5149l+O+P4L._AC_.jpg',
@@ -30,8 +29,7 @@ m1 = u1.movies.create(
 
 m2 = u1.movies.create(
   name:'The Interview',
-  year:'2014', 
-  genre:'Comedy', 
+  year:'2014',  
   plot:'Dave Skylark and his producer Aaron Rapaport run the celebrity tabloid show "Skylark Tonight". When they land an interview with a surprise fan, North Korean dictator Jong-Un Kim, they are recruited by the CIA to assassinate him.', 
   runtime:'1h 52m', 
   poster:'https://m.media-amazon.com/images/I/81R2FrgnfZL._AC_SL1000_.jpg', 
@@ -39,8 +37,7 @@ m2 = u1.movies.create(
 
 m3 = u2.movies.create(
   name:'National Treasure', 
-  year:'2004', 
-  genre:'Action', 
+  year:'2004',  
   plot:'A historian races to find the legendary Templar Treasure before a team of mercenaries.', 
   runtime:'2h 25m', 
   poster:'https://m.media-amazon.com/images/I/516L7A1oXZL._AC_.jpg', 
@@ -49,7 +46,6 @@ m3 = u2.movies.create(
 m4 = u2.movies.create(
   name:'Knives Out', 
   year:'2019', 
-  genre:'Mystery', 
   plot:'A detective investigates the death of the patriarch of an eccentric, combative family.', 
   runtime:'2h 10m', 
   poster:'https://m.media-amazon.com/images/I/71enm1zeBvL._AC_SL1500_.jpg', 
@@ -57,8 +53,7 @@ m4 = u2.movies.create(
 
 m5 = u1.movies.create(
   name:'Jason and the Argonauts',
-  year:'1963',
-  genre:'Action', 
+  year:'1963', 
   plot:'The legendary Greek hero leads a team of intrepid adventurers in a perilous quest for the legendary Golden Fleece.',
   runtime:'1h 44m', 
   poster:'https://m.media-amazon.com/images/I/71J-SyixPsL._AC_SL1000_.jpg', 
@@ -66,8 +61,7 @@ m5 = u1.movies.create(
 
 m6 = u1.movies.create(
   name:'Crazy Rich Asians',
-  year:'2018', 
-  genre:'Comedy',
+  year:'2018',
   plot:'This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachel Chu to Singapore to meet her boyfriends family.', 
   runtime:'2h 1m', 
   poster:'https://m.media-amazon.com/images/I/91RSvcwSX+L._AC_SL1500_.jpg', 
@@ -75,8 +69,7 @@ m6 = u1.movies.create(
 
 m7 = u1.movies.create(
   name:'Beetlejuice', 
-  year:'1988', 
-  genre:'Comedy',
+  year:'1988',
   plot:'The spirits of a deceased couple are harassed by an unbearable family that has moved into their home, and hire a malicious spirit to drive them out.', 
   runtime:'1h 32m', 
   poster:'https://m.media-amazon.com/images/I/7134I6+ZJmL._AC_SL1000_.jpg', 
@@ -85,7 +78,6 @@ m7 = u1.movies.create(
 m8 = u1.movies.create(
   name:'The Crow', 
   year:'1994', 
-  genre:'Action', 
   plot:'A man brutally murdered comes back to life as an undead avenger of his and his fiancées murder.', 
   runtime:'1h 42m', 
   poster:'https://m.media-amazon.com/images/I/71pdrpHZUfL._AC_SL1500_.jpg', 
@@ -94,7 +86,6 @@ m8 = u1.movies.create(
 m9 = u2.movies.create(
   name:'Labyrinth', 
   year:'1986', 
-  genre:'Adventure,Fantasy', 
   plot:'Sixteen-year-old Sarah is given thirteen hours to solve a labyrinth and rescue her baby brother Toby when her wish for him to be taken away is granted by the Goblin King Jareth.', 
   runtime:'1h 41m', 
   poster:'https://m.media-amazon.com/images/I/619yt12HbSL._AC_SL1001_.jpg', 
@@ -103,7 +94,6 @@ m9 = u2.movies.create(
 m10 = u2.movies.create(
   name:'Romeo and Juliet' , 
   year:'1996', 
-  genre:'Drama,Romance', 
   plot:'Shakespeares famous play is updated to the hip modern suburb of Verona still retaining its original dialogue.', 
   runtime:'2h', 
   poster:'https://m.media-amazon.com/images/I/81xn4q+XdeL._AC_SL1500_.jpg',  
@@ -112,7 +102,6 @@ m10 = u2.movies.create(
 m11 = u1.movies.create(
   name:'The Three Amigos!',
   year:'1986', 
-  genre:'Comedy', 
   plot:'Three actors accept an invitation to a Mexican village to perform their onscreen bandit fighter roles, unaware that it is the real thing.', 
   runtime:'1h 44m', 
   poster:'https://m.media-amazon.com/images/I/51pC6YFqfqL._AC_.jpg', 
@@ -121,7 +110,6 @@ m11 = u1.movies.create(
 m12 = u1.movies.create(
   name:'The Neverending Story',
   year:'1984', 
-  genre:'Adventure', 
   plot:'A troubled boy dives into a wondrous fantasy world through the pages of a mysterious book.', 
   runtime:'1h 42m', 
   poster:'https://m.media-amazon.com/images/I/710R6Go8u0L._AC_SY679_.jpg', 
@@ -130,7 +118,6 @@ m12 = u1.movies.create(
 m13 = u2.movies.create(
   name:'Earth Girls are Easy', 
   year:'1988', 
-  genre:'Comedy', 
   plot:'A Southern California girl befriends three furry aliens after their spaceship lands in her swimming pool.', 
   runtime:'1h 40m', 
   poster:'https://m.media-amazon.com/images/I/51Bw3Zfm97L.jpg', 
@@ -139,7 +126,6 @@ m13 = u2.movies.create(
 m14 = u2.movies.create(
   name:'Muppet Treasure Island', 
   year:'1996', 
-  genre:'Adventure', 
   plot:'The Muppets twist on the classic tale.', 
   runtime:'1h 39m', 
   poster:'https://m.media-amazon.com/images/I/61ZWo59PYKL._AC_.jpg', 
@@ -148,7 +134,6 @@ m14 = u2.movies.create(
 m15 = u1.movies.create(
   name:'Man of Steel', 
   year:'2013', 
-  genre:'Action', 
   plot:'An alien child is evacuated from his dying world and sent to Earth to live among humans. His peace is threatened when other survivors of his home planet invade Earth.', 
   runtime:'2h 23m', 
   poster:'https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg', 
@@ -157,7 +142,6 @@ m15 = u1.movies.create(
 m16 = u1.movies.create(
   name:'What Dreams May Come', 
   year:'1998', 
-  genre:'Drama', 
   plot:'Chris Nielsen dies in an accident, and enters Heaven. But when he discovers that his beloved wife Annie has killed herself out of grief over the loss, he embarks on an afterlife adventure to reunite with her.', 
   runtime:'1h 53m', 
   poster:'https://m.media-amazon.com/images/I/61-j8oLV9nL._AC_SL1500_.jpg', 
@@ -166,7 +150,6 @@ m16 = u1.movies.create(
 m17 = u1.movies.create(
   name:'Gladiator', 
   year:'2000', 
-  genre:'Action', 
   plot:'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', 
   runtime:'2h 35m', 
   poster:'https://m.media-amazon.com/images/I/51a-Iz7wwCL._AC_.jpg', 
@@ -175,7 +158,6 @@ m17 = u1.movies.create(
 m18 = u1.movies.create(
   name:'The Count of Monte Cristo',
   year:'2002',
-  genre:'Action',
   plot:'A young man, falsely imprisoned by his jealous "friend", escapes and uses a hidden treasure to exact his revenge.',
   runtime:'2h 11m',
   poster:'https://m.media-amazon.com/images/I/41Byr2iM4mL._AC_.jpg',
@@ -721,7 +703,65 @@ Role.create(
   movie_id:1,
 )
 
+adventure = Genre.create(
+  name:'Adventure',
+  image:''
+)
 
+comedy = Genre.create(
+  name:'Comedy',
+  image:''
+)
+
+fantasy = Genre.create(
+  name:'Fantasy',
+  image:''
+)
+
+drama = Genre.create(
+  name:'Drama',
+  image:''
+)
+
+mystery = Genre.create(
+  name:'Mystery',
+  image:''
+)
+
+romance = Genre.create(
+  name:'Romance',
+  image:''
+)
+
+action = Genre.create(
+  name:'Action',
+  image:''
+)
+
+GenreMovie.create(
+  genre_id:2,
+  movie_id:1
+)
+
+GenreMovie.create(
+  genre_id:2,
+  movie_id:1
+)
+
+GenreMovie.create(
+  genre_id:2,
+  movie_id:1
+)
+
+GenreMovie.create(
+  genre_id:2,
+  movie_id:1
+)
+
+GenreMovie.create(
+  genre_id:2,
+  movie_id:1
+)
 
 puts "Movies: #{Movie.all.length}"
 puts "Reviews: #{Review.all.length}"
