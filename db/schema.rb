@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_07_210621) do
+ActiveRecord::Schema.define(version: 2022_04_15_212948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,24 @@ ActiveRecord::Schema.define(version: 2022_04_07_210621) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "genre_movies", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_genre_movies_on_genre_id"
+    t.index ["movie_id"], name: "index_genre_movies_on_movie_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "name"
-    t.string "genre"
     t.string "poster"
     t.string "trailer"
     t.text "plot"
@@ -90,6 +105,8 @@ ActiveRecord::Schema.define(version: 2022_04_07_210621) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "genre_movies", "genres"
+  add_foreign_key "genre_movies", "movies"
   add_foreign_key "movies", "users"
   add_foreign_key "reviews", "movies"
   add_foreign_key "reviews", "users"

@@ -2,6 +2,8 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :reviews
   has_many :roles
+  has_many :genre_movie
+  
 
   def self.details(id)
     # puts movie.id
