@@ -71,7 +71,7 @@ class Movie < ApplicationRecord
     INNER JOIN reviews AS rev ON m.id = rev.movie_id
     WHERE rev.watched = 'true'
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
-    ORDER BY unwatched_rating DESC
+    ORDER BY watched_rating DESC
     LIMIT 15")
   end
   # HAVING COUNT(rev.id)>=5 move this back to top10_fries
