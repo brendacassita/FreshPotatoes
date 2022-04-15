@@ -94,7 +94,7 @@ m8 = u1.movies.create(
 m9 = u2.movies.create(
   name:'Labyrinth', 
   year:'1986', 
-  genre:'Adventure,Fantasy', 
+  genre:'Fantasy', 
   plot:'Sixteen-year-old Sarah is given thirteen hours to solve a labyrinth and rescue her baby brother Toby when her wish for him to be taken away is granted by the Goblin King Jareth.', 
   runtime:'1h 41m', 
   poster:'https://m.media-amazon.com/images/I/619yt12HbSL._AC_SL1001_.jpg', 
@@ -103,7 +103,7 @@ m9 = u2.movies.create(
 m10 = u2.movies.create(
   name:'Romeo and Juliet' , 
   year:'1996', 
-  genre:'Drama,Romance', 
+  genre:'Drama', 
   plot:'Shakespeares famous play is updated to the hip modern suburb of Verona still retaining its original dialogue.', 
   runtime:'2h', 
   poster:'https://m.media-amazon.com/images/I/81xn4q+XdeL._AC_SL1500_.jpg',  

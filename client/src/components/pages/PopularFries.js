@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const PopularPotatoes = ()=>{
+const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
   const [count, setCount] = useState(1)
@@ -17,7 +17,7 @@ const PopularPotatoes = ()=>{
 
   const getTop10 = async () =>{
     try{
-      let res = await axios.get('/api/pagetoppotatoes/?per=10')
+      let res = await axios.get('/api/pagetopfries/?per=10')
       setPer(res.data.per)
       setCount(res.data.count)
 
@@ -30,7 +30,7 @@ const PopularPotatoes = ()=>{
 
   const getMoreThanTop10 = async (page) =>{
     try{
-      let res = await axios.get(`/api/pagetoppotatoes/?page=${page}`)
+      let res = await axios.get(`/api/pagetopfries/?page=${page}`)
       setTop10(res.data.movie)
     }catch(err){
     alert('error in getting more top movies')
@@ -59,11 +59,11 @@ const PopularPotatoes = ()=>{
 
   return(
       <div>
-      <h1>Popular Potatoes </h1>  
+      <h1>Popular Fries </h1>  
       {renderMovies()}
       <div>{renderButtons()}</div>
     </div>
   )
 }
 
-export default PopularPotatoes
+export default PopularFries

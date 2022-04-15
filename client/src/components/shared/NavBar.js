@@ -56,9 +56,10 @@ const Navbar = () => {
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
          
           
-
+          
+           
+          <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
-          <Link className="btn1" to='/categories'>Categories</Link> {''}
           <Link className="btn1" to='/movie_detail'>Movie Detail</Link> {''}
 
   
@@ -112,15 +113,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   return (
     <AppBar position='static' sx={{background: 'red'}}>
       <Toolbar>
+        
         <Link to='./'>
           <div className='logo'><img src={logo}width='190px' ></img></div>
        </Link>
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
+      
+        <Link className="Nav-link" to="/">Home</Link>
+        <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
+        {renderLeft()}
 
         
-        <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+        
 
       
     
@@ -170,8 +177,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
               >
-                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
+                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
               <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
