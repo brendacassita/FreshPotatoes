@@ -50,11 +50,10 @@ class Movie < ApplicationRecord
     INNER JOIN reviews AS rev ON m.id = rev.movie_id
     WHERE rev.watched = 'false'
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
-    HAVING COUNT(rev.id)>=5
     ORDER BY unwatched_rating DESC
     LIMIT 10")
   end
-
+  # HAVING COUNT(rev.id)>=5 move this back to top10_potatoes
   def self.top3_fries
     Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
     FROM movies AS m

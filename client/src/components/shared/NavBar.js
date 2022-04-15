@@ -56,9 +56,12 @@ const Navbar = () => {
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
          
           
+
           <Link className="btn1" to='/SearchResults'>Search</Link>
           <Link className="btn1" to='/categories'>Categories</Link> {''}
           <Link className="btn1" to='/movie_detail'>Movie Detail</Link> {''}
+
+  
         </>
       );
     }
@@ -115,8 +118,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
+
         
         <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+
+      
+    
+      
         {renderLeft()}
           </div>
          
