@@ -17,9 +17,7 @@ const MovieDetail = () => {
 
   useEffect(()=>{
     getMovies()
-    getCasts()
-    getRoles()
-    getReviews()
+   
 
   },[])
  
@@ -33,26 +31,7 @@ const MovieDetail = () => {
     }
   }
 
-  const getCasts = async () =>{
-    try{
-      let res = await axios.get('/api/casts')
-      setCasts(res.data)
-      console.log(res.data)
-    }catch(err){
-    alert('error in getting cast')
-    }
-  }
-      
-  const getRoles = async () =>{
-    try{
-      let res = await axios.get('/api/roles')
-      setRoles(res.data)
-      console.log(res.data)
-    }catch(err){
-    alert('error in getting roles')
-    }
-  }
-
+//TODO: need to make 2 separate api calls, one for watched and one for unwatched
   const getReviews = async () =>{
     try{
       let res = await axios.get('/api/reviews')
@@ -78,6 +57,7 @@ const MovieDetail = () => {
   
   
   return(
+  
     <div className='App'>
       <h1>Movie Detail </h1>
       {movies.map((movie) => {
