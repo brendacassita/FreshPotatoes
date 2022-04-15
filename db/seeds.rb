@@ -695,6 +695,173 @@ Review.create(
   user_id:2,
   movie_id:15,
 )
+
+
+
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:10,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:10,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:10,
+)
+
+Review.create(
+  rating:4.5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:10,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:10,
+)
+
+
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:12,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:12,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:12,
+)
+
+Review.create(
+  rating:4.5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:12,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:12,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:10,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:10,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:10,
+)
+
+Review.create(
+  rating:4.5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:10,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:10,
+)
+
+
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:9,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:9,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:9,
+)
+
+Review.create(
+  rating:4.5,
+  watched:'false',
+  comment:'comment goes here!',
+  user_id:1,
+  movie_id:9,
+)
+
+Review.create(
+  rating:5,
+  watched:'true',
+  comment:'comment goes here!',
+  user_id:2,
+  movie_id:9,
+)
 ########## CAST ##########
 
 Cast.create(
