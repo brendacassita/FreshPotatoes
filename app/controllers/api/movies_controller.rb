@@ -124,7 +124,7 @@ end
 
 def page
   @page = params[:page] || 1
-  @per = params[:per] || 2
+  @per = params[:per] || 3
 end
 
 end
