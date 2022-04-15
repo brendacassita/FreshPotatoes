@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "freshpotatoes",
   "version": "1.0.0",
   "description": "This project has devise_token_auth, react_router, etc setup. - uses rails v6, ruby 3.0.2 - more info about the project",
@@ -25,7 +24,4 @@
     "url": "https://github.com/brendacassita/FreshPotatoes/issues"
   },
   "homepage": "https://github.com/brendacassita/FreshPotatoes#readme"
-=======
-  "dependencies": {}
->>>>>>> 57b0e4407edc767119f345143430cb4482e2a255
 }
