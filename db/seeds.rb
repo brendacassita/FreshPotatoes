@@ -947,13 +947,13 @@ GenreMovie.create(
 )
 
 GenreMovie.create(
-  genre_id:2,
-  movie_id:1
+  genre_id:3,
+  movie_id:2
 )
 
 GenreMovie.create(
   genre_id:2,
-  movie_id:1
+  movie_id:2
 )
 
 puts "Movies: #{Movie.all.length}"
