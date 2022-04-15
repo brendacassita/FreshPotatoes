@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get '/categories', to: 'movies#categories'
 
     get'pagetoppotatoes', to: 'movies#pageTopPotatoes'
+    get'pagetopfries', to: 'movies#pageTopFries'
+
    
     end  
     

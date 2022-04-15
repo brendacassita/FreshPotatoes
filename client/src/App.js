@@ -10,11 +10,13 @@ import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
 import SearchResults from './components/pages/SearchResults';
 import EditProfile from './components/auth/EditProfile';
-import Categories from './components/pages/Categories';
+import Genres from './components/pages/Genres';
 import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
 import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
+import PopularFries from './components/pages/PopularFries';
+
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
 //Fetch User: going to see if the user is logged in(valid user?)
@@ -40,6 +42,8 @@ function App() {
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
             <Route path='/' element={<Home />}/>
+            <Route path='/popular_fries' element={<PopularFries />}/>
+            
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
@@ -51,11 +55,12 @@ function App() {
               <Route path='/movieDetail' element={<MovieDetail />}/>
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
-              <Route path='/categories' element={<Categories />}/>
-              <Route path='/movies/:id' element={<MovieDetail  />}/>
+              <Route path='/genres' element={<Genres />}/>
+              <Route path='/movie_detail' element={<MovieDetail  />}/>
               <Route path= '/popular_potatoes' element={<PopularPotatoes/>}>
 
               </Route>
+              
 
 
 
