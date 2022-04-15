@@ -1,6 +1,6 @@
 class Api::MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :details, :watched, :unwatched, :update, :destroy]
-  before_action :page, only: [:pageMovies]
+  before_action :page, only: [:pageTopPotatoes, :pageTopFries]
 
 #authenticate_user! - anyone can go there, even if not signed in
  # before_action :authenticate_user!, except: [:all_users]
@@ -51,9 +51,9 @@ def top10_potatoes
   render json: Movie.top10_potatoes
 end
 
-def top3_fries
-  render json: Movie.top3_fries
-end
+# def top3_fries
+#   render json: Movie.top3_fries
+# end
 
 def top10_fries
   render json: Movie.top10_fries
@@ -94,13 +94,13 @@ def pageTopPotatoes
   count = Movie.top10_potatoes.count
   movies = Movie.top10_potatoes
   puts json: movies
-  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:3}
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
 end
 
 def pageTopFries
   count = Movie.top10_fries.count
   movies = Movie.top10_fries
-  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:3}
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
 end
 
 private 
@@ -124,7 +124,7 @@ end
 
 def page
   @page = params[:page] || 1
-  @per = params[:per] || 2
+  @per = params[:per] || 3
 end
 
 end

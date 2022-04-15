@@ -73,20 +73,17 @@ const MovieDetail = () => {
             <h6> {movie.year} | {movie.runtime} | {movie.genre}</h6>
               <h6>pre: {reviews.rating} {reviews.rating} post:</h6> 
             
-            <div id='container'>
-            <h4>Story Line</h4>
+              <div id='container'>
+              <h4>Story Line</h4>
               <p className='information'>{movie.plot}</p>
               <h6>Cast & Crew</h6>
               <p>{casts.name}</p>
               <img href={casts.headshot} width={50} /> 
-                <p>{roles.title}</p>
+              <p>{roles.title}</p>
               </div>
-              <div className="control">
-	
-	
-	
-</div>
-            </div>       
+            <div className="control">
+            </div>
+          </div>       
             </div>
         )
       })}
