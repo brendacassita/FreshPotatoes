@@ -30,11 +30,10 @@ const Navbar = () => {
          
           
           <Link className="Nav-link" to='/SearchResults'>Search</Link>
+          <Link className="Nav-link" to='/profile'>Profile</Link> 
+          <Link className="Nav-link" to='/edit_profile'>EditProfile</Link> 
+          <Link className="Nav-link" to='/categories'>Categories</Link> 
           
-          <Link to='/profile'>Profile</Link> {''}
-          <Link to='/edit_profile'>Edit Profile</Link> {''}
-          <Link to='/categories'>Categories</Link> {''}
-          <Link to='/movie_detail'>Movie Detail</Link> {''}
 
 
 
@@ -47,7 +46,7 @@ const Navbar = () => {
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
       
-        <Link className="Nav-link" to="/">Home</Link>
+        <Link className="Nav-link" to="/">AllMovies</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
         {renderLeft()}
 

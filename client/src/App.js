@@ -15,8 +15,10 @@ import EditProfile from './components/auth/EditProfile';
 import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
+import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
-
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
+import About from './components/pages/About';
 
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -37,21 +39,24 @@ function App() {
             {/* Unprotected */}
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
+            <Route path='/review' element={<Review />}/>
+            <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
+            <Route path='/about' element={<About />}/>
             <Route path='/' element={<Home />}/>
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
             <Route element={<ProtectedRoute />}>
-              <Route path='/home' element={<HomeClass yo={'yoyo'} />}/>
+              <Route path='/home' element={<Home/>}/>
             
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
               
-              <Route path='/movieDetail' element={<MovieDetail yo={'MovieDetail'} />}/>
-              <Route path='/profile' element={<Profile yo={'Profile'} />}/>
-              <Route path='/edit_profile' element={<EditProfile yo={'Edit Profile'} />}/>
-              <Route path='/categories' element={<Categories yo={'Categories'} />}/>
-              <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
-              <Route path= '/popular_potatoes' element={<PopularPotatoes yo={'PopularPotatoes'}/>}>
+              <Route path='/movieDetail' element={<MovieDetail />}/>
+              <Route path='/profile' element={<Profile />}/>
+              <Route path='/edit_profile' element={<EditProfile />}/>
+              <Route path='/categories' element={<Categories />}/>
+              <Route path='/movies/:id' element={<MovieDetail  />}/>
+              <Route path= '/popular_potatoes' element={<PopularPotatoes/>}>
 
               </Route>
 
