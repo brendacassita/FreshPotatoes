@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import YouTube from 'react-youtube'
+import '../../App.css'
+import '../CssFIles/container.css'
+
 
 const MovieDetail = () => {
   const [movies, setMovies] =  useState([])
@@ -20,7 +23,7 @@ const MovieDetail = () => {
  
   const getMovies = async () =>{
     try{
-      let res = await axios.get(`/api/movies/:id`)
+      let res = await axios.get('/api/movies')
       setMovies(res.data)
       console.log(res.data)
     }catch(err){
@@ -39,29 +42,51 @@ const MovieDetail = () => {
     }
   }
 
+ 
+  const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 0,
+      },
+    };
   
   
 
+  
   
   return(
   
     <div className='App'>
       <h1>Movie Detail </h1>
-      {movies.map((movie)=>{
+      {movies.map((movie) => {
+        console.log('movie name:', movie.name, movie.trailer)
         return(
-          <div key = {movie.id}>
-            <img src={movie.poster} width={150} />
-            <img src={movie.trailer} width={500} /> 
+          <div key={movie.id}>
             <h3>{movie.name}</h3>
+            <div className='movieCard'>
+            <img src={movie.poster} width={250} />
+            <YouTube videoId={movie.trailer} opts={opts} width={500} /> 
+            </div>
+            <div>
             <h6> {movie.year} | {movie.runtime} | {movie.genre}</h6>
-            <h6>pre: {reviews.rating} {reviews.rating} post:</h6>
-            <h4>Story Line: </h4>
-              <p>{movie.plot}</p>
+              <h6>pre: {reviews.rating} {reviews.rating} post:</h6> 
+            
+            <div id='container'>
+            <h4>Story Line</h4>
+              <p className='information'>{movie.plot}</p>
               <h6>Cast & Crew</h6>
               <p>{casts.name}</p>
-              <img src={casts.headshot} width={50} /> 
-              <p>{roles.title}</p>
-
+              <img href={casts.headshot} width={50} /> 
+                <p>{roles.title}</p>
+              </div>
+              <div className="control">
+	
+	
+	
+</div>
+            </div>       
             </div>
         )
       })}
