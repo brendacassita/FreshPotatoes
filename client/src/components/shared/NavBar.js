@@ -1,4 +1,4 @@
-import Logo from '../../Images/FpLogo.png'
+import logo from '../../Images/Thelogo.png'
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -109,18 +109,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   return (
     <AppBar position='static' sx={{background: 'red'}}>
       <Toolbar>
-        
-       
-        <img className='logo' scr={Logo} width='120px' ></img>
-       
+        <Link to='./'>
+          <div className='logo'><img src={logo}width='190px' ></img></div>
+       </Link>
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-        <Link className="btn1" to="/">Home</Link>
+        
         <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
         {renderLeft()}
           </div>
-          {/* {user.avatar && <img src={user.avatar} width={150} />} */}
+         
           
           <Box className='box'>
            <Search className='box' >
@@ -169,6 +168,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
               </Menu>
             </div>
          
+    
       
         </div>
         </Toolbar>
