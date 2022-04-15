@@ -61,15 +61,6 @@ const Navbar = () => {
           <Link className="Nav-link" to='/edit_profile'>EditProfile</Link> 
           <Link className="Nav-link" to='/genres'>Genres</Link> 
           
-<<<<<<< HEAD
-          <Link to='/profile'>Profile</Link> {''}
-          <Link to='/edit_profile'>Edit Profile</Link> {''}
-          <Link to='/categories'>Categories</Link> {''}
-          <Link to='/movie_detail'>Movie Detail</Link> {''}
-          
-
-=======
->>>>>>> d55ea7c53f26fe74534e0efdb293a40168d93734
 
 
           <Link className="btn1" to='/SearchResults'>Search</Link>
@@ -132,17 +123,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-<<<<<<< HEAD
       
         <Link className="Nav-link" to="/">Home</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
         {renderLeft()}
-=======
->>>>>>> d55ea7c53f26fe74534e0efdb293a40168d93734
 
         
-        <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+        
 
       
     
@@ -192,8 +180,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
               >
-                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
+                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
               <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
