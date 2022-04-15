@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 //import MovieCarousel from '../pages/MovieCarousel'
 import Carousel from '../pages/Carousel'
 
@@ -26,6 +27,7 @@ const Home = ()=>{
         alert('error in getting movies')
         }
       }
+
 
     const renderPosters = () => {
      

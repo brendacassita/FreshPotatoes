@@ -126,13 +126,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
         {renderLeft()}
 
-        
-        
-
-      
-    
-      
-        {renderLeft()}
+  
           </div>
          
           
@@ -176,9 +170,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
+
+            >
+              
+              {/* DO NOT DELETE THESE */}
+                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
+
               >
                 {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
+
               <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
