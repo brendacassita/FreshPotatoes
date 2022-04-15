@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 //import MovieCarousel from '../pages/MovieCarousel'
 import Carousel from '../pages/Carousel'
 
@@ -26,6 +27,32 @@ const Home = ()=>{
         alert('error in getting movies')
         }
       }
+
+    // WILL DELETE LATER
+    const movs = () => {
+      const navigate = useNavigate()
+      const [movs, setMovs] = useState([])
+      useEffect(() => {
+          console.log('mounted and doing api to get movs')
+          getMovs()
+      },[])
+    }
+
+    const getMovs = async() => {
+        try {
+            let res = await axios.get('/api/newest')
+            setMovs(res.data)
+        }catch(err){
+            alert('error in getMovs')
+        }
+    }
+
+    const renderMovs = () => {
+        return movs.map(mov => {
+            return <MovieDetail key={mov.name} />
+        })
+    }
+    // WILL DELETE LATER
 
 
 
@@ -76,6 +103,7 @@ const Home = ()=>{
                     </div>
                 </div>
             </Carousel>
+            {renderMovs()}
         </div>
     )
 }
