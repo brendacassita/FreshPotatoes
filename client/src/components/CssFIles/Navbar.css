@@ -1,0 +1,45 @@
+.btn1 {
+justify-content: space-between;
+text-decoration: none;
+color: rgb(245, 242, 242)!important;
+margin: 10px;
+font-weight: bold;
+
+}
+
+.search{
+color: white!important;
+background-color: rgba(13, 13, 13, 0.336);
+}
+.searchicon {
+color: white!important;
+z-index: 1;
+}
+.logout {
+position: absolute!important;
+right: 0px!important;
+}
+.profilelink {
+text-decoration: none;
+color: black;
+margin: 1px;
+}
+#menu-appbar {
+margin: 30px;
+}
+.avatar_circle {
+/* width: 100px; */
+margin: -40px -2px  ;
+}
+.box {
+position: absolute;
+right: 40px!important;
+align-items: center;
+margin: -5px 0px;
+}
+
+.logo {
+/* z-index: -auto; */
+margin: 0px 20px;
+padding: 0px 20px;
+}

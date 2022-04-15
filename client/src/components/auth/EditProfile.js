@@ -1,4 +1,6 @@
-import React, { useContext, useState } from "react";
+import React,{useContext,useState} from "react";
+
+
 
 // Import React FilePond
 import { FilePond, registerPlugin } from "react-filepond";
@@ -85,7 +87,9 @@ function EditProfile() {
     <div className="App">
       <form onSubmit={handleSubmit} style={{width:'900px',margin:'auto', padding:'20px', border:'1px solid'}}>
         <h1>Edit Profile</h1>
-        {user.avatar && <img src={user.avatar} width={150} />}
+        
+        {user.avatar && <img  src={user.avatar} width={150} />} 
+        
         {!user.avatar && <p>no image</p>}
         < br/>
         {user.name} <br/>
