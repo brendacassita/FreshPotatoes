@@ -32,7 +32,7 @@ const Navbar = () => {
           <Link className="Nav-link" to='/SearchResults'>Search</Link>
           <Link className="Nav-link" to='/profile'>Profile</Link> 
           <Link className="Nav-link" to='/edit_profile'>EditProfile</Link> 
-          <Link className="Nav-link" to='/categories'>Categories</Link> 
+          <Link className="Nav-link" to='/genres'>Genres</Link> 
           
 
 

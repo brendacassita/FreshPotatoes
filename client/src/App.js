@@ -12,7 +12,7 @@ import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
 import SearchResults from './components/pages/SearchResults';
 import EditProfile from './components/auth/EditProfile';
-import Categories from './components/pages/Categories';
+import Genres from './components/pages/Genres';
 import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
 import Review from './components/pages/Review';
@@ -50,7 +50,7 @@ function App() {
               <Route path='/movieDetail' element={<MovieDetail />}/>
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
-              <Route path='/categories' element={<Categories />}/>
+              <Route path='/genres' element={<Genres />}/>
               <Route path='/movies/:id' element={<MovieDetail  />}/>
               <Route path= '/popular_potatoes' element={<PopularPotatoes/>}>
 
