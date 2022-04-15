@@ -16,6 +16,7 @@ import Categories from './components/pages/Categories';
 import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
 import PopularPotatoes from './components/pages/PopularPotatoes';
+import PopularFries from './components/pages/PopularFries';
 
 
 //Fetch User: going to see if the user is logged in(valid user?)
@@ -38,6 +39,8 @@ function App() {
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
             <Route path='/' element={<Home />}/>
+            <Route path='/popular_fries' element={<PopularFries />}/>
+            
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
@@ -52,6 +55,7 @@ function App() {
               <Route path='/categories' element={<Categories yo={'Categories'} />}/>
               <Route path='/movie_detail' element={<MovieDetail yo={'MovieDetail'} />}/>
               <Route path= '/popular_potatoes' element={<PopularPotatoes yo={'PopularPotatoes'}/>}>
+                
                 
                 
 

@@ -51,7 +51,7 @@ const Navbar = () => {
       
         <Link className="Nav-link" to="/">Home</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
-        {/* <Link className="Nav-link" to='/popular_fries'>Popular Fries</Link> {''} */}
+        <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
         {renderLeft()}
 
       </div>
