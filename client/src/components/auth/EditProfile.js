@@ -1,4 +1,6 @@
-import React, { useContext, useState } from "react";
+import React,{useContext,useState} from "react";
+
+
 
 // Import React FilePond
 import { FilePond, registerPlugin } from "react-filepond";
@@ -85,7 +87,9 @@ function EditProfile() {
     <div className="App">
       <form onSubmit={handleSubmit} style={{width:'900px',margin:'auto', padding:'20px', border:'1px solid'}}>
         <h1>Edit Profile</h1>
-        {user.avatar && <img src={user.avatar} width={150} />}
+        
+        {user.avatar && <img  src={user.avatar} width={150} />} 
+        
         {!user.avatar && <p>no image</p>}
         < br/>
         {user.name} <br/>
@@ -97,7 +101,7 @@ function EditProfile() {
         {/* to do have *name already exists pop up if there is already a name */}
         <h6>*name already exists</h6> 
         <h5>Email:</h5><input value={email} onChange={(e)=> setEmail(e.target.value)} /> 
-        <h5>Password:</h5><input value={password} onChange={(e)=> setPassword(e.target.value)} />  
+        <h5></h5><input placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} />  
         <h5>Phone number:</h5><input value={phone} onChange={(e)=> setPhone(e.target.value)} />   
         <br/>   
         <br/>   
