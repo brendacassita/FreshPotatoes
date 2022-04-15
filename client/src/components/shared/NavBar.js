@@ -124,14 +124,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         <Link className="Nav-link" to="/">Home</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
-        {renderLeft()}
-
-        
         
 
-      
-    
-      
         {renderLeft()}
           </div>
          
