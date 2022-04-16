@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const PopularPotatoes = ()=>{
   const [top10, setTop10] =  useState([])
@@ -50,11 +51,16 @@ const PopularPotatoes = ()=>{
   const renderMovies = ()=>{
     return top10.map((movie)=>(
       <div>
+        <ol><li>
+        <Link to={`/movies/${movie.id}`}>
         <img className='top10' src = {movie.poster}/>
+        
+        </Link>
+        </li>
+        </ol>
       </div>
     ))
   }
-
 
 
   return(
