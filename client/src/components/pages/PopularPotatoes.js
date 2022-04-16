@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const PopularPotatoes = ()=>{
   const [top10, setTop10] =  useState([])

@@ -14,7 +14,11 @@ u1 = User.create(email:'test1@test.com', password:123456, name:'Beyonce', userna
 
 u2 = User.create(email:'test2@test.com', password:123456, name:'Michael Meyers', username:'user2', avatar:'https://upload.wikimedia.org/wikipedia/en/e/e9/MichaelMyers2018.jpg', phone:'801777777', role:'admin')
 
-u3 = User.create(email:'test2@test.com', password:123456, name:'Ellen Ripley', username:'alien_slayer', avatar:'https://static.wikia.nocookie.net/avp/images/4/48/Ellen_Ripley.png/revision/latest?cb=20130410133154', phone:'801777777', role:'admin')
+u3 = User.create(email:'ripley@test.com', password:123456, name:'Ellen Ripley', username:'alien_slayer', avatar:'https://static.wikia.nocookie.net/avp/images/4/48/Ellen_Ripley.png/revision/latest?cb=20130410133154', phone:'801777777', role:'admin')
+
+u4 = User.create(email:'sherlocked@test.com', password:123456, name:'Sherlock Holmes', username:'sherlocked', avatar:'https://i.guim.co.uk/img/media/ffc016b01f45eeec94ff69dc59eb65a9137ae52a/0_95_3500_2101/master/3500.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=915d4080291d752325c0a25518ac4602', phone:'801777777', role:'admin')
+
+u5 = User.create(email:'007@test.com', password:123456, name:'James Bond', username:'007', avatar:'https://static.wikia.nocookie.net/jamesbond/images/d/dc/James_Bond_%28Pierce_Brosnan%29_-_Profile.jpg/revision/latest?cb=20220207082851', phone:'801777777', role:'admin')
 
 
 ########## MOVIES ##########
@@ -116,7 +120,7 @@ m12 = u1.movies.create(
   trailer:'YKGYgFPAP14')
 
 m13 = u2.movies.create(
-  name:'Earth Girls are Easy', 
+  name:'Earth Girls Are Easy', 
   year:'1988', 
   plot:'A Southern California girl befriends three furry aliens after their spaceship lands in her swimming pool.', 
   runtime:'1h 40m', 
@@ -237,697 +241,62 @@ m25 = u1.movies.create(
       
 
 
+
 ########## REVIEWS ##########
 
-Review.create(
-  rating:5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:1,
-)
+Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:1, movie_id:1)
+Review.create(rating:3, watched:'true', comment:'comment goes here!', user_id:1, movie_id:1)
+Review.create(rating:4, watched:'false', comment:'comment goes here!',user_id:2, movie_id:1)
+Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:2, movie_id:1)
+Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:3, movie_id:1)
+Review.create(rating:5, watched:'true', comment:'comment goes here!', user_id:3, movie_id:1)
+Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:4, movie_id:1)
+Review.create(rating:1.5, watched:'true', comment:'comment goes here!', user_id:4, movie_id:1)
+Review.create(rating:4, watched:'false', comment:'comment goes here!',user_id:5, movie_id:1)
+Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:5, movie_id:1)
+
+Review.create(rating:2, watched:'false', comment:'comment goes here!',user_id:1, movie_id:2)
+Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:1, movie_id:2)
+Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:2, movie_id:2)
+Review.create(rating:3, watched:'true', comment:'comment goes here!', user_id:2, movie_id:2)
+
+
+Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:1, movie_id:3)
+Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:1, movie_id:3)
+Review.create(rating:4.5, watched:'false', comment:'comment goes here!',user_id:2, movie_id:3)
+Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:3, movie_id:3)
+Review.create(rating:1, watched:'true', comment:'comment goes here!', user_id:3, movie_id:3)
+Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:4, movie_id:3)
+Review.create(rating:3, watched:'true', comment:'comment goes here!', user_id:4, movie_id:3)
+Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:5, movie_id:3)
+Review.create(rating:4.5, watched:'true', comment:'comment goes here!', user_id:5, movie_id:3)
+
+Review.create(rating:4.5, watched:'false', comment:'comment goes here!',user_id:1, movie_id:4)
+Review.create(rating:1, watched:'true', comment:'comment goes here!', user_id:1, movie_id:4)
+Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:2, movie_id:4)
+Review.create(rating:1, watched:'false', comment:'comment goes here!',user_id:3, movie_id:4)
+
+Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:1, movie_id:5)
+Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:1, movie_id:5)
+Review.create(rating:1, watched:'false', comment:'comment goes here!',user_id:2, movie_id:5)
+Review.create(rating:2.5, watched:'true', comment:'comment goes here!', user_id:2, movie_id:5)
+Review.create(rating:1, watched:'false', comment:'comment goes here!',user_id:3, movie_id:5)
+Review.create(rating:4.5, watched:'true', comment:'comment goes here!', user_id:3, movie_id:5)
+Review.create(rating:1, watched:'false', comment:'comment goes here!',user_id:4, movie_id:5)
+Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:4, movie_id:5)
+Review.create(rating:3.5, watched:'false', comment:'comment goes here!',user_id:5, movie_id:5)
+Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:5, movie_id:5)
 
-Review.create(
-  rating:3,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:1,
-)
-
-Review.create(
-  rating:2,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:1,
-)
-
-Review.create(
-  rating:4,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:1,
-)
-
-Review.create(
-  rating:1,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:2,
-)
-
-Review.create(
-  rating:3,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:2,
-)
-
-Review.create(
-  rating:3,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:2,
-)
-
-Review.create(
-  rating:4,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:2,
-)
-
-Review.create(
-  rating:4,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:3,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:3,
-)
-
-Review.create(
-  rating:2,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:3,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:3,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:3,
-)
-
-Review.create(
-  rating:2.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:3,
-)
-
-Review.create(
-  rating:5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:1,
-)
-
-Review.create(
-  rating:3.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:1,
-)
-
-Review.create(
-  rating:5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:1,
-)
-
-Review.create(
-  rating:4,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:2,
-)
-
-
-Review.create(
-  rating:4.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:17,
-)
-
-Review.create(
-  rating:1,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:17,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:17,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:17,
-)
-
-Review.create(
-  rating:5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:17,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:17,
-)
-
-Review.create(
-  rating:3,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:6,
-)
-
-
-Review.create(
-  rating:4.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:6,
-)
-
-Review.create(
-  rating:2,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:6,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:6,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:6,
-)
-
-Review.create(
-  rating:5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:6,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:6,
-)
-Review.create(
-  rating:5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:4,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:4,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:4,
-)
-
-Review.create(
-  rating:2.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:4,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:6,
-)
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:7,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:7,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:7,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:7,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:6,
-)
-
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:15,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:15,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-
-
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:18,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:18,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:18,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:18,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:18,
-)
-
-
-
-
-
-Review.create(
-  rating:4,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:15,
-)
-
-Review.create(
-  rating:3.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-Review.create(
-  rating:2.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-Review.create(
-  rating:2.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:15,
-)
-
-Review.create(
-  rating:2,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:15,
-)
-
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:12,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:12,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:12,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:12,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:12,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:10,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:10,
-)
-
-
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:9,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:9,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:9,
-)
-
-Review.create(
-  rating:4.5,
-  watched:'false',
-  comment:'comment goes here!',
-  user_id:1,
-  movie_id:9,
-)
-
-Review.create(
-  rating:5,
-  watched:'true',
-  comment:'comment goes here!',
-  user_id:2,
-  movie_id:9,
-)
 ########## CAST ##########
 
 Cast.create(
   headshot:'https://m.media-amazon.com/images/M/MV5BMTQ0NjgzNzcwNV5BMl5BanBnXkFtZTcwODExMDYxOQ@@._V1_.jpg',
-  name:'Seth Rogen',
+  name:'Seth Rogen'
 )
 
 Cast.create(
   headshot:'https://m.media-amazon.com/images/M/MV5BMjA4MzMzNDM5MF5BMl5BanBnXkFtZTgwMjQ0MDk0NDM@._V1_.jpg',
-  name:'James Franco',
+  name:'James Franco'
 )
 
 ########## ROLE ##########
@@ -944,67 +313,86 @@ Role.create(
   movie_id:1,
 )
 
-adventure = Genre.create(
-  name:'Adventure',
-  image:''
-)
+##### GENRES #####
 
-comedy = Genre.create(
-  name:'Comedy',
-  image:''
-)
+action = Genre.create(name:'Action', image:'')
+adventure = Genre.create(name:'Adventure', image:'')
+comedy = Genre.create(name:'Comedy', image:'')
+crime = Genre.create(name:'Crime', image:'')
+drama = Genre.create(name:'Drama', image:'')
+family = Genre.create(name:'Family', image:'')
+fantasy = Genre.create(name:'Fantasy', image:'')
+musical = Genre.create(name:'Musical', image:'')
+mystery = Genre.create(name:'Mystery', image:'')
+romance = Genre.create(name:'Romance', image:'')
+scifi = Genre.create(name:'Sci-Fi', image:'')
+thriller = Genre.create(name:'Thriller', image:'')
+western = Genre.create(name:'Western', image:'')
 
-fantasy = Genre.create(
-  name:'Fantasy',
-  image:''
-)
+##### GENRE/MOVIE JOINS #####
 
-drama = Genre.create(
-  name:'Drama',
-  image:''
-)
+GenreMovie.create(genre_id:1, movie_id:1)
+GenreMovie.create(genre_id:3, movie_id:1)
+GenreMovie.create(genre_id:4, movie_id:1)
 
-mystery = Genre.create(
-  name:'Mystery',
-  image:''
-)
+GenreMovie.create(genre_id:12, movie_id:2)
+GenreMovie.create(genre_id:4, movie_id:2)
+GenreMovie.create(genre_id:5, movie_id:2)
 
-romance = Genre.create(
-  name:'Romance',
-  image:''
-)
+GenreMovie.create(genre_id:1, movie_id:3)
+GenreMovie.create(genre_id:2, movie_id:3)
+GenreMovie.create(genre_id:9, movie_id:3)
 
-action = Genre.create(
-  name:'Action',
-  image:''
-)
+GenreMovie.create(genre_id:3, movie_id:4)
+GenreMovie.create(genre_id:4, movie_id:4)
+GenreMovie.create(genre_id:5, movie_id:4)
 
-GenreMovie.create(
-  genre_id:2,
-  movie_id:1
-)
+GenreMovie.create(genre_id:1, movie_id:5)
+GenreMovie.create(genre_id:2, movie_id:5)
+GenreMovie.create(genre_id:6, movie_id:5)
 
-GenreMovie.create(
-  genre_id:2,
-  movie_id:1
-)
+GenreMovie.create(genre_id:3, movie_id:6)
+GenreMovie.create(genre_id:5, movie_id:6)
+GenreMovie.create(genre_id:10, movie_id:6)
 
-GenreMovie.create(
-  genre_id:2,
-  movie_id:1
-)
+GenreMovie.create(genre_id:3, movie_id:7)
+GenreMovie.create(genre_id:7, movie_id:7)
 
-GenreMovie.create(
-  genre_id:3,
-  movie_id:2
-)
+GenreMovie.create(genre_id:1, movie_id:8)
+GenreMovie.create(genre_id:4, movie_id:8)
+GenreMovie.create(genre_id:5, movie_id:8)
 
-GenreMovie.create(
-  genre_id:2,
-  movie_id:2
-)
+GenreMovie.create(genre_id:2, movie_id:9)
+GenreMovie.create(genre_id:6, movie_id:9)
+GenreMovie.create(genre_id:7, movie_id:9)
+
+GenreMovie.create(genre_id:5, movie_id:10)
+GenreMovie.create(genre_id:10, movie_id:10)
+
+GenreMovie.create(genre_id:3, movie_id:11)
+GenreMovie.create(genre_id:13, movie_id:11)
+
+GenreMovie.create(genre_id:2, movie_id:12)
+GenreMovie.create(genre_id:5, movie_id:12)
+GenreMovie.create(genre_id:6, movie_id:12)
+
+GenreMovie.create(genre_id:3, movie_id:13)
+GenreMovie.create(genre_id:8, movie_id:13)
+GenreMovie.create(genre_id:10, movie_id:13)
+
+GenreMovie.create(genre_id:1, movie_id:14)
+GenreMovie.create(genre_id:2, movie_id:14)
+GenreMovie.create(genre_id:3, movie_id:14)
+
+GenreMovie.create(genre_id:1, movie_id:15)
+GenreMovie.create(genre_id:2, movie_id:15)
+GenreMovie.create(genre_id:11, movie_id:15)
+
+##### PUTS #####
 
 puts "Movies: #{Movie.all.length}"
 puts "Reviews: #{Review.all.length}"
 puts "Cast: #{Cast.all.length}"
 puts "Role: #{Role.all.length}"
+puts "Genres: #{Genre.all.length}"
+puts "Genres Tied To Movies: #{GenreMovie.all.length}"
