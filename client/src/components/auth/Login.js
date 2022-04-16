@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
-
+import {Button} from "../Button"
 // import Card from "../shared/./Card"
 
 
@@ -31,7 +31,7 @@ const Login = ()=>{
                 <br/>
                 <p>Password: </p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <button variant="primary" size="sm" onClick={handleSubmit}>Login</button>
+                <Button variant="primary" size="sm" onClick={handleSubmit}>Login</Button>
             </form>
            
         </div>
