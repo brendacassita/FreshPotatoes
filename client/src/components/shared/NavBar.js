@@ -178,7 +178,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 onClose={handleMenuClose}
 >
               
-              {/* DO NOT DELETE THESE */}
+             > {/* DO NOT DELETE THESE */}
                 <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
 

@@ -19,6 +19,7 @@ import PopularFries from './components/pages/PopularFries';
 
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
+//import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
 //prevents routes from getting rendered until check is done 
@@ -41,6 +42,7 @@ function App() {
             <Route path='/review' element={<Review />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
+            {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
             <Route path='/popular_fries' element={<PopularFries />}/>
             
