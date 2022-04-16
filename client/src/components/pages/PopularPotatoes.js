@@ -51,9 +51,12 @@ const PopularPotatoes = ()=>{
   const renderMovies = ()=>{
     return top10.map((movie)=>(
       <div>
+        <ol><li>
         <Link to={`/movies/${movie.id}`}>
         <img className='top10' src = {movie.poster}/>
         </Link>
+        </li>
+        </ol>
       </div>
     ))
   }
