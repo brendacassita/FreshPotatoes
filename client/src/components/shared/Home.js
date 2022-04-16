@@ -55,47 +55,47 @@ const Home = ()=>{
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/5149l+O+P4L._AC_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/71R3sYwjb4L._AC_SL1464_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/81R2FrgnfZL._AC_SL1000_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/61DfIhoIJGL._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/516L7A1oXZL._AC_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/61KJHL4G+eL._AC_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/71enm1zeBvL._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/71DuFCPQHRL._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/71J-SyixPsL._AC_SL1000_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/71r6YHoA4sL._AC_SL1358_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/91RSvcwSX+L._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://ariseletusbegoing.files.wordpress.com/2022/04/wp-16495315765356152001558212309618.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/7134I6+ZJmL._AC_SL1000_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/71vHJ8UqxxL._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/71pdrpHZUfL._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/51a-Iz7wwCL._AC_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/619yt12HbSL._AC_SL1001_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>

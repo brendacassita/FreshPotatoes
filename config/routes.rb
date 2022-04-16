@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :casts
     resources :roles
     resources :users
+    resources :genres
 
     put '/update_image', to: "users#update_image"
 
