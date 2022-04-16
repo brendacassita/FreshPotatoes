@@ -60,7 +60,6 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
-          <Link className="btn1" to='/movie_detail'>Movie Detail</Link> {''}
 
   
         </>

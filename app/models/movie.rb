@@ -8,14 +8,12 @@ class Movie < ApplicationRecord
   def self.details(id)
     # puts movie.id
     # id = movie.id
-    Movie.find_by_sql(["SELECT m.id, m.name AS movie_name, g.name AS genre, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title
+    Movie.find_by_sql(["SELECT m.id, m.name AS movie_name, STRING_AGG(g.name, ', ') AS genre, m.poster, m.trailer, m.plot, m.runtime, m.year
     FROM movies AS m
-    LEFT JOIN roles AS r ON m.id = r.movie_id
-    LEFT JOIN casts AS c ON c.id = r.cast_id
     LEFT JOIN genre_movies AS gm ON m.id = gm.movie_id
     LEFT JOIN genres AS g ON gm.genre_id = g.id
     WHERE m.id = ?
-    GROUP BY m.id, m.name, g.name, m.poster, m.trailer, m.plot, m.runtime, m.year, r.title", id])
+    GROUP BY m.id, m.name, m.poster, m.trailer, m.plot, m.runtime, m.year", id])
   end
 
   def self.unwatched(id)
@@ -55,10 +53,10 @@ class Movie < ApplicationRecord
     INNER JOIN reviews AS rev ON m.id = rev.movie_id
     WHERE rev.watched = 'false'
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
+    HAVING COUNT(rev.id)>=5
     ORDER BY unwatched_rating DESC
-    LIMIT 15")
+    LIMIT 10")
   end
-  # HAVING COUNT(rev.id)>=5 move this back to top10_potatoes
   def self.top3_fries
     Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
     FROM movies AS m
@@ -76,16 +74,24 @@ class Movie < ApplicationRecord
     INNER JOIN reviews AS rev ON m.id = rev.movie_id
     WHERE rev.watched = 'true'
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
+    HAVING COUNT(rev.id)>=5
     ORDER BY watched_rating DESC
-    LIMIT 15")
+    LIMIT 10")
   end
-  # HAVING COUNT(rev.id)>=5 move this back to top10_fries
 
   def self.newest
     Movie.find_by_sql("SELECT m.id, m.name AS movie_name, m.poster, m.runtime, m.year
     FROM movies AS m
     ORDER BY m.year DESC
     LIMIT 5")
+  end
+
+  def self.cast(id)
+    Movie.find_by_sql(["SELECT m.id, r.title, c.name, c.headshot
+    FROM movies AS m
+    INNER JOIN roles AS r ON m.id = r.movie_id
+    INNER JOIN casts AS c ON c.id = r.cast_id
+    WHERE m.id = ?", id])
   end
 
   # def self.categories
