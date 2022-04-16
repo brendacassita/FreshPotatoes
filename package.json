@@ -1,9 +1,6 @@
 {
-<<<<<<< HEAD
   "dependencies": {
     "styled-components": "^5.3.5"
   }
-=======
   "dependencies": {}
->>>>>>> 91791fc21d523016307e4d8efa509eb28e15a3d8
 }
