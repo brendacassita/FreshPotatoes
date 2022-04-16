@@ -10,8 +10,8 @@ class Movie < ApplicationRecord
     # id = movie.id
     Movie.find_by_sql(["SELECT m.id, m.name AS movie_name, STRING_AGG(g.name, ', ') AS genre, m.poster, m.trailer, m.plot, m.runtime, m.year
     FROM movies AS m
-    LEFT JOIN genre_movies AS gm ON m.id = gm.movie_id
-    LEFT JOIN genres AS g ON gm.genre_id = g.id
+    INNER JOIN genre_movies AS gm ON m.id = gm.movie_id
+    INNER JOIN genres AS g ON gm.genre_id = g.id
     WHERE m.id = ?
     GROUP BY m.id, m.name, m.poster, m.trailer, m.plot, m.runtime, m.year", id])
   end
@@ -80,8 +80,11 @@ class Movie < ApplicationRecord
   end
 
   def self.newest
-    Movie.find_by_sql("SELECT m.id, m.name AS movie_name, m.poster, m.runtime, m.year
+    Movie.find_by_sql("SELECT m.id, m.name AS movie_name, STRING_AGG(g.name, ', ') AS genre, m.poster, m.runtime, m.year
     FROM movies AS m
+    INNER JOIN genre_movies AS gm ON m.id = gm.movie_id
+    INNER JOIN genres AS g ON gm.genre_id = g.id
+    GROUP BY m.id, m.name, m.poster, m.runtime, m.year
     ORDER BY m.year DESC
     LIMIT 5")
   end
