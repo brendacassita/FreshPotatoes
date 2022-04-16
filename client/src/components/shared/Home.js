@@ -48,11 +48,7 @@ const Home = ()=>{
                 infiniteLoop
                 // content added to the carousel - using a placeholder image
             > 
-                <div>
-                    <div style={{padding: 8}}>
-                        <img src={renderPosters()} style={{width: '100%'}} />
-                    </div>
-                </div>
+                
                 <div>
                     <div style={{padding: 8}}>
                         <img src="https://m.media-amazon.com/images/I/71R3sYwjb4L._AC_SL1464_.jpg" alt="placeholder" style={{width: '100%'}} />
