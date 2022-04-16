@@ -195,14 +195,6 @@ m21 = u1.movies.create(
   poster:'https://m.media-amazon.com/images/I/61DfIhoIJGL._AC_SL1500_.jpg',
   trailer:'oMSdFM12hOw')
 
-m21 = u1.movies.create(
-  name:'The Northman',
-  year:'2022',
-  plot:'From visionary director Robert Eggers comes The Northman, an action-filled epic that follows a young Viking prince on his quest to avenge his fathers murder.',
-  runtime:'2h 16m',
-  poster:'https://m.media-amazon.com/images/I/61DfIhoIJGL._AC_SL1500_.jpg',
-  trailer:'oMSdFM12hOw')
-
 m22 = u1.movies.create(
   name:'Fantastic Beasts: The Secrets of Dumbledore',
   year:'2022',
