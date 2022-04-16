@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link, Outlet } from 'react-router-dom'
 
 
+
 const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
@@ -53,6 +54,7 @@ const PopularFries= ()=>{
   const renderMovies = ()=>{
     return top10.map((movie)=>(
       <div>
+
 
         <Link to={`/movies/${movie.id}`}>
 

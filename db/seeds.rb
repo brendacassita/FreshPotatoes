@@ -241,7 +241,6 @@ m25 = u1.movies.create(
       
 
 
-
 ########## REVIEWS ##########
 
 Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:1, movie_id:1)
