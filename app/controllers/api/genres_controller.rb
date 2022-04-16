@@ -6,7 +6,7 @@ class Api::GenresController < ApplicationController
     end
 
     def show
-        render json: @genre
+        render json: Genre.movies(@genre.id)
     end
 
     def create
