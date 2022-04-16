@@ -227,21 +227,21 @@ m24 = u1.movies.create(
   poster:'https://m.media-amazon.com/images/I/71r6YHoA4sL._AC_SL1358_.jpg',
   trailer:'ij2ztHOOe9s')
   
-  m25 = u1.movies.create(
-    name:'Father Stu',
+m25 = u1.movies.create(
+  name:'Father Stu',
+  year:'2022',
+  plot:'Follows the life of Father Stuart Long, a boxer-turned-priest who inspired countless people during his journey from self-destruction to redemption.',
+  runtime:'2h 4m',
+  poster:'https://ariseletusbegoing.files.wordpress.com/2022/04/wp-16495315765356152001558212309618.jpg',
+  trailer:'DHREzAdyCPs')
+  
+  m26 = u1.movies.create(
+    name:'Moonfall',
     year:'2022',
-    plot:'Follows the life of Father Stuart Long, a boxer-turned-priest who inspired countless people during his journey from self-destruction to redemption.',
-    runtime:'2h 4m',
-    poster:'https://ariseletusbegoing.files.wordpress.com/2022/04/wp-16495315765356152001558212309618.jpg',
-    trailer:'DHREzAdyCPs')
-    
-    m26 = u1.movies.create(
-      name:'Moonfall',
-      year:'2022',
-      plot:'A mysterious force knocks the moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it.',
-      runtime:'2h 10m',
-      poster:'https://m.media-amazon.com/images/I/71vHJ8UqxxL._AC_SL1500_.jpg',
-      trailer:'ivIwdQBlS10')
+    plot:'A mysterious force knocks the moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it.',
+    runtime:'2h 10m',
+    poster:'https://m.media-amazon.com/images/I/71vHJ8UqxxL._AC_SL1500_.jpg',
+    trailer:'ivIwdQBlS10')
       
 
 
