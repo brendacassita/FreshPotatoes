@@ -86,12 +86,12 @@ const Home = ()=>{
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/71pdrpHZUfL._AC_SL1500_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/51a-Iz7wwCL._AC_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
                     <div style={{padding: 8}}>
-                        <img src="https://m.media-amazon.com/images/I/619yt12HbSL._AC_SL1001_.jpg" alt="placeholder" style={{width: '100%'}} />
+                        <img src="https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg" alt="placeholder" style={{width: '100%'}} />
                     </div>
                 </div>
                 <div>
