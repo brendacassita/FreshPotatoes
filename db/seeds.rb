@@ -143,6 +143,104 @@ m15 = u1.movies.create(
   poster:'https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg', 
   trailer:'wArmHSPIvlQ')
 
+m16 = u1.movies.create(
+  name:'What Dreams May Come', 
+  year:'1998', 
+  plot:'Chris Nielsen dies in an accident, and enters Heaven. But when he discovers that his beloved wife Annie has killed herself out of grief over the loss, he embarks on an afterlife adventure to reunite with her.', 
+  runtime:'1h 53m', 
+  poster:'https://m.media-amazon.com/images/I/61-j8oLV9nL._AC_SL1500_.jpg', 
+  trailer:'RmZ-FuBThuQ')
+
+m17 = u1.movies.create(
+  name:'Gladiator', 
+  year:'2000', 
+  plot:'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', 
+  runtime:'2h 35m', 
+  poster:'https://m.media-amazon.com/images/I/51a-Iz7wwCL._AC_.jpg', 
+  trailer:'owK1qxDselE')
+
+m18 = u1.movies.create(
+  name:'The Count of Monte Cristo',
+  year:'2002',
+  plot:'A young man, falsely imprisoned by his jealous "friend", escapes and uses a hidden treasure to exact his revenge.',
+  runtime:'2h 11m',
+  poster:'https://m.media-amazon.com/images/I/41Byr2iM4mL._AC_.jpg',
+  trailer:'qesn8pV9yu8')
+
+m19 = u1.movies.create(
+  name:'Alien',
+  year:'1979',
+  plot:'The crew of a commercial spacecraft encounter a deadly lifeform after investigating an unknown transmission.',
+  runtime:'1h 56m',
+  poster:'https://m.media-amazon.com/images/I/81TpGaKY3ML._AC_UY436_FMwebp_QL65_.jpg',
+  trailer:'jQ5lPt9edzQ')
+
+m19 = u1.movies.create(
+  name:'Star Wars: A New Hope',
+  year:'1977',
+  plot:'Young farm boy Luke Skywalker is thrust into a galaxy of adventure when he intercepts a distress call from the captive Princess Leia. The event launches him on a daring mission to rescue her from the clutches of Darth Vader and the Evil Empire.',
+  runtime:'2h 4m',
+  poster:'https://m.media-amazon.com/images/I/91MMkv35K5L._AC_UY436_FMwebp_QL65_.jpg',
+  trailer:'1g3_CFmnU7k')
+
+m20 = u2.movies.create(
+  name:'The Bad Guys',
+  year:'2022',
+  plot:'Several reformed yet misunderstood criminal animals attempt to become good, with some disastrous results along the way.',
+  runtime:'1h 40m',
+  poster:'https://m.media-amazon.com/images/I/71R3sYwjb4L._AC_SL1464_.jpg',
+  trailer:'m8Xt0yXaDPU')
+
+m21 = u1.movies.create(
+  name:'The Northman',
+  year:'2022',
+  plot:'From visionary director Robert Eggers comes The Northman, an action-filled epic that follows a young Viking prince on his quest to avenge his fathers murder.',
+  runtime:'2h 16m',
+  poster:'https://m.media-amazon.com/images/I/61DfIhoIJGL._AC_SL1500_.jpg',
+  trailer:'oMSdFM12hOw')
+
+m22 = u1.movies.create(
+  name:'Fantastic Beasts: The Secrets of Dumbledore',
+  year:'2022',
+  plot:'Albus Dumbledore assigns Newt and his allies with a mission related to the rising power of Grindelwald.',
+  runtime:'2h 22m',
+  poster:'https://m.media-amazon.com/images/I/61KJHL4G+eL._AC_.jpg',
+  trailer:'Y9dr2zw-TXQ')
+
+m23 = u1.movies.create(
+  name:'Uncharted',
+  year:'2022',
+  plot:'Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor "Sully" Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.',
+  runtime:'1h 56m',
+  poster:'https://m.media-amazon.com/images/I/71DuFCPQHRL._AC_SL1500_.jpg',
+  trailer:'eHp3MbsCbMg')
+
+m24 = u1.movies.create(
+  name:'Death On The Nile',
+  year:'2022',
+  plot:'While on vacation on the Nile, Hercule Poirot must investigate the murder of a young heiress.',
+  runtime:'2h 7m',
+  poster:'https://m.media-amazon.com/images/I/71r6YHoA4sL._AC_SL1358_.jpg',
+  trailer:'ij2ztHOOe9s')
+  
+m25 = u1.movies.create(
+  name:'Father Stu',
+  year:'2022',
+  plot:'Follows the life of Father Stuart Long, a boxer-turned-priest who inspired countless people during his journey from self-destruction to redemption.',
+  runtime:'2h 4m',
+  poster:'https://ariseletusbegoing.files.wordpress.com/2022/04/wp-16495315765356152001558212309618.jpg',
+  trailer:'DHREzAdyCPs')
+  
+  m26 = u1.movies.create(
+    name:'Moonfall',
+    year:'2022',
+    plot:'A mysterious force knocks the moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it.',
+    runtime:'2h 10m',
+    poster:'https://m.media-amazon.com/images/I/71vHJ8UqxxL._AC_SL1500_.jpg',
+    trailer:'ivIwdQBlS10')
+      
+
+
 ########## REVIEWS ##########
 
 Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:1, movie_id:1)
