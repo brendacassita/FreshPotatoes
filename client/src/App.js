@@ -55,10 +55,21 @@ function App() {
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
               <Route path='/genres' element={<Genres />}/>
+
               <Route path='/popular_potatoes' element={<PopularPotatoes/>}/>
               <Route path='/popular_fries' element={<PopularFries />}/>
               <Route path='/movies/:id' element={<MovieDetail />}/>
               <Route path='/review' element={<Review />}/>
+
+
+             
+
+              
+
+            
+              
+
+
 
 
             </Route>  
