@@ -56,7 +56,6 @@ function App() {
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
               <Route path='/genres' element={<Genres />}/>
-              <Route path='/movie_detail' element={<MovieDetail  />}/>
               <Route path= '/popular_potatoes' element={<PopularPotatoes/>}>
 
               </Route>
