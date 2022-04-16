@@ -176,7 +176,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
-
+>
               
               >
 
