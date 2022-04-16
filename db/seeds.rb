@@ -250,7 +250,7 @@ Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:2,
 Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:3, movie_id:1)
 Review.create(rating:5, watched:'true', comment:'comment goes here!', user_id:3, movie_id:1)
 Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:4, movie_id:1)
-Review.create(rating:1.5, watched:'true', comment:'comment goes here!', user_id:4, movie_id:1)
+Review.create(rating:1.5, watched:'true', comment:'comment goes here!',user_id:4, movie_id:1)
 Review.create(rating:4, watched:'false', comment:'comment goes here!',user_id:5, movie_id:1)
 Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:5, movie_id:1)
 
@@ -259,10 +259,9 @@ Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:1,
 Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:2, movie_id:2)
 Review.create(rating:3, watched:'true', comment:'comment goes here!', user_id:2, movie_id:2)
 
-
 Review.create(rating:3, watched:'false', comment:'comment goes here!',user_id:1, movie_id:3)
 Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:1, movie_id:3)
-Review.create(rating:4.5, watched:'false', comment:'comment goes here!',user_id:2, movie_id:3)
+Review.create(rating:4.5, watched:'false',comment:'comment goes here!',user_id:2, movie_id:3)
 Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:3, movie_id:3)
 Review.create(rating:1, watched:'true', comment:'comment goes here!', user_id:3, movie_id:3)
 Review.create(rating:5, watched:'false', comment:'comment goes here!',user_id:4, movie_id:3)
@@ -285,6 +284,51 @@ Review.create(rating:1, watched:'false', comment:'comment goes here!',user_id:4,
 Review.create(rating:4, watched:'true', comment:'comment goes here!', user_id:4, movie_id:5)
 Review.create(rating:3.5, watched:'false', comment:'comment goes here!',user_id:5, movie_id:5)
 Review.create(rating:2, watched:'true', comment:'comment goes here!', user_id:5, movie_id:5)
+
+Review.create(rating:3,watched:'true',comment:'comment goes here!',user_id:2,movie_id:6,)
+Review.create(rating:4.5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:6,)
+Review.create(rating:2,watched:'true',comment:'comment goes here!',user_id:1,movie_id:6,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:6,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:6,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:6,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:2,movie_id:6,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:2,movie_id:6,)
+
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:7,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:7,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:7,)
+Review.create(rating:4.5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:7,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:7,)
+
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:8,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:8,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:8,)
+Review.create(rating:4.5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:8,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:8,)
+Review.create(rating:4.5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:8,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:2,movie_id:8,)
+
+Review.create(rating:4.5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:9,)
+Review.create(rating:1.5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:9,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:9,)
+Review.create(rating:4.5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:9,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:9,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:9,)
+
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:10,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:10,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:10,)
+Review.create(rating:4.5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:10,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:2,movie_id:10,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:2,movie_id:10,)
+
+Review.create(rating:4.5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:17,)
+Review.create(rating:1,watched:'false',comment:'comment goes here!',user_id:1,movie_id:17,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:17,)
+Review.create(rating:4.5,watched:'true',comment:'comment goes here!',user_id:2,movie_id:17,)
+Review.create(rating:5,watched:'false',comment:'comment goes here!',user_id:1,movie_id:17,)
+Review.create(rating:5,watched:'true',comment:'comment goes here!',user_id:1,movie_id:17,)
+
 
 ########## CAST ##########
 
