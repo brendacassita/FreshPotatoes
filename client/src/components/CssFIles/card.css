@@ -6,7 +6,6 @@ h2:after,
 .news .card:after,
 .news .article figcaption {
   position: absolute;
-
 }
 .rel,
 h2,
@@ -107,22 +106,22 @@ h2:after {
 }
 .cards .card figcaption,
 .news .card figcaption {
-  bottom: 1;
+  bottom: 0;
   left: 0;
   right: 0;
   padding: 20px;
-  padding-top: 10px;
-  font-size: 30px;
+  padding-bottom: 10px;
+  font-size: 20px;
   background: none;
   color: #fff;
-  transform: translateY(400%);
+  transform: translateY(100%);
   transition: 0.3s;
 }
 .cards .card:after,
 .news .card:after {
   content: '';
   z-index: 10;
-  width: 00%;
+  width: 200%;
   height: 100%;
   top: -90%;
   left: -20px;
@@ -203,9 +202,29 @@ h2:after {
   transform: none;
 }
 
-.back {
-background-color: black;
+.centered {
+ color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ font-size: 30px;
+opacity: 1;
+font-family:'impact';
 }
+.cards .card:hover .centered {
+color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ font-size: 50px;
+opacity: 1;
+transition: 1s;
+text-shadow: 150px;
+}
+
+
 
 
 

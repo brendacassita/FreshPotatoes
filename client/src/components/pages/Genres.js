@@ -42,8 +42,8 @@ const Genres = ()=>{
           <div className="wrapper">
             <div className="cards">
               <figure className="card">
+                 <div className="centered">ACTION</div>
               <img className="back" src="https://wwwimage-us.pplusstatic.com/thumbnails/photos/370-q80/movie_asset/87/18/37/wom_salone_poster_1400x2100.jpg" ></img>
-                <figcaption>ACTION</figcaption>
                 </figure>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/shared/NavBar';
 import { Routes, Route, useParams} from 'react-router-dom';
@@ -6,7 +5,6 @@ import Home from './components/shared/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import NoMatch from './components/shared/NoMatch';
-import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import Profile from './components/auth/Profile';
@@ -17,9 +15,11 @@ import MovieDetail from './components/pages/MovieDetail';
 import Footer from './components/pages/Footer';
 import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
+import PopularFries from './components/pages/PopularFries';
+
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
-
+//import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
 //prevents routes from getting rendered until check is done 
@@ -39,10 +39,11 @@ function App() {
             {/* Unprotected */}
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
-            <Route path='/review' element={<Review />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
+            {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
+            
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
@@ -51,14 +52,23 @@ function App() {
             
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
               
-              <Route path='/movieDetail' element={<MovieDetail />}/>
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
               <Route path='/genres' element={<Genres />}/>
-              <Route path='/movie_detail' element={<MovieDetail  />}/>
-              <Route path= '/popular_potatoes' element={<PopularPotatoes/>}>
 
-              </Route>
+              <Route path='/popular_potatoes' element={<PopularPotatoes/>}/>
+              <Route path='/popular_fries' element={<PopularFries />}/>
+              <Route path='/movies/:id' element={<MovieDetail />}/>
+              <Route path='/review' element={<Review />}/>
+
+
+             
+
+              
+
+            
+              
+
 
 
 
