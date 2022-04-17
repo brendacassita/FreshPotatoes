@@ -5,34 +5,34 @@ import logo from '../../Images/Thelogo.png'
 
 
 const Genres = ()=>{
-//   const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([])
 
-//   useEffect(()=>{
-//     getGenres()
-//   }, [])
+  useEffect(()=>{
+    getGenres()
+  }, [])
 
 
-//  const getGenres = async()=>{
-//    try{
-//     let res = await axios.get('/api/categories')
-//     setCategories(res.data)
-//    }catch (err){
-//    alert('error getting categories')
-//   }
-// }
+ const getGenres = async()=>{
+   try{
+    let res = await axios.get('/api/categories')
+    setCategories(res.data)
+   }catch (err){
+   alert('error getting categories')
+  }
+}
 
     
-// const renderData = () => {
-//   const genres = categories.map((c) => {
-//     return (
-//       <div key={c.genre}>
-//       </div>
-//     )
-//   }
+const renderData = () => {
+  const genres = categories.map((c) => {
+    return (
+      <div key={c.genre}>
+      </div>
+    )
+  }
   
-//   )
-//   return genres
-// }
+  )
+  return genres
+}
    
      
       return(
@@ -112,8 +112,8 @@ const Genres = ()=>{
           
       
           
-        {/* {renderData()}
-        {JSON.stringify(categories)} */}
+        {renderData()}
+        {JSON.stringify(categories)}
         </div>
       
       )
