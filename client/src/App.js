@@ -41,6 +41,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
+            <Route path='/review' element={<Review />}/>
             {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
             

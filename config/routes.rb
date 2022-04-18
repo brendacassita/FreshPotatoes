@@ -33,7 +33,8 @@ Rails.application.routes.draw do
     get 'movies/:id/cast', to: 'movies#cast'
 
     
-
+#Create a review for a movie
+post 'movies/:id/reviews', to: 'reviews#create'
 
    
     end  

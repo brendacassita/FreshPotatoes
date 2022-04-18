@@ -1,5 +1,6 @@
 class Api::ReviewsController < ApplicationController
     before_action :set_review, only: [:update, :show, :destroy]
+    before_action :set_monster, except: [:update, :show, :destroy]
 
     def index
         render json: Review.all
@@ -36,6 +37,8 @@ class Api::ReviewsController < ApplicationController
 
 
     private
+    def set_movie 
+        @movie = Movie.find(params[:id])
 
     def set_review
         @review = Review.find(params[:id])
