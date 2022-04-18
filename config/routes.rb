@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
    namespace :api do 
-    resources :movies
-    resources :casts
+    resources :movies do
+      resources :casts
+    end
     resources :reviews
     resources :roles
     resources :users
@@ -30,11 +31,7 @@ Rails.application.routes.draw do
     get 'newest', to: 'movies#newest'
 
     # CAST BY MOVIE
-    get 'movies/:id/cast', to: 'movies#cast'
-
-    
-
-
+    # get 'movies/:id/cast', to: 'movies#cast'
    
     end  
     get '*other', to: 'static#index'
