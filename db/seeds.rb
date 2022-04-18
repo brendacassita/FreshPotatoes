@@ -144,8 +144,6 @@ m15 = u1.movies.create(
   trailer:'wArmHSPIvlQ')
 
 
-
-
 ########## REVIEWS ##########
 
 100.times do
@@ -154,7 +152,7 @@ Review.create(
   watched: 'true',
   comment: Faker::ChuckNorris.fact,
   user_id: Faker::Number.between(from: 1, to: 5),
-  movie_id: Faker::Number.between(from: 1, to: 26)
+  movie_id: Faker::Number.between(from: 1, to: 15)
 )
 end
 
@@ -164,10 +162,9 @@ Review.create(
   watched: 'false',
   comment: Faker::ChuckNorris.fact,
   user_id: Faker::Number.between(from: 1, to: 5),
-  movie_id: Faker::Number.between(from: 1, to: 26)
+  movie_id: Faker::Number.between(from: 1, to: 15)
 )
 end
-
 
 
 ########## CAST ##########
