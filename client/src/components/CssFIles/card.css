@@ -1,12 +1,10 @@
 
- .wrapper  {
-  
-}
+
 
 .rowdata {
 display: flex;
-
 flex-wrap: wrap;
+justify-content: center;
 }
 
 .abs,
@@ -37,8 +35,8 @@ h2 strong,
 .cards .card,
 .news .card {
   margin: 20px;
-  width: 180px;
-  height: 270px;
+  width: 150px;
+  height: 240px;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.8);
   transform-origin: center top;
@@ -72,7 +70,7 @@ h2 strong,
   height: 100%;
   top: -90%;
   left: -20px;
-  opacity: 0.1;
+  opacity: 0.3;
   transform: rotate(45deg);
   background: linear-gradient(to top, transparent, #fff 15%, rgba(255,255,255,0.5));
   transition: 0.3s;
@@ -106,7 +104,7 @@ h2 strong,
 }
 .news .article {
   overflow: hidden;
-  width: 350px;
+  width: 50px;
   height: 235px;
   margin: 20px;
 }
@@ -158,6 +156,8 @@ h2 strong,
  font-size: 30px;
 opacity: 1;
 font-family:'impact';
+text-shadow: 2px 2px black;
+/* background-color: #24282f; */
 }
 .cards .card:hover .centered {
 color: white;

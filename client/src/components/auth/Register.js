@@ -8,7 +8,8 @@ let timeout;
 const Register = ()=>{
     const [email, setEmail] = useState('test1@test.com')
     const [password, setPassword] = useState('123456')
-    const [loading, setLoading] = useState(false);
+  const [loading,setLoading] = useState(false);
+  const [name, setName] = useState()
 
     // const [confirmPassword, setConfirmPassword] = useState('') // not need but nice for UX
 
@@ -17,7 +18,7 @@ const Register = ()=>{
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        auth.handleRegister({email, password})
+        auth.handleRegister({email, password, name})
         setLoading(true);
         timeout = setTimeout (()=> {
             setLoading(false);
@@ -35,7 +36,9 @@ const Register = ()=>{
     return (
         <div>
             <h1>Sign-up for a new account</h1>
-            <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <p>Name:</p>
+          <input value={name} onChange={(e)=> setName(e.target.value)}/>
                 <p>Email: </p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 <p>Password: </p>

@@ -4,9 +4,11 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 //import MovieCarousel from '../pages/MovieCarousel'
 import Carousel from '../pages/Carousel'
+import { AuthContext } from '../../providers/AuthProvider'
 
 
-const Home = ()=>{
+const Home = () => {
+  let auth = useContext(AuthContext)
     const [movies, setMovies] =  useState([])
     const [loading, setLoading] = useState(false)
 
@@ -42,7 +44,8 @@ const Home = ()=>{
     }
 
        return (
-        <div style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}>
+         <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64}}>
+               <h2 className='namehome'>Welcome {auth.user.name}!</h2>
             <Carousel
                 show={4}
                 infiniteLoop

@@ -36,10 +36,6 @@ const renderData = () => {
             </figure>
           </div>
         </div>
-        
-        
-        
-      
       </div>
     )
   }

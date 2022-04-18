@@ -59,7 +59,9 @@ function App() {
               <Route path='/popular_potatoes' element={<PopularPotatoes/>}/>
               <Route path='/popular_fries' element={<PopularFries />}/>
               <Route path='/movies/:id' element={<MovieDetail />}/>
-              <Route path='/review' element={<Review />}/>
+              <Route path='/review' element={<Review />} />
+              
+              
 
 
              
