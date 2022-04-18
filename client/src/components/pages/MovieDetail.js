@@ -125,8 +125,8 @@ const MovieDetail = () => {
           </div>
         )
       })}
-      {renderUnwatched()}
-      {renderWatched()}
+      {/* {renderUnwatched()}
+      {renderWatched()} */}
       {/* {JSON.stringify(movies)} */}
       
     </div>
