@@ -5,13 +5,16 @@ const PrivacyPolicy = () => {
   return( 
     <>
     <h1>PRIVACY NOTICE</h1>
-    <h6>Last updated April 13, 2022</h6>
+    <h5>Last updated April 13, 2022</h5>
     <p>
-    This privacy notice for Fresh Potatoes ("Company," "we," "us," or "our"), describes how any why we might collect, store, use and/or share ("process") your information when you use our services ("Services"), such as when you:
-    
-    - Visit our website, or any website of ours that links to this privacy notice
-    - Engage with us in other related ways, including any sales, marketing, or events
-
+    This privacy notice for Fresh Potatoes (<b>"Company," "we," "us," or "our"</b>), describes how any why we might collect, store, use and/or share ("process") your information when you use our services ("Services"), such as when you:</p>
+    <p>
+      <ul>
+        <li>Visit our website, or any website of ours that links to this privacy notice</li>
+        <li>Engage with us in other related ways, including any sales, marketing, or events</li>
+      </ul>
+    </p>
+    <p>
     Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us.
     </p>
 
