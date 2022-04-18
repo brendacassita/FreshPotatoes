@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.18/libexec/bin/yarn.js
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.18/libexec/bin/yarn.js start
 
 PATH: 
   /Applications/Postgres.app/Contents/Versions/14/bin:/Users/trinanixon/.rbenv/shims:/Users/trinanixon/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/trinanixon/.rbenv/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/trinanixon/Desktop/DPL/week8/FreshPotatoes/package.json: Unexpected token < in JSON at position 2
+  SyntaxError: /Users/trinanixon/Desktop/DPL/week8/FreshPotatoes/package.json: Unexpected string in JSON at position 62
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.18/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -23,35 +23,10 @@ Trace:
 
 npm manifest: 
   {
-  <<<<<<< HEAD
-    "name": "freshpotatoes",
-    "version": "1.0.0",
-    "description": "This project has devise_token_auth, react_router, etc setup. - uses rails v6, ruby 3.0.2 - more info about the project",
-    "main": "index.js",
-    "directories": {
-      "lib": "lib",
-      "test": "test"
-    },
-    "devDependencies": {},
-    "scripts": {
-    "build": "cd client && npm install --only=dev && npm install && npm run build && cd ..",
-    "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
-  },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/brendacassita/FreshPotatoes.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/brendacassita/FreshPotatoes/issues"
-    },
-    "homepage": "https://github.com/brendacassita/FreshPotatoes#readme"
-  =======
+    "dependencies": {
+      "styled-components": "^5.3.5"
+    }
     "dependencies": {}
-  >>>>>>> 57b0e4407edc767119f345143430cb4482e2a255
   }
 
 yarn manifest: 
