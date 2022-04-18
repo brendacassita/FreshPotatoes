@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 //import MovieCarousel from '../pages/MovieCarousel'
 import Carousel from '../pages/Carousel'
 
@@ -27,6 +28,7 @@ const Home = ()=>{
         }
       }
 
+
     const renderPosters = () => {
      
 
@@ -46,11 +48,7 @@ const Home = ()=>{
                 infiniteLoop
                 // content added to the carousel - using a placeholder image
             > 
-                <div>
-                    <div style={{padding: 8}}>
-                        <img src={renderPosters()} style={{width: '100%'}} />
-                    </div>
-                </div>
+            
                 <div>
                     <div style={{padding: 8}}>
                         <img src="https://m.media-amazon.com/images/I/71R3sYwjb4L._AC_SL1464_.jpg" alt="placeholder" style={{width: '100%'}} />

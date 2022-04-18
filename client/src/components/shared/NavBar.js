@@ -60,7 +60,7 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
-          <Link className="btn1" to='/movie_detail'>Movie Detail</Link> {''}
+          <Link className="btn1" to='/movies/:id'>Movie Detail</Link>
 
   
         </>
@@ -124,9 +124,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         <Link className="Nav-link" to="/">Home</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
+
         
 
+  
+
         {renderLeft()}
+
+  
+
           </div>
          
           
@@ -170,9 +176,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
-              >
+>
+              
+             {/* DO NOT DELETE THESE */}
                 <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
+
+              
+                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
+
               <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
