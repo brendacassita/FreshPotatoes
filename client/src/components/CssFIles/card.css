@@ -1,3 +1,14 @@
+
+ .wrapper  {
+  
+}
+
+.rowdata {
+display: flex;
+
+flex-wrap: wrap;
+}
+
 .abs,
 h2:after,
 .cards .card figcaption,
@@ -13,79 +24,15 @@ h2 strong,
 .cards .card,
 .news .card,
 .news .article {
-  position: relative;
+  position: flex;
 }
-.fix {
-  position: fixed;
-}
-.dfix {
-  display: inline;
-}
-.dib {
-  display: inline-block;
-}
-.db {
-  display: block;
-}
-.dn {
-  display: none;
-}
-.df,
-.cards,
-.news {
+
+
+
+.cards .card .wrapper
+ {
   display: flex;
-}
-.dif {
-  display: inline-flex;
-}
-.dg {
-  display: grid;
-}
-.dig {
-  display: inline-grid;
-}
-.vm,
-h2,
-h2 strong,
-h2 span {
-  vertical-align: middle;
-}
-body {
-  background: #24282f;
-  font-family: 'Alegreya Sans';
-}
-.wrapper {
-  padding: 15px;
-}
-h2 {
-  padding: 10px;
-  padding-left: 25px;
-  color: #ccc;
-  margin: 0;
-}
-h2 strong {
-  z-index: 2;
-  background: #24282f;
-  padding: 4px 8px;
-}
-h2 span {
-  font-size: 0.7em;
-  color: #aaa;
-  margin-left: 10px;
-}
-h2:after {
-  content: '';
-  z-index: 1;
-  bottom: 50%;
-  margin-bottom: -2px;
-  height: 2px;
-  left: 0;
-  right: 0;
-  background: #373d47;
-}
-.cards,
-.news {
-  flex-flow: row wrap;
+  flex-flow:  wrap;
 }
 .cards .card,
 .news .card {
@@ -99,8 +46,8 @@ h2:after {
   transform: translateZ(0);
   transition: 0.3s;
 }
-.cards .card img,
-.news .card img {
+.cards .card .back,
+.news .card .back {
   width: 100%;
   min-height: 100%;
 }
@@ -118,7 +65,7 @@ h2:after {
   transition: 0.3s;
 }
 .cards .card:after,
-.news .card:after {
+ .card:after {
   content: '';
   z-index: 10;
   width: 200%;
@@ -131,7 +78,7 @@ h2:after {
   transition: 0.3s;
 }
 .cards .card:hover,
-.news .card:hover,
+
 .cards .card:focus,
 .news .card:focus,
 .cards .card:active,
@@ -163,7 +110,7 @@ h2:after {
   height: 235px;
   margin: 20px;
 }
-.news .article img {
+.news .article .back {
   width: 100%;
   min-height: 100%;
   transition: 0.2s;
@@ -218,13 +165,17 @@ color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- font-size: 50px;
+ font-size: 40px;
 opacity: 1;
 transition: 1s;
 text-shadow: 150px;
 }
 
-
+.back{
+width: 10px;
+height: 10px;
+background-color: #24282f;
+}
 
 
 
