@@ -20,6 +20,7 @@ import PopularFries from './components/pages/PopularFries';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
+import MovieForm from './components/forms/MovieForm';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -64,6 +65,9 @@ function App() {
               <Route path='/genres/:id' element={<GenreShow />}/>
               
               
+
+              <Route path='/movies/:id/edit' element={<MovieForm/>}/>
+              <Route path='/movies/new' element={<MovieForm/>}/>
 
 
              

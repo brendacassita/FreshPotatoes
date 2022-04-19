@@ -60,6 +60,7 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
+          <Link className="btn1" to='/movies/:id'>Movie Detail</Link>
 
   
         </>
