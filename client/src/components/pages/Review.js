@@ -33,7 +33,7 @@ const handleSubmit  = async (e) => {
   e.preventDefault()
 
   try{
-    let res = await axios.post(`api/movies/${params.id}/reviews`)
+    let res = await axios.post(`api/movies/${movie_id}/reviews`)
     console.log(res.data)
     setReview(res.data)
   
