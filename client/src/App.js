@@ -19,6 +19,7 @@ import PopularFries from './components/pages/PopularFries';
 
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
+import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
@@ -42,6 +43,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
+            <Route path='/review' element={<Review />}/>
             {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
             
@@ -60,7 +62,10 @@ function App() {
               <Route path='/popular_potatoes' element={<PopularPotatoes/>}/>
               <Route path='/popular_fries' element={<PopularFries />}/>
               <Route path='/movies/:id' element={<MovieDetail />}/>
-              <Route path='/review' element={<Review />}/>
+              <Route path='/review' element={<Review />} />
+              <Route path='/genres/:id' element={<GenreShow />}/>
+              
+              
 
               <Route path='/movies/:id/edit' element={<MovieForm/>}/>
               <Route path='/movies/new' element={<MovieForm/>}/>

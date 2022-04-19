@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './carousel.css'
+import '../CssFIles/carousel.css'
 
 const Carousel = (props) => {
     //add a prop, this is the content that will be displayed on the carousel

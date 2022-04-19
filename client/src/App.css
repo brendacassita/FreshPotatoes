@@ -84,3 +84,8 @@ text-decoration: none;
     transform: rotate(360deg);
   }
 }
+
+.welcome {
+display: flex;
+justify-content: center;
+}
