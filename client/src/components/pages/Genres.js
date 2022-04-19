@@ -1,7 +1,7 @@
 import axios from "axios"
 import {useEffect,useState} from "react"
 import '../CssFIles/card.css'
-
+import { Link } from 'react-router-dom'
 
 
 
@@ -20,7 +20,8 @@ const Genres = ()=>{
    }catch (err){
    alert('error getting genres')
   }
-}
+ }
+  
 
     
 const renderData = () => {
@@ -30,10 +31,14 @@ const renderData = () => {
         <div className="wrapper">
           
           <div className="cards ">
+               <Link to={`/genres/${g.id}`}>
             <figure className="card ">
               <div className="centered">{g.name}</div>
-              <img className="back" src={g.image}></img>
+              
+                <img alt="g.id" className="back" src={g.image}></img>
+               
             </figure>
+              </Link>
           </div>
         </div>
       </div>

@@ -146,7 +146,11 @@ h2 strong,
   opacity: 1;
   transform: none;
 }
-
+.back{
+width: 10px;
+height: 10px;
+background-color: #24282f;
+}
 .centered {
  color: white;
   position: absolute;
@@ -166,16 +170,13 @@ color: white;
   left: 50%;
   transform: translate(-50%, -50%);
  font-size: 40px;
-opacity: 1;
+/* opacity: 1; */
 transition: 1s;
 text-shadow: 150px;
+z-index: 1;
 }
 
-.back{
-width: 10px;
-height: 10px;
-background-color: #24282f;
-}
+
 
 
 

@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     # CAST BY MOVIE
     get 'movies/:id/cast', to: 'movies#cast'
 
+ 
+
     
 
 
