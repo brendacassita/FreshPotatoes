@@ -182,10 +182,14 @@ flex-wrap: wrap;
 flex-direction: row;
 justify-content: flex-start;
 margin: 10px 15px;
-width: 200px;
+width: 180px;
 height: auto;
 }
 .genretitle {
 display: flex;
 justify-content: center;
 }
+ .genreShow:hover {
+opacity:.8;
+}
+

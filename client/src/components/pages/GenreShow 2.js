@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import {useLocation, useParams} from 'react-router-dom'
 import '../CssFIles/container.css'
-import { Link } from 'react-router-dom'
 
 
 
@@ -10,44 +9,52 @@ import { Link } from 'react-router-dom'
 const GenreShow = () => {
   const [genre,setGenre] = useState([])
   const [movies, setMovies] = useState([])
-  const location = useLocation()
-  console.log(location)
+  
   useEffect(() => {
     getGenre()
   },[])
-  
+  useEffect(() => {
+    getMovies()
+  },[])
   
   const getGenre = async () => {
     try {
-      let res = await axios.get(`/api/genres/${params.name}`)
+      let res = await axios.get(`/api/genres/${params.id}`)
       setGenre(res.data)
-     console.log(res.data)
+     
     } catch(err) {
     alert('error getting genre id')
     }
   }
   
-
+  const getMovies = async () => {
+    try {
+      let res = await axios.get(`/api/movies/${params.id}`)
+      setMovies(res.data)
+    
+    } catch(err) {
+    alert('error getting movies')
+    }
+}
   
   const params = useParams()
    
   
   return (
     <div>
-      <div className=''><h1>{params.name}</h1></div>
+      <h1 className='genretitle'>GenreShow</h1>
       
-      {genre.map((m) => {
+      {genre.map((movie) => {
+        
         return (
           
-          <div className='genreShow'>
-             <Link to={`/movies/${m.genre_id}`}>
-            <img className='genreShow genreImage' src={m.poster} />
-            </Link>
-            <h5 className='genreShow'>{m.movie_name}</h5>
+          <div className='genreShow' key={movie.name}>
+            <img className='genreShow'  src={movie.poster} />
+            
+            
          </div>
 )
       })}
-      
       
     </div>
   )

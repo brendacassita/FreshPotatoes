@@ -63,13 +63,15 @@ const Home = () => {
 
        return (
          <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64}}>
-           <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
-           </div>
            
-         
-           {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
-           </div> */}
-   
+           {auth.user ?
+             <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
+             </div>
+             :<p> hi</p>}
+            
+          
+          
+               
             <Carousel
                 show={4}
                 infiniteLoop
