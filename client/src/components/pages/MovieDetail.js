@@ -4,6 +4,7 @@ import YouTube from "react-youtube";
 import "../../App.css";
 import "../CssFIles/container.css";
 import { useLocation, useParams } from "react-router-dom";
+import Ratings from "../shared/Ratings";
 
 const MovieDetail = () => {
   const [movies, setMovies] = useState([]);
@@ -123,9 +124,7 @@ const MovieDetail = () => {
                 {movie.year} | {movie.runtime} | {movie.genre}
               </h6>
               <div>
-                <h6>
-                  pre: {renderUnwatched()} | post: {renderWatched()}{" "}
-                </h6>
+                <Ratings />
               </div>
 
               <div id="container">
