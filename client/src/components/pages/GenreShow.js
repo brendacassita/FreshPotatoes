@@ -29,9 +29,9 @@ const GenreShow = () => {
   
   const getMovies = async () => {
     try {
-      let res = await axios.get(`/api/movies/${params.id}`)
+      let res = await axios.get(`/api/genres/${params.id}`)
       setMovies(res.data)
-    
+    console.log(res.data)
     } catch(err) {
     alert('error getting movies')
     }
@@ -49,12 +49,12 @@ const GenreShow = () => {
         return (
           
           <div className='genreShow' key={movie.name}>
-            <img className='genreShow'  src={movie.poster} />
-            
-            
+            <img className='genreShow genreImage' src={movie.poster} />
+            <h5 className='genreShow'>{movie.movie_name}</h5>
          </div>
 )
       })}
+      
       
     </div>
   )
