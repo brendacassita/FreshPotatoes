@@ -120,10 +120,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
       
+
+       
+        <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
+
         <Link className="Nav-link" to="/">Home</Link>
-        <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
-        <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
+     
         <Link className="Nav-link" to='/review'>Review</Link> {''}
+
 
         
 

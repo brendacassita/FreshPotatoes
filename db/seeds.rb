@@ -195,19 +195,32 @@ Role.create(
 
 ##### GENRES #####
 
-action = Genre.create(name:'Action', image:'')
-adventure = Genre.create(name:'Adventure', image:'')
-comedy = Genre.create(name:'Comedy', image:'')
-crime = Genre.create(name:'Crime', image:'')
-drama = Genre.create(name:'Drama', image:'')
-family = Genre.create(name:'Family', image:'')
-fantasy = Genre.create(name:'Fantasy', image:'')
-musical = Genre.create(name:'Musical', image:'')
-mystery = Genre.create(name:'Mystery', image:'')
-romance = Genre.create(name:'Romance', image:'')
-scifi = Genre.create(name:'Sci-Fi', image:'')
-thriller = Genre.create(name:'Thriller', image:'')
-western = Genre.create(name:'Western', image:'')
+action = Genre.create(name:'Action',
+ image:'https://wwwimage-us.pplusstatic.com/thumbnails/photos/370-q80/movie_asset/87/18/37/wom_salone_poster_1400x2100.jpg')
+adventure = Genre.create(name:'Adventure',
+ image:'https://m.media-amazon.com/images/M/MV5BMjNkMzc2N2QtNjVlNS00ZTk5LTg0MTgtODY2MDAwNTMwZjBjXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg')
+comedy = Genre.create(name:'Comedy', 
+image:'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/7d40e55728cbd7f03444363572a830f5_bfcdfb95-e46e-4a48-b3a9-05c482802c01_500x.jpg?v=1573593901')
+crime = Genre.create(name:'Crime', 
+image:'https://cpb-us-w2.wpmucdn.com/blogs.iu.edu/dist/f/65/files/2019/04/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_-1odtbn5.jpg')
+drama = Genre.create(name:'Drama', 
+image:'https://m.media-amazon.com/images/I/51mTtUGvUCL.jpg')
+family = Genre.create(name:'Family',
+ image:'https://waghostwriter.com/wp-content/uploads/2020/01/0x800.jpg')
+fantasy = Genre.create(name:'Fantasy',
+ image:'https://www.weekendnotes.com/im/008/05/movie-locations-fantasy-movies-film-travel5.JPG')
+musical = Genre.create(name:'Musical', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmji1ndyznzy2ml5bml5banbnxkftztgwodqwodczntmat-v1-1588868235.jpg?crop=0.9745419938139424xw:1xh;center,top&resize=480:*')
+mystery = Genre.create(name:'Mystery', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/115455159-1300x1733-1602867451.jpg?crop=0.910428158655109xw:1xh;center,top&resize=480:*')
+romance = Genre.create(name:'Romance', 
+image:'https://m.media-amazon.com/images/M/MV5BMTMxMmRmMWUtNGNhZS00MWYxLTkwNzUtM2QwNzI4MGU1ZTI2XkEyXkFqcGdeQXVyNTQ3MjE4NTU@._V1_FMjpg_UX1000_.jpg')
+scifi = Genre.create(name:'Sci-Fi', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmtexmzu0odcxndheqtjeqwpwz15bbwu4mde1oti4mzay-v1-1589813214.jpg?crop=1xw:0.960205078125xh;center,top&resize=480:*')
+thriller = Genre.create(name:'Thriller',
+ image:'https://img.dtcn.com/image/themanual/rpllj2hpcoqmkfhtqute0mkeao2-500x500.jpg')
+western = Genre.create(name:'Western', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/westerns-12-1582066991.jpg')
 
 ##### GENRE/MOVIE JOINS #####
 
