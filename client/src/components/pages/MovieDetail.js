@@ -122,10 +122,11 @@ const MovieDetail = () => {
                 {" "}
                 {movie.year} | {movie.runtime} | {movie.genre}
               </h6>
-              <div></div>
-              <h6>
-                pre: {renderUnwatched()} | post: {renderWatched()}{" "}
-              </h6>
+              <div>
+                <h6>
+                  pre: {renderUnwatched()} | post: {renderWatched()}{" "}
+                </h6>
+              </div>
 
               <div id="container">
                 <h4>Story Line</h4>

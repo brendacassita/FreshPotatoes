@@ -6,12 +6,16 @@ import {AuthContext} from '../../providers/AuthProvider'
 
 
 
+
 const Home = () => {
   let auth = useContext(AuthContext)
     const [movies, setMovies] =  useState([])
+
+    const navigate = useNavigate()
+
+
     const [loading, setLoading] = useState(false)
     let nav = useNavigate()
-
 
     useEffect(()=>{
         getMovies()
@@ -32,24 +36,6 @@ const Home = () => {
       }
 
 
-
-  const renderMovies = ()=>{
-    return movies.map((movie)=>(
-      <div key = {movie.id}>
-      <img src={movie.poster} width={150}/>
-      </div>
-    ))
-  }
-  
-
-
-      return(
-        <div className='container'>
-         {renderMovies()}
-         
-          {/* {JSON.stringify(movies)} */}
-          
-
     const renderPosters = () => {
         return movies.map((movie) => (
             <div>
@@ -57,21 +43,20 @@ const Home = () => {
                 <img src={movie.poster} onClick={()=>nav(`/movies/${movie.id}`)} style={{width: '100%'}} />
             </div>
 
+
         </div>
         ))   
     }
 
        return (
          <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64}}>
+           <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
+           </div>
            
-           {auth.user ?
-             <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
-             </div>
-             :<p> hi</p>}
-            
-          
-          
-               
+         
+           {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
+           </div> */}
+   
             <Carousel
                 show={4}
                 infiniteLoop
@@ -84,4 +69,3 @@ const Home = () => {
 }
 
     export default Home
-
