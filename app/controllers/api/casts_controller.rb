@@ -1,12 +1,13 @@
 class Api::CastsController < ApplicationController
+    before_action :set_movie
     before_action :set_cast, only: [:update, :show, :destroy]
 
     def index
-        render json: Cast.all
+        render json: Movie.cast(@movie.id)
     end
 
     def show
-        render json: @cast
+        render json: Cast.member(@cast.id)
     end
 
     def create
@@ -32,6 +33,10 @@ class Api::CastsController < ApplicationController
 
 
     private
+
+    def set_movie
+        @movie = Movie.find(params[:movie_id])
+    end
 
     def set_cast
         @cast = Cast.find(params[:id])

@@ -1,7 +1,29 @@
+
+.container2 {
+  display: flex; 
+  flex-direction: column;/* or inline-flex */
+  justify-content: space-evenly;
+}
+.movieCard {
+display: flex;
+justify-content: center;
+}
+.card {
+display: flex;
+flex-wrap: wrap;
+width: auto;
+justify-content: center;
+align-items: center;
+}
+
 .container {
   display: flex; 
   flex-direction: row;/* or inline-flex */
   flex-wrap: wrap;
+}
+.top10{
+  height: 200px;
+  width: auto;
 }
 
 
@@ -61,4 +83,9 @@ text-decoration: none;
   to {
     transform: rotate(360deg);
   }
+}
+
+.welcome {
+display: flex;
+justify-content: center;
 }

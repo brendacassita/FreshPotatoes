@@ -1,5 +1,6 @@
 class Api::MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :details, :watched, :unwatched, :update, :destroy]
+  before_action :set_movie, only: [:show, :details, :watched, :unwatched, :cast, :update, :destroy]
+  before_action :page, only: [:pageTopPotatoes, :pageTopFries]
 
 #authenticate_user! - anyone can go there, even if not signed in
  # before_action :authenticate_user!, except: [:all_users]
@@ -34,6 +35,7 @@ def show
   render json: Movie.details(@movie.id)
 end
 
+### WATCHED/UNWATCHED RATINGS ###
 def watched
   render json: Movie.watched(@movie.id)
 end
@@ -42,24 +44,14 @@ def unwatched
   render json: Movie.unwatched(@movie.id)
 end
 
-def top3_potatoes
-  render json: Movie.top3_potatoes
+### NEWEST 5 MOVIES BY YEAR ###
+def newest
+  render json: Movie.newest
 end
 
-def top10_potatoes
-  render json: Movie.top10_potatoes
-end
-
-def top3_fries
-  render json: Movie.top3_fries
-end
-
-def top10_fries
-  render json: Movie.top10_fries
-end
-
-def categories
-  render json: Movie.categories
+### CAST LIST BY MOVIE ID ###
+def cast
+  render json: Movie.cast(@movie.id)
 end
 
 def create 
@@ -84,12 +76,37 @@ def destroy
   @movie.destroy
 end
 
-def set_page
-  @page = params[:page] || 1
-end 
+### TOP POTATOES/FRIES ###
+def top3_potatoes
+  render json: Movie.top3_potatoes
+end
 
+def top10_potatoes
+  render json: Movie.top10_potatoes
+end
 
+def top3_fries
+  render json: Movie.top3_fries
+end
 
+def top10_fries
+  render json: Movie.top10_fries
+end
+
+def pageTopPotatoes
+  count = Movie.top10_potatoes.count
+  movies = Movie.top10_potatoes
+  puts json: movies
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
+end
+
+def pageTopFries
+  count = Movie.top10_fries.count
+  movies = Movie.top10_fries
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
+end
+
+### PRIVATE ###
 private 
 
 def set_movie
@@ -109,5 +126,9 @@ def movie_params
      )
 end
 
+def page
+  @page = params[:page] || 1
+  @per = params[:per] || 3
+end
 
 end
