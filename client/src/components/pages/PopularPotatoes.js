@@ -55,13 +55,14 @@ const PopularPotatoes = ()=>{
   const renderMovies = ()=>{
     return top10.map((movie)=>(
       <div className='container'>
-       
+       <li>
         <Link to={`/movies/${movie.id}`}>
         <img className='top10' src = {movie.poster}/>
         </Link>
         <h4>{movie.name} <br/></h4>
         <br/>
         <p>{movie.plot}</p>
+        </li>
       </div>
     ))
   }
@@ -70,7 +71,7 @@ const PopularPotatoes = ()=>{
   return(
     <div>
     <h1>Popular Potatoes </h1>  
-    {renderMovies()}
+   <ol> {renderMovies()}</ol>
     <div>{renderButtons()}</div>
   </div>
 )
