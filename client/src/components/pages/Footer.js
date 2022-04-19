@@ -50,20 +50,26 @@ const Footer = () => {
         </Box>
   </Grid>
   <Grid item xs={12} sm={4}>
-        <Box borderBottom={1}>Messages</Box>
+        <Box borderBottom={1}>Pages</Box>
         <Box>
             <Link href="/" color="inherit">
-              *Link
+              Home
             </Link> 
         </Box>
         <Box>
-            <Link href="/" color="inherit">
-              *Link
+            <Link href="/popular_potatoes" color="inherit">
+              PopularPotatoes
             </Link> 
         </Box>
         <Box>
-            <Link href="/" color="inherit">
-               *Link
+            <Link href="/popular_fries" color="inherit">
+              PopularFries
+            </Link> 
+        </Box>
+       
+        <Box>
+            <Link href="/genres" color="inherit">
+               Genres
             </Link> 
         </Box>
   </Grid>

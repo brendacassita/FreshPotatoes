@@ -55,13 +55,14 @@ const PopularFries= ()=>{
     return top10.map((movie)=>(
       <div>
 
-
+      <li>
         <Link to={`/movies/${movie.id}`}>
 
 
 
         <img className='top10' src = {movie.poster}/>
         </Link>
+        </li>
       </div>
     ))
   }
@@ -71,7 +72,7 @@ const PopularFries= ()=>{
   return(
       <div>
       <h1>Popular Fries </h1>  
-      {renderMovies()}
+      <ol>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
     </div>
   )

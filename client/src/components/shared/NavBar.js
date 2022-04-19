@@ -118,7 +118,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       <div>
       
 
-       
+        <Link className="btn1" to="/">Home</Link>
         <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
         <Link className="btn1" to='/review'>Review</Link> {''}
