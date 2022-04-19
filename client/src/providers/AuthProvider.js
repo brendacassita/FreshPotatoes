@@ -43,7 +43,7 @@ const AuthProvider = ({children})=>{
         } catch(err){
             // potentially a lot of work here
             //TODO: show why it didn't work (good UX)
-            alert('error: unable to register, do you have a unique/valid email, is password greater than 6')
+            alert('error: unable to register, do you have a unique/valid email, is password greater than 6 characters?')
             console.log(err)
         }
     }
@@ -60,7 +60,7 @@ const AuthProvider = ({children})=>{
             // setUser
         } catch(err){
             // potentailly a lot of work here
-            alert('error Logining in is email and password valid?')
+            alert('error logging in, is email and password valid?')
             console.log(err)
         }
     }
@@ -77,7 +77,7 @@ const AuthProvider = ({children})=>{
             navigate('/login')
             // setUser
         } catch(err){
-            alert('error Logining out did you send the token?')
+            alert('error logging out, did you send the token?')
             console.log(err)
         }
     }
