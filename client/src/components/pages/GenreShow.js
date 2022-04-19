@@ -19,7 +19,7 @@ const GenreShow = () => {
   
   const getGenre = async () => {
     try {
-      let res = await axios.get(`/api/genres/${params.id}`)
+      let res = await axios.get(`/api/genres/${params.name}`)
       setGenre(res.data)
      
     } catch(err) {
@@ -27,15 +27,15 @@ const GenreShow = () => {
     }
   }
   
-  const getMovies = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}`)
-      setMovies(res.data)
+//   const getMovies = async () => {
+//     try {
+//       let res = await axios.get(`/api/movies/${params.id}`)
+//       setMovies(res.data)
     
-    } catch(err) {
-    alert('error getting movies')
-    }
-}
+//     } catch(err) {
+//     alert('error getting movies')
+//     }
+// }
   
   const params = useParams()
    
