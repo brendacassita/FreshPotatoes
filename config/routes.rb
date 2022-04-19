@@ -5,8 +5,8 @@ Rails.application.routes.draw do
    namespace :api do 
     resources :movies do
       resources :casts
+      resources :reviews
     end
-    resources :reviews
     resources :roles
     resources :users
     resources :genres
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
     
 #Create a review for a movie
-#post 'movies/:id/reviews', to: 'reviews#create'
+post 'movies/:id/reviews', to: 'reviews#create'
 
     
    

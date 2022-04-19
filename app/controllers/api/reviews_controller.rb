@@ -1,14 +1,11 @@
 class Api::ReviewsController < ApplicationController
     before_action :set_review, only: [:update, :show, :destroy]
-    before_action :set_movie, except: [:reviews_all]
+    before_action :set_movie
 
     def index
         render json: @movie.reviews
     end
 
-    def reviews_all
-        render json: Review.all
-    end
 
     def show
         render json: @reviews
@@ -19,7 +16,7 @@ class Api::ReviewsController < ApplicationController
     # end
 
     def create
-        review = Review.new(review_params)
+        review = Reviews.new(review_params)
         if(review.save)
             render json: review
         else
