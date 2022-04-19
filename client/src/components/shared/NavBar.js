@@ -55,12 +55,9 @@ const Navbar = () => {
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
          
-          
-          
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
-          <Link className="btn1" to='/movies/:id'>Movie Detail</Link>
   
         </>
       );
@@ -121,26 +118,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       <div>
       
 
-       
+        <Link className="btn1" to="/">Home</Link>
         <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
+        <Link className="btn1" to='/review'>Review</Link> {''}
 
-        <Link className="Nav-link" to="/">Home</Link>
-     
-        <Link className="Nav-link" to='/review'>Review</Link> {''}
-
-
-        
-
-  
 
         {renderLeft()}
 
   
 
           </div>
-         
-          
+      
           <Box className='box'>
            <Search className='box' >
             <SearchIconWrapper>
