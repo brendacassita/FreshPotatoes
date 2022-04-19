@@ -5,11 +5,11 @@ Rails.application.routes.draw do
    namespace :api do 
     resources :movies do
       resources :casts
+      resources :reviews
     end
-    resources :reviews
     resources :roles
     resources :users
-    resources :genres
+    resources :genres, except: :show
 
     put '/update_image', to: "users#update_image"
 
@@ -30,9 +30,14 @@ Rails.application.routes.draw do
     # NEWEST MOVIES BY DATE
     get 'newest', to: 'movies#newest'
 
-    # CAST BY MOVIE
-    # get 'movies/:id/cast', to: 'movies#cast'
+    get 'genres/:name', to: 'genres#genre_show'
+
+    
+#Create a review for a movie
+post 'movies/:id/reviews', to: 'reviews#create'
+
+    
    
-    end  
+  end 
     get '*other', to: 'static#index'
 end

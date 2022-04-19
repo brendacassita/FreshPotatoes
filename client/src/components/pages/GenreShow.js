@@ -21,7 +21,7 @@ const GenreShow = () => {
   
   const getGenre = async () => {
     try {
-      let res = await axios.get(`/api/genres/${params.id}`)
+      let res = await axios.get(`/api/genres/${params.name}`)
       setGenre(res.data)
      console.log(res.data)
     } catch(err) {

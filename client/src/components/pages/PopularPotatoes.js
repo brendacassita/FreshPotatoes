@@ -2,11 +2,15 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import YouTube from 'react-youtube'
 
 const PopularPotatoes = ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
   const [count, setCount] = useState(1)
+  const [casts, setCasts] =  useState([])
+  const [movies, setMovies] =  useState([])
 
 
   useEffect(()=>{
@@ -50,26 +54,27 @@ const PopularPotatoes = ()=>{
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div>
-       <ol type = '1'> <li>
+      <div className='container'>
+       <li>
         <Link to={`/movies/${movie.id}`}>
         <img className='top10' src = {movie.poster}/>
         </Link>
+        <h4>{movie.name} <br/></h4>
+        <br/>
+        <p>{movie.plot}</p>
         </li>
-        </ol>
       </div>
     ))
   }
 
 
-
   return(
-      <div>
-      <h1>Popular Potatoes </h1>  
-      {renderMovies()}
-      <div>{renderButtons()}</div>
-    </div>
-  )
+    <div>
+    <h1>Popular Potatoes </h1>  
+   <ol> {renderMovies()}</ol>
+    <div>{renderButtons()}</div>
+  </div>
+)
 }
 
 export default PopularPotatoes

@@ -43,6 +43,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
+            <Route path='/review' element={<Review />}/>
             {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
             
@@ -62,7 +63,7 @@ function App() {
               <Route path='/popular_fries' element={<PopularFries />}/>
               <Route path='/movies/:id' element={<MovieDetail />}/>
               <Route path='/review' element={<Review />} />
-              <Route path='/genres/:id' element={<GenreShow />}/>
+              <Route path='/genres/:name' element={<GenreShow />}/>
               
               
 
