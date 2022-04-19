@@ -15,9 +15,7 @@ const GenreShow = () => {
   useEffect(() => {
     getGenre()
   },[])
-  useEffect(() => {
-    getMovies()
-  },[])
+  
   
   const getGenre = async () => {
     try {
@@ -29,28 +27,20 @@ const GenreShow = () => {
     }
   }
   
-  const getMovies = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}`)
-      setMovies(res.data)
-    console.log(res.data)
-    } catch(err) {
-    alert('error getting movies')
-    }
-}
+  
   
   const params = useParams()
    
   
   return (
     <div>
-        <div className=''><h1>{location.state.genre}</h1></div>
+      <div className=''><h1>{params.name}</h1></div>
       
       {genre.map((m) => {
         return (
           
           <div className='genreShow'>
-             <Link to={`/movies/${m.id}`}>
+             <Link to={`/movies/${m.genre_id}`}>
             <img className='genreShow genreImage' src={m.poster} />
             </Link>
             <h5 className='genreShow'>{m.movie_name}</h5>

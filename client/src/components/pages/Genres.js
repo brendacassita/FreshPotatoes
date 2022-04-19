@@ -31,7 +31,7 @@ const renderData = () => {
         <div className="wrapper">
           
           <div className="cards ">
-            <Link to={`/genres/${g.id}`}state={{genre:g.name}}>
+            <Link to={`/genres/${g.name}`}state={{genre:g.name}}>
             <figure className="card ">
               <div className="centered">{g.name}</div>
               
