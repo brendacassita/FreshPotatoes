@@ -49,8 +49,8 @@ const Home = () => {
          <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64}}>
            
          
-           <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
-           </div>
+           {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
+           </div> */}
             
           
           
