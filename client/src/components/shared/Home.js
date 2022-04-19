@@ -1,24 +1,21 @@
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
-<<<<<<< HEAD
 import { useNavigate, Link } from "react-router-dom"
-=======
-import { useNavigate } from 'react-router-dom'
 import Carousel from '../pages/Carousel'
 import {AuthContext} from '../../providers/AuthProvider'
->>>>>>> 8fc8ee318bc5d5a8c6b660b2b45102f69674ffff
+
+
 
 
 const Home = () => {
   let auth = useContext(AuthContext)
     const [movies, setMovies] =  useState([])
-<<<<<<< HEAD
-    const navigate = useNavigate()
-=======
-    const [loading, setLoading] = useState(false)
 
+    const navigate = useNavigate()
+
+
+    const [loading, setLoading] = useState(false)
     let nav = useNavigate()
->>>>>>> 8fc8ee318bc5d5a8c6b660b2b45102f69674ffff
 
     useEffect(()=>{
         getMovies()
@@ -45,6 +42,8 @@ const Home = () => {
             <div style={{padding: 8}}>
                 <img src={movie.poster} onClick={()=>nav(`/movies/${movie.id}`)} style={{width: '100%'}} />
             </div>
+
+
         </div>
         ))   
     }
