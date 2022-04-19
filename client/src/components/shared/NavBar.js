@@ -61,7 +61,6 @@ const Navbar = () => {
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
           <Link className="btn1" to='/movies/:id'>Movie Detail</Link>
-
   
         </>
       );
@@ -124,6 +123,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         <Link className="Nav-link" to="/">Home</Link>
         <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
+        <Link className="Nav-link" to='/review'>Review</Link> {''}
 
         
 
