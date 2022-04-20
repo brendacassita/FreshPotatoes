@@ -40,7 +40,7 @@ const GenreShow = () => {
         return (
           
           <div className='genreShow'>
-             <Link to={`/movies/${m.genre_id}`}>
+             <Link to={`/movies/${m.movie_id}`}>
             <img className='genreShow genreImage' src={m.poster} />
             </Link>
             <h5 className='genreShow'>{m.movie_name}</h5>

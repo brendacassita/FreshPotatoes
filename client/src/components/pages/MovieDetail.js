@@ -145,8 +145,8 @@ const MovieDetail = () => {
         return (
           <div key={cast.id}>
             <img src={cast.headshot} width={100} />
-            <p>{cast.title}</p>
-            <p>{cast.name}</p>
+            <p><b>{cast.title}</b></p>
+            <p><i>{cast.name}</i></p>
           </div>
         );
       })}

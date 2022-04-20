@@ -89,3 +89,31 @@ text-decoration: none;
 display: flex;
 justify-content: center;
 }
+.btn1:hover {
+color: black;
+}
+
+.searchresults {
+display: flex;
+display:inline-block;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: flex-start;
+margin: 10px 15px;
+width: 180px;
+height: auto;
+}
+.listbox {
+
+  width: 300px;
+  margin: 2px 0 0;
+  padding: 0;
+  position: absolute;
+  list-style: none;
+  background-color:  #fff;
+  overflow: auto;
+  max-height: 250px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
