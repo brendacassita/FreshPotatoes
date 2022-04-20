@@ -37,10 +37,19 @@ const Navbar = () => {
   
   const renderRightNav = () => {
     if (user) {
-      return <div style={{display:'flex'}}><Button variant='outlined' onClick={handleLogout}>Logout</Button></div> 
+      return <div className=''>
+        <Link className='profilelink' to='/profile'>Profile</Link>
+        
+        <Link className='profilelink' to='/edit_profile'>Edit Profile</Link>
+       
+        <Button className='btn2'variant='outlined' onClick={handleLogout}>Logout</Button>
+        
+      </div> 
+      
     }
     return (
       <>
+        
         <Button className='btn2' variant='outlined' type="button" href="/login">Login</Button>
         <br/>
         <Button className='btn2' variant='outlined' href='/register'>Register</Button>
@@ -179,11 +188,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 >
               
              {/* DO NOT DELETE THESE */}
-                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
+                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
 
 
-              <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
+              <MenuItem className='profilelink' onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
          

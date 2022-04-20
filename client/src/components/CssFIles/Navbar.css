@@ -28,9 +28,11 @@ position: absolute!important;
 right: 0px!important;
 }
 .profilelink {
+display: flex!important;
+justify-content: center!important;
 text-decoration: none;
 color: black;
-margin: 1px;
+margin: 3px;
 font-weight: bold;
 }
 #menu-appbar {

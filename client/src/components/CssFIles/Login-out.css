@@ -23,12 +23,12 @@ box-shadow: 0 15px 30px 1px rgb(182, 180, 180);
 	overflow: hidden;
 	margin: 45px auto;
 	height: auto;
-	width: 250px;
+	width: 320px;
 }
 .potatoe {
 display: flex;
 justify-content: flex-start;
-width: 100px;
+width: 120px;
 margin: 5px;
 padding: 5px -190px;
 }
