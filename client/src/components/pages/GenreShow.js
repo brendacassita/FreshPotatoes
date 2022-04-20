@@ -27,7 +27,7 @@ const GenreShow = () => {
     }
   }
   
-  
+
   
   const params = useParams()
    
