@@ -32,6 +32,9 @@ Rails.application.routes.draw do
 
     get 'genres/:name', to: 'genres#genre_show'
 
+    # MOST POPULAR GENRES
+    get 'popular', to: 'genres#popular_genres'
+
     
 #Create a review for a movie
 post 'movies/:id/reviews', to: 'reviews#create'

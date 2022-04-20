@@ -14,6 +14,10 @@ class Api::GenresController < ApplicationController
         render json: Genre.movies(params[:name].downcase)
     end
 
+    def popular_genres
+        render json: Genre.popular
+    end
+
     def create
         genre = Genre.new(genre_params)
         if(genre.save)
