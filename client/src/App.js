@@ -21,11 +21,7 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
-<<<<<<< HEAD
-
-=======
 import Search from './components/shared/Search'
->>>>>>> a72686c33bc6882c05af3d3fcefc85e408c7e7f6
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
