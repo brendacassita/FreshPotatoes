@@ -1,0 +1,47 @@
+.logincard {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.buttonlogin {
+display: flex;
+margin: 20px;
+flex-direction: row;
+justify-content: space-around;
+}
+.loginnames {
+display: flex;
+justify-content: center;
+font-weight: bold;
+margin: 15px;
+}
+.loginborder {
+box-shadow: 0 15px 30px 1px rgb(182, 180, 180);
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 15px;
+	overflow: hidden;
+	margin: 45px auto;
+	height: auto;
+	width: 320px;
+}
+.potatoe {
+display: flex;
+justify-content: flex-start;
+width: 120px;
+margin: 5px;
+padding: 5px -190px;
+}
+
+.btnlogin {
+margin: 5px!important;
+}
+.btnsignup {
+margin: 5px!important;
+}
+.btnregister {
+margin: 15px!important;
+}
+.btnloginhere {
+margin: 15px!important;
+}
