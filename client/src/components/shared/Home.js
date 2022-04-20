@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import Carousel from '../pages/Carousel'
 import {AuthContext} from '../../providers/AuthProvider'
 
