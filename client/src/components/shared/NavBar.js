@@ -1,4 +1,4 @@
-import logo from '../../Images/Thelogo.png'
+import logo from '../../Images/Theotherlogo-01.png'
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -9,8 +9,8 @@ import SearchIcon from '@mui/icons-material/Search'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
-
-import '../CssFIles/Navbar.css'
+import '../CssFIles/Navbar.css';
+import Search from '.././pages/SearchResults'
 
 const Navbar = () => {
   
@@ -37,12 +37,22 @@ const Navbar = () => {
   
   const renderRightNav = () => {
     if (user) {
-      return <div style={{display:'flex'}}><Button variant='outlined' onClick={handleLogout}>Logout</Button></div> 
+      return <div className=''>
+        <Link className='profilelink' to='/profile'>Profile</Link>
+        
+        <Link className='profilelink' to='/edit_profile'>Edit Profile</Link>
+       
+        <Button className='btn2'variant='outlined' onClick={handleLogout}>Logout</Button>
+        
+      </div> 
+      
     }
     return (
       <>
-         <Button className='btn1' variant='outlined' type="button" href="/login">Login</Button>
-        <Button className='btn1' variant='contained' href='/register'>Register</Button>
+        
+        <Button className='btn2' variant='outlined' type="button" href="/login">Login</Button>
+        <br/>
+        <Button className='btn2' variant='outlined' href='/register'>Register</Button>
       </>
     );
   };
@@ -58,6 +68,8 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
+          
+         
       
 
   
@@ -121,7 +133,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
 
        
-        <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="btn1 navlist" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
         <Link className="btn1" to='/review'>Review</Link> {''}
 
@@ -137,7 +149,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             <SearchIconWrapper>
               <SearchIcon className="searchicon"/>
             </SearchIconWrapper>
-            <StyledInputBase className="search"
+              <StyledInputBase className="search"
               placeholder="Search Movies…"
               inputProps={{ 'aria-label': 'search' }}
             />
@@ -154,7 +166,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
-              >
+            >
+              
               <Avatar className='avatar_circle' src={user && user.avatar} sx={{width: 56, height: "auto"}} />
               
               </IconButton>
@@ -175,14 +188,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 >
               
              {/* DO NOT DELETE THESE */}
-                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
-
-              
                 {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
 
-              <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
+
+              <MenuItem className='profilelink' onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
          
