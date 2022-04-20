@@ -1,4 +1,4 @@
-import logo from '../../Images/Thelogo.png'
+import logo from '../../Images/Theotherlogo-01.png'
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -10,6 +10,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import '../CssFIles/Navbar.css';
+import Search from '.././pages/SearchResults'
 
 const Navbar = () => {
   
@@ -58,6 +59,8 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
+          
+         
       
 
   
@@ -137,7 +140,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             <SearchIconWrapper>
               <SearchIcon className="searchicon"/>
             </SearchIconWrapper>
-            <StyledInputBase className="search"
+              <StyledInputBase className="search"
               placeholder="Search Movies…"
               inputProps={{ 'aria-label': 'search' }}
             />
@@ -179,9 +182,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
 
-              
-                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
 
               <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>

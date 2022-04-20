@@ -2,7 +2,9 @@ import React,{useState, useEffect} from 'react'
 import useAxios from 'axios-hooks' 
 import axios from 'axios'
 import Fuse from 'fuse.js'
-
+import Ratings from '../shared/Ratings'
+import {Link} from 'react-router-dom'
+import '../CssFIles/card.css'
 
 
 const SearchResults = () => {
@@ -13,7 +15,7 @@ const SearchResults = () => {
   
   useEffect(() => {
     getMoviesFromApi()
-    
+ 
   },[])
    
   const options = {
@@ -60,10 +62,19 @@ const SearchResults = () => {
       {filteredMovies ? 
         filteredMovies.map((movies) => {
           return (
+            <div className='searchresults'>
             <div key={movies.id}>
-              <h4>{movies.name}</h4>
-              <img src={movies.poster} width={150} />
-            </div>
+                <h4>{movies.name}</h4>
+                <div className='cards'>
+                  <Link to={`/movies/${movies.id}`}>
+                    <figure className='card'>
+                      <img className='back' src={movies.poster} width={170} />
+                      </figure>
+                </Link>
+                </div>
+                {/* <Ratings /> */}
+              </div>
+              </div>
           )
         })
       :<p>Not searching yet</p>}

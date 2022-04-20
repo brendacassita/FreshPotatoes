@@ -1,6 +1,9 @@
 import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import Button from '@mui/material/Button';
+import '../CssFIles/Login-out.css';
+import p from '../../Images/Potatoe.png'
+import f from '../../Images/fry.png'
 
 
 //revert the state after 2 seconds pass so not contantly in loading state 
@@ -43,45 +46,45 @@ const Login = ()=>{
 
     // with devise these are required
     return (
-        <div>
-           
-            <h1>Login:</h1>
+        <div className='loginborder'>
+        <div className='logincard'>
+          <img className='potatoe'src={p}></img>
+         
+          
+          <h1>Login</h1>
+        </div>
+        <div className='logincard'>
         <form onSubmit={handleSubmit}>
           
-            <p>Email</p>
+            <p className="loginnames">Email</p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                <br/>
-                <br/>
-                <p>Password</p>
-                <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-          <br></br>
-                <br></br>
+                
+            <p className="loginnames">Password</p>
+                <input value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
           
-          <Button
-            secondary
-            variant="outlined"
+            <div className='buttonlogin'>
+         
+                
+                {!loading &&
+                <>
+                    <div className="alt-text">
+                </div>
+                <Button
+                  className='buttonlogin btnsignup'
+                   type="button" variant='outlined' href='/register'>Sign-up</Button>
+                </>
+              }
+               <Button className='buttonlogin btnlogin'
+           
+            variant="contained"
             type="button"
            onClick={handleSubmit}
             disabled={loading}>
             {loading ? 'Loading...' : 'Login'}
           </Button>
-                
-                {!loading &&
-                <>
-                    <div className="alt-text">
-                       <br></br>
-                        Don't have an account?
-
-                    </div>
-                    <br></br>
-                    <Button secondary type="button" variant='outlined' href='/register'>Sign-up</Button>
-                    {/* <button secondary type="button" href='/register'> */}
-                    {/* </Button> */}
-                    
-                </>
-                }
+                   </div>
             </form>
-           
+           </div>
         </div>
     )
 }
