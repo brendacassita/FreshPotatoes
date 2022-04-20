@@ -2,8 +2,9 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { useLocation, useParams } from 'react-router-dom'
 import YouTube from 'react-youtube'
+import Ratings from '../shared/Ratings'
+import Review from "./Review";
 
 const PopularPotatoes = ()=>{
   const [top10, setTop10] =  useState([])
@@ -13,11 +14,12 @@ const PopularPotatoes = ()=>{
   const [movies, setMovies] =  useState([])
 
 
+
   useEffect(()=>{
     getTop10()
    console.log('in useeffect')
-
   },[])
+
 
 
   const getTop10 = async () =>{
@@ -54,27 +56,72 @@ const PopularPotatoes = ()=>{
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div className='container'>
-       <li>
+      <div>
+        <li>
         <Link to={`/movies/${movie.id}`}>
         <img className='top10' src = {movie.poster}/>
         </Link>
         <h4>{movie.name} <br/></h4>
+        <div key={movie.id}>
+            <h1>{movie.movie_name}</h1>
+            <div className="movieCard"> 
+            </div>
+
+            <div>
+              <h6>
+                {" "}
+                year: {movie.year} | runtime:{movie.runtime}
+              </h6>
+              <div>
+                <h6>pre:{movie.unwatched_rating.toFixed(2)}</h6>
+              </div>
+
+              <div id="container">
+                <h4>Story Line</h4>
+                <p className="information">{movie.plot}</p>
+              </div>
+
+            </div>
+          </div>
+        
+        
         <br/>
-        <p>{movie.plot}</p>
+    
         </li>
       </div>
     ))
   }
 
 
-  return(
-    <div>
+
+
+  
+
+
+
+
+    return (
+    <div className="App">
     <h1>Popular Potatoes </h1>  
-   <ol> {renderMovies()}</ol>
+   <ol>{renderMovies()}</ol>
     <div>{renderButtons()}</div>
-  </div>
-)
+     
+     
+
+      {casts.map((cast) => {
+        console.log("cast data:", cast.name);
+        return (
+          <div key={cast.id}>
+            <img src={cast.headshot} width={100} />
+            <p><b>{cast.title}</b></p>
+            <p><i>{cast.name}</i></p>
+          </div>
+        );
+      })}
+   
+    </div>
+  );
 }
+
 
 export default PopularPotatoes

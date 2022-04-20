@@ -87,11 +87,11 @@ const MovieDetail = () => {
     const uw = unwatched.map((uw) => {
       return (
         <div>
-          <p>{uw.unwatched_rating}</p>
+          <p>{uw.unwatched_rating.toFixed(2)}</p>
         </div>
       );
     });
-    console.log(uw.unwatched_rating);
+    console.log(uw.unwatched_rating.toFixed(2));
     return uw;
   };
 
@@ -99,11 +99,11 @@ const MovieDetail = () => {
     const w = watched.map((w) => {
       return (
         <div>
-          <p>{w.watched_rating}</p>
+          <p>{w.watched_rating.toFixed(2)}</p>
         </div>
       );
     });
-    console.log(w.watched_rating);
+    console.log(w.watched_rating.toFixed(2));
     return w;
   };
 

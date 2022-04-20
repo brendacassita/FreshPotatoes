@@ -11,11 +11,13 @@ initMiddleware();
 
 
 ReactDOM.render(
+  
   <BrowserRouter>
     <AuthProvider>
       <App />
     </AuthProvider>
   </BrowserRouter>,
+ 
   document.getElementById("root")
 );
 

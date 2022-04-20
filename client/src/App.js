@@ -66,7 +66,8 @@ function App() {
               <Route path='/movies/:id' element={<MovieDetail />}/>
               <Route path='/review' element={<Review />} />
               <Route path='/genres/:name' element={<GenreShow />}/>
-              
+
+        
               
 
               <Route path='/movies/:id/edit' element={<MovieForm/>}/>
