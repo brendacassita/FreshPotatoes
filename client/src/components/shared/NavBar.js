@@ -9,8 +9,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
-
-import '../CssFIles/Navbar.css'
+import '../CssFIles/Navbar.css';
 
 const Navbar = () => {
   
@@ -41,8 +40,9 @@ const Navbar = () => {
     }
     return (
       <>
-         <Button className='btn1' variant='outlined' type="button" href="/login">Login</Button>
-        <Button className='btn1' variant='contained' href='/register'>Register</Button>
+        <Button className='btn2' variant='outlined' type="button" href="/login">Login</Button>
+        <br/>
+        <Button className='btn2' variant='outlined' href='/register'>Register</Button>
       </>
     );
   };
@@ -121,7 +121,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
 
        
-        <Link className="btn1" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="btn1 navlist" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
         <Link className="btn1" to='/review'>Review</Link> {''}
 
@@ -154,7 +154,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
-              >
+            >
+              
               <Avatar className='avatar_circle' src={user && user.avatar} sx={{width: 56, height: "auto"}} />
               
               </IconButton>

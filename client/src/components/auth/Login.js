@@ -54,22 +54,26 @@ const Login = ()=>{
                 <br/>
                 <p>Password</p>
                 <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                
-                <button  variant="primary" 
-                         size="lg" 
-                         onClick={handleSubmit}
-                         disabled={loading}>
-                         {loading ? 'Loading...' : 'Login'}
-                </button>
+          <br></br>
+                <br></br>
+          
+          <Button
+            secondary
+            variant="outlined"
+            type="button"
+           onClick={handleSubmit}
+            disabled={loading}>
+            {loading ? 'Loading...' : 'Login'}
+          </Button>
                 
                 {!loading &&
                 <>
                     <div className="alt-text">
-                       
+                       <br></br>
                         Don't have an account?
 
                     </div>
-                    
+                    <br></br>
                     <Button secondary type="button" variant='outlined' href='/register'>Sign-up</Button>
                     {/* <button secondary type="button" href='/register'> */}
                     {/* </Button> */}

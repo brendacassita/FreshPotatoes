@@ -4,7 +4,15 @@ text-decoration: none;
 color: rgb(245, 242, 242)!important;
 margin: 10px;
 font-weight: bold;
-
+}
+.btn1:hover {
+color: rgb(7, 5, 5)!important;
+z-index: 1;
+}
+.btn2 {
+display: absolute;
+margin: 5px!important;
+font-weight: bold;
 }
 
 .search{
@@ -23,6 +31,7 @@ right: 0px!important;
 text-decoration: none;
 color: black;
 margin: 1px;
+font-weight: bold;
 }
 #menu-appbar {
 margin: 40px 10px;
@@ -48,3 +57,8 @@ display: flex;
 justify-content: center;
 margin: -30px 10px 20px;
 }
+.btn2 {
+margin: 10px;
+justify-content: space-between;
+}
+

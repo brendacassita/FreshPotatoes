@@ -89,3 +89,6 @@ text-decoration: none;
 display: flex;
 justify-content: center;
 }
+.btn1:hover {
+color: black;
+}
