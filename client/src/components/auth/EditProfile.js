@@ -84,10 +84,10 @@ function EditProfile() {
 
 
   return (
-    <div className="">
-      <div className="editprofile">
+    <div className="App">
+      <div className="">
         
-      <form className="form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
+      <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
          <button className="profilechange" onClick={()=>setShowUpload(!showUpload)}> 
         {user.avatar && <img className="avataredit" src={user.avatar} width={150} />} 
             </button>
