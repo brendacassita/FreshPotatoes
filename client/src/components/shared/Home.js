@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate} from "react-router-dom"
 import Carousel from '../pages/Carousel'
 import {AuthContext} from '../../providers/AuthProvider'
+import GenreFilter from '../pages/GenreFilter'
 
 
 
@@ -62,6 +63,10 @@ const Home = () => {
             {renderPosters()}
             
             </Carousel>
+
+            <div>
+              <GenreFilter />
+            </div>
         </div>
     )
 }
