@@ -5,12 +5,12 @@ const GenreFilter = () => {
   const [popular, setPopular] = useState([]);
 
   useEffect(() => {
-    setPopular();
+    getPopular();
   }, []);
 
   const getPopular = async () => {
     try {
-      let res = await axios.get('/api.popular')
+      let res = await axios.get('/api/popular')
       setPopular(res.data)
       console.log(res.data)
     } catch (err) {
