@@ -79,3 +79,36 @@ background-color: #d24318;
 border: none;
 background: none;
 }
+
+.editprofile {
+justify-content: center;
+text-align: center;
+background-color: rgb(210, 210, 215);
+width:800px;
+margin: 100px;
+height: 800px;
+border: none;
+box-shadow: 0 15px 30px 1px ;
+
+}
+.form{
+align-items: center;
+border: none!important;
+margin: 100px;
+width: 800px;
+height: 800px;
+text-align: center;
+}
+
+.form .editprofile {
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.fileupload {
+width: 300px;
+justify-content: center;
+align-items: center;
+margin: 0px 300px;
+padding: 10px;
+}

@@ -84,22 +84,23 @@ function EditProfile() {
 
 
   return (
-    <div className="App">
-      <div Id="editprofile">
-      <form onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
+    <div className="">
+      <div className="editprofile">
         
-         
+      <form className="form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
          <button className="profilechange" onClick={()=>setShowUpload(!showUpload)}> 
         {user.avatar && <img className="avataredit" src={user.avatar} width={150} />} 
             </button>
           {!user.avatar && <p>no image</p>}
-           {/* <p>image:</p> */}
+          {/* <p>image:</p> */}
+          <div className="fileupload">
         {showUpload && <FilePond
             files={files}
             allowMultiple={false}
             onupdatefiles={handleUpdate}
             labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-        />}
+            />}
+            </div>
        
        <h2 className="usernameedit">{user.name}</h2> 
         <p className="useremailedit"> {user.email}</p>
