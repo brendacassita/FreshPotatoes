@@ -1,3 +1,11 @@
+.AppBar {
+background-color: #1F1D2B!important;
+border-width: 5px;
+}
+.AppBar1 {
+border-bottom:  solid white;
+}
+
 .btn1 {
 justify-content: space-between;
 text-decoration: none;
@@ -40,7 +48,7 @@ margin: 40px 10px;
 }
 .avatar_circle {
 /* width: 100px; */
-margin: -40px -2px  ;
+margin: -25px 10px  ;
 }
 .box {
 position: absolute;
@@ -51,7 +59,8 @@ margin: -5px 0px;
 
 .logo {
 /* z-index: -auto; */
-margin: 0px 3px;
+/* margin: 0px 3px; */
+position:static;
 padding: 0px 5px;
 }
 .namehome {
@@ -64,3 +73,14 @@ margin: 10px;
 justify-content: space-between;
 }
 
+.searchfunction {
+color: rgb(237, 227, 227)
+
+}
+.navbarstay {
+
+top:0;
+left:0;
+width:100%;
+
+}
