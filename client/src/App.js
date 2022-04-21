@@ -22,6 +22,7 @@ import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 import Search from './components/shared/Search'
+import ContactForm from './components/pages/ContactForm';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -44,6 +45,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/about' element={<About />}/>
+            <Route path='/contact_us' element={<ContactForm />}/>
             <Route path='/review' element={<Review />}/>
             {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
