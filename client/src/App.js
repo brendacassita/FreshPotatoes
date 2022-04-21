@@ -23,7 +23,6 @@ import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 import SearchBar from './components/shared/SearchBar'
 import GenreFilter from './components/pages/GenreFilter';
-import Search from './components/shared/Search'
 import ContactForm from './components/pages/ContactForm';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
