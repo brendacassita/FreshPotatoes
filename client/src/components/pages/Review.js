@@ -1,12 +1,9 @@
 import React, {useState} from 'react'
 import {useParams} from 'react-router-dom'; 
-import { FormControl, Input, InputLabel } from '@mui/material'
 import axios from 'axios'
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
-
 
 const labels = {
   0.5: 'Worst Movie Ever.',
@@ -22,8 +19,7 @@ const labels = {
 
 }
 
-
-const Review = () => {
+const Review = (props) => {  
 const [review, setReview] = useState("");
 const [value, setValue] = useState(2); 
 const [hover, setHover] = useState(-1)
@@ -31,12 +27,12 @@ const params = useParams();
 
 const handleSubmit  = async (e) => {
   e.preventDefault()
-
+  let newReview = {comment:review, rating:value, movie_id:props.movieId }
+  console.log(newReview)
   try{
-    let res = await axios.post(`api/movies/${params.id}/reviews`)
+    let res = await axios.post(`/api/movies/${props.movieId}/reviews`, newReview)
     console.log(res.data)
-    setReview(res.data)
-  
+    setReview(res.data) 
 }catch (err) {
   alert('error occurred posting review')
 }
@@ -46,12 +42,10 @@ function getLabelText(value) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`; 
 }
 
-
-
   return(
     <div>
     <h2>Leave a Review</h2>
-<Box
+    <Box
       sx={{
         width: 200,
         display: 'flex',
@@ -77,24 +71,15 @@ function getLabelText(value) {
     </Box>
 
     <form onSubmit={handleSubmit}>
-    
       <div> 
-        
           <textarea onChange={(e) => setReview(e.target.value)} cols="30" rows="5"></textarea>
             </div>
             <button>Submit</button>
     </form>
+
+    {JSON.stringify(review)}
+    
     </div>
-
-  
-  //     {/* see material UI docs for more info about the features below */}
-  //      {/* <Typography component="legend">Read only</Typography>
-  //     <Rating name="read-only" value={value} readOnly />
-  //     <Typography component="legend">Disabled</Typography>
-  //     <Rating name="disabled" value={value} disabled />
-  //     <Typography component="legend">No rating given</Typography>
-  //     <Rating name="no-value" value={null} />  */}
-
   );
 }
   
