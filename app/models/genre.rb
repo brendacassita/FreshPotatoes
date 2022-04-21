@@ -16,4 +16,14 @@ class Genre < ApplicationRecord
     INNER JOIN movies AS m ON m.id = gm.movie_id
     WHERE g.id = ?", id])
   end
+
+  def self.popular
+    Genre.find_by_sql("SELECT g.name, COUNT(gm.movie_id) AS num
+    FROM genres AS g
+    INNER JOIN genre_movies AS gm ON g.id = gm.genre_id
+    GROUP BY g.name
+    ORDER BY num DESC
+    LIMIT 3")
+  end
+
 end

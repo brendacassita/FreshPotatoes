@@ -21,9 +21,9 @@ Rails.application.routes.draw do
 
     # TOP 3 AND TOP 10 POTATOES/FRIES BASED ON SCORES
     get 'top3/potatoes', to: 'movies#top3_potatoes'
-    get 'top10/potatoes', to: 'movies#top10_potatoes'
+    get 'top/potatoes', to: 'movies#topPotatoes'
     get 'top3/fries', to: 'movies#top3_fries'
-    get 'top10/fries', to: 'movies#top10_fries'
+    get 'top/fries', to: 'movies#topFries'
     get 'pagetoppotatoes', to: 'movies#pageTopPotatoes'
     get 'pagetopfries', to: 'movies#pageTopFries'
 
@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     get 'newest', to: 'movies#newest'
 
     get 'genres/:name', to: 'genres#genre_show'
+
+    # MOST POPULAR MOVIES AND GENRES
+    get '/popular/movies', to: 'movies#popular'
+    get '/popular/genres', to: 'genres#popular'
 
     
 #Create a review for a movie
