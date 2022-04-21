@@ -20,7 +20,8 @@ import PopularFries from './components/pages/PopularFries';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
-import SearchBar from './components/shared/SearchBar'
+import SearchBar from './components/shared/SearchBar';
+import About from './components/pages/About';
 
 import ContactForm from './components/pages/ContactForm';
 //import RateForm from './components/pages/RateForm';
@@ -46,6 +47,7 @@ function App() {
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/contact_us' element={<ContactForm />}/>
             <Route path='/review' element={<Review />}/>
+            <Route path='/about' element={<About />}/>
             {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
             
