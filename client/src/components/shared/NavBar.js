@@ -141,7 +141,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
   
   return (
-    <AppBar className='' position='static' sx={{background: 'red'}}>
+    <AppBar className='AppBar' position='static' >
       <Toolbar  className=''>
         
         <Link to='./'>

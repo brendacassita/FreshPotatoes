@@ -63,49 +63,9 @@ const SearchBar = ({placeholder, data}) => {
   }
   const params = useParams()
   
-  const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-  }));
+
   
   
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 1),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  }));
-  
-  
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'black',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(3)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '22ch',
-      '&:focus': {
-        width: '30ch',
-      },
-    },
-  },
-}));
   
   
   
@@ -117,12 +77,14 @@ const SearchBar = ({placeholder, data}) => {
       
       <div className='searchInputs'>
         <div className='search-wrapper'>
+          
         <input className='searchbox' type='text' placeholder='Search Movies...' onChange={handleSearchTermChange} value={searchTerm}>
         </input>  
         
           <div className='searchicon'>
-         <SearchIcon/>
+         <SearchIcon/> 
           </div>
+          
           </div>
       </div>
       
