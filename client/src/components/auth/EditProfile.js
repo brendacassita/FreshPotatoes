@@ -84,7 +84,7 @@ function EditProfile() {
 
 
   return (
-    <div className="App">
+    <div className="App1">
       <div className="">
         
       <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
