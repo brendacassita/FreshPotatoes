@@ -21,8 +21,9 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
+import SearchBar from './components/shared/SearchBar'
 import GenreFilter from './components/pages/GenreFilter';
-import Search from './components/shared/Search'
+
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -56,7 +57,7 @@ function App() {
               <Route path='/home' element={<Home/>}/>
             
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
-              <Route path='/Search' element={<Search />}/>
+              <Route path='/Search' element={<SearchBar />}/>
               
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
