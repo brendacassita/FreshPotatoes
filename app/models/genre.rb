@@ -26,8 +26,4 @@ class Genre < ApplicationRecord
     LIMIT 3")
   end
 
-  def self.popular_movies(name)
-  
-  end
-  
 end
