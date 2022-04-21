@@ -3,27 +3,17 @@ import axios from "axios";
 import YouTube from "react-youtube";
 import "../../App.css";
 import "../CssFIles/container.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
 
 const MovieDetail = () => {
   const [movies, setMovies] = useState([]);
   const [casts, setCasts] = useState([]);
-  // const [roles, setRoles] =  useState([])
-  const [unwatched, setUnwatched] = useState([]);
-  const [watched, setWatched] = useState([]);
+  const params = useParams();
 
   useEffect(() => {
     getMovies();
-  }, []);
-
-  useEffect(() => {
-    getUnwatched();
-  }, []);
-
-  useEffect(() => {
-    getWatched();
   }, []);
 
   useEffect(() => {
@@ -37,27 +27,6 @@ const MovieDetail = () => {
       console.log(res.data);
     } catch (err) {
       alert("error in getting movies");
-    }
-  };
-
-  //TODO: need to make 2 separate api calls, one for watched and one for unwatched
-  const getUnwatched = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}/unwatched`);
-      setUnwatched(res.data);
-      console.log(res.data);
-    } catch (err) {
-      alert("error in getting unwatched reviews");
-    }
-  };
-
-  const getWatched = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}/watched`);
-      setWatched(res.data);
-      console.log(res.data);
-    } catch (err) {
-      alert("error in getting unwatched reviews");
     }
   };
 
@@ -78,33 +47,6 @@ const MovieDetail = () => {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
     },
-  };
-
-  const params = useParams();
-  const location = useLocation();
-
-  const renderUnwatched = () => {
-    const uw = unwatched.map((uw) => {
-      return (
-        <div>
-          <p>{uw.unwatched_rating.toFixed(2)}</p>
-        </div>
-      );
-    });
-    console.log(uw.unwatched_rating.toFixed(2));
-    return uw;
-  };
-
-  const renderWatched = () => {
-    const w = watched.map((w) => {
-      return (
-        <div>
-          <p>{w.watched_rating.toFixed(2)}</p>
-        </div>
-      );
-    });
-    console.log(w.watched_rating.toFixed(2));
-    return w;
   };
 
   return (
@@ -145,8 +87,12 @@ const MovieDetail = () => {
         return (
           <div key={cast.id}>
             <img src={cast.headshot} width={100} />
-            <p><b>{cast.title}</b></p>
-            <p><i>{cast.name}</i></p>
+            <p>
+              <b>{cast.title}</b>
+            </p>
+            <p>
+              <i>{cast.name}</i>
+            </p>
           </div>
         );
       })}

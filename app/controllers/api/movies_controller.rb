@@ -49,6 +49,11 @@ def newest
   render json: Movie.newest
 end
 
+### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
+def popular
+  render json: Movie.popular
+end
+
 ### CAST LIST BY MOVIE ID ###
 def cast
   render json: Movie.cast(@movie.id)
