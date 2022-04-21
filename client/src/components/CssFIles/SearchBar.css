@@ -1,0 +1,105 @@
+.seachInputs {
+margin-top: 105px;
+display: flex;
+margin: ;
+}
+.searchbar input {
+background-color: white;
+border: 0;
+border-radius: 2px;
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+font-size: 18px;
+padding: 15px;
+height: 5px;
+width: 200px;
+
+}
+.search-wrapper {
+position: relative;
+}
+
+.search-wrapper .searchicon {
+position: absolute;
+align-items: center;
+top: 0px;
+left: 5px;
+
+}
+.searchicon svg {
+font-size: 30px;
+}
+
+.searchbox {
+background-color:rgba(0, 0, 0, .4)!important;
+text-indent: 20px;
+color: white;
+}
+::placeholder {
+color: white ;
+padding: 10px;
+}
+
+.searchbar {
+margin-left: 20px;
+margin-right: 20px;
+
+}
+
+.searchIcon {
+display:grid;
+background-color: white;
+
+}
+
+input:focus {
+outline: none;
+}
+ 
+.searchIcon svg {
+font-size: 40px;
+}
+.dataResult{
+position: absolute;
+display: absolute!important;
+margin-top: 5px;
+width: 250px;
+max-height: 300px;
+min-height: auto;
+background-color: white!important;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+overflow: hidden;
+overflow-y: auto;
+z-index: 1;
+}
+.dataResult::-webkit-scrollbar {
+display: none;
+}
+
+.dataResult .dataItem {
+width: 110%;
+height: 100;
+display: flex;
+/* align-items: center; */
+color: black!important;
+
+}
+.dataItem p {
+margin-left: 10px;
+display: inline;
+flex-direction: row;
+justify-content: flex-start;
+align-items: baseline;
+}
+a {
+text-decoration: none;
+color: black;
+font-weight: bold;
+}
+.alink:hover {
+background-color: lightgray;
+
+}
+#clearBtn {
+cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import logo from '../../Images/Theotherlogo-01.png'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Button from '@mui/material/Button';
@@ -10,14 +10,34 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import '../CssFIles/Navbar.css';
-import Search from '.././pages/SearchResults'
+import SearchBar from './SearchBar'
+import axios from 'axios';
+import '../CssFIles/SearchBar.css'
+
 
 const Navbar = () => {
-  
+   const [allMovies,setAllMovies] = useState([])
   const { handleLogout, user} = useContext(AuthContext)
   const [anchorEl,setAnchorEl] = useState(null)
   const [anchorElNav,setAnchorElNav] = useState(null)
   const [value,setValue] = useState(0)
+  
+  useEffect(() => {
+    getMoviesFromApi()
+ 
+  },[])
+  
+  const getMoviesFromApi = async () => {
+    
+    try {
+      let res = await axios.get('/api/movies')
+      setAllMovies(res.data)
+      
+    } catch(err) {
+      alert('error getting movies')
+    }
+  }
+  
   
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -121,8 +141,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
   
   return (
-    <AppBar position='static' sx={{background: 'red'}}>
-      <Toolbar>
+    <AppBar className='' position='static' sx={{background: 'red'}}>
+      <Toolbar  className=''>
         
         <Link to='./'>
           <div className='logo'><img src={logo}width='190px' ></img></div>
@@ -130,20 +150,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-      
-
-       
         <Link className="btn1 navlist" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
         <Link className="btn1" to='/review'>Review</Link> {''}
-
-
         {renderLeft()}
-
-  
-
-          </div>
+     </div>
       
+          
+          <SearchBar className='searchfunction' placeholder='Search Movies...' />
+          
+{/*           
           <Box className='box'>
            <Search className='box' >
             <SearchIconWrapper>
@@ -154,7 +170,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          </Box>
+          </Box> */}
+          
+          
           
           
           
