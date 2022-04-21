@@ -1,4 +1,5 @@
 class Api::ReviewsController < ApplicationController
+    before_action :authenticate_user!, only: [:create]
     before_action :set_review, only: [:update, :show, :destroy]
     before_action :set_movie
 
@@ -15,8 +16,9 @@ class Api::ReviewsController < ApplicationController
     #     render json: Review.watched_score(@review.movie_id)
     # end
 
+    
     def create
-        review = Review.new(review_params)
+        review = current_user.reviews.new(review_params)
         if(review.save)
             render json: review
         else
@@ -47,7 +49,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:rating, :watched, :comment, :user_id, :movie_id)
+        params.require(:review).permit(:rating, :comment, :watched,  :user_id, :movie_id)
     end
 
 end

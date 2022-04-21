@@ -5,6 +5,7 @@ import "../../App.css";
 import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
+import Review from "./Review";
 
 const MovieDetail = () => {
   const [movies, setMovies] = useState([]);
@@ -74,6 +75,7 @@ const MovieDetail = () => {
                 <p className="information">{movie.plot}</p>
               </div>
 
+                <Review movieId={movie.id} />
               <div className="control"></div>
             </div>
           </div>
