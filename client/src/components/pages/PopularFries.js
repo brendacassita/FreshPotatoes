@@ -7,6 +7,7 @@ const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
   const [count, setCount] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1)
 
 
   useEffect(()=>{
@@ -31,7 +32,9 @@ const PopularFries= ()=>{
   const getMoreThanTop10 = async (page) =>{
     try{
       let res = await axios.get(`/api/pagetopfries/?page=${page}`)
+      setCurrentPage (page)
       setTop10(res.data.movie)
+      
     }catch(err){
     alert('error in getting more top movies')
     }
@@ -65,7 +68,7 @@ const PopularFries= ()=>{
                 year: {movie.year} | runtime:{movie.runtime}
               </h6>
               <div>
-                <h6>pre:{movie.watched_rating.toFixed(2)}</h6>
+                <h6>post:{movie.watched_rating.toFixed(2)}</h6>
               </div>
             </div>
           </div>
@@ -83,7 +86,7 @@ const PopularFries= ()=>{
   return(
       <div>
       <h1>Popular Fries </h1>  
-      <ol>{renderMovies()}</ol>
+      <ol start={(currentPage-1)*10+1}>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
     </div>
   )
