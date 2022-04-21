@@ -49,6 +49,11 @@ def newest
   render json: Movie.newest
 end
 
+### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
+def popular
+  render json: Movie.popular
+end
+
 ### CAST LIST BY MOVIE ID ###
 def cast
   render json: Movie.cast(@movie.id)
@@ -81,28 +86,28 @@ def top3_potatoes
   render json: Movie.top3_potatoes
 end
 
-def top10_potatoes
-  render json: Movie.top10_potatoes
+def topPotatoes
+  render json: Movie.topPotatoes
 end
 
 def top3_fries
   render json: Movie.top3_fries
 end
 
-def top10_fries
-  render json: Movie.top10_fries
+def topFries
+  render json: Movie.topFries
 end
 
 def pageTopPotatoes
-  count = Movie.top10_potatoes.count
-  movies = Movie.top10_potatoes
+  count = Movie.topPotatoes.count
+  movies = Movie.topPotatoes
   puts json: movies
   render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
 end
 
 def pageTopFries
-  count = Movie.top10_fries.count
-  movies = Movie.top10_fries
+  count = Movie.topFries.count
+  movies = Movie.topFries
   render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
 end
 

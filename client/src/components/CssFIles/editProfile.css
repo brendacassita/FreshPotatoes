@@ -1,0 +1,114 @@
+
+/* #editprofile {
+	box-shadow: 0 15px 30px 1px rgb(64, 46, 46);
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 15px;
+	overflow: hidden;
+	margin: 2em auto;
+	height: auto;
+	width: 600px;
+justify-content: center;
+  border: none;
+} */
+.avataredit {
+border-radius: 48px!important;
+box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+}
+.usernameedit {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+letter-spacing: 0.12px;
+color: #000000;
+margin-bottom: -8px;
+}
+.useremailedit {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+letter-spacing: -0.02em;
+color: #000000;
+}
+.editbox {
+/* position: absolute; */
+font-size: 15px;
+border-radius: 40px;
+width: 200px;
+height: 40px;
+left: 675px;
+top: 881px;
+background-color: white;
+text-align: center;
+}
+.editbox:hover {
+border-color: orange;
+}
+.align {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.fullname {
+background-color: #000000;
+color: white;
+width: fit-content;
+flex-direction: column;
+margin-bottom: -7px;
+margin-left: -120px;
+z-index: 1;
+}
+.editprofilebtn {
+background-color: #EC4E20;
+color: white;
+font-size: 15px;
+border-radius: 40px;
+width: 200px;
+height: 40px;
+left: 675px;
+top: 881px;
+text-align: center;
+border: none;
+}
+.editprofilebtn:hover {
+background-color: #d24318;
+}
+.profilechange {
+border: none;
+background: none;
+}
+
+.editprofile {
+justify-content: center;
+text-align: center;
+background-color: rgb(210, 210, 215);
+width:800px;
+margin: 100px;
+height: 800px;
+border: none;
+box-shadow: 0 15px 30px 1px ;
+
+}
+.form{
+align-items: center;
+border: none!important;
+margin: 100px;
+width: 800px;
+height: 800px;
+text-align: center;
+}
+
+.form .editprofile {
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.fileupload {
+width: 300px;
+justify-content: center;
+align-items: center;
+margin: 0px 300px;
+padding: 10px;
+}

@@ -1,10 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
 import { Link, Outlet } from 'react-router-dom'
-
-
 
 const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
@@ -15,7 +12,6 @@ const PopularFries= ()=>{
   useEffect(()=>{
     getTop10()
    console.log('in useeffect')
-
   },[])
 
 
@@ -53,15 +49,31 @@ const PopularFries= ()=>{
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div>
-
-
+      <div className="container2">
+       <li>
         <Link to={`/movies/${movie.id}`}>
-
-
-
         <img className='top10' src = {movie.poster}/>
         </Link>
+        <h4>{movie.name}</h4>
+        <div key={movie.id}>
+            <p>{movie.plot}</p>
+            <div className="container2">
+            </div>
+
+            <div>
+              <h6>
+                year: {movie.year} | runtime:{movie.runtime}
+              </h6>
+              <div>
+                <h6>pre:{movie.watched_rating.toFixed(2)}</h6>
+              </div>
+            </div>
+          </div>
+        
+        
+        <br/>
+        
+        </li>
       </div>
     ))
   }
@@ -71,7 +83,7 @@ const PopularFries= ()=>{
   return(
       <div>
       <h1>Popular Fries </h1>  
-      {renderMovies()}
+      <ol>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
     </div>
   )

@@ -47,15 +47,14 @@ class Movie < ApplicationRecord
     LIMIT 3")
   end
 
-  def self.top10_potatoes
+  def self.topPotatoes
     Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
     FROM movies AS m
     INNER JOIN reviews AS rev ON m.id = rev.movie_id
     WHERE rev.watched = 'false'
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
     HAVING COUNT(rev.id)>=5
-    ORDER BY unwatched_rating DESC
-    LIMIT 10")
+    ORDER BY unwatched_rating DESC")
   end
   def self.top3_fries
     Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
@@ -68,15 +67,14 @@ class Movie < ApplicationRecord
     LIMIT 3")
   end
 
-  def self.top10_fries
+  def self.topFries
     Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
     FROM movies AS m
     INNER JOIN reviews AS rev ON m.id = rev.movie_id
     WHERE rev.watched = 'true'
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year, m.plot
     HAVING COUNT(rev.id)>=5
-    ORDER BY watched_rating DESC
-    LIMIT 10")
+    ORDER BY watched_rating DESC")
   end
 
   def self.newest
@@ -87,6 +85,17 @@ class Movie < ApplicationRecord
     GROUP BY m.id, m.name, m.poster, m.runtime, m.year
     ORDER BY m.year DESC
     LIMIT 5")
+  end
+
+  def self.popular
+    Movie.find_by_sql("SELECT m.id, m.name AS movie_name, g.name AS genre, m.poster, m.runtime, m.year, COUNT(r.id) AS review_count
+    FROM movies AS m
+    INNER JOIN genre_movies AS gm ON m.id = gm.movie_id
+    INNER JOIN genres AS g ON g.id = gm.genre_id
+    INNER JOIN reviews AS r ON m.id = r.movie_id
+    GROUP BY m.id, m.name, g.name, m.poster, m.runtime, m.year
+    HAVING COUNT(r.id)>=13
+    ORDER BY review_count DESC")
   end
 
   def self.cast(id)

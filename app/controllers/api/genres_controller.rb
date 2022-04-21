@@ -1,12 +1,21 @@
 class Api::GenresController < ApplicationController
     before_action :set_genre, only: [:show, :update, :destroy]
+    # before_action :set_name, only: [:genre_show]
 
     def index
         render json: Genre.all
     end
 
     def show
-        render json: Genre.movies(@genre.id)
+        render json: Genre.movies_id(@genre.id)
+    end
+
+    def genre_show
+        render json: Genre.movies(params[:name].downcase)
+    end
+
+    def popular
+        render json: Genre.popular
     end
 
     def create
@@ -32,6 +41,11 @@ class Api::GenresController < ApplicationController
 
 
     private
+
+    def set_name
+        puts json: Genre.find(params[:name])
+        @genre = Genre.find(params[:name])
+    end
 
     def set_genre
         @genre = Genre.find(params[:id])

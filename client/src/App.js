@@ -21,6 +21,9 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
+import SearchBar from './components/shared/SearchBar'
+import GenreFilter from './components/pages/GenreFilter';
+
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -54,6 +57,7 @@ function App() {
               <Route path='/home' element={<Home/>}/>
             
               <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
+              <Route path='/Search' element={<SearchBar />}/>
               
               <Route path='/profile' element={<Profile />}/>
               <Route path='/edit_profile' element={<EditProfile />}/>
@@ -63,23 +67,11 @@ function App() {
               <Route path='/popular_fries' element={<PopularFries />}/>
               <Route path='/movies/:id' element={<MovieDetail />}/>
               <Route path='/review' element={<Review />} />
-              <Route path='/genres/:id' element={<GenreShow />}/>
-              
-              
+              <Route path='/genres/:name' element={<GenreShow />}/>
 
               <Route path='/movies/:id/edit' element={<MovieForm/>}/>
-              <Route path='/movies/new' element={<MovieForm/>}/>
-
-
-             
-
+              <Route path='/movies/new' element={<MovieForm />} />
               
-
-            
-              
-
-
-
 
             </Route>  
             <Route path='*' element={<NoMatch />}/>
