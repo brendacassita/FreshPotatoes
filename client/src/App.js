@@ -72,8 +72,6 @@ function App() {
               <Route path='/movies/new' element={<MovieForm />} />
               
 
-              <Route path='/genrefilter' element={<GenreFilter/>}/>
-
             </Route>  
             <Route path='*' element={<NoMatch />}/>
           </Routes>
