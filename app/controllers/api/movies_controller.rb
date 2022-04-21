@@ -1,4 +1,6 @@
 class Api::MoviesController < ApplicationController
+  require 'rest-client'
+
   before_action :set_movie, only: [:show, :details, :watched, :unwatched, :cast, :update, :destroy]
   before_action :page, only: [:pageTopPotatoes, :pageTopFries]
 
@@ -51,7 +53,7 @@ end
 
 ### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
 def popular
-  render json: Movie.popular
+  response = HTTParty.get('https://api.themoviedb.org/3/movie/popular?api_key='+ ENV["TMDB_API_KEY"])
 end
 
 ### CAST LIST BY MOVIE ID ###
