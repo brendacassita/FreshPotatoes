@@ -57,16 +57,17 @@ border-color: orange;
 }
 .align {
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 }
 .fullname {
 background-color: #000000;
 color: white;
 width: fit-content;
-flex-direction: column;
+/* justify-content: flex-start; */
+/* flex-direction: column; */
 margin-bottom: -7px;
-margin-left: -120px;
+margin-left: 260px;
 z-index: 1;
 }
 .editprofilebtn {
