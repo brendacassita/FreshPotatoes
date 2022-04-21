@@ -21,6 +21,7 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
+import GenreFilter from './components/pages/GenreFilter';
 import Search from './components/shared/Search'
 import ContactForm from './components/pages/ContactForm';
 //import RateForm from './components/pages/RateForm';
@@ -69,23 +70,11 @@ function App() {
               <Route path='/review' element={<Review />} />
               <Route path='/genres/:name' element={<GenreShow />}/>
 
-        
-              
-
               <Route path='/movies/:id/edit' element={<MovieForm/>}/>
               <Route path='/movies/new' element={<MovieForm />} />
               
 
-
-             
-
-              
-
-            
-              
-
-
-
+              <Route path='/genrefilter' element={<GenreFilter/>}/>
 
             </Route>  
             <Route path='*' element={<NoMatch />}/>

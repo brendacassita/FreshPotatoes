@@ -87,6 +87,17 @@ class Movie < ApplicationRecord
     LIMIT 5")
   end
 
+  def self.popular
+    Movie.find_by_sql("SELECT m.id, m.name AS movie_name, g.name AS genre, m.poster, m.runtime, m.year, COUNT(r.id) AS review_count
+    FROM movies AS m
+    INNER JOIN genre_movies AS gm ON m.id = gm.movie_id
+    INNER JOIN genres AS g ON g.id = gm.genre_id
+    INNER JOIN reviews AS r ON m.id = r.movie_id
+    GROUP BY m.id, m.name, g.name, m.poster, m.runtime, m.year
+    HAVING COUNT(r.id)>=13
+    ORDER BY review_count DESC")
+  end
+
   def self.cast(id)
     Movie.find_by_sql(["SELECT m.id, r.title, c.name, c.headshot
     FROM movies AS m
