@@ -29,6 +29,7 @@ const Home = () => {
         try{
           let res = await axios.get('/api/newest/')
           setMovies(res.data)
+          console.log(res.data)
           //set back to false because now we have the data
           setLoading(false);
           console.log(res.data)
@@ -42,7 +43,9 @@ const Home = () => {
         return movies.map((movie) => (
             <div>
             <div style={{padding: 8}}>
-                <img src={movie.poster} onClick={()=>nav(`/movies/${movie.id}`)} style={{width: '100%'}} />
+                <img src={movie.poster_path} 
+                // onClick={()=>nav(`/movies/${movie.id}`)} 
+                style={{width: '100%'}} />
             </div>
 
 
@@ -69,7 +72,7 @@ const Home = () => {
             <div className="wrapper">
           
           <div className="cards ">
-              <GenreFilter />
+              {/* <GenreFilter /> */}
             </div>
             </div>
         </div>

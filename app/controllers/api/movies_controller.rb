@@ -48,12 +48,17 @@ end
 
 ### NEWEST 5 MOVIES BY YEAR ###
 def newest
-  render json: Movie.newest
+  url = "https://api.themoviedb.org/3/movie/upcoming?api_key=b8780ae423693a3389766038fe49d728&language=en-US&region=US"
+  response = RestClient.get(url)
+  render json: response
+  # render json: Movie.newest
 end
 
 ### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
 def popular
-  response = HTTParty.get('https://api.themoviedb.org/3/movie/popular?api_key='+ ENV["TMDB_API_KEY"])
+  url = "https://api.themoviedb.org/3/movie/popular?api_key=b8780ae423693a3389766038fe49d728&language=en-US&page=1"
+  response = RestClient.get(url)
+  render json: response
 end
 
 ### CAST LIST BY MOVIE ID ###
