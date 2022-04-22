@@ -117,3 +117,42 @@ height: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
+
+.homeCarousel {
+margin-top: 50px;
+}
+
+.genrebtn {
+background-color: 
+#E6E6E6;
+color: black;
+border: none;
+margin-top: 30px;
+align-items: baseline;
+justify-content: flex-start ;
+margin-bottom: 20px;
+font-size: 18px;
+
+}
+.genrebtn:hover {
+background-color: #ec5020aa ;
+color: white;
+border-radius: 3px;
+border-color:#E6E6E6!important ;
+border-width: 5px;
+}
+.genreselect {
+overflow: hidden;
+flex-wrap: wrap;
+}
+.imgGenreFilter {
+margin: 5px;
+margin-left: 10px;
+
+}
+.genreCategories {
+margin-bottom: -20px;
+margin-top: 40px;
+
+}
+

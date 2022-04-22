@@ -101,20 +101,25 @@ const GenreFilter = () => {
 
   return (
     <div>
+      <h4 className="genreCategories">Categories</h4>
+      
       {buttons &&
         buttons.map((genre, index) => (
+      
           <>
-            <button key={index} value={genre.value} onClick={handleMovies}>
+            
+            <button className="genrebtn" key={index} value={genre.value} onClick={handleMovies}>
               {genre.name}
-            </button>
-          </>
+              </button>
+            </>
+            
         ))}
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div className="genreselect" style={{ display: "flex", flexDirection: "row" }}>
         {filteredMovies &&
           filteredMovies.map((mov) => (
             <div key={mov.id}>
+              <img className="imgGenreFilter" src={mov.poster} style={{ height: "200px" }} />
               <h5 style={{ textAlign: "center" }}>{mov.name}</h5>
-              <img src={mov.poster} style={{ height: "200px" }} />
             </div>
           ))}
       </div>
