@@ -92,7 +92,8 @@ const ContactForm = (props) => {
 
 
   return(
- <Grid container direction="row">
+    <Grid container direction="row">
+      <div className='contactpic'>
      <Grid 
         item 
         container 
@@ -220,8 +221,10 @@ const ContactForm = (props) => {
       </Grid>
           </Grid>
         </Grid>
-   </Grid>
-      <Grid item container className={classes.background} lg={9}></Grid>
+      </Grid>
+     
+        <Grid item container className={classes.background} lg={9}></Grid>
+       </div>
     </Grid>
   )
 }
