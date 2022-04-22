@@ -52,6 +52,7 @@ const Home = () => {
          <div className='App' >
            {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
            </div> */}
+           
          <div className='homeCarousel' >
             <Carousel
                 show={4}

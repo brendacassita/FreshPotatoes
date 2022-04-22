@@ -17,7 +17,7 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import bwPic from '../../Images/blackwhitePotatoe.png'
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -57,7 +57,7 @@ function EditProfile() {
       console.log(files)
      // axios call
      try{
-        console.log('trying to update with data:')
+        
        let res = await axios.put('/api/update_image', data)
        setUser(res.data)
      } catch(err){
@@ -84,15 +84,17 @@ function EditProfile() {
 
 
   return (
-    <div className="">
+    <div className="App">
       <div className="borderfresh">
         
-      <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
+        <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
+          
          <button className="profilechange" onClick={()=>setShowUpload(!showUpload)}> 
 
-        {user.avatar && <img className="avataredit" src={user.avatar} width={150} />} 
-            </button>
-          {!user.avatar && <p>no image</p>}
+            {user.avatar && <img className="avataredit" src={user.avatar} width={150} />}</button>
+         
+          {!user.avatar && <button onClick={() => setShowUpload(!showUpload)} ><img src={bwPic} width='170px'></img></button>}
+          
           {/* <p>image:</p> */}
           <div className="fileupload">
         {showUpload && <FilePond
