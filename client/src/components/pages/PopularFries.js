@@ -46,14 +46,14 @@ const PopularFries= ()=>{
     console.log(numPage)
     const buttonArr = []
     for(let i = 1; i<=numPage; i++){
-      buttonArr.push(<button onClick={()=>{getMoreThanTop10(i)}}>{i}</button>)
+      buttonArr.push(<button className='pagebutton' Click={()=>{getMoreThanTop10(i)}}>{i}</button>)
     }
     return buttonArr
   }
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div className="container">
+      <div className="display">
        <li>
         <Link to={`/movies/${movie.id}`}><div>
         <img className='top10' src = {movie.poster}/></div>
