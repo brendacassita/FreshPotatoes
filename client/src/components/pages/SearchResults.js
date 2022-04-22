@@ -40,10 +40,11 @@ const SearchResults = () => {
     <div className='App'>
       
       <div className='searchall' >
-      <div className='sline' ></div>
+        <div className='sline' ></div>
       <h1 className='searchall2' > Search Result - All</h1>
       <div className='bline' ></div>
       </div>
+      
       <div className='searchInputs1'>
           <input className=' searching' onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies...'></input>
           {/* <div className='searchiconall'>
