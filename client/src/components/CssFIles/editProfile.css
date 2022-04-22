@@ -51,22 +51,24 @@ left: 675px;
 top: 881px;
 background-color: white;
 text-align: center;
+z-index: 1;
 }
 .editbox:hover {
 border-color: orange;
 }
 .align {
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 }
 .fullname {
 background-color: #000000;
 color: white;
 width: fit-content;
-flex-direction: column;
+/* justify-content: flex-start; */
+/* flex-direction: column; */
 margin-bottom: -7px;
-margin-left: -120px;
+margin-left: 260px;
 z-index: 1;
 }
 .editprofilebtn {
@@ -81,6 +83,7 @@ top: 881px;
 text-align: center;
 border: none;
 margin: 10px;
+z-index: 1;
 }
 .editprofilebtn:hover {
 background-color: #d24318;
@@ -108,16 +111,19 @@ width: 700px!important;
 height: 600px;
 text-align: center;
 padding: 80px!important;
+
 }
 
 .fileupload {
+position: absolute;
 width: 300px;
 justify-content: center;
 align-items: center;
-margin: 0px 300px;
+margin: -200px -50px;
 padding: 10px;
 }
 .App1 {
 background-color: #1F1D2B;
 padding: 100px;
 }
+
