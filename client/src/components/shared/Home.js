@@ -51,29 +51,27 @@ const Home = () => {
     }
 
        return (
-        <div className='App2'>
-         <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64, }}>
+         <div className='App' >
         
          
            {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
            </div> */}
-   
+         <div className='homeCarousel' >
             <Carousel
                 show={4}
                 infiniteLoop
             > 
             {renderPosters()}
-            
             </Carousel>
-
-            <div className="wrapper">
-          
-          <div className="cards ">
+        </div>
+             
+             
+             
+            <div className='homeGenre'>
               <GenreFilter />
             </div>
             </div>
-        </div>
-        </div>
+        
     )
 }
 

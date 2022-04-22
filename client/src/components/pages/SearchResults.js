@@ -38,6 +38,7 @@ const SearchResults = () => {
   }
   return (
     <div className='App'>
+      
       <div className='searchall' >
       <div className='sline' ></div>
       <h1 className='searchall2' > Search Result - All</h1>
