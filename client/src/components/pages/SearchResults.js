@@ -128,7 +128,7 @@ const SearchResults = () => {
       })}
       
       
-      {JSON.stringify(allMovies)}
+      {/* {JSON.stringify(allMovies)} */}
       
         
       </div>
