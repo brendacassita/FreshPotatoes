@@ -38,16 +38,16 @@ const Footer = () => {
   </Grid>
   <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Account</Box>
-        <Box>
+        {/* <Box>
             <Link href="/login" color="inherit">
               Login
             </Link> 
-        </Box>
-        <Box>
+        </Box> */}
+        {/* <Box>
             <Link href="/register" color="inherit">
               Register
             </Link> 
-        </Box>
+        </Box> */}
   </Grid>
   <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Pages</Box>
