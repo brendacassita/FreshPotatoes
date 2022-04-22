@@ -7,6 +7,12 @@ class Api::ReviewsController < ApplicationController
         render json: @movie.reviews
     end
 
+    def preWatched 
+        render json: Review.preWatched(@review.movie_id)
+    end
+
+    # def postWatched
+    # end
 
     def show
         render json: @reviews

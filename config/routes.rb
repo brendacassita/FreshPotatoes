@@ -40,7 +40,9 @@ Rails.application.routes.draw do
 #Create a review for a movie
 post 'movies/:id/reviews', to: 'reviews#create'
 
-    
+#get all reviews for preWatched movies
+get 'movies/:id/prewatched', to: 'reviews#preWatched'
+#get 'movies/:id/reviews/pre', to: 'reviews#preWatched'
    
   end 
     get '*other', to: 'static#index'
