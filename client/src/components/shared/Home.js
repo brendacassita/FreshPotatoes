@@ -62,20 +62,10 @@ const Home = () => {
             > 
             {renderPosters()}
             </Carousel>
-<<<<<<< HEAD
-
-            <div className="wrapper">
-          
-          <div className="cards ">
-              {/* <GenreFilter /> */}
-=======
         </div>
-             
-             
              
             <div className='homeGenre'>
               <GenreFilter />
->>>>>>> 1afe4c8b793d1211446c4e8268c81bd84c4ead99
             </div>
             </div>   
     )
