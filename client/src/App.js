@@ -18,6 +18,7 @@ import PopularPotatoes from './components/pages/PopularPotatoes';
 import PopularFries from './components/pages/PopularFries';
 
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
+
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 import SearchBar from './components/shared/SearchBar';

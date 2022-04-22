@@ -51,7 +51,7 @@ const SearchResults = () => {
   
 
   return (
-    <div className='App'>
+    <div className='App2'>
       <h1> Search Result Page</h1>
       <p>Search:</p>
       <input onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies'></input>
