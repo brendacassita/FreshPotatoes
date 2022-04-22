@@ -124,6 +124,7 @@ const GenreFilter = () => {
           ))}
       </div>
     </div>
+    
   );
 };
 

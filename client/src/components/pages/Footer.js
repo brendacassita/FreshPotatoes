@@ -12,7 +12,7 @@ const Footer = () => {
 <Box 
   px={{ xs: 3, sm: 10}} 
   py={{ xs: 5, sm: 10}}
-  bgcolor="text.secondary" 
+  bgcolor="#1F1D2B" 
   color="white"
   >
   
@@ -21,7 +21,7 @@ const Footer = () => {
       <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Help</Box>
         <Box>
-            <Link href="/" color="inherit">
+            <Link href="/contact_us" color="inherit">
               Contact
             </Link> 
         </Box>

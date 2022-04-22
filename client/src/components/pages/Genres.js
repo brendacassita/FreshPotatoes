@@ -51,7 +51,7 @@ const renderData = () => {
    
      
       return(
-        <div>
+        <div className="App2">
           
       
           <h1>Genres</h1>   

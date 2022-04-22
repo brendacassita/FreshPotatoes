@@ -30,6 +30,12 @@ align-items: center;
 .App {
   text-align: center;
 }
+.App2 {
+  border: 75px solid #1F1D2B;
+  text-align: center;
+}
+
+
 
 .App-logo {
   height: 40vmin;
@@ -58,13 +64,17 @@ align-items: center;
 }
 
 .footer {
-  background-color: rgb(115, 0, 128);
+  background-color: #1F1D2B;
   border-top:2px solid rgb(11, 11, 11);
   position: fixed;
   width: 100%;
   bottom: 0;
   color: white;
   font-size: 25px;
+}
+
+.footer2{
+  background-color: #1F1D2B;
 }
 
 .Nav-link {
