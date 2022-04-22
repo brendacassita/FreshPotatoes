@@ -52,9 +52,13 @@ const renderData = () => {
      
       return(
         <div className="App2">
-          
-      
-          <h1>Genres</h1>   
+       
+          <div className='searchall' >
+        <div className='sline' ></div>
+      <h1 className='searchall2' > Genres</h1>
+      <div className='bline' ></div>
+      </div>
+        
 {/*           
           <div className="wrapper">
             <div className="cards">
