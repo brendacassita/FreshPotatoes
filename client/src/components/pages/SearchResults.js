@@ -55,12 +55,19 @@ const SearchResults = () => {
   
 
   return (
+
     <div className='App'>
       <div className='searchall' >
       <div className='sline' ></div>
       <h1 className='searchall2' > Search Result - All</h1>
       <div className='bline' ></div>
       </div>
+
+    <div className='App2'>
+      <h1> Search Result Page</h1>
+      <p>Search:</p>
+      <input onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies'></input>
+
       
       
       <div className='searchInputs1'>

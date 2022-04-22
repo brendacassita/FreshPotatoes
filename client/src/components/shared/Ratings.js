@@ -42,7 +42,7 @@ const Ratings = () => {
     const uw = unwatched.map((uw) => {
       return (
         <div>
-          {uw.unwatched_rating}
+          {uw.unwatched_rating.toFixed(0)}
         </div>
       );
     });
@@ -54,7 +54,7 @@ const Ratings = () => {
     const w = watched.map((w) => {
       return (
         <div>
-          {w.watched_rating}
+          {w.watched_rating.toFixed(0)}
         </div>
       );
     });
@@ -65,7 +65,7 @@ const Ratings = () => {
   return (
     <div className="App">
       <div>
-        <h5 style={{display: 'flex', justifyContent: 'center'}}>pre: {renderUnwatched()} | post: {renderWatched()}</h5>   
+        <h5 style={{display: 'flex', justifyContent: 'center'}}>pre: {renderUnwatched()}% | post: {renderWatched()}%</h5>   
       </div>
     </div>
   );

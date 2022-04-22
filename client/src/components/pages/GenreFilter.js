@@ -109,7 +109,10 @@ const GenreFilter = () => {
             </button>
           </>
         ))}
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div style={{ display: "flex", flexDirection: "row", justifyContent:"space-evenly"}}>
+     
+          
+      
         {filteredMovies &&
           filteredMovies.map((mov) => (
             <div key={mov.id}>
@@ -119,6 +122,7 @@ const GenreFilter = () => {
           ))}
       </div>
     </div>
+    
   );
 };
 

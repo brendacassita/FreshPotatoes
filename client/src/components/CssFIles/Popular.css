@@ -1,0 +1,55 @@
+.App1 {
+border: 75px solid #1F1D2B;
+background-color: #ffffff;
+padding: 10px;
+text-align: center;
+}
+
+
+
+
+.orangewording {
+  align-content: stretch;
+  color: #ec4e20;
+  justify-content: flex-start;
+}
+
+.titlename {
+  display: flex;
+  justify-content:right;
+  padding: 20px;
+  text-align: right;
+}
+
+.container {
+  display: flex; 
+  flex-direction: row;/* or inline-flex */
+  flex-wrap: wrap;
+}
+
+.logincard {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.loginnames {
+display: flex;
+justify-content: center;
+font-weight: bold;
+margin: 15px;
+}
+
+
+.align {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+
+
+
+
+
+
