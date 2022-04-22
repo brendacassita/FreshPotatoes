@@ -1,5 +1,5 @@
-import logo from '../../Images/Thelogo.png'
-import { useContext, useState } from "react";
+import logo from '../../Images/Theotherlogo-01.png'
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Button from '@mui/material/Button';
@@ -9,15 +9,35 @@ import SearchIcon from '@mui/icons-material/Search'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
+import '../CssFIles/Navbar.css';
+import SearchBar from './SearchBar'
+import axios from 'axios';
+import '../CssFIles/SearchBar.css'
 
-import '../CssFIles/Navbar.css'
 
 const Navbar = () => {
-  
+   const [allMovies,setAllMovies] = useState([])
   const { handleLogout, user} = useContext(AuthContext)
   const [anchorEl,setAnchorEl] = useState(null)
   const [anchorElNav,setAnchorElNav] = useState(null)
   const [value,setValue] = useState(0)
+  
+  useEffect(() => {
+    getMoviesFromApi()
+ 
+  },[])
+  
+  const getMoviesFromApi = async () => {
+    
+    try {
+      let res = await axios.get('/api/movies')
+      setAllMovies(res.data)
+      
+    } catch(err) {
+      alert('error getting movies')
+    }
+  }
+  
   
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,12 +57,22 @@ const Navbar = () => {
   
   const renderRightNav = () => {
     if (user) {
-      return <div style={{display:'flex'}}><Button variant='outlined' onClick={handleLogout}>Logout</Button></div> 
+      return <div className=''>
+        <Link className='profilelink' to='/profile'>Profile</Link>
+        
+        <Link className='profilelink' to='/edit_profile'>Edit Profile</Link>
+       
+        <Button className='btn2'variant='outlined' onClick={handleLogout}>Logout</Button>
+        
+      </div> 
+      
     }
     return (
       <>
-         <Button className='btn1' variant='outlined' type="button" href="/login">Login</Button>
-        <Button className='btn1' variant='contained' href='/register'>Register</Button>
+        
+        <Button className='btn2' variant='outlined' type="button" href="/login">Login</Button>
+        <br/>
+        <Button className='btn2' variant='outlined' href='/register'>Register</Button>
       </>
     );
   };
@@ -55,11 +85,12 @@ const Navbar = () => {
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
          
-          
-          
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
+          
+         
+      
 
   
         </>
@@ -110,8 +141,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
   
   return (
-    <AppBar position='static' sx={{background: 'red'}}>
-      <Toolbar>
+    <AppBar className='AppBar' position='static' >
+      <Toolbar  className='AppBar1'>
         
         <Link to='./'>
           <div className='logo'><img src={logo}width='190px' ></img></div>
@@ -119,33 +150,28 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-      
-        <Link className="Nav-link" to="/">Home</Link>
-        <Link className="Nav-link" to="/popular_potatoes">PopularPotatoes</Link>
-        <Link className="Nav-link" to='/popular_fries'>PopularFries</Link> {''}
-
-        
-
-  
-
+        <Link className="btn1 navlist" to="/popular_potatoes">PopularPotatoes</Link>
+        <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
         {renderLeft()}
-
-  
-
-          </div>
-         
+     </div>
+      
           
+          <SearchBar className='searchfunction' placeholder='Search Movies...' />
+          
+{/*           
           <Box className='box'>
            <Search className='box' >
             <SearchIconWrapper>
               <SearchIcon className="searchicon"/>
             </SearchIconWrapper>
-            <StyledInputBase className="search"
+              <StyledInputBase className="search"
               placeholder="Search Movies…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          </Box>
+          </Box> */}
+          
+          
           
           
           
@@ -157,7 +183,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
-              >
+            >
+              
               <Avatar className='avatar_circle' src={user && user.avatar} sx={{width: 56, height: "auto"}} />
               
               </IconButton>
@@ -177,15 +204,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 onClose={handleMenuClose}
 >
               
-             > {/* DO NOT DELETE THESE */}
-                <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem>
-
-              
+             {/* DO NOT DELETE THESE */}
                 {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
 
-              <MenuItem onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
+
+              <MenuItem className='profilelink' onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
             </div>
          

@@ -1,10 +1,26 @@
+.AppBar {
+background-color: #1F1D2B!important;
+border-width: 5px;
+}
+.AppBar1 {
+border-bottom:  solid white;
+}
+
 .btn1 {
 justify-content: space-between;
 text-decoration: none;
 color: rgb(245, 242, 242)!important;
 margin: 10px;
 font-weight: bold;
-
+}
+.btn1:hover {
+color: rgb(7, 5, 5)!important;
+z-index: 1;
+}
+.btn2 {
+display: absolute;
+margin: 5px!important;
+font-weight: bold;
 }
 
 .search{
@@ -20,16 +36,19 @@ position: absolute!important;
 right: 0px!important;
 }
 .profilelink {
+display: flex!important;
+justify-content: center!important;
 text-decoration: none;
 color: black;
-margin: 1px;
+margin: 3px;
+font-weight: bold;
 }
 #menu-appbar {
-margin: 30px;
+margin: 40px 10px;
 }
 .avatar_circle {
 /* width: 100px; */
-margin: -40px -2px  ;
+margin: -25px 10px  ;
 }
 .box {
 position: absolute;
@@ -40,6 +59,28 @@ margin: -5px 0px;
 
 .logo {
 /* z-index: -auto; */
-margin: 0px 20px;
-padding: 0px 20px;
+/* margin: 0px 3px; */
+position:static;
+padding: 0px 5px;
+}
+.namehome {
+display: flex;
+justify-content: center;
+margin: -30px 10px 20px;
+}
+.btn2 {
+margin: 10px;
+justify-content: space-between;
+}
+
+.searchfunction {
+color: rgb(237, 227, 227)
+
+}
+.navbarstay {
+
+top:0;
+left:0;
+width:100%;
+
 }

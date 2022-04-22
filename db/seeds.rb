@@ -143,103 +143,6 @@ m15 = u1.movies.create(
   poster:'https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg', 
   trailer:'wArmHSPIvlQ')
 
-m16 = u1.movies.create(
-  name:'What Dreams May Come', 
-  year:'1998', 
-  plot:'Chris Nielsen dies in an accident, and enters Heaven. But when he discovers that his beloved wife Annie has killed herself out of grief over the loss, he embarks on an afterlife adventure to reunite with her.', 
-  runtime:'1h 53m', 
-  poster:'https://m.media-amazon.com/images/I/61-j8oLV9nL._AC_SL1500_.jpg', 
-  trailer:'RmZ-FuBThuQ')
-
-m17 = u1.movies.create(
-  name:'Gladiator', 
-  year:'2000', 
-  plot:'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', 
-  runtime:'2h 35m', 
-  poster:'https://m.media-amazon.com/images/I/51a-Iz7wwCL._AC_.jpg', 
-  trailer:'owK1qxDselE')
-
-m18 = u1.movies.create(
-  name:'The Count of Monte Cristo',
-  year:'2002',
-  plot:'A young man, falsely imprisoned by his jealous "friend", escapes and uses a hidden treasure to exact his revenge.',
-  runtime:'2h 11m',
-  poster:'https://m.media-amazon.com/images/I/41Byr2iM4mL._AC_.jpg',
-  trailer:'qesn8pV9yu8')
-
-m19 = u1.movies.create(
-  name:'Alien',
-  year:'1979',
-  plot:'The crew of a commercial spacecraft encounter a deadly lifeform after investigating an unknown transmission.',
-  runtime:'1h 56m',
-  poster:'https://m.media-amazon.com/images/I/81TpGaKY3ML._AC_UY436_FMwebp_QL65_.jpg',
-  trailer:'jQ5lPt9edzQ')
-
-m19 = u1.movies.create(
-  name:'Star Wars: A New Hope',
-  year:'1977',
-  plot:'Young farm boy Luke Skywalker is thrust into a galaxy of adventure when he intercepts a distress call from the captive Princess Leia. The event launches him on a daring mission to rescue her from the clutches of Darth Vader and the Evil Empire.',
-  runtime:'2h 4m',
-  poster:'https://m.media-amazon.com/images/I/91MMkv35K5L._AC_UY436_FMwebp_QL65_.jpg',
-  trailer:'1g3_CFmnU7k')
-
-m20 = u2.movies.create(
-  name:'The Bad Guys',
-  year:'2022',
-  plot:'Several reformed yet misunderstood criminal animals attempt to become good, with some disastrous results along the way.',
-  runtime:'1h 40m',
-  poster:'https://m.media-amazon.com/images/I/71R3sYwjb4L._AC_SL1464_.jpg',
-  trailer:'m8Xt0yXaDPU')
-
-m21 = u1.movies.create(
-  name:'The Northman',
-  year:'2022',
-  plot:'From visionary director Robert Eggers comes The Northman, an action-filled epic that follows a young Viking prince on his quest to avenge his fathers murder.',
-  runtime:'2h 16m',
-  poster:'https://m.media-amazon.com/images/I/61DfIhoIJGL._AC_SL1500_.jpg',
-  trailer:'oMSdFM12hOw')
-
-m22 = u1.movies.create(
-  name:'Fantastic Beasts: The Secrets of Dumbledore',
-  year:'2022',
-  plot:'Albus Dumbledore assigns Newt and his allies with a mission related to the rising power of Grindelwald.',
-  runtime:'2h 22m',
-  poster:'https://m.media-amazon.com/images/I/61KJHL4G+eL._AC_.jpg',
-  trailer:'Y9dr2zw-TXQ')
-
-m23 = u1.movies.create(
-  name:'Uncharted',
-  year:'2022',
-  plot:'Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor "Sully" Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.',
-  runtime:'1h 56m',
-  poster:'https://m.media-amazon.com/images/I/71DuFCPQHRL._AC_SL1500_.jpg',
-  trailer:'eHp3MbsCbMg')
-
-m24 = u1.movies.create(
-  name:'Death On The Nile',
-  year:'2022',
-  plot:'While on vacation on the Nile, Hercule Poirot must investigate the murder of a young heiress.',
-  runtime:'2h 7m',
-  poster:'https://m.media-amazon.com/images/I/71r6YHoA4sL._AC_SL1358_.jpg',
-  trailer:'ij2ztHOOe9s')
-  
-m25 = u1.movies.create(
-  name:'Father Stu',
-  year:'2022',
-  plot:'Follows the life of Father Stuart Long, a boxer-turned-priest who inspired countless people during his journey from self-destruction to redemption.',
-  runtime:'2h 4m',
-  poster:'https://ariseletusbegoing.files.wordpress.com/2022/04/wp-16495315765356152001558212309618.jpg',
-  trailer:'DHREzAdyCPs')
-  
-m26 = u1.movies.create(
-  name:'Moonfall',
-  year:'2022',
-  plot:'A mysterious force knocks the moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it.',
-  runtime:'2h 10m',
-  poster:'https://m.media-amazon.com/images/I/71vHJ8UqxxL._AC_SL1500_.jpg',
-  trailer:'ivIwdQBlS10')
-      
-
 
 ########## REVIEWS ##########
 
@@ -249,7 +152,7 @@ Review.create(
   watched: 'true',
   comment: Faker::ChuckNorris.fact,
   user_id: Faker::Number.between(from: 1, to: 5),
-  movie_id: Faker::Number.between(from: 1, to: 26)
+  movie_id: Faker::Number.between(from: 1, to: 15)
 )
 end
 
@@ -259,10 +162,9 @@ Review.create(
   watched: 'false',
   comment: Faker::ChuckNorris.fact,
   user_id: Faker::Number.between(from: 1, to: 5),
-  movie_id: Faker::Number.between(from: 1, to: 26)
+  movie_id: Faker::Number.between(from: 1, to: 15)
 )
 end
-
 
 
 ########## CAST ##########
@@ -293,19 +195,32 @@ Role.create(
 
 ##### GENRES #####
 
-action = Genre.create(name:'Action', image:'')
-adventure = Genre.create(name:'Adventure', image:'')
-comedy = Genre.create(name:'Comedy', image:'')
-crime = Genre.create(name:'Crime', image:'')
-drama = Genre.create(name:'Drama', image:'')
-family = Genre.create(name:'Family', image:'')
-fantasy = Genre.create(name:'Fantasy', image:'')
-musical = Genre.create(name:'Musical', image:'')
-mystery = Genre.create(name:'Mystery', image:'')
-romance = Genre.create(name:'Romance', image:'')
-scifi = Genre.create(name:'Sci-Fi', image:'')
-thriller = Genre.create(name:'Thriller', image:'')
-western = Genre.create(name:'Western', image:'')
+action = Genre.create(name:'Action',
+ image:'https://wwwimage-us.pplusstatic.com/thumbnails/photos/370-q80/movie_asset/87/18/37/wom_salone_poster_1400x2100.jpg')
+adventure = Genre.create(name:'Adventure',
+ image:'https://m.media-amazon.com/images/M/MV5BMjNkMzc2N2QtNjVlNS00ZTk5LTg0MTgtODY2MDAwNTMwZjBjXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg')
+comedy = Genre.create(name:'Comedy', 
+image:'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/7d40e55728cbd7f03444363572a830f5_bfcdfb95-e46e-4a48-b3a9-05c482802c01_500x.jpg?v=1573593901')
+crime = Genre.create(name:'Crime', 
+image:'https://cpb-us-w2.wpmucdn.com/blogs.iu.edu/dist/f/65/files/2019/04/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_-1odtbn5.jpg')
+drama = Genre.create(name:'Drama', 
+image:'https://m.media-amazon.com/images/I/51mTtUGvUCL.jpg')
+family = Genre.create(name:'Family',
+ image:'https://waghostwriter.com/wp-content/uploads/2020/01/0x800.jpg')
+fantasy = Genre.create(name:'Fantasy',
+ image:'https://www.weekendnotes.com/im/008/05/movie-locations-fantasy-movies-film-travel5.JPG')
+musical = Genre.create(name:'Musical', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmji1ndyznzy2ml5bml5banbnxkftztgwodqwodczntmat-v1-1588868235.jpg?crop=0.9745419938139424xw:1xh;center,top&resize=480:*')
+mystery = Genre.create(name:'Mystery', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/115455159-1300x1733-1602867451.jpg?crop=0.910428158655109xw:1xh;center,top&resize=480:*')
+romance = Genre.create(name:'Romance', 
+image:'https://m.media-amazon.com/images/M/MV5BMTMxMmRmMWUtNGNhZS00MWYxLTkwNzUtM2QwNzI4MGU1ZTI2XkEyXkFqcGdeQXVyNTQ3MjE4NTU@._V1_FMjpg_UX1000_.jpg')
+scifi = Genre.create(name:'Sci-Fi', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmtexmzu0odcxndheqtjeqwpwz15bbwu4mde1oti4mzay-v1-1589813214.jpg?crop=1xw:0.960205078125xh;center,top&resize=480:*')
+thriller = Genre.create(name:'Thriller',
+ image:'https://img.dtcn.com/image/themanual/rpllj2hpcoqmkfhtqute0mkeao2-500x500.jpg')
+western = Genre.create(name:'Western', 
+image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/westerns-12-1582066991.jpg')
 
 ##### GENRE/MOVIE JOINS #####
 

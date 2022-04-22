@@ -1,6 +1,9 @@
 import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import Button from '@mui/material/Button';
+import '../CssFIles/Login-out.css';
+import p from '../../Images/Potatoe.png'
+import f from '../../Images/fry.png'
 
 
 //revert the state after 2 seconds pass so not contantly in loading state 
@@ -43,40 +46,45 @@ const Login = ()=>{
 
     // with devise these are required
     return (
-        <div>
-           
-            <h1>Login:</h1>
-            <form onSubmit={handleSubmit}>
-            <p>Email</p>
+        <div className='loginborder'>
+        <div className='logincard'>
+          <img className='potatoe'src={p}></img>
+         
+          
+          <h1>Login</h1>
+        </div>
+        <div className='logincard'>
+        <form onSubmit={handleSubmit}>
+          
+            <p className="loginnames">Email</p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                <br/>
-                <br/>
-                <p>Password</p>
-                <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
                 
-                <button  variant="primary" 
-                         size="lg" 
-                         onClick={handleSubmit}
-                         disabled={loading}>
-                         {loading ? 'Loading...' : 'Login'}
-                </button>
+            <p className="loginnames">Password</p>
+                <input value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
+          
+            <div className='buttonlogin'>
+         
                 
                 {!loading &&
                 <>
                     <div className="alt-text">
-                       
-                        Don't have an account?
-
-                    </div>
-                    
-                    <Button secondary type="button" variant='outlined' href='/register'>Sign-up</Button>
-                    {/* <button secondary type="button" href='/register'> */}
-                    {/* </Button> */}
-                    
+                </div>
+                <Button
+                  className='buttonlogin btnsignup'
+                   type="button" variant='outlined' href='/register'>Sign-up</Button>
                 </>
-                }
-            </form>
+              }
+               <Button className='buttonlogin btnlogin'
            
+            variant="contained"
+            type="button"
+           onClick={handleSubmit}
+            disabled={loading}>
+            {loading ? 'Loading...' : 'Login'}
+          </Button>
+                   </div>
+            </form>
+           </div>
         </div>
     )
 }
