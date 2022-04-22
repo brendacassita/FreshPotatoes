@@ -4,6 +4,7 @@ import { useNavigate} from "react-router-dom"
 import Carousel from '../pages/Carousel'
 import {AuthContext} from '../../providers/AuthProvider'
 import GenreFilter from '../pages/GenreFilter'
+import '../CssFIles/card.css'
 
 
 
@@ -50,7 +51,8 @@ const Home = () => {
     }
 
        return (
-         <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64}}>
+        <div className='App2'>
+         <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64, }}>
         
          
            {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
@@ -64,9 +66,13 @@ const Home = () => {
             
             </Carousel>
 
-            <div>
+            <div className="wrapper">
+          
+          <div className="cards ">
               <GenreFilter />
             </div>
+            </div>
+        </div>
         </div>
     )
 }

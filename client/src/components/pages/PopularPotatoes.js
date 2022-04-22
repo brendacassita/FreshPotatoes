@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import '../CssFIles/card.css'
+import '../CssFIles/Popular.css';
 
 const PopularPotatoes = () => {
   const [top10, setTop10] = useState([])
@@ -100,8 +101,12 @@ const PopularPotatoes = () => {
 
 
   return (
-    <div className="App">
+    <div className='App1'>
+          <div className='titlename'></div>
       <h1>Popular Potatoes </h1>
+      <p className='orangewording'>Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <hr/>
+    <br/>
       <ol start={(currentPage-1)*10+1}>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
 

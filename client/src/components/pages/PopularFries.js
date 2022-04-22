@@ -58,10 +58,9 @@ const PopularFries= ()=>{
         <Link to={`/movies/${movie.id}`}><div>
         <img className='top10' src = {movie.poster}/></div>
         </Link>
-        <div>
-        <h4>{movie.name}</h4></div>
+        <div></div>
+        <h4>{movie.name}</h4>
         <div key={movie.id}>
-            <p>{movie.plot}</p>
             
             </div>
 
@@ -72,7 +71,7 @@ const PopularFries= ()=>{
               <div>
                 <h6>post-rating: {movie.watched_rating.toFixed(0)}%</h6>
               </div>
-              <div>
+              <div id="container">
                 <h4>Story Line</h4>
                 <p>{movie.plot}</p>
               </div>
@@ -98,14 +97,18 @@ const PopularFries= ()=>{
 
   return(
    
-        <div className='popularcard'>
+        <div className='App1'>
+          <div className='titlename'></div>
       <h1>Popular Fries </h1>  
       
+      <p className='orangewording'>Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <hr/>
+    <br/>
     
       <ol start={(currentPage-1)*10+1}>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
-      
-    </div>
+      </div>
+     
     
   )
 }
