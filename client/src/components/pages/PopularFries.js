@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, Outlet } from 'react-router-dom'
+import '../CssFIles/Popular.css';
 
 const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
@@ -52,15 +53,16 @@ const PopularFries= ()=>{
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div className="container2">
+      <div className="container">
        <li>
-        <Link to={`/movies/${movie.id}`}>
-        <img className='top10' src = {movie.poster}/>
+        <Link to={`/movies/${movie.id}`}><div>
+        <img className='top10' src = {movie.poster}/></div>
         </Link>
-        <h4>{movie.name}</h4>
+        <div>
+        <h4>{movie.name}</h4></div>
         <div key={movie.id}>
             <p>{movie.plot}</p>
-            <div className="container2">
+            
             </div>
 
             <div>
@@ -68,27 +70,43 @@ const PopularFries= ()=>{
                 year: {movie.year} | runtime:{movie.runtime}
               </h6>
               <div>
-                <h6>post:{movie.watched_rating.toFixed(2)}</h6>
+                <h6>post-rating: {movie.watched_rating.toFixed(0)}%</h6>
               </div>
+              <div>
+                <h4>Story Line</h4>
+                <p>{movie.plot}</p>
+              </div>
+              <hr/>
+
             </div>
-          </div>
-        
-        
-        <br/>
-        
+          
+
+
+          <br />
+
         </li>
       </div>
+      
     ))
   }
 
 
 
+
+
+
+
   return(
-      <div>
+   
+        <div className='popularcard'>
       <h1>Popular Fries </h1>  
+      
+    
       <ol start={(currentPage-1)*10+1}>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
+      
     </div>
+    
   )
 }
 

@@ -2,9 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import YouTube from 'react-youtube'
-import Ratings from '../shared/Ratings'
-import Review from "./Review";
+import '../CssFIles/card.css'
 
 const PopularPotatoes = () => {
   const [top10, setTop10] = useState([])
@@ -55,7 +53,8 @@ const PopularPotatoes = () => {
 
   const renderMovies = () => {
     return top10.map((movie) => (
-      <div>
+      <div className="display">
+      
         <li>
           <Link to={`/movies/${movie.id}`}>
             <img className='top10' src={movie.poster} />
@@ -71,13 +70,14 @@ const PopularPotatoes = () => {
                 year: {movie.year} runtime:{movie.runtime}
               </h6>
               <div>
-                <h6>pre:{movie.unwatched_rating.toFixed(2)}</h6>
+                <h6>pre-rating: {movie.unwatched_rating.toFixed(0)}%</h6>
               </div>
 
               <div id="container">
                 <h4>Story Line</h4>
                 <p className="information">{movie.plot}</p>
               </div>
+              <hr/>
 
             </div>
           </div>
@@ -87,6 +87,7 @@ const PopularPotatoes = () => {
 
         </li>
       </div>
+      
     ))
   }
 
