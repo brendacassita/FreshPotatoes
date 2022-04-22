@@ -97,7 +97,7 @@ const SearchResults = () => {
       {/* {JSON.stringify(allMovies)} */}
       </div>
 
-     </div>
+    
     
    
 
