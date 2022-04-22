@@ -1,0 +1,26 @@
+{
+  "name": "freshpotatoes",
+  "version": "1.0.0",
+  "description": "This project has devise_token_auth, react_router, etc setup. - uses rails v6, ruby 3.0.2 - more info about the project",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+    "scripts": {
+    "build": "cd client && npm install --only=dev && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendacassita/FreshPotatoes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendacassita/FreshPotatoes/issues"
+  },
+  "homepage": "https://github.com/brendacassita/FreshPotatoes#readme"
+}
