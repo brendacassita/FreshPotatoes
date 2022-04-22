@@ -61,7 +61,27 @@ justify-content: center;
     
     }
 
+    .sline {
+      background-color: red;
+      width: 60px;
+      margin-left: 80px;
+      
+      }
+      .bline {
+      background-color: red;
+      width: 700px;
+      overflow: hidden;
+      
+      }
 
+      .searchall {
+        display: flex;
+        height: 30px;
+        margin: 80px;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 80px;
+        }
 
 
 
