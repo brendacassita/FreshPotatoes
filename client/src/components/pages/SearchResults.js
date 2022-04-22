@@ -5,6 +5,10 @@ import Fuse from 'fuse.js'
 import Ratings from '../shared/Ratings'
 import {Link} from 'react-router-dom'
 import '../CssFIles/card.css'
+import '../CssFIles/SearchBar.css'
+import '../CssFIles/searchResults.css'
+import SearchIcon from '@mui/icons-material/Search'
+
 
 
 const SearchResults = () => {
@@ -51,38 +55,91 @@ const SearchResults = () => {
   
 
   return (
+
     <div className='App'>
+      <div className='searchall' >
+      <div className='sline' ></div>
+      <h1 className='searchall2' > Search Result - All</h1>
+      <div className='bline' ></div>
+      </div>
+
+    <div className='App2'>
       <h1> Search Result Page</h1>
       <p>Search:</p>
       <input onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies'></input>
+
       
-        {/* <p>{JSON.stringify(filteredMovies)}</p> */}
       
-      <hr></hr>
+      <div className='searchInputs1'>
+        
+          <input className=' searching' onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies...'></input>
+          {/* <div className='searchiconall'>
+         <SearchIcon /> 
+      </div> */}
+      </div>
+      <br />
+      <div className='moviesearch' >
       {filteredMovies ? 
         filteredMovies.map((movies) => {
           return (
-            <div className='searchresults'>
-            <div key={movies.id}>
-                <h4>{movies.name}</h4>
+            
+            <div className='searchresultsall'>
+              <div  key={movies.id}>
+                
+                <div className='movieInfoBox' >
+                  <Link className='cards' to={`/movies/${movies.id}`}>
+
+                    <figure className='card resultcard'>
+                      <img className='back result' src={movies.poster} width={100} />
+                      </figure> 
+                  </Link>
+                  
+                    <div className='seperate'>
+                      <h4 className='movieName'>{movies.name}</h4>
+                      <p>{movies.plot}</p>
+                   </div>
+                </div>
+                {/* <Ratings /> */}
+              </div>
+        <div className='lineseperator'></div>
+              </div>
+          )
+        })
+        : <p>Not searching yet</p>}</div>
+      <br/>
+     <hr></hr>
+      {allMovies.map((m) => {
+        return (
+          <div className='searchresults'>
+            <div key={m.id}>
+                <h4>{m.name}</h4>
+
                 <div className='cards'>
-                  <Link to={`/movies/${movies.id}`}>
+                  <Link to={`/movies/${m.id}`}>
                     <figure className='card'>
-                      <img className='back' src={movies.poster} width={170} />
+                      <img className='back' src={m.poster} width={170} />
                       </figure>
                 </Link>
                 </div>
                 {/* <Ratings /> */}
               </div>
-              </div>
-          )
-        })
-      :<p>Not searching yet</p>}
-    
         
+           
+            
+              
+              
+              
+              </div>
+)
+      
+      })}
+      
+      
+      {/* {JSON.stringify(allMovies)} */}
+      
         
       </div>
-     
+     </div>
     
     
   )

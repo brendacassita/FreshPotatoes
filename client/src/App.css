@@ -30,6 +30,10 @@ align-items: center;
 .App {
   text-align: center;
 }
+.App2 {
+  border: 75px solid #1F1D2B;
+  text-align: center;
+}
 
 .App-logo {
   height: 40vmin;

@@ -2,11 +2,13 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, Outlet } from 'react-router-dom'
+import '../CssFIles/Popular.css';
 
 const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
   const [count, setCount] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1)
 
 
   useEffect(()=>{
@@ -31,7 +33,9 @@ const PopularFries= ()=>{
   const getMoreThanTop10 = async (page) =>{
     try{
       let res = await axios.get(`/api/pagetopfries/?page=${page}`)
+      setCurrentPage (page)
       setTop10(res.data.movie)
+      
     }catch(err){
     alert('error in getting more top movies')
     }
@@ -49,15 +53,15 @@ const PopularFries= ()=>{
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div className="container2">
+      <div className="container">
        <li>
-        <Link to={`/movies/${movie.id}`}>
-        <img className='top10' src = {movie.poster}/>
+        <Link to={`/movies/${movie.id}`}><div>
+        <img className='top10' src = {movie.poster}/></div>
         </Link>
+        <div></div>
         <h4>{movie.name}</h4>
         <div key={movie.id}>
-            <p>{movie.plot}</p>
-            <div className="container2">
+            
             </div>
 
             <div>
@@ -65,27 +69,47 @@ const PopularFries= ()=>{
                 year: {movie.year} | runtime:{movie.runtime}
               </h6>
               <div>
-                <h6>pre:{movie.watched_rating.toFixed(2)}</h6>
+                <h6>post-rating: {movie.watched_rating.toFixed(0)}%</h6>
               </div>
+              <div id="container">
+                <h4>Story Line</h4>
+                <p>{movie.plot}</p>
+              </div>
+              <hr/>
+
             </div>
-          </div>
-        
-        
-        <br/>
-        
+          
+
+
+          <br />
+
         </li>
       </div>
+      
     ))
   }
 
 
 
+
+
+
+
   return(
-      <div>
+   
+        <div className='App1'>
+          <div className='titlename'></div>
       <h1>Popular Fries </h1>  
-      <ol>{renderMovies()}</ol>
+      
+      <p className='orangewording'>Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <hr/>
+    <br/>
+    
+      <ol start={(currentPage-1)*10+1}>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
-    </div>
+      </div>
+     
+    
   )
 }
 
