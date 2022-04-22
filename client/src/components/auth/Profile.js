@@ -16,7 +16,7 @@ const Profile = () => {
   
   
   return(
-    <div className="App">
+    <div className="App2">
      <h1>Profile Page</h1>
      {user.avatar && <img src={user.avatar} width={200} />}
      < br/>

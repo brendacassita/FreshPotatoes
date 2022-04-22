@@ -106,6 +106,16 @@ class Movie < ApplicationRecord
     WHERE m.id = ?", id])
   end
 
+  def self.preWatched(id)
+    Movie.find_by_sql(["SELECT r.rating, r.comment, r.user_id, u.username
+FROM movies AS m
+INNER JOIN reviews AS r ON r.movie_id = m.id 
+INNER JOIN users AS u ON r.user_id = u.id 
+WHERE m.id = 1 
+AND r.watched = 'false'", id])
+
+  end
+
   # def self.categories
   #   select("m.genre")
   #   .from("movies AS m")

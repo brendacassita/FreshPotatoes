@@ -97,6 +97,11 @@ const SearchResults = () => {
       })}
       {/* {JSON.stringify(allMovies)} */}
       </div>
+
+    
+    
+   
+
   )
 }
 export default SearchResults

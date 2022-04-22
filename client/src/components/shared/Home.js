@@ -40,20 +40,16 @@ const Home = () => {
 
     const renderPosters = () => {
         return movies.map((movie) => (
-            <div>
+        <div>
             <div style={{padding: 8}}>
                 <img src={movie.poster} onClick={()=>nav(`/movies/${movie.id}`)} style={{width: '100%'}} />
             </div>
-
-
         </div>
         ))   
     }
 
        return (
          <div className='App' >
-        
-         
            {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
            </div> */}
          <div className='homeCarousel' >
@@ -70,8 +66,7 @@ const Home = () => {
             <div className='homeGenre'>
               <GenreFilter />
             </div>
-            </div>
-        
+            </div>   
     )
 }
 
