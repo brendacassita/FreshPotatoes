@@ -50,7 +50,7 @@ const MovieDetail = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App2">
       {movies.map((movie) => {
         console.log("movie name:", movie.name, movie.trailer);
         return (

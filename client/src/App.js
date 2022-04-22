@@ -18,7 +18,7 @@ import PopularPotatoes from './components/pages/PopularPotatoes';
 import PopularFries from './components/pages/PopularFries';
 
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
-
+//import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 import SearchBar from './components/shared/SearchBar';
@@ -48,9 +48,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/contact_us' element={<ContactForm />}/>
-            <Route path='/review' element={<Review />}/>
             <Route path='/about' element={<About />}/>
-            {/* <Route path='/rate_form' element={<RateForm />}/> */}
             <Route path='/' element={<Home />}/>
             
                 {/* protected in routes inside of here you need to logged in*/}

@@ -12,7 +12,7 @@ const Footer = () => {
 <Box 
   px={{ xs: 3, sm: 10}} 
   py={{ xs: 5, sm: 10}}
-  bgcolor="text.secondary" 
+  bgcolor="#1F1D2B" 
   color="white"
   >
   
@@ -38,16 +38,16 @@ const Footer = () => {
   </Grid>
   <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Account</Box>
-        <Box>
+        {/* <Box>
             <Link href="/login" color="inherit">
               Login
             </Link> 
-        </Box>
-        <Box>
+        </Box> */}
+        {/* <Box>
             <Link href="/register" color="inherit">
               Register
             </Link> 
-        </Box>
+        </Box> */}
   </Grid>
   <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Pages</Box>

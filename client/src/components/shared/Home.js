@@ -41,42 +41,43 @@ const Home = () => {
 
     const renderPosters = () => {
         return movies.map((movie) => (
-            <div>
+        <div>
             <div style={{padding: 8}}>
                 <img src={movie.poster_path} 
                 // onClick={()=>nav(`/movies/${movie.id}`)} 
                 style={{width: '100%'}} />
             </div>
-
-
         </div>
         ))   
     }
 
        return (
-        <div className='App2'>
-         <div style={{maxWidth: 1200,marginLeft: 'auto',marginRight: 'auto',marginTop: 64, }}>
-        
-         
+         <div className='App' >
            {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
            </div> */}
-   
+         <div className='homeCarousel' >
             <Carousel
                 show={4}
                 infiniteLoop
             > 
             {renderPosters()}
-            
             </Carousel>
+<<<<<<< HEAD
 
             <div className="wrapper">
           
           <div className="cards ">
               {/* <GenreFilter /> */}
-            </div>
-            </div>
+=======
         </div>
-        </div>
+             
+             
+             
+            <div className='homeGenre'>
+              <GenreFilter />
+>>>>>>> 1afe4c8b793d1211446c4e8268c81bd84c4ead99
+            </div>
+            </div>   
     )
 }
 

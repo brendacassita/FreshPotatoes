@@ -38,6 +38,7 @@ const SearchResults = () => {
   }
   return (
     <div className='App'>
+      
       <div className='searchall' >
       <div className='sline' ></div>
       <h1 className='searchall2' > Search Result - All</h1>
@@ -95,6 +96,14 @@ const SearchResults = () => {
       })}
       {/* {JSON.stringify(allMovies)} */}
       </div>
+<<<<<<< HEAD
+=======
+
+    
+    
+   
+
+>>>>>>> 1afe4c8b793d1211446c4e8268c81bd84c4ead99
   )
 }
 export default SearchResults
