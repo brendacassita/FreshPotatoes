@@ -4,6 +4,7 @@ import axios from 'axios'
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
+import '../CssFIles/editProfile.css'
 
 const labels = {
   0.5: 'Worst Movie Ever.',
@@ -74,8 +75,13 @@ function getLabelText(value) {
     <form onSubmit={handleSubmit}>
       <div> 
           <textarea onChange={(e) => setReview(e.target.value)} cols="30" rows="5"></textarea>
-      </div>
-            <button>Submit</button>
+
+      
+            
+
+            </div>
+            <button className="editprofilebtn">Submit Review</button>
+
     </form>
 
     {JSON.stringify(review)}

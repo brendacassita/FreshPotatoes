@@ -47,7 +47,7 @@ const PopularPotatoes = () => {
     console.log(numPage)
     const buttonArr = []
     for (let i = 1; i <= numPage; i++) {
-      buttonArr.push(<button onClick={() => { getMoreThanTop10(i) }}>{i}</button>)
+      buttonArr.push(<button className='pagebutton' onClick={() => { getMoreThanTop10(i) }}>{i}</button>)
     }
     return buttonArr
   }
@@ -102,8 +102,12 @@ const PopularPotatoes = () => {
 
   return (
     <div className='App1'>
+       <div className='searchall' >
+      <div className='sline' ></div>
           <div className='titlename'></div>
-      <h1>Popular Potatoes </h1>
+      <h1>Popular Potatoes</h1>
+      <div className='bline' ></div>
+      </div>
       <p className='orangewording'>Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
       <hr/>
     <br/>
