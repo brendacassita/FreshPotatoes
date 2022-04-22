@@ -53,6 +53,7 @@ function getLabelText(value) {
         alignItems: 'center',
       }}
     >
+
       <Rating
         name="hover-feedback"
         value={value}
@@ -74,8 +75,13 @@ function getLabelText(value) {
     <form onSubmit={handleSubmit}>
       <div> 
           <textarea onChange={(e) => setReview(e.target.value)} cols="30" rows="5"></textarea>
+
+      
+            
+
             </div>
             <button className="editprofilebtn">Submit Review</button>
+
     </form>
 
     {JSON.stringify(review)}
