@@ -35,7 +35,7 @@ export default function MediaCard() {
         <Typography variant="body2" color="text.secondary">
          All about our Fresh Potatoes team! Add more about us here....
         </Typography>
-        freshpotatoes@gmail.com<br/>
+        freshpotatoes@gmail.com
         {gmail && (
               <img style={{
                   objectFit: "cover",
@@ -73,14 +73,14 @@ export default function MediaCard() {
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
-        <Link to = "https://github.com/jess215">
+        <a target="_blank" href="https://github.com/jess215">
         {github && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={github} width={300}/>)}</Link>
+                 }}src={github} width={300}/>)}</a>
 
 {linkedin && (
               <img style={{
@@ -113,13 +113,14 @@ export default function MediaCard() {
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
+        <a target="_blank" href="https://github.com/brendacassita">
         {github && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={github} width={300}/>)}
+                 }}src={github} width={300}/>)}</a>
 
 {linkedin && (
               <img style={{
@@ -165,13 +166,14 @@ export default function MediaCard() {
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
+        <a target="_blank" href="https://github.com/TrinaNix4">
         {github && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={github} width={300}/>)}
+                 }}src={github} width={300}/>)}</a>
 
           {linkedin && (
               <img style={{
@@ -205,13 +207,15 @@ export default function MediaCard() {
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
+
+        <a target="_blank" href="https://github.com/SharayahDesigns">
         {github && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={github} width={300}/>)}
+                 }}src={github} width={300}/>)}</a>
 
           {linkedin && (
               <img style={{
@@ -243,13 +247,14 @@ export default function MediaCard() {
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
+        <a target="_blank" href="https://github.com/katbrenda">
         {github && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={github} width={300}/>)}
+                 }}src={github} width={300}/>)}</a>
 
 {linkedin && (
               <img style={{
