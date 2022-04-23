@@ -37,19 +37,31 @@ right: 0px!important;
 }
 .profilelink {
 display: flex!important;
-justify-content: center!important;
 text-decoration: none;
 color: black;
-margin: 3px;
-font-weight: bold;
+margin: 2px;
+
 }
 #menu-appbar {
 margin: 40px 10px;
 }
 .avatar_circle {
-/* width: 100px; */
-margin: -25px 10px  ;
+width: auto!important;
+height: 50px!important;
+margin: -20px 20px  ;
+/* filter: grayscale(100%); */
+/* -webkit-filter: grayscale(100%); */
+/* -webkit-transition: all 1s ease; */
 }
+
+.avatar_circle:hover {
+/* filter: grayscale(0%); */
+/* filter: gray; */
+/* -webkit-filter: grayscale(0%); */
+/* filter: none; */
+/* transition: 1s ease; */
+}
+
 .box {
 position: absolute;
 right: 40px!important;

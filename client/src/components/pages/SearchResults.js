@@ -45,6 +45,12 @@ const SearchResults = () => {
       <div className='bline' ></div>
       </div>
       
+      {/* <h1>Search Results</h1>
+      <div className='searchall2' >
+      <div className='line'>
+        </div>
+        </div> */}
+      
       <div className='searchInputs1'>
           <input className=' searching' onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies...'></input>
           {/* <div className='searchiconall'>

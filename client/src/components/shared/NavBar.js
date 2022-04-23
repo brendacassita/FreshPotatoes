@@ -13,6 +13,8 @@ import '../CssFIles/Navbar.css';
 import SearchBar from './SearchBar'
 import axios from 'axios';
 import '../CssFIles/SearchBar.css'
+import bwPic from '../../Images/blackwhitePotatoe.png'
+import potatoe from '../../Images/Potatoe.png'
 
 
 const Navbar = () => {
@@ -88,7 +90,6 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
-          
          
       
 
@@ -157,23 +158,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       
           
           <SearchBar className='searchfunction' placeholder='Search Movies...' />
-          
-{/*           
-          <Box className='box'>
-           <Search className='box' >
-            <SearchIconWrapper>
-              <SearchIcon className="searchicon"/>
-            </SearchIconWrapper>
-              <StyledInputBase className="search"
-              placeholder="Search Movies…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          </Box> */}
-          
-          
-          
-          
+      
           
           <div className='logout' >
               <IconButton
@@ -182,12 +167,27 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
-                color="inherit"
+                // color="inherit"
             >
               
-              <Avatar className='avatar_circle' src={user && user.avatar} sx={{width: 56, height: "auto"}} />
               
-              </IconButton>
+              <Avatar className='avatar_circle' src={user && user.avatar }  />
+              
+            
+                {/* <div className='avatar_circle' src={user && user.avatar}>
+                  <img className='avatar_circle' src={potatoe} width='60px'></img>
+                </div> */}
+              
+          {/* {!user.avatar &&
+            <button onClick={() => setShowUpload(!showUpload)} ><img src={bwPic} width='170px'></img></button>} */}
+              
+              
+              {/* <img className='avatar_circle' src={bwPic} width='60px'></img> */}
+              
+              
+            </IconButton>
+            
+            
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
