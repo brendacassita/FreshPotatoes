@@ -44,8 +44,8 @@ background-color: #d24318;
 
 .smallline {
 background-color: #EC4E20;
-width: 60px;
-margin-left: 80px;
+width: 80px;
+margin-left: 10px;
 }
 
 .bigline {
@@ -57,10 +57,10 @@ overflow: hidden;
 .titleline{
   display: flex;
   height: 30px;
-  margin: 80px;
+  margin: 60px;
   flex-direction: row;
   justify-content: flex-start;
-  margin-top: 80px;
+  margin-top: 60px;
 
 
 }
