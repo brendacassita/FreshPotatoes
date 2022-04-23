@@ -82,13 +82,20 @@ export default function MediaCard() {
                   height: "40px",
                  }}src={github} width={300}/>)}</a>
 
-{linkedin && (
+        {linkedin && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "50px",
                   height: "40px",
                  }}src={linkedin} width={300}/>)}
+        {gmail && (
+              <img style={{
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                 }}src={gmail} width={300}/>)}
       </CardContent>
       <CardActions>
       </CardActions>
@@ -129,6 +136,14 @@ export default function MediaCard() {
                   width: "50px",
                   height: "40px",
                  }}src={linkedin} width={300}/>)}
+ <a href="mailto:brendacassita@gmail.com">
+{gmail && (
+              <img style={{
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                 }}src={gmail} width={300}/>)}</a>
       </CardContent>
       <CardActions>
       </CardActions>
@@ -182,6 +197,14 @@ export default function MediaCard() {
                   width: "50px",
                   height: "40px",
                  }}src={linkedin} width={300}/>)}
+
+          {gmail && (
+              <img style={{
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                 }}src={gmail} width={300}/>)}
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
@@ -224,6 +247,14 @@ export default function MediaCard() {
                   width: "50px",
                   height: "40px",
                  }}src={linkedin} width={300}/>)}
+
+{gmail && (
+              <img style={{
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                 }}src={gmail} width={300}/>)}
       </CardContent>
     </Card>
 
@@ -263,6 +294,14 @@ export default function MediaCard() {
                   width: "50px",
                   height: "40px",
                  }}src={linkedin} width={300}/>)}
+
+{gmail && (
+              <img style={{
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                 }}src={gmail} width={300}/>)}
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
