@@ -34,6 +34,13 @@ align-items: center;
 .App {
   text-align: center;
 }
+.App2 {
+  border: 75px solid #1F1D2B;
+  text-align: center;
+  display: flexbox; 
+}
+
+
 
 .App-logo {
   height: 40vmin;
@@ -62,13 +69,17 @@ align-items: center;
 }
 
 .footer {
-  background-color: rgb(115, 0, 128);
+  background-color: #1F1D2B;
   border-top:2px solid rgb(11, 11, 11);
   position: fixed;
   width: 100%;
   bottom: 0;
   color: white;
   font-size: 25px;
+}
+
+.footer2{
+  background-color: #1F1D2B;
 }
 
 .Nav-link {
@@ -88,3 +99,75 @@ text-decoration: none;
     transform: rotate(360deg);
   }
 }
+
+.welcome {
+display: flex;
+justify-content: center;
+}
+.btn1:hover {
+color: black;
+}
+
+.searchresults {
+display: flex;
+display:inline-block;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: flex-start;
+margin: 10px 15px;
+width: 180px;
+height: auto;
+}
+.listbox {
+
+  width: 300px;
+  margin: 2px 0 0;
+  padding: 0;
+  position: absolute;
+  list-style: none;
+  background-color:  #fff;
+  overflow: auto;
+  max-height: 250px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.homeCarousel {
+margin-top: 50px;
+}
+
+.genrebtn {
+background-color: 
+#E6E6E6;
+color: black;
+border: none;
+margin-top: 30px;
+align-items: baseline;
+justify-content: flex-start ;
+margin-bottom: 20px;
+font-size: 18px;
+
+}
+.genrebtn:hover {
+background-color: #ec5020aa ;
+color: white;
+border-radius: 3px;
+border-color:#E6E6E6!important ;
+border-width: 5px;
+}
+.genreselect {
+overflow: hidden;
+flex-wrap: wrap;
+}
+.imgGenreFilter {
+margin: 5px;
+margin-left: 10px;
+
+}
+.genreCategories {
+margin-bottom: -20px;
+margin-top: 40px;
+
+}
+

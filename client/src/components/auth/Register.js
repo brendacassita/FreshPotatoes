@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import Button from '@mui/material/Button';
+import '../CssFIles/Login-out.css';
+
+import p from '../../Images/Potatoe.png'
 
 
 let timeout;
@@ -8,7 +11,8 @@ let timeout;
 const Register = ()=>{
     const [email, setEmail] = useState('test1@test.com')
     const [password, setPassword] = useState('123456')
-    const [loading, setLoading] = useState(false);
+  const [loading,setLoading] = useState(false);
+  const [name, setName] = useState()
 
     // const [confirmPassword, setConfirmPassword] = useState('') // not need but nice for UX
 
@@ -17,7 +21,7 @@ const Register = ()=>{
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        auth.handleRegister({email, password})
+        auth.handleRegister({email, password, name})
         setLoading(true);
         timeout = setTimeout (()=> {
             setLoading(false);
@@ -33,29 +37,38 @@ const Register = ()=>{
         }, [])
     // with devise these are required
     return (
-        <div>
-            <h1>Sign-up for a new account</h1>
-            <form onSubmit={handleSubmit}>
-                <p>Email: </p>
+        <div className="loginborder">
+        <h1>Sign-up </h1>
+        <div className="logincard">
+        <form onSubmit={handleSubmit}>
+          <p className='loginnames'>Name:</p>
+          <input value={name} onChange={(e)=> setName(e.target.value)}/>
+                <p className="loginnames">Email: </p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                <p>Password: </p>
-                <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <button variant="primary" 
-                        size="lg" 
+                <p className="loginnames">Password: </p>
+          <input value={password} type='password' onChange={(e) => setPassword(e.target.value)} />
+          
+          
+           <div className='buttonlogin'>
+          
+                {!loading &&
+                <>
+                    
+                
+                    <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button>
+
+                </>
+              }
+              <Button
+            className="buttonlogin btnregister"
+            variant="contained" 
                         onClick={handleSubmit}
                         disabled={loading}>
                         {loading ? 'Loading...' : 'Register'}
-                </button>
-                {!loading &&
-                <>
-                    <div className="alt-text">
-                        Already have an account? 
-                    </div>
-                    <Button secondary type="button" size="sm" variant='outlined' href='/login'>Login Here</Button>
-
-                </>
-                }
-            </form>
+                </Button>
+          </div>
+          </form>
+          </div>
         </div>
     )
 }

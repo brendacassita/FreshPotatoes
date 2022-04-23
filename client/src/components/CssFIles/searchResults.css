@@ -1,0 +1,36 @@
+.searchresultsall {
+display: flexbox;
+flex-direction: row;
+position: relative;
+justify-content: flex-start;
+margin-left: 150px;
+margin-right: 150px;
+margin-top: 110px;
+
+
+}
+
+.movieInfoBox {
+display: flex;
+justify-content: flex-start;
+width: 600px!important;
+flex-direction: row;
+margin: -90px 0px -10px -10px;
+}
+.serperate {
+display: flex;
+flex-direction: row;
+}
+
+.lineseperator {
+width: 800px;
+border: solid black;
+margin: 20px;
+}
+.movieName {
+margin: 24px;
+}
+.App {
+border:solid #1F1D2B;
+border-width: 60px;
+}
