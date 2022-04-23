@@ -56,22 +56,21 @@ justify-content: center;
   margin: 10px;
   }
 
-  .pagebutton:hover {
-    background-color: #d24318;
-    
-    }
+.pagebutton:hover {
+background-color: #d24318;
+
+}
 
 .sline {
 background-color: #EC4E20;
 width: 70px;
 margin-left: 50px;
-
 }
+
 .bline {
 background-color: #EC4E20;
 width: 700px;
 overflow: hidden;
-
 }
 
 .searchall {
