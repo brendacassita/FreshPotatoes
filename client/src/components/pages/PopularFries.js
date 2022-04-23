@@ -101,7 +101,7 @@ const PopularFries= ()=>{
     <div className='titleline' >
    <div className='smallline' ></div>
        
-       <h2 className='searchall2' >Popular Fries </h2>
+       <h2 className='searchall2' >Popular Fries</h2>
       <div className='bigline' ></div>
       </div>
       <p className='miniwording'>* Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
