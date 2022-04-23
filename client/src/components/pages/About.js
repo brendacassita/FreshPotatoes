@@ -35,7 +35,7 @@ export default function MediaCard() {
         <Typography variant="body2" color="text.secondary">
          All about our Fresh Potatoes team! Add more about us here....
         </Typography>
-        freshpotatoes@gmail.com
+        freshpotatoes@gmail.com <br/>
         {gmail && (
               <img style={{
                   objectFit: "cover",
