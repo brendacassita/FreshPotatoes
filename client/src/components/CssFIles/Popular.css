@@ -5,9 +5,9 @@ padding: 10px;
 text-align: center;
 }
 
-.orangewording {
+.miniwording {
   align-content: stretch;
-  color: #EC4E20;
+  color: #628395;
   justify-content: flex-start;
 }
 
@@ -23,25 +23,7 @@ text-align: center;
   flex-wrap: wrap;
 }
 
-.logincard {
-display: flex;
-justify-content: center;
-align-items: center;
-}
 
-.loginnames {
-display: flex;
-justify-content: center;
-font-weight: bold;
-margin: 15px;
-}
-
-
-.align {
-display: flex;
-flex-direction: row;
-justify-content: center;
-}
 
 .pagebutton {
   background-color: #EC4E20;
@@ -60,19 +42,19 @@ background-color: #d24318;
 
 }
 
-.sline {
+.smallline {
 background-color: #EC4E20;
 width: 90px;
 margin-left: 2px;
 }
 
-.bline {
+.bigline {
 background-color: #EC4E20;
 width: 700px;
 overflow: hidden;
 }
 
-.searchall {
+.titleline{
 display: flex;
 flex-wrap: wrap;
 height: 30px;
