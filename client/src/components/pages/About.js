@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 //import GitHubIcon from '@mui/icons-material/GitHub';
 import github from '../CssFIles/images/github.png'
 import linkedin from '../CssFIles/images/linkedin.webp'
+import gmail from '../CssFIles/images/gmail.png'
 import { Link } from 'react-router-dom';
 
 
@@ -32,24 +33,17 @@ export default function MediaCard() {
           The Freshest
         </Typography>
         <Typography variant="body2" color="text.secondary">
-         All about our Fresh Potatoes team! Add more content here.
+         All about our Fresh Potatoes team! Add more about us here....
         </Typography>
-        {github && (
+        freshpotatoes@gmail.com<br/>
+        {gmail && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={github} width={300}/>)}
+                 }}src={gmail} width={300}/>)}
 
-
-            {linkedin && (
-              <img style={{
-                  objectFit: "cover",
-                  borderRadius: "50%",
-                  width: "50px",
-                  height: "40px",
-                 }}src={linkedin} width={300}/>)}
           
       </CardContent>
       <CardActions>
