@@ -35,14 +35,14 @@ export default function MediaCard() {
         <Typography variant="body2" color="text.secondary">
          All about our Fresh Potatoes team! Add more about us here....
         </Typography>
-        freshpotatoes@gmail.com <br/>
+        <a href="mailto:freshpotatoes@gmail.com">freshpotatoes@gmail.com <br/>
         {gmail && (
               <img style={{
                   objectFit: "cover",
                   borderRadius: "50%",
                   width: "40px",
                   height: "40px",
-                 }}src={gmail} width={300}/>)}
+                 }}src={gmail} width={300}/>)}</a>
 
           
       </CardContent>
