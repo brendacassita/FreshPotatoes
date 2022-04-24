@@ -16,13 +16,12 @@ import Footer from './components/pages/Footer';
 import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
 import PopularFries from './components/pages/PopularFries';
-
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
-//import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 import SearchBar from './components/shared/SearchBar';
 import About from './components/pages/About';
+import Sandbox from './components/pages/Sandbox'
 
 import ContactForm from './components/pages/ContactForm';
 
@@ -67,6 +66,7 @@ function App() {
             <Route path='/genres/:name' element={<GenreShow />}/>
             <Route path='/movies/:id/edit' element={<MovieForm/>}/>
             <Route path='/movies/new' element={<MovieForm />} />
+            <Route path='/sandbox' element={<Sandbox />} />
               
             </Route>  
             <Route path='*' element={<NoMatch />}/>

@@ -10,6 +10,12 @@ class Api::GenresController < ApplicationController
         render json: Genre.movies_id(@genre.id)
     end
 
+    def tmdb_genres
+        url = "https://api.themoviedb.org/3/genre/movie/list?api_key=b8780ae423693a3389766038fe49d728&language=en-US"
+        response = RestClient.get(url)
+        render json: response
+    end
+
     def genre_show
         render json: Genre.movies(params[:name].downcase)
     end

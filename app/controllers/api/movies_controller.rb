@@ -35,6 +35,9 @@ end
 
 def show
   render json: Movie.details(@movie.id)
+  # url = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=b8780ae423693a3389766038fe49d728&language=en-US"
+  # response = RestClient.get(url), {params: {movie_id}}
+  # render json: response
 end
 
 ### WATCHED/UNWATCHED RATINGS ###
@@ -46,7 +49,7 @@ def unwatched
   render json: Movie.unwatched(@movie.id)
 end
 
-### NEWEST 5 MOVIES BY YEAR ###
+### NEWEST MOVIES ###
 def newest
   url = "https://api.themoviedb.org/3/movie/upcoming?api_key=b8780ae423693a3389766038fe49d728&language=en-US&region=US"
   response = RestClient.get(url)
@@ -124,6 +127,16 @@ private
 def set_movie
     @movie = Movie.find(params[:id])
 end
+
+# def tmdb_movie_params
+#   params.require(:movie).permit(
+#     :movie_id
+#   )
+# end
+
+# def set_movie_id
+#   @movie = 
+# end
 
 def movie_params
   params.require(:movie).permit(

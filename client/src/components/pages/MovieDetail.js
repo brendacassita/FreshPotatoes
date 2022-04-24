@@ -16,42 +16,42 @@ const MovieDetail = () => {
     getMovies();
   }, []);
 
-  useEffect(() => {
-    getCasts();
-  }, []);
+  // useEffect(() => {
+  //   getCasts();
+  // }, []);
 
   const getMovies = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}`);
-      setMovies(res.data);
-      console.log(res.data);
+      setMovies(res.data.result);
+      console.log(res.data.result);
     } catch (err) {
       alert("error in getting movies");
     }
   };
 
-  const getCasts = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}/casts`);
-      setCasts(res.data);
-      console.log(res.data);
-    } catch (err) {
-      alert("error in getting cast");
-    }
-  };
+  // const getCasts = async () => {
+  //   try {
+  //     let res = await axios.get(`/api/movies/${params.id}/casts`);
+  //     setCasts(res.data);
+  //     console.log(res.data);
+  //   } catch (err) {
+  //     alert("error in getting cast");
+  //   }
+  // };
 
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 0,
-    },
-  };
+  // const opts = {
+  //   height: "390",
+  //   width: "640",
+  //   playerVars: {
+  //     // https://developers.google.com/youtube/player_parameters
+  //     autoplay: 0,
+  //   },
+  // };
 
   return (
     <div className="App2">
-      {movies.map((movie) => {
+      {/* {movies.map((movie) => {
         console.log("movie name:", movie.name, movie.trailer);
         return (
           <div key={movie.id}>
@@ -95,7 +95,7 @@ const MovieDetail = () => {
             </p>
           </div>
         );
-      })}
+      })} */}
       {/* {JSON.stringify(movies)} */}
     </div>
   );

@@ -36,6 +36,8 @@ Rails.application.routes.draw do
     get '/popular/movies', to: 'movies#popular'
     get '/popular/genres', to: 'genres#popular'
 
+    # TMDB GENRE LIST
+    get '/tmdb_genres', to: 'genres#tmdb_genres'
     
 #Create a review for a movie
 post 'movies/:id/reviews', to: 'reviews#create'
