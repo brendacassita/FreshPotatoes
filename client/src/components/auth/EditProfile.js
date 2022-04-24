@@ -73,9 +73,10 @@ function EditProfile() {
    } catch(err){
        alert('error occured updating user info')
    } finally {
+     console.log('Password:',password)
      console.log(files)
      if(!files[0]){
-       console.log('ffff')
+       
        return 
      }
      handleImage()
@@ -126,9 +127,10 @@ function EditProfile() {
             <input className="editbox" value={email} onChange={(e) => setEmail(e.target.value)} /> 
             
             <div className="editalign">
-              <h5 className="fullname">Password</h5>
+            <h5 className="fullname">Password</h5>
               </div>
-            <input className="editbox" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />  
+          <input className="editbox" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />  
+          
             <div className="editalign">
               <h5 className="fullname">Phone number</h5>
               </div>
