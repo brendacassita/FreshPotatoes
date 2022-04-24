@@ -63,7 +63,7 @@ const Ratings = () => {
   };
 
   return (
-    <div className="App">
+    <div>
       <div>
         <h5 style={{display: 'flex', justifyContent: 'center'}}>pre: {renderUnwatched()}% | post: {renderWatched()}%</h5>   
       </div>
