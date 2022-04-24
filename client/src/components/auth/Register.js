@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import Button from '@mui/material/Button';
 import '../CssFIles/Login-out.css';
+import {Link} from '@mui/material';
 
 import p from '../../Images/Potatoe.png'
 
@@ -36,7 +37,8 @@ const Register = ()=>{
             }
         }, [])
     // with devise these are required
-    return (
+  return (
+      <div  className="login-background App" >
         <div className="loginborder">
         <h1>Sign-up </h1>
         <div className="logincard">
@@ -53,21 +55,25 @@ const Register = ()=>{
           
                 {!loading &&
                 <>
-                    
+                  <div className="login-btns">
+               
+                <p className="acnt">Already have an account?</p><Link href='/login'>LOGIN </Link>
+                </div>
                 
-                    <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button>
+                    {/* <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button> */}
 
                 </>
               }
               <Button
-            className="buttonlogin btnregister"
+            className="buttonlogin1 btnregister"
             variant="contained" 
                         onClick={handleSubmit}
                         disabled={loading}>
                         {loading ? 'Loading...' : 'Register'}
-                </Button>
+              </Button>
           </div>
           </form>
+              </div>
           </div>
         </div>
     )

@@ -171,3 +171,102 @@ margin-top: 40px;
 display: flex;
 width: 100%;
 }
+.logolanding {
+position:absolute;
+width: 450px;
+margin: 50px;
+-webkit-filter: drop-shadow(5px 5px 5px #222);
+z-index: 2;
+}
+
+.text-landing{
+position: absolute;
+display: flex;
+justify-content: center;
+width: 300px;
+color: white;
+margin: 250px;
+text-shadow: 2px 1px black;
+align-items: center;
+}
+
+
+
+.backpic {
+display: flex ;
+border: 2px solid #EC4E20;
+width: 100%;
+}
+
+.landingPage {
+display: flex;
+justify-content: center;
+left:0;
+top:0;
+}
+.landingbtn {
+position:absolute;
+display: flex;
+justify-content: center!important;
+justify-content: space-around;
+align-items: center;
+background-color: #EC4E20;
+color: white!important;
+text-decoration: none!important;
+font-size: 12px;
+border-radius: 5px;
+width: 200px;
+height: 40px;
+text-align: center;
+border: none;
+margin: 300px;
+box-shadow:  0px 0px 40px black;
+}
+
+.landingbtn1 {
+position:absolute;
+display: flex;
+justify-content: center!important;
+justify-content: space-around;
+align-items: center;
+background-color: #EC4E20;
+color: white!important;
+text-decoration: none!important;
+font-size: 12px;
+border-radius: 5px;
+width: 200px;
+height: 40px;
+text-align: center;
+border: none;
+margin: 300px;
+box-shadow:  0px 0px 40px black;
+}
+
+
+
+
+
+
+
+.landing-all{
+position: relative;
+display: flex;
+justify-content: center;
+overflow: hidden ;
+}
+.fbicon-landing {
+justify-content: flex-start;
+align-items: center;
+}
+.btn-all {
+position: absolute;
+/* z-index: 1; */
+display: flex;
+justify-content: center;
+margin: 294px;
+}
+
+
+.btn-all .landingbtn1:hover {
+background-color: #ec5020af;
+}

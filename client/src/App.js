@@ -25,6 +25,7 @@ import SearchBar from './components/shared/SearchBar';
 import About from './components/pages/About';
 
 import ContactForm from './components/pages/ContactForm';
+import LandingPage from './components/shared/LandingPage';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -48,7 +49,10 @@ function App() {
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/contact_us' element={<ContactForm />}/>
             <Route path='/about' element={<About />}/>
-            <Route path='/' element={<Home />}/>
+            <Route path='/' element={<LandingPage />} />
+            {/* <Route path='/home' element={<LandingPage />} /> */}
+            
+            
             
            
                 {/* protected in routes inside of here you need to logged in*/}

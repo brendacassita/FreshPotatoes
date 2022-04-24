@@ -99,53 +99,13 @@ const Navbar = () => {
     }
   };
   
-   const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 1),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'black',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(3)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '22ch',
-      '&:focus': {
-        width: '30ch',
-      },
-    },
-  },
-}));
+  
   
   return (
     <AppBar className='AppBar' position='static' >
       <Toolbar  className='AppBar1'>
         
-        <Link to='./'>
+        <Link to='/home'>
           <div className='logo'><img src={logo}width='190px' ></img></div>
        </Link>
       
@@ -174,12 +134,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
               <Avatar className='avatar_circle' src={user && user.avatar }  />
               
             
-                {/* <div className='avatar_circle' src={user && user.avatar}>
+                {/* <div className='avatar_circle' src={user }>
                   <img className='avatar_circle' src={potatoe} width='60px'></img>
                 </div> */}
               
           {/* {!user.avatar &&
-            <button onClick={() => setShowUpload(!showUpload)} ><img src={bwPic} width='170px'></img></button>} */}
+            <button ><img src={bwPic} width='170px'></img></button>} */}
               
               
               {/* <img className='avatar_circle' src={bwPic} width='60px'></img> */}

@@ -94,6 +94,10 @@ background-color: #d24318;
 border: none;
 background: none;
 }
+.avataredit:hover {
+filter: grayscale(100%);
+cursor:pointer;
+}
 
 .editprofile {
 justify-content: center;
@@ -132,5 +136,9 @@ padding: 100px;
 border: solid #1F1D2B;
 border-width: 30px;
 background-color: #1F1D2B ;
+
+}
+.App-edit {
+display: absolute;
 
 }

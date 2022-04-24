@@ -56,7 +56,7 @@ const AuthProvider = ({children})=>{
             // no token needed
             let res = await axios.post('/api/auth/sign_in',user)
             setUser(res.data.data)
-            navigate('/')
+            navigate('/home')
             // setUser
         } catch(err){
             // potentailly a lot of work here
