@@ -33,6 +33,17 @@ letter-spacing: 0.12px;
 color: #000000;
 margin-bottom: -8px;
 }
+.fullname {
+position: relative;
+z-index: 1!important;
+background-color: #000000;
+color: white;
+width: fit-content;
+/* justify-content: flex-start;
+flex-direction: column;  */
+ margin-bottom: -7px;
+margin-left: 262px;
+}
 .useremailedit {
 font-family: 'Montserrat';
 font-style: normal;
@@ -41,8 +52,13 @@ font-size: 14px;
 letter-spacing: -0.02em;
 color: #000000;
 }
+.editalign {
+flex-direction: column;
+justify-content: center;
+z-index: 1;
+}
 .editbox {
-/* position: absolute; */
+
 font-size: 15px;
 border-radius: 40px;
 width: 200px;
@@ -51,27 +67,13 @@ left: 675px;
 top: 881px;
 background-color: white;
 text-align: center;
-z-index: 1;
+z-index: -1;
 }
 .editbox:hover {
 border-color: orange;
 }
-.align {
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
-.fullname {
-background-color: #000000;
-color: white;
-width: fit-content;
-/* justify-content: flex-start; */
-/* flex-direction: column; */
-margin-bottom: -7px;
-margin-left: 260px;
-z-index: 1;
-}
 .editprofilebtn {
+z-index: 1;
 background-color: #EC4E20;
 color: white;
 font-size: 15px;
@@ -83,7 +85,6 @@ top: 881px;
 text-align: center;
 border: none;
 margin: 10px;
-z-index: 1;
 }
 .editprofilebtn:hover {
 background-color: #d24318;
@@ -127,3 +128,8 @@ background-color: #1F1D2B;
 padding: 100px;
 }
 
+.borderfresh {
+border: solid #1F1D2B;
+border-width: 30px;
+
+}

@@ -22,9 +22,8 @@ const PopularFries= ()=>{
       let res = await axios.get('/api/pagetopfries/?per=10')
       setPer(res.data.per)
       setCount(res.data.count)
-
       setTop10(res.data.movie)
-      console.log(res)
+      console.log('res:', res)
     }catch(err){
     alert('error in getting top 10 movies')
     }
@@ -43,7 +42,7 @@ const PopularFries= ()=>{
 
   const renderButtons = () =>{
     const numPage = Math.ceil(count/per)
-    console.log(numPage)
+    console.log('numPage:', numPage)
     const buttonArr = []
     for(let i = 1; i<=numPage; i++){
       buttonArr.push(<button className='pagebutton' Click={()=>{getMoreThanTop10(i)}}>{i}</button>)
@@ -97,14 +96,14 @@ const PopularFries= ()=>{
 
   return(
    
-        <div className='App1'>
-          <div className='searchall' >
-      <div className='sline' ></div>
-          <div className='titlename'></div>
-      <h1>Popular Fries</h1>
-      <div className='bline' ></div>
+    <div className='App'>
+    <div className='titleline' >
+   <div className='smallline' ></div>
+       
+       <h2 className='searchall2' >Popular Fries</h2>
+      <div className='bigline' ></div>
       </div>
-      <p className='orangewording'>Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <p className='miniwording'>* Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
       <hr/>
     <br/>
     
