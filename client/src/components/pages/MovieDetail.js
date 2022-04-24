@@ -66,9 +66,9 @@ const MovieDetail = () => {
                 {" "}
                 {movie.year} | {movie.runtime} | {movie.genre}
               </h6>
-              <div>
+              
                 <Ratings />
-              </div>
+              
 
               <div id="container">
                 <h4>Story Line</h4>

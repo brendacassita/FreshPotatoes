@@ -17,10 +17,14 @@ align-items: center;
 }
 
 .container {
-  display: flex; 
+  display:flex;
   flex-direction: row;/* or inline-flex */
-  flex-wrap: wrap;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  text-align:left;
+  text-overflow:initial;
 }
+
 .top10{
   height: 200px;
   width: auto;
