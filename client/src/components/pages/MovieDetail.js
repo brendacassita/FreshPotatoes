@@ -8,70 +8,58 @@ import Ratings from "../shared/Ratings";
 import Review from "./Review";
 
 const MovieDetail = () => {
-  const [movie, setMovie] = useState([])
-  const [videos, setVideos] = useState([])
-  const [cast, setCast] = useState([])
-  const [crew, setCrew] = useState([])
-  const params = useParams()
+  const [loading, setLoading] = useState(true);
+  const [movie, setMovie] = useState(null);
+  const [cast, setCast] = useState([]);
+  const [trailer, setTrailer] = useState({});
+  const params = useParams();
 
   useEffect(() => {
-    getMovie()
-  }, [])
-
-  useEffect(() => {
-    getVideos()
-  },[])
-
-  useEffect(() => {
-    getCast()
-  }, [])
-
-  useEffect(() => {
-    getCrew()
-  }, [])
+    getMovie();
+    getVideos();
+    getCast();
+  }, []);
 
   const getMovie = async () => {
     try {
-      let res = await axios.get(`/api/movies/${params.id}`)
-      console.log('MOVIE')
-      setMovie(res.data)
-      console.log(res.data)
+      let res = await axios.get(`/api/movies/${params.id}`);
+      setMovie(res.data);
+      setLoading(false);
+      console.log("MOVIE:", res.data);
     } catch (err) {
-      alert("Error in getting movie")
+      alert("Error in getting movie");
     }
   };
 
   const getVideos = async () => {
     try {
-      let res = await axios.get(`/api/movies/${params.id}/videos`)
-      setVideos(res.data.results)
-      console.log('VIDEOS')
-      console.log(res.data.results)
+      let res = await axios.get(`/api/movies/${params.id}/videos`);
+      setTrailer(
+        res.data.results.find((t) => {
+          return t.type === "Trailer";
+        })
+      );
+      console.log("VIDEOS:", res.data.results);
     } catch (err) {
-      alert('Error in getting videos')
-    }
-  }
-
-  const getCast = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}/cast`)
-      console.log('CAST')
-      setCast(res.data.cast)
-      console.log(res.data.cast)
-    } catch (err) {
-      alert("Error in getting cast")
+      alert("Error in getting videos");
     }
   };
 
-  const getCrew = async () => {
+  const getCast = async () => {
     try {
-      let res = await axios.get(`/api/movies/${params.id}/cast`)
-      console.log('CREW')
-      setCrew(res.data.crew)
-      console.log(res.data.crew)
+      let res = await axios.get(`/api/movies/${params.id}/cast`);
+      setCast(res.data);
+      console.log("CAST:", res.data);
     } catch (err) {
-      alert("Error in getting crew")
+      alert("Error in getting cast");
     }
+  };
+
+  const getString = () => {
+    if (movie)
+      return `${movie.release_date} | ${movie.runtime} min | ${movie.genres
+        .map((g) => g.name)
+        .join(", ")}`;
   };
 
   const opts = {
@@ -83,35 +71,41 @@ const MovieDetail = () => {
     },
   };
 
+  if (!movie) {
+    return <p>"Loading"</p>;
+  }
 
-  return (
-    <div className="App2">
-      <h1>{movie.title}</h1>
-      <div className="movieCard">
-        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} width={250} />
-        {/* <YouTube videoID={`https://www.youtube.com/watch?v=`} */}
-      </div>
+  const render = () => {
+    if (loading) {
+      return <p>"Loading"</p>;
+    }
+    return (
+      <div className="App2">
+        <h1>{movie.title}</h1>
+        <div className="movieCard">
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            width={250}
+          />
+          <YouTube videoId={trailer.key} opts={opts} width={500} />
+        </div>
+        <div>
+          <h6> {getString()}</h6>
+        </div>
 
-      <div>
-        <h6>
-          {" "}
-          {movie.release_date} | {movie.runtime} min | {movie.genre}
-        </h6>
-      </div>
+        {/* <Ratings /> */}
 
-      {/* <Ratings /> */}
-
-      <div id="container">
-        <h4>Story Line</h4>
-        <p className="information">{movie.overview}</p>
-      </div>
+        <div id="container">
+          <h4>Story Line</h4>
+          <p className="information">{movie.overview}</p>
+        </div>
 
         <Review movieId={movie.id} />
-      <div className="control"></div>
-
-
-    </div>
-  )
+        <div className="control"></div>
+      </div>
+    );
+  };
+  return <div>{render()}</div>;
 };
 
 export default MovieDetail;
