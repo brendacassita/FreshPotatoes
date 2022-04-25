@@ -6,9 +6,6 @@ import {AuthContext} from '../../providers/AuthProvider'
 import GenreFilter from '../pages/GenreFilter'
 import '../CssFIles/card.css'
 
-
-
-
 const Home = () => {
   let auth = useContext(AuthContext)
     const [movies, setMovies] =  useState([])
@@ -29,7 +26,7 @@ const Home = () => {
         try{
           let res = await axios.get('/api/newest/')
           setMovies(res.data.results)
-          // console.log(res.data)
+          console.log(res.data.results)
           //set back to false because now we have the data
           setLoading(false);
           // console.log(res.data)

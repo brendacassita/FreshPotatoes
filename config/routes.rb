@@ -45,6 +45,10 @@ post 'movies/:id/reviews', to: 'reviews#create'
 #get all reviews for preWatched movies
 get 'movies/:id/prewatched', to: 'reviews#preWatched'
 #get 'movies/:id/reviews/pre', to: 'reviews#preWatched'
+
+get 'movies/:id/cast', to: 'casts#index'
+
+get 'movies/:id/videos', to: 'movies#videos'
    
   end 
     get '*other', to: 'static#index'

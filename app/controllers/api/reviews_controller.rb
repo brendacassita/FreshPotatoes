@@ -1,4 +1,8 @@
 class Api::ReviewsController < ApplicationController
+    require 'rest-client'
+    BASE_URL = "https://api.themoviedb.org/3/movie/"
+    API_PARTIAL_URL = "?api_key=#{ENV['TMDB_API_KEY']}"
+    
     before_action :authenticate_user!, only: [:create]
     before_action :set_review, only: [:update, :show, :destroy]
     before_action :set_movie
@@ -46,8 +50,9 @@ class Api::ReviewsController < ApplicationController
 
 
     private
-    def set_movie 
-        @movie = Movie.find(params[:movie_id])
+    def set_movie
+        TMDB::API.api_key = "b8780ae423693a3389766038fe49d728"
+        @movie = TMDB::Movie.id(params[:id])
     end
 
     def set_review
