@@ -66,7 +66,7 @@ function EditProfile() {
   }
 
   const handleSubmit = async (e)=>{
-    e.preventDefault()
+    // e.preventDefault()
    try{
       console.log('trying to update with data:')
      let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
