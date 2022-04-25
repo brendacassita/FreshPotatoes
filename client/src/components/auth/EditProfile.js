@@ -1,4 +1,4 @@
-import React,{useContext,useState} from "react";
+import React,{useContext,useEffect,useState} from "react";
 import '../CssFIles/editProfile.css'
 
 
@@ -34,7 +34,7 @@ function EditProfile() {
 
   const [showUpload, setShowUpload] = useState(false)
 
-
+                                                                                                             
 
   const upload = () =>{
     if(showUpload){
@@ -66,10 +66,11 @@ function EditProfile() {
   }
 
   const handleSubmit = async (e)=>{
-    // e.preventDefault()
+    e.preventDefault()
    try{
       console.log('trying to update with data:')
      let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
+    setUser(res.data)
    } catch(err){
        alert('error occured updating user info')
    } finally {
