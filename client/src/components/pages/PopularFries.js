@@ -34,7 +34,6 @@ const PopularFries= ()=>{
       let res = await axios.get(`/api/pagetopfries/?page=${page}`)
       setCurrentPage (page)
       setTop10(res.data.movie)
-      
     }catch(err){
     alert('error in getting more top movies')
     }
@@ -45,7 +44,7 @@ const PopularFries= ()=>{
     console.log('numPage:', numPage)
     const buttonArr = []
     for(let i = 1; i<=numPage; i++){
-      buttonArr.push(<button className='pagebutton' Click={()=>{getMoreThanTop10(i)}}>{i}</button>)
+      buttonArr.push(<button className='pagebutton' onClick={()=>{getMoreThanTop10(i)}}>{i}</button>)
     }
     return buttonArr
   }

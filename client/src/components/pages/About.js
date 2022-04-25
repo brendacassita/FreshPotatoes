@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import github from '../CssFIles/images/github.png'
 import linkedin from '../CssFIles/images/linkedin.webp'
 import gmail from '../CssFIles/images/gmail.png'
+import fb from '../CssFIles/images/fb.png'
+
 import { Link } from 'react-router-dom';
 
 
@@ -43,6 +45,13 @@ export default function MediaCard() {
                   width: "40px",
                   height: "40px",
                  }}src={gmail} width={300}/>)}</a>
+                 {fb && (
+              <img style={{
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                 }}src={fb} width={300}/>)}
 
           
       </CardContent>
