@@ -171,3 +171,19 @@ margin-top: 40px;
 
 }
 
+.backToTopButton {
+  background-color: #EC4E20;
+  color: white;
+  font-size: 14px;
+  border-radius: 10px;
+  width: 140px;
+  height: 200px;
+  text-align: center;
+  border: solid white .5px;
+  margin: 20px;
+  }
+
+.backToTopButton:hover {
+background-color: #d24318;
+
+}
