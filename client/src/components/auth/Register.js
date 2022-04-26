@@ -24,31 +24,33 @@ const Register = ()=>{
         e.preventDefault()
         auth.handleRegister({email, password, name})
         setLoading(true);
-        // timeout = setTimeout (()=> {
-        //     setLoading(false);
-        // }, 2000)
+        timeout = setTimeout (()=> {
+            setLoading(false);
+        }, 2000)
     }
 
-        // useEffect(()=> {
-        //     return () => {
-        //         if(timeout) {
-        //             clearTimeout(timeout);
-        //         }
-        //     }
-        // }, [])
+        useEffect(()=> {
+            return () => {
+                if(timeout) {
+                    clearTimeout(timeout);
+                }
+            }
+        }, [])
     // with devise these are required
   return (
-      <div  className="login-background App" >
-        <div className="loginborder">
-        <h1>Sign-up </h1>
+      <div  className="logout-background " >
+      <div className="logoutborder">
+        <h1 className="signup-title">Sign-up </h1>
+        <img className="p" src={p} width='300'/>
         <div className="logincard">
-        <form onSubmit={handleSubmit}>
+          
+        <form className="signup-form" onSubmit={handleSubmit}>
           <p className='loginnames'>Name:</p>
-          <input value={name} onChange={(e)=> setName(e.target.value)}/>
+          <input className="login-btn" value={name} onChange={(e)=> setName(e.target.value)}/>
                 <p className="loginnames">Email: </p>
-                <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                <input className="login-btn" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 <p className="loginnames">Password: </p>
-          <input value={password} type='password' onChange={(e) => setPassword(e.target.value)} />
+          <input className="login-btn" value={password} type='password' onChange={(e) => setPassword(e.target.value)} />
           
           
            <div className='buttonlogin'>

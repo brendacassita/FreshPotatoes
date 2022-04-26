@@ -47,10 +47,10 @@ const Login = ()=>{
 
     // with devise these are required
   return (
-      <div className="login-background App" >
+      <div className="login-background " >
         <div className='loginborder'>
         <div className='logincard'>
-          <img className='potatoe'src={p}></img>
+          {/* <img className='potatoe'src={p}></img> */}
          
           
           <h1>Login</h1>
@@ -59,10 +59,10 @@ const Login = ()=>{
         <form onSubmit={handleSubmit}>
           
             <p className="loginnames">Email</p>
-                <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                <input className="login-btn" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 
             <p className="loginnames">Password</p>
-                <input value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
+                <input className="login-btn" value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
           
             <div className='buttonlogin'>
          

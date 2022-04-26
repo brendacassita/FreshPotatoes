@@ -23,6 +23,7 @@ margin: auto;
 .avataredit {
 border-radius: 48px!important;
 box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+
 }
 .usernameedit {
 font-family: 'Montserrat';
@@ -53,6 +54,7 @@ width: fit-content;
 
 }
 
+
 .editbox {
 /* position: relative; */
 font-size: 15px;
@@ -71,7 +73,6 @@ border-color: orange;
 .edit-all  {
 display: flex;
 flex-direction:column;
-margin-left: 30%;
 justify-content: center!important;
 text-align: center!important;
 
@@ -107,7 +108,7 @@ background-color: #d24318;
 }
 .profilechange {
 border: none;
-background: none;
+
 }
 .avataredit:hover {
 filter: grayscale(100%);
@@ -115,6 +116,8 @@ cursor:pointer;
 }
 
 .editprofile {
+display: flex;
+flex-direction: column;
 justify-content: center;
 text-align: center;
 align-items: center;
@@ -138,12 +141,12 @@ text-align: center;
 }
 
 .fileupload {
-position: absolute;
+/* position: absolute; */
 width: 300px;
 justify-content: center;
 align-items: center;
-margin: -293px 141px;
-    padding: 60px
+/* margin: -293px 141px; */
+    /* padding: 60px */
 }
 .Appnow {
 background-color: #1F1D2B;

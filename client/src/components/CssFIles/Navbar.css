@@ -48,20 +48,21 @@ margin: 40px 10px;
 }
 .avatar_circle {
 width: auto!important;
-height: 50px!important;
+height: 60px!important;
 margin: -20px 20px  ;
+border-radius: 30px;
 /* filter: grayscale(100%); */
-/* -webkit-filter: grayscale(100%); */
+/* -webkit-filter: grayscale(90%); */
 /* -webkit-transition: all 1s ease; */
 }
 
-.avatar_circle:hover {
-/* filter: grayscale(0%); */
-/* filter: gray; */
-/* -webkit-filter: grayscale(0%); */
-/* filter: none; */
-/* transition: 1s ease; */
-}
+/* .avatar_circle:hover {
+filter: grayscale(10%);
+filter: rgb(235, 28, 28);
+-webkit-filter: grayscale(50%);
+filter: none;
+transition: 1s ease;
+} */
 
 .box {
 position: absolute;

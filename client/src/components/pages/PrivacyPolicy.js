@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PrivacyPolicy = () => {
 
   return( 
-    <>
+    
       <div className='App1'>
     <h1>PRIVACY NOTICE</h1>
     <h5>Last updated April 13, 2022</h5>
@@ -17,18 +17,23 @@ const PrivacyPolicy = () => {
         </ul>
       </p>
       <p>
-      <b>Questions or concerns?</b> Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please <b style={{color: 'red'}}>contact us</b>.
+      <b>Questions or concerns?</b> Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please <Link to="/contact_us"><b style={{color: 'red'}}>contact us</b>.</Link>
     </p>
 
     <h3>SUMMARY OF KEY POINTS</h3>
 
     <p>
       <p>
-        <b><i>This summary provides key points from our privacy notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for. You can also click <b style={{color:'red'}}>here</b> to go directly to our table of contents.</i></b>
+        <b><i>This summary provides key points from our privacy notice</i></b>
+          {/* ,but you can find out more details about any of these topics by clicking the link following 
+          each key point or by using our table of contents below to find the section you are looking for. 
+          You can also click <b style={{color:'red'}}>here</b> 
+          to go directly to our table of contents.</i></b> */}
       </p>
 
       <p>
-        <b>What personal information do we process?</b> When you visit, use, or navigate our Services, we may process personal information depending on hwo you interact with Fresh Potatoes and the Services, the choices you make, and the products and features you use. Click <b style={{color:'red'}}>here</b> to learn more.
+        <b>What personal information do we process?</b> When you visit, use, or navigate our Services, we may process personal information depending on hwo you interact with Fresh Potatoes and the Services, the choices you make, and the products and features you use. 
+        {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
       </p>
 
       <p>
@@ -40,19 +45,23 @@ const PrivacyPolicy = () => {
       </p>
 
       <p>
-        <b>How do you process my information?</b> we process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Click <b style={{color:'red'}}>here</b> to learn more.
+        <b>How do you process my information?</b> we process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. 
+        {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
       </p>
 
       <p>
-        <b>In what situations and with what parties do we share personal information?</b> We may share information in specific situations and with specific third parties. Click <b style={{color:'red'}}>here</b> to learn more.
+        <b>In what situations and with what parties do we share personal information?</b> We may share information in specific situations and with specific third parties. 
+        {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
       </p>
 
       <p>
-        <b>How do we keep your information safe?</b> We have organizational and technical processes and  procedures in place to protect your personal information. However, no electronic transmission  over the internet or information storage technology can be guarantee to be 100% secure, so we  cannot promise or guarantee that hackers, cyber-criminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Click <b style={{color:'red'}}>here</b> to learn more.
+        <b>How do we keep your information safe?</b> We have organizational and technical processes and  procedures in place to protect your personal information. However, no electronic transmission  over the internet or information storage technology can be guarantee to be 100% secure, so we  cannot promise or guarantee that hackers, cyber-criminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. 
+        {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
       </p>
 
       <p>
-        <b>What are your rights?</b> Depending on where you are located geographically, the applicable   privacy law may mean you have certain rights regarding your personal information. Click <b style={{color:'red'}}>here</b> to learn more.
+        <b>What are your rights?</b> Depending on where you are located geographically, the applicable   privacy law may mean you have certain rights regarding your personal information. 
+        {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
       </p>
 
       <p>
@@ -60,7 +69,8 @@ const PrivacyPolicy = () => {
       </p>
 
       <p>
-        Want to learn more about what Fresh Potatoes does with any information we collect? Click <b style={{color:'red'}}>here</b> to review the notice in full
+        Want to learn more about what Fresh Potatoes does with any information we collect? 
+        {/* Click <b style={{color:'red'}}>here</b> to review the notice in full */}
       </p>
     </p>
 
@@ -182,7 +192,7 @@ const PrivacyPolicy = () => {
       </p>
       
       <p>
-        <b><u>Withdrawing your consent:</u></b> If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by <b style={{color: 'red'}}>contacting us</b>.
+        <b><u>Withdrawing your consent:</u></b> If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by <Link to="/contact_us"><b style={{color: 'red'}}>contacting us</b>.</Link>
       </p>
 
       <p>
@@ -226,13 +236,13 @@ const PrivacyPolicy = () => {
 
     <h3>9. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h3>
 
-    <p>If you have questions or comments about this notice, you may <b style={{color: 'red'}}>contact us</b>.</p>
+    <p>If you have questions or comments about this notice, you may <Link to="/contact_us"><b style={{color: 'red'}}>contact us</b>.</Link></p>
 
     <h3>10. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h3>
 
-    <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please <b style={{color: 'red'}}>contact us</b>.</p>
-</div>
-    </>
+    <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please <Link to="/contact_us"><b style={{color: 'red'}}>contact us</b></Link>.</p>
+
+    </div>
   )
 }
 

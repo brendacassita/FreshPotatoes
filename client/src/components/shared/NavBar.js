@@ -63,7 +63,7 @@ const Navbar = () => {
               onClick={handleMenu}
               // color="inherit"
             >
-              <Avatar className="avatar_circle" src={user && user.avatar} />
+              {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
 
               {/* <div className='avatar_circle' src={user }>
                   <img className='avatar_circle' src={potatoe} width='60px'></img>
@@ -72,7 +72,7 @@ const Navbar = () => {
               {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
 
-              {/* <img className='avatar_circle' src={bwPic} width='60px'></img> */}
+              <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
             </IconButton>
 
             <Menu
@@ -134,13 +134,20 @@ const Navbar = () => {
         <>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
-
+<Link className="btn1 navlist" to="/popular_potatoes">
+              PopularPotatoes
+            </Link>
+            <Link className="btn1" to="/popular_fries">
+              PopularFries
+            </Link>{" "}
+            {""}
           <Link className="btn1" to="/genres">
             Genres
           </Link>
           <Link className="btn1" to="/SearchResults">
             Search
           </Link>
+          
         </>
       );
     }
@@ -157,13 +164,7 @@ const Navbar = () => {
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
-            <Link className="btn1 navlist" to="/popular_potatoes">
-              PopularPotatoes
-            </Link>
-            <Link className="btn1" to="/popular_fries">
-              PopularFries
-            </Link>{" "}
-            {""}
+            
             {renderLeft()}
           </div>
 

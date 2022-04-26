@@ -92,9 +92,12 @@ const ContactForm = (props) => {
 
 
   return(
-    <Grid container direction="row" className='App1' >
-      <div className='contactpic'>
-     <Grid 
+    
+      
+    <form action="https://submit-form.com/TIGURCmb">
+ <Grid container direction="row" className='App1'>
+    <div className='contactpic'>
+          <Grid 
         item 
         container 
         direction="column" 
@@ -120,12 +123,15 @@ const ContactForm = (props) => {
             </Typography>
         </Grid>
         <Grid item container style={{ marginTop: "2em" }}>
-          <Grid item>
-            <img 
+                  <Grid item>
+                    
+            <img id='phone-icon'
               src={phoneIcon} 
-              alt="phone" 
-              style={{marginRight: "0.5em"}}
-               /> 
+                      alt="phone" 
+                  
+                      style={{marginRight: "0.5em"}}
+                      /> 
+                      
           </Grid>
           <Grid item>
           <a href= "tel:5555555555"> (555) 555-5555</a>
@@ -141,7 +147,8 @@ const ContactForm = (props) => {
       
       <Grid item container style={{ marginBottom: "2em" }}>
           <Grid item>
-            <img 
+                    <img 
+                      className='email-icon'
               src={emailIcon} 
               alt="envelope" 
               style={{marginRight: "0.5em", verticalAlign: "bottom"}} 
@@ -158,8 +165,10 @@ const ContactForm = (props) => {
       </Grid>
       <Grid item container direction="column" style={{ maxWidth: "20em" }}>
         <Grid item style={{ marginBottom: "0.5em" }}>                                 
-          <TextField 
-            
+                    <TextField 
+                     
+          type="text"
+            name="name"
             label="Name" 
             id="name" 
             fullWidth 
@@ -168,7 +177,8 @@ const ContactForm = (props) => {
           />
         </Grid>
         <Grid item style={{ marginBottom: "0.5em" }}>
-          <TextField 
+          <TextField
+          name="email"
             label="Email" 
             fullWidth
             error={emailHelper.length !== 0 }
@@ -180,6 +190,7 @@ const ContactForm = (props) => {
         <Grid item style={{ marginBottom: "0.5em" }}>
           <TextField 
             label="Phone" 
+            name="phone"
             fullWidth
             error={phoneHelper.length !== 0 }
             helperText={phoneHelper}
@@ -196,11 +207,12 @@ const ContactForm = (props) => {
           fullWidth
           rows={10} 
           id="message" 
+          name="message"
           onChange={(event) =>setMessage(event.target.value)}  
         />
       </Grid>
       <Grid item container justify="center" style={{marginTop: "2em" }} >
-          <Button 
+          <Button type = "submit"
             disabled={
               name.length === 0 || 
               message.length === 0 ||
@@ -226,6 +238,7 @@ const ContactForm = (props) => {
         <Grid item container className={classes.background} lg={9}></Grid>
        </div>
     </Grid>
+    </form>
   )
 }
 
