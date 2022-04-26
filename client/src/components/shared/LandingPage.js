@@ -12,7 +12,8 @@ import { useNavigate } from "react-router-dom";
 import Carousel from "../pages/Carousel";
 import GenreFilter from "../pages/GenreFilter";
 import "../CssFIles/card.css";
-
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import '../CssFIles/Other.css'
 const LandingPage = () => {
   let auth = useContext(AuthContext);
   const [movies, setMovies] = useState([]);
@@ -59,16 +60,42 @@ const LandingPage = () => {
       <div className="landingPage">
         <img className="backpic" src={backpic}></img>
         <img className="logolanding" src={logo}></img>
+        
+        
       </div>
 
-      <p className="text-landing">Find out if you want to watch a movie</p>
+      <p className="text-landing">Exclusive reviews by movie lovers, like you.</p>
 
       <div className="btn-all">
         <Link className="landingbtn1" href="/login">
           {" "}
           Sign in Fresh Potatoes
         </Link>
-
+        
+        <div className="check-align"> 
+          
+          <div className="check" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+            
+            <h2>Search</h2>
+          <p>Search all your favorite movies with a click of a mouse  </p>
+        </div>
+          <div className="check2" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+            
+            
+            <h2>Database</h2>
+            <p>We have a large database of movies. Name it, we got it</p>
+          </div>
+          
+          <div className="check3" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+            <h2>Reviews</h2>
+          <p> Rate and review movies before and after you view them</p>
+          </div>
+          
+          <div className="check4" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+            <h2>Connect</h2>
+          <p>Connect with millions of movie buffs across the world </p>
+        </div>
+        </div>
         
         
         <div className="landing-home">

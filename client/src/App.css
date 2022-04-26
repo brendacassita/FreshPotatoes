@@ -201,21 +201,9 @@ align-items: center;
 
 
 
-.backpic {
-display: flex ;
-border: 2px solid #EC4E20;
-width: 100%;
-}
 
-.landingPage {
-background-color: #1F1D2B!important;
-display: flex;
-position: absolute;
-width: auto;
-justify-content: center;
-left:0;
-top:0;
-}
+
+
 .landingbtn {
 position:absolute;
 display: flex;
@@ -271,16 +259,7 @@ filter: invert(100%)!important;
 filter: invert(100%)!important;
 }
 
-.landing-all{
-position:relative;
-display: flex;
-height: 2000px;
-width: 100%;
-background-color: #1F1D2B;
-/* flex-direction: column; */
-justify-content: center;
 
-}
 .fbicon-landing {
 justify-content: flex-start;
 align-items: center;
@@ -324,15 +303,23 @@ padding: 20px;
 position: relative;
 text-align: center;
 }
-.landing-home {
-    max-width: 2200px;
-min-width: 1000px;
-/* height: 1000px; */
-width: 100%;
-    background-color: white;
-    position: relative;
 
-display:block;
-    justify-content: center;
-    margin-top: 330px;
+.backToTopButton {
+  background-color: #EC4E20;
+  color: white;
+  font-size: 14px;
+font-weight: bold;
+  border-radius: 10px;
+  width: 140px;
+  height: 200px;
+  text-align: center;
+  border: solid white .5px;
+  margin: 20px;
+border: none;
+  }
+
+.backToTopButton:hover {
+background-color: #d24318;
+
 }
+

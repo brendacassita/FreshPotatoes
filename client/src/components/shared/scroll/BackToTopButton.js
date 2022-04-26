@@ -2,6 +2,7 @@ import { fontSize } from "@mui/system"
 import React from "react"
 import {useEffect,useState} from "react"
 import '../../CssFIles/Other.css'
+import "../../../../src/App.css";
 
 const BackToTopButton = () =>{
   const [backToTopButton, setBackToTopButton] = useState(false)
@@ -28,7 +29,7 @@ const BackToTopButton = () =>{
     <div>
       <>
       {backToTopButton && (
-        <button className="b2b" style={{
+        <button className="backToTopButton" style={{
           position:"fixed",
           bottom: "20px",
           right: "20px",
