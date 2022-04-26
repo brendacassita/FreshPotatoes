@@ -48,6 +48,16 @@ const Footer = () => {
               Register
             </Link> 
         </Box> */}
+        <Box>
+            <Link href="/profile" color="inherit">
+              Profile
+            </Link> 
+        </Box>
+        <Box>
+            <Link href="/edit_profile" color="inherit">
+              Edit Profile
+            </Link> 
+        </Box>
   </Grid>
   <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Pages</Box>
