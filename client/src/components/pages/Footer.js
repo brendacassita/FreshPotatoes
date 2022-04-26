@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Link } from '@mui/material';
+import BackToTopButton from '../shared/scroll/BackToTopButton';
 
 
 const Footer = () => {
@@ -48,6 +49,16 @@ const Footer = () => {
               Register
             </Link> 
         </Box> */}
+        <Box>
+            <Link href="/profile" color="inherit">
+              Profile
+            </Link> 
+        </Box>
+        <Box>
+            <Link href="/edit_profile" color="inherit">
+              Edit Profile
+            </Link> 
+        </Box>
   </Grid>
   <Grid item xs={12} sm={4}>
         <Box borderBottom={1}>Pages</Box>
@@ -76,6 +87,7 @@ const Footer = () => {
   </Grid>
   <Box textAlign="center" pt={{xs: 5, sm: 10}} pb={{xs: 5, sm:0}}>
     Fresh Potatoes &reg; {new Date().getFullYear()}
+    <BackToTopButton />
   </Box>
   </Container>
 </Box>
