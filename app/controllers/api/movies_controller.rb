@@ -53,7 +53,7 @@ end
 
 ### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
 def popular
-  response = HTTParty.get('https://api.themoviedb.org/3/movie/popular?api_key='+ ENV["TMDB_API_KEY"])
+  render json: Movie.popular
 end
 
 ### CAST LIST BY MOVIE ID ###
