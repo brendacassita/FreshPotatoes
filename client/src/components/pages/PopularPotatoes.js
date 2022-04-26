@@ -24,7 +24,6 @@ const PopularPotatoes = () => {
       let res = await axios.get('/api/pagetoppotatoes/?per=10')
       setPer(res.data.per)
       setCount(res.data.count)
-
       setTop10(res.data.movie)
       console.log(res)
     } catch (err) {
@@ -35,7 +34,7 @@ const PopularPotatoes = () => {
   const getMoreThanTop10 = async (page) => {
     try {
       let res = await axios.get(`/api/pagetoppotatoes/?page=${page}`)
-      setCurrentPage (page)
+      setCurrentPage(page)
       setTop10(res.data.movie)
     } catch (err) {
       alert('error in getting more top movies')
@@ -55,7 +54,6 @@ const PopularPotatoes = () => {
   const renderMovies = () => {
     return top10.map((movie) => (
       <div className="display">
-      
         <li>
           <Link to={`/movies/${movie.id}`}>
             <img className='top10' src={movie.poster} />
@@ -78,40 +76,29 @@ const PopularPotatoes = () => {
                 <h4>Story Line</h4>
                 <p className="information">{movie.plot}</p>
               </div>
-              <hr/>
-
+              <hr />
             </div>
           </div>
-
-
           <br />
-
         </li>
       </div>
-      
+
     ))
   }
 
 
-
-
-
-
-
-
-
   return (
-    <div className='App1'>
-       <div className='searchall' >
-      <div className='sline' ></div>
-          <div className='titlename'></div>
-      <h1>Popular Potatoes</h1>
-      <div className='bline' ></div>
+    <div className='App'>
+      <div className='titleline' >
+        <div className='smallline' ></div>
+        <div className='titlename'></div>
+        <h1 className='searchall2' >Popular Potatoes</h1>
+        <div className='bigline' ></div>
       </div>
-      <p className='orangewording'>Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
-      <hr/>
-    <br/>
-      <ol start={(currentPage-1)*10+1}>{renderMovies()}</ol>
+      <p className='miniwording'>* Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <hr />
+      <br />
+      <ol start={(currentPage - 1) * 10 + 1}>{renderMovies()}</ol>
       <div>{renderButtons()}</div>
 
 

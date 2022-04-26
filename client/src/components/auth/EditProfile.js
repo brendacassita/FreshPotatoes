@@ -1,4 +1,4 @@
-import React,{useContext,useState} from "react";
+import React,{useContext,useEffect,useState} from "react";
 import '../CssFIles/editProfile.css'
 
 
@@ -34,7 +34,7 @@ function EditProfile() {
 
   const [showUpload, setShowUpload] = useState(false)
 
-
+                                                                                                             
 
   const upload = () =>{
     if(showUpload){
@@ -70,6 +70,7 @@ function EditProfile() {
    try{
       console.log('trying to update with data:')
      let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
+    setUser(res.data)
    } catch(err){
        alert('error occured updating user info')
    } finally {
@@ -84,8 +85,8 @@ function EditProfile() {
 
 
   return (
-    <div className="App1">
-      <div className="">
+    <div className="">
+      <div className="borderfresh">
         
       <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
          <button className="profilechange" onClick={()=>setShowUpload(!showUpload)}> 
@@ -112,26 +113,26 @@ function EditProfile() {
         {/* to do have *name already exists pop up if there is already a name */}
         {/* <h6>*name already exists</h6>  */}
         
-          <div>
-            <div className="align">
+          
+            <div className="editalign">
             <h5 className="fullname">Full Name</h5>
               </div>
               <input className="editbox" value={name} onChange={(e) => setName(e.target.value)} /> 
             
-            <div  className="align">
+            <div  className="editalign">
               <h5 className="fullname">Email</h5>
               </div>
             <input className="editbox" value={email} onChange={(e) => setEmail(e.target.value)} /> 
             
-            <div className="align">
+            <div className="editalign">
               <h5 className="fullname">Password</h5>
               </div>
             <input className="editbox" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />  
-            <div className="align">
+            <div className="editalign">
               <h5 className="fullname">Phone number</h5>
               </div>
             <input className="editbox" value={phone} onChange={(e) => setPhone(e.target.value)} />  
-          </div>   
+         
           
         <br/>   
         <br/>   
