@@ -8,7 +8,7 @@ import { Link } from '@mui/material';
 
 const Footer = () => {
   return(
-<footer>
+<footer  className='footer'>
 <Box 
   px={{ xs: 3, sm: 10}} 
   py={{ xs: 5, sm: 10}}

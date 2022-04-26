@@ -37,7 +37,8 @@ import LandingPage from './components/shared/LandingPage';
 
 function App() {
   return (
-    <div>
+    <div id='page-container'>
+      <div id='content-wrap' >
       <Navbar />
       {/* When our app first mounts FetchUser Runs */}
       <FetchUser>
@@ -81,9 +82,11 @@ function App() {
             <Route path='*' element={<NoMatch />}/>
           </Routes>
         </>
-      </FetchUser>
+        </FetchUser>
+        </div>
+      <div id='footer'>
       <Footer />
-
+</div>
     </div>
   );
 }

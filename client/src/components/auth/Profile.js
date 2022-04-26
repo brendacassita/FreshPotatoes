@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { FilePond, registerPlugin } from "react-filepond";
 import { AuthContext } from "../../providers/AuthProvider";
 
+import bwPic from '../../Images/blackwhitePotatoe.png'
 
 
 
@@ -16,11 +17,16 @@ const Profile = () => {
   
   
   return(
-    <div className="App2">
+    <div className="App1">
      <h1>Profile Page</h1>
-     {user.avatar && <img src={user.avatar} width={200} />}
-     < br/>
-     {user.name}
+      {user.avatar && <img className="profile-pic" src={user.avatar} width={200} />}
+      
+       {!user.avatar && <button ><img className="profile-pic" src={bwPic} width='170px'></img></button>}
+      
+      
+      < br />
+      <h2>{user.name}</h2>
+     
       {/* {!user.avatar && <p>no image</p>} */}
       < br/>
       < br/>
@@ -31,6 +37,7 @@ const Profile = () => {
   )
 }
   
+
 
 
   

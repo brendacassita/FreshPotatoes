@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 export default function MediaCard() {
   return (
-    <div className='App2'>
+    <div className='App1'>
 
       <h1>About Us</h1>
 

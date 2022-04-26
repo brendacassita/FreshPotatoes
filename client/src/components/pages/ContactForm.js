@@ -92,7 +92,7 @@ const ContactForm = (props) => {
 
 
   return(
-    <Grid container direction="row">
+    <Grid container direction="row" className='App1' >
       <div className='contactpic'>
      <Grid 
         item 

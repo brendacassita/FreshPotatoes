@@ -10,7 +10,7 @@ import {Link} from '@mui/material';
 
 const LandingPage = () => {
   return (
-    <div className='landing-all' >
+    <div className='landing-all ' >
     <div className='landingPage' >
       <img className='backpic' src={backpic}  ></img>
       <img className='logolanding' src={logo}></img>

@@ -33,32 +33,28 @@ letter-spacing: 0.12px;
 color: #000000;
 margin-bottom: -8px;
 }
+.editalign {
+flex-direction: column;
+justify-content: center;
+/* position:relative; */
+/* display:block; */
+/* justify-content: center!important; */
+/* z-index: 1; */
+}
+
 .fullname {
 position: relative;
 z-index: 1!important;
 background-color: #000000;
 color: white;
 width: fit-content;
-/* justify-content: flex-start;
-flex-direction: column;  */
- margin-bottom: -7px;
-margin-left: 262px;
-}
-.useremailedit {
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-letter-spacing: -0.02em;
-color: #000000;
-}
-.editalign {
-flex-direction: column;
-justify-content: center;
-z-index: 1;
-}
-.editbox {
+ margin-bottom: -30px;
+/* margin-left: 190px; */
 
+}
+
+.editbox {
+/* position: relative; */
 font-size: 15px;
 border-radius: 40px;
 width: 200px;
@@ -67,10 +63,29 @@ left: 675px;
 top: 881px;
 background-color: white;
 text-align: center;
-z-index: -1;
+/* z-index: 1; */
 }
 .editbox:hover {
 border-color: orange;
+}
+.edit-all  {
+display: flex;
+flex-direction:column;
+margin-left: 30%;
+justify-content: center!important;
+text-align: center!important;
+
+}
+
+
+
+.useremailedit {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+letter-spacing: -0.02em;
+color: #000000;
 }
 .editprofilebtn {
 z-index: 1;
@@ -102,20 +117,23 @@ cursor:pointer;
 .editprofile {
 justify-content: center;
 text-align: center;
+align-items: center;
 background-color: rgb(240, 240, 244);
-width:900px;
-margin: 100px;
-height: 800px;
+width:100%;
+padding: 20px;
+/* margin: 100px; */
+/* height: 800px; */
 border: none;
-box-shadow: 0 15px 30px 1px ;
+/* box-shadow: 0 15px 30px 1px ; */
 }
 .form{
+justify-content: center;
 align-items: center;
 border: none!important;
-width: 700px!important;
-height: 600px;
+/* width: 700px!important; */
+/* height: 600px; */
 text-align: center;
-padding: 80px!important;
+/* padding: 80px!important; */
 
 }
 
@@ -127,18 +145,23 @@ align-items: center;
 margin: -293px 141px;
     padding: 60px
 }
-.App1 {
+.Appnow {
 background-color: #1F1D2B;
 padding: 100px;
+
 }
 
-.borderfresh {
-border: solid #1F1D2B;
-border-width: 30px;
+/* .borderfresh {
+border: none;
 background-color: #1F1D2B ;
-
-}
+position: relative;
+display: flex;
+justify-content: center;
+} */
 .App-edit {
 display: absolute;
 
+}
+.profile-pic {
+border-radius: 90px!important;
 }

@@ -37,7 +37,7 @@ const SearchResults = () => {
     setFilteredMovies(MovieData)
   }
   return (
-    <div className='App'>
+    <div className='App1'>
       
       <div className='searchall' >
         <div className='sline' ></div>

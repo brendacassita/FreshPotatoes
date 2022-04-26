@@ -114,14 +114,15 @@ cursor: pointer;
 
 .sline {
 background-color: red;
-width: 42px;
-margin-left: -35px;
-
+width: 12px;
+margin-left: 61px;
+    margin-right: -259px
 }
 .bline {
 background-color: red;
 width: 1200px;
 overflow: hidden;
+margin-left: 253px;
 }
 
 
@@ -158,6 +159,7 @@ justify-content: flex-start;
 margin-top: -5px!important;
 margin: 44px;
 margin: 95px;
+padding: 0 22px;
     font-size: 32px!important;
     position: absolute;
     background-color: white;

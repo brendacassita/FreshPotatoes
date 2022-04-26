@@ -69,3 +69,12 @@ background-color: #EC4E20!important;
 .buttonlogin1:hover{
 background-color: #ec5020b8!important;
 }
+.buttonRegister-nav {
+background-color: #EC4E20!important;
+color: white!important;
+border: none!important;
+}
+.buttonRegister-nav:hover{
+background-color: #ec5020d3!important;
+
+}

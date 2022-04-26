@@ -101,9 +101,10 @@ const PopularPotatoes = () => {
 
 
   return (
-    <div className='App'>
-       <div className='titleline' >
-      <div className='smallline' ></div>
+    <div className='App1'>
+      
+       <div className='searchall' >
+      <div className='sline' ></div>
           <div className='titlename'></div>
       <h1 className='searchall2' >Popular Potatoes</h1>
       <div className='bline' ></div>

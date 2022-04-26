@@ -49,7 +49,7 @@ const Home = () => {
     }
 
        return (
-         <div className='App' >
+         <div className='App1' >
            {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
            </div> */}
            

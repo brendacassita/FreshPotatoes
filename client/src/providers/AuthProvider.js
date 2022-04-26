@@ -38,7 +38,7 @@ const AuthProvider = ({children})=>{
             // there is also a token being sent back here, that
             // devise-axios is keeping track of
             setUser(res.data.data)
-            navigate('/')
+            navigate('/home')
             // setUser
         } catch(err){
             // potentially a lot of work here
@@ -55,7 +55,8 @@ const AuthProvider = ({children})=>{
             // assuming email and password are correct
             // no token needed
             let res = await axios.post('/api/auth/sign_in',user)
-            setUser(res.data.data)
+          setUser(res.data.data)
+          console.log('handlelogin hit in auth')
             navigate('/home')
             // setUser
         } catch(err){
@@ -73,8 +74,9 @@ const AuthProvider = ({children})=>{
             // the user
             let res = await axios.delete('/api/auth/sign_out')
             // no token given back
-            setUser(null)
-            navigate('/login')
+        
+          setUser(null)
+         
             // setUser
         } catch(err){
             alert('error logging out, did you send the token?')

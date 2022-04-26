@@ -50,11 +50,11 @@ const MovieDetail = () => {
   };
 
   return (
-    <div className="App2">
+    <div className="movieDetail-page">
       {movies.map((movie) => {
         console.log("movie name:", movie.name, movie.trailer);
         return (
-          <div key={movie.id}>
+          <div  key={movie.id}>
             <h1>{movie.movie_name}</h1>
             <div className="movieCard">
               <img src={movie.poster} width={250} />
@@ -66,16 +66,15 @@ const MovieDetail = () => {
                 {" "}
                 {movie.year} | {movie.runtime} | {movie.genre}
               </h6>
-              
-                <Ratings />
-              
 
-              <div id="container">
+              <Ratings />
+
+              <div id="">
                 <h4>Story Line</h4>
                 <p className="information">{movie.plot}</p>
               </div>
 
-                <Review movieId={movie.id} />
+              <Review movieId={movie.id} />
               <div className="control"></div>
             </div>
           </div>

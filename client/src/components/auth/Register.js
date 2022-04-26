@@ -24,18 +24,18 @@ const Register = ()=>{
         e.preventDefault()
         auth.handleRegister({email, password, name})
         setLoading(true);
-        timeout = setTimeout (()=> {
-            setLoading(false);
-        }, 2000)
+        // timeout = setTimeout (()=> {
+        //     setLoading(false);
+        // }, 2000)
     }
 
-        useEffect(()=> {
-            return () => {
-                if(timeout) {
-                    clearTimeout(timeout);
-                }
-            }
-        }, [])
+        // useEffect(()=> {
+        //     return () => {
+        //         if(timeout) {
+        //             clearTimeout(timeout);
+        //         }
+        //     }
+        // }, [])
     // with devise these are required
   return (
       <div  className="login-background App" >
