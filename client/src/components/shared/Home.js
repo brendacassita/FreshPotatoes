@@ -42,7 +42,10 @@ const Home = () => {
         return movies.map((movie) => (
         <div>
             <div style={{padding: 8}}>
-                <img src={movie.poster} onClick={()=>nav(`/movies/${movie.id}`)} style={{width: '100%'}} />
+                <img 
+                  src={movie.poster} 
+                  onClick={()=>nav(`/movies/${movie.id}`)} 
+                  style={{width: '100%'}} />
             </div>
         </div>
         ))   
@@ -55,7 +58,7 @@ const Home = () => {
          <div className='homeCarousel' >
             <Carousel
                 show={4}
-                infiniteLoop
+                 infiniteLoop
             > 
             {renderPosters()}
             </Carousel>

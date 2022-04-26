@@ -5,25 +5,24 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import '../CssFIles/editProfile.css'
+import SvgComponent from './SvgComponent';
+import Radio from '@mui/material/Radio'
+import { FormControlLabel, RadioGroup } from '@mui/material';
 
 const labels = {
-  0.5: 'Worst Movie Ever.',
   1: 'Worst Movie Ever.',
-  1.5: 'Worst Movie Ever+.',
   2: 'Meh, it passed the time.',
-  2.5: 'Meh, it passed the time.',
   3: 'Pretty good.',
-  3.5: 'I would recommend this movie!', 
   4: 'Awesome!',
-  4.5: 'Awesome!',
   5: 'Absolute must-see!'
 
 }
 
 const Review = (props) => {  
-const [review, setReview] = useState("");
-const [value, setValue] = useState(2); 
-const [hover, setHover] = useState(-1)
+  const [allReviews, setAllReviews] = useState([]); 
+const [review, setReview] = useState(null);
+const [value, setValue] = useState(null); 
+const [hover, setHover] = useState(null)
 const params = useParams();
 
 const handleSubmit  = async (e) => {
@@ -38,26 +37,34 @@ const handleSubmit  = async (e) => {
   alert('error occurred posting review')
 }
 }
-
+const getReviews = async () => {
+    try {
+      let res = await axios.get(`/api/movies/${params.id}/reviews`);
+    setAllReviews(res.data);
+      console.log(res.data);
+    } catch (err) {
+      alert("error in getting reviews");
+    }
+  };
 function getLabelText(value) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`; 
 }
 
-  return(
-    <div>
-    <h2>Leave a Review</h2>
-    <Box
-      sx={{
-        width: 200,
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
+// const renderReviews = () => {
+//   return review.map(r => {
+//         return <Review key={review.id} {...review} />
+//   })
+// }
 
+  return(
+<div>
+    <h2>Leave a review</h2>
+  <div className="reviewRating">
       <Rating
+        icon={<SvgComponent style={{width:"64px", height:"64px"}} />}
         name="hover-feedback"
         value={value}
-        precision={0.5}
+        precision={1.0}
         getLabelText={getLabelText}
         onChange={(event, newValue) => {
           setValue(newValue);
@@ -65,28 +72,55 @@ function getLabelText(value) {
         onChangeActive={(event, newHover) => {
           setHover(newHover);
         }}
-        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+        emptyIcon={<SvgComponent style={{ width:"64px", height:"64px", opacity: 0.55 }} 
+        fontSize="inherit" />}
       />
       {value !== null && (
         <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
       )}
-    </Box>
+  </div>
 
+  <RadioGroup>
+      <FormControlLabel control={<Radio />}  label="Pre"/>
+  </RadioGroup>
+    
+    
+    
     <form onSubmit={handleSubmit}>
       <div> 
-          <textarea onChange={(e) => setReview(e.target.value)} cols="30" rows="5"></textarea>
-
-      
-            
-
-            </div>
-            <button className="editprofilebtn">Submit Review</button>
-
+       <textarea 
+          placeholder={"What do you think of the movie? (optional)"} 
+          style={{marginTop: "2.5em", opacity: 0.55}} 
+          onChange={(e) => setReview(e.target.value)} 
+          cols="75" 
+          rows="15">
+          </textarea>
+          
+      </div>
+        <button 
+          className="editprofilebtn"
+          >Submit Review
+        </button>
     </form>
 
-    {JSON.stringify(review)}
-    
+
+<hr></hr>
+{/* {allReviews.map((r)=> {
+  console.log(allReviews)
+  return(
+    <div key={r.id}>
+      {r.comment}
     </div>
+  )
+})
+} */}
+
+<div>
+
+    {JSON.stringify(review)}
+    </div>
+    </div>
+    
   );
 }
   

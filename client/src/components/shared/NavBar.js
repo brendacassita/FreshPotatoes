@@ -13,7 +13,7 @@ import '../CssFIles/Navbar.css';
 import SearchBar from './SearchBar'
 import axios from 'axios';
 import '../CssFIles/SearchBar.css'
-
+import potatoe from "../../Images/Potatoe.png"
 
 const Navbar = () => {
    const [allMovies,setAllMovies] = useState([])
@@ -174,7 +174,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           
           
           
-          
           <div className='logout' >
               <IconButton
                 size="large"
@@ -205,12 +204,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 >
               
              {/* DO NOT DELETE THESE */}
-                {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
-              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
+                {/* { <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> } */}
 
 
               <MenuItem className='profilelink' onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
               </Menu>
+             
             </div>
          
     
