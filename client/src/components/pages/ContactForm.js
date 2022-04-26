@@ -92,6 +92,7 @@ const ContactForm = (props) => {
 
 
   return(
+    <form action="https://submit-form.com/TIGURCmb">
  <Grid container direction="row">
      <Grid 
         item 
@@ -159,7 +160,8 @@ const ContactForm = (props) => {
         <Grid item style={{ marginBottom: "0.5em" }}>                                 
         
           <TextField 
-            
+          type="text"
+            name="name"
             label="Name" 
             id="name" 
             fullWidth 
@@ -168,7 +170,8 @@ const ContactForm = (props) => {
           />
         </Grid>
         <Grid item style={{ marginBottom: "0.5em" }}>
-          <TextField 
+          <TextField
+          name="email"
             label="Email" 
             fullWidth
             error={emailHelper.length !== 0 }
@@ -180,6 +183,7 @@ const ContactForm = (props) => {
         <Grid item style={{ marginBottom: "0.5em" }}>
           <TextField 
             label="Phone" 
+            name="phone"
             fullWidth
             error={phoneHelper.length !== 0 }
             helperText={phoneHelper}
@@ -197,11 +201,12 @@ const ContactForm = (props) => {
           fullWidth
           rows={10} 
           id="message" 
+          name="message"
           onChange={(event) =>setMessage(event.target.value)}  
         />
       </Grid>
       <Grid item container justify="center" style={{marginTop: "2em" }} >
-          <Button 
+          <Button type = "submit"
             disabled={
               name.length === 0 || 
               message.length === 0 ||
@@ -225,6 +230,7 @@ const ContactForm = (props) => {
    </Grid>
       <Grid item container className={classes.background} lg={9}></Grid>
     </Grid>
+    </form>
   )
 }
 
