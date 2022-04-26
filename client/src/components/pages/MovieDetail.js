@@ -93,7 +93,7 @@ const MovieDetail = () => {
           <h6> {getString()}</h6>
         </div>
 
-        {/* <Ratings /> */}
+        <Ratings />
 
         <div id="container">
           <h4>Story Line</h4>

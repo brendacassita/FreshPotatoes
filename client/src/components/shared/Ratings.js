@@ -32,7 +32,7 @@ const Ratings = () => {
       setWatched(res.data);
       console.log(res.data);
     } catch (err) {
-      alert("error in getting unwatched reviews");
+      alert("error in getting watched reviews");
     }
   };
 

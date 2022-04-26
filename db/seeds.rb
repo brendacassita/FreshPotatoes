@@ -545,6 +545,25 @@ Review.create(
 )
 end
 
+10.times do
+Review.create(
+  rating: Faker::Number.between(from: 1, to: 5),
+  watched: 'true',
+  comment: Faker::ChuckNorris.fact,
+  user_id: Faker::Number.between(from: 1, to: 5),
+  movie_id: 639933
+)
+end
+10.times do
+Review.create(
+  rating: Faker::Number.between(from: 1, to: 5),
+  watched: 'false',
+  comment: Faker::ChuckNorris.fact,
+  user_id: Faker::Number.between(from: 1, to: 5),
+  movie_id: 639933
+)
+end
+
 
 ########## CAST ##########
 

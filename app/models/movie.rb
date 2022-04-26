@@ -15,25 +15,25 @@ class Movie < ApplicationRecord
     GROUP BY m.id, m.name, m.poster, m.trailer, m.plot, m.runtime, m.year", id])
   end
 
-  def self.unwatched(id)
-    Movie.find_by_sql(["SELECT m.id, m.name
-    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
-    FROM movies m
-    INNER JOIN reviews rev ON m.id = rev.movie_id
-    WHERE m.id = ? AND rev.watched = 'false'
-    GROUP BY m.id, rev.watched
-    ORDER BY m.id", id])
-  end
+  # def self.unwatched(id)
+  #   Movie.find_by_sql(["SELECT m.id, m.name
+  #   , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating
+  #   FROM movies m
+  #   INNER JOIN reviews rev ON m.id = rev.movie_id
+  #   WHERE m.id = ? AND rev.watched = 'false'
+  #   GROUP BY m.id, rev.watched
+  #   ORDER BY m.id", id])
+  # end
 
-  def self.watched(id)
-    Movie.find_by_sql(["SELECT m.id, m.name
-    , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
-    FROM movies m
-    INNER JOIN reviews rev ON m.id = rev.movie_id
-    WHERE m.id = ? AND rev.watched = 'true'
-    GROUP BY m.id, rev.watched
-    ORDER BY m.id", id])
-  end
+  # def self.watched(id)
+  #   Movie.find_by_sql(["SELECT m.id, m.name
+  #   , (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS watched_rating
+  #   FROM movies m
+  #   INNER JOIN reviews rev ON m.id = rev.movie_id
+  #   WHERE m.id = ? AND rev.watched = 'true'
+  #   GROUP BY m.id, rev.watched
+  #   ORDER BY m.id", id])
+  # end
 
   def self.top3_potatoes
     Movie.find_by_sql("SELECT m.id, m.name, m.poster, m.runtime, m.year, m.plot, (SELECT (SUM(rev.rating)/(COUNT(rev.id)*5)*100)) AS unwatched_rating, COUNT(rev.id) AS rev_count

@@ -18,6 +18,16 @@ class Api::ReviewsController < ApplicationController
     # def postWatched
     # end
 
+    def unwatched
+        puts @movie.id
+        render json: Review.unwatched(@movie.id)
+    end
+
+    def watched
+        puts @movie.id
+        render json: Review.watched(@movie.id)
+    end
+
     def show
         render json: @reviews
     end

@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     get 'all_users', to: 'movies#all_users'
 
     # GRABS RATINGS FOR WATCHED/UNWATCHED
-    get 'movies/:id/watched', to: 'movies#watched'
-    get 'movies/:id/unwatched', to: 'movies#unwatched'
+    get 'movies/:id/watched', to: 'reviews#watched'
+    get 'movies/:id/unwatched', to: 'reviews#unwatched'
 
     # TOP 3 AND TOP 10 POTATOES/FRIES BASED ON SCORES
     get 'top3/potatoes', to: 'movies#top3_potatoes'
