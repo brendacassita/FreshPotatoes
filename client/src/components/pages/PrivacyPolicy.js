@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const PrivacyPolicy = () => {
 
   return( 
-    <>
+    
+      <div className='App1'>
     <h1>PRIVACY NOTICE</h1>
     <h5>Last updated April 13, 2022</h5>
     <p>
@@ -241,7 +242,7 @@ const PrivacyPolicy = () => {
 
     <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please <Link to="/contact_us"><b style={{color: 'red'}}>contact us</b></Link>.</p>
 
-    </>
+    </div>
   )
 }
 

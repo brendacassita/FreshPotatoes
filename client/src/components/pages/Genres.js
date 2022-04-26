@@ -51,7 +51,7 @@ const renderData = () => {
    
      
       return(
-        <div className="App2">
+        <div className="App1">
        
           <div className='searchall' >
         <div className='sline' ></div>

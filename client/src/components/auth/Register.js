@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import Button from '@mui/material/Button';
 import '../CssFIles/Login-out.css';
+import {Link} from '@mui/material';
 
 import p from '../../Images/Potatoe.png'
 
@@ -36,38 +37,45 @@ const Register = ()=>{
             }
         }, [])
     // with devise these are required
-    return (
-        <div className="loginborder">
-        <h1>Sign-up </h1>
+  return (
+      <div  className="logout-background " >
+      <div className="logoutborder">
+        <h1 className="signup-title">Sign-up </h1>
+        <img className="p" src={p} width='300'/>
         <div className="logincard">
-        <form onSubmit={handleSubmit}>
+          
+        <form className="signup-form" onSubmit={handleSubmit}>
           <p className='loginnames'>Name:</p>
-          <input value={name} onChange={(e)=> setName(e.target.value)}/>
+          <input className="login-btn" value={name} onChange={(e)=> setName(e.target.value)}/>
                 <p className="loginnames">Email: </p>
-                <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                <input className="login-btn" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 <p className="loginnames">Password: </p>
-          <input value={password} type='password' onChange={(e) => setPassword(e.target.value)} />
+          <input className="login-btn" value={password} type='password' onChange={(e) => setPassword(e.target.value)} />
           
           
            <div className='buttonlogin'>
           
                 {!loading &&
                 <>
-                    
+                  <div className="login-btns">
+               
+                <p className="acnt">Already have an account?</p><Link href='/login'>LOGIN </Link>
+                </div>
                 
-                    <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button>
+                    {/* <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button> */}
 
                 </>
               }
               <Button
-            className="buttonlogin btnregister"
+            className="buttonlogin1 btnregister"
             variant="contained" 
                         onClick={handleSubmit}
                         disabled={loading}>
                         {loading ? 'Loading...' : 'Register'}
-                </Button>
+              </Button>
           </div>
           </form>
+              </div>
           </div>
         </div>
     )

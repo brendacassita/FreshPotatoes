@@ -2,7 +2,7 @@ body {
 background: linear-gradient(to right, #fbfaf9,#dbdbdb);
 	background-attachment: fixed;	
 	background-size: cover;
-  
+  position: relative;
 	}
 
 #container{
