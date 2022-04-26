@@ -4,8 +4,8 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.float :rating
       t.boolean :watched
       t.text :comment
+      t.integer :movie_id
       t.belongs_to :user, null: false, foreign_key: true
-      t.belongs_to :movie, null: false, foreign_key: true
 
       t.timestamps
     end

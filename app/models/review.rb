@@ -1,6 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :user
-  belongs_to :movie
 
   def self.preWatched(movie_id) 
     

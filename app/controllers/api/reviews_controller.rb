@@ -8,7 +8,7 @@ class Api::ReviewsController < ApplicationController
     before_action :set_movie
 
     def index
-        render json: @movie.reviews
+        render json: Review.where("movie_id = #{@movie.id}")
     end
 
     def preWatched 
