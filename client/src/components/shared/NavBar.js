@@ -103,17 +103,18 @@ const Navbar = () => {
               <MenuItem className="profilelink" onClick={handleMenuClose}>
                 <div className="">
                   <Link className="profilelink" to="/profile">
-                    Profile
+                  {t("common:profile")}
                   </Link>
                   <Link className="profilelink" to="/edit_profile">
-                    Edit Profile
+                  {t("common:editprofile")}
                   </Link>
                   <Button
                     className="btn2"
                     variant="outlined"
                     onClick={() => handleLogout()}
                   >
-                    Logout
+                  {t("common:logout")}
+
                   </Button>
                 </div>
               </MenuItem>
