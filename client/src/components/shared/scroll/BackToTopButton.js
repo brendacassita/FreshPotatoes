@@ -3,9 +3,14 @@ import React from "react"
 import {useEffect,useState} from "react"
 import '../../CssFIles/Other.css'
 import "../../../../src/App.css";
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
+
 
 const BackToTopButton = () =>{
   const [backToTopButton, setBackToTopButton] = useState(false)
+  const {i18n, t} = useTranslation(["common"])
+
 
   useEffect(()=>{
     window.addEventListener("scroll", () => {
@@ -37,7 +42,7 @@ const BackToTopButton = () =>{
           fontSize: "12px"
         }}
       onClick={scrollUp}>
-        ^ Back to the top
+        ^ {t("common:back2top")}
       </button>
       )}
       </>
