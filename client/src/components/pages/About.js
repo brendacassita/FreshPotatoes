@@ -15,6 +15,7 @@ import jess from '../../Images/Jess.jpg'
 import fresh from '../../Images/Potatoe.png'
 import sharayah from '../../Images/sharayah.jpg'
 import trina from '../../Images/Trina.jpg'
+import brenda from '../../Images/SELFIE.JPG'
 import {Link} from 'react-router-dom';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -24,7 +25,13 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import freshPF from '../../Images/FreshPotatoesFrylogo-01.png'
-export default function MediaCard() {
+export default function MediaCard()
+
+
+
+
+
+{
   return (
     <div className='App1'>
 
@@ -557,19 +564,20 @@ export default function MediaCard() {
             <h1 className='name-team'>Brenda</h1>
       <div className="card1 profile-two">
         <div className="card-image profile-img--two">
-      <img src='' width='100%' alt="profile-two"/>
+                <img src={brenda} width='100%' alt="profile-two"/>
         </div>
 
             <ul className="social-icons">
               
           <li>
-            <a href="https://github.com/SharayahDesigns">
+            <a href="https://github.com/brendacassita">
               <GitHubIcon sx={{ fontSize: 40 }}className="fab Linked-in" width='200px'/>
             </a>
               </li>
               
               <li>    
-                <a href="https://www.linkedin.com/in/sharayahhefner/">
+                <a href="https://www.linkedin.com/in/brenda-cassita-7387191bb
+">
                   <LinkedIn
                     sx={{ fontSize: 40 }}className="fab Linked-in" width='200px' />
                 </a>
