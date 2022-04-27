@@ -2,6 +2,7 @@
 background-color: #1F1D2B!important;
 border-width: 5px;
 }
+
 .AppBar1 {
 border-bottom:  solid white;
 }
@@ -37,19 +38,32 @@ right: 0px!important;
 }
 .profilelink {
 display: flex!important;
-justify-content: center!important;
 text-decoration: none;
 color: black;
-margin: 3px;
-font-weight: bold;
+margin: 2px;
+
 }
 #menu-appbar {
 margin: 40px 10px;
 }
 .avatar_circle {
-/* width: 100px; */
-margin: -25px 10px  ;
+width: auto!important;
+height: 60px!important;
+margin: -20px 20px  ;
+border-radius: 30px;
+/* filter: grayscale(100%); */
+/* -webkit-filter: grayscale(90%); */
+/* -webkit-transition: all 1s ease; */
 }
+
+/* .avatar_circle:hover {
+filter: grayscale(10%);
+filter: rgb(235, 28, 28);
+-webkit-filter: grayscale(50%);
+filter: none;
+transition: 1s ease;
+} */
+
 .box {
 position: absolute;
 right: 40px!important;

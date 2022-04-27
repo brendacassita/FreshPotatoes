@@ -33,6 +33,7 @@ const Home = () => {
     }
   };
 
+<<<<<<< HEAD
   const renderPosters = () => {
     return movies.map((movie) => (
       <div>
@@ -42,6 +43,20 @@ const Home = () => {
             onClick={() => nav(`/movies/${movie.id}`)}
             style={{ width: "100%" }}
           />
+=======
+       return (
+         <div className='App1' >
+           {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
+           </div> */}
+           
+         <div className='homeCarousel' >
+            <Carousel
+                show={4}
+                infiniteLoop
+            > 
+            {renderPosters()}
+            </Carousel>
+>>>>>>> dddb19885eb6002f48fe8f5d2963ed6416c54a44
         </div>
       </div>
     ));
