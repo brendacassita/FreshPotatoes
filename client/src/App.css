@@ -222,6 +222,24 @@ border: none;
 margin: 300px;
 box-shadow:  0px 0px 40px black;
 }
+.landingbtn2 {
+  position: absolute;
+  display: flex;
+  justify-content: center !important;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #be3005;
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 12px;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  margin: 300px;
+  box-shadow: 0px 0px 40px black;
+}
 
 .landingbtn1 {
 position:absolute;
@@ -229,7 +247,7 @@ display: flex;
 justify-content: center!important;
 justify-content: space-around;
 align-items: center;
-background-color: #EC4E20;
+background-color: #be3005;
 color: white!important;
 text-decoration: none!important;
 font-size: 12px;
@@ -241,7 +259,6 @@ border: none;
 margin: 300px;
 box-shadow:  0px 0px 40px black;
 }
-
 .email-icon {
 
 -webkit-filter: invert(50%);

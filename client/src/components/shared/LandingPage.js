@@ -15,8 +15,9 @@ import "../CssFIles/card.css";
 import '../CssFIles/Other.css'
 
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-
+import StorageIcon from "@mui/icons-material/Storage";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import GroupIcon from "@mui/icons-material/Group";
 
 const LandingPage = () => {
   let auth = useContext(AuthContext);
@@ -63,58 +64,58 @@ const LandingPage = () => {
       <div className="landingPage">
         <img className="backpic" src={backpic}></img>
         <img className="logolanding" src={logo}></img>
-        
-        
       </div>
 
-      <p className="text-landing">Exclusive reviews by movie lovers, like you.</p>
+      <p className="text-landing">
+        Exclusive reviews by movie lovers, like you.
+      </p>
 
       <div className="btn-all">
         <Link className="landingbtn1" href="/login">
           {" "}
           Sign in Fresh Potatoes
         </Link>
-        
-        <div className="check-align"> 
-          
-          <div className="check" ><LocalMoviesIcon sx={{fontSize: 60}} />
-            
+
+        <div className="check-align">
+          <div className="check">
+            <LocalMoviesIcon sx={{ fontSize: 60 }} />
+
             <h2>Search</h2>
-          <p>Search all your favorite movies with a click of a mouse  </p>
-        </div>
-          <div className="check2" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
-            
-            
+            <p>Search all your favorite movies with a click of a mouse </p>
+          </div>
+          <div className="check2">
+            <StorageIcon sx={{ fontSize: 60 }} />
+
             <h2>Database</h2>
             <p>We have a large database of movies. Name it, we got it</p>
           </div>
-          
-          <div className="check3" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+
+          <div className="check3">
+            <StarBorderIcon sx={{ fontSize: 60 }} />
             <h2>Reviews</h2>
-          <p> Rate and review movies before and after you view them</p>
+            <p> Rate and review movies before and after you view them</p>
           </div>
-          
-          <div className="check4" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+
+          <div className="check4">
+            <GroupIcon sx={{ fontSize: 60 }} />
             <h2>Connect</h2>
-          <p>Connect with millions of movie buffs across the world </p>
-        </div>
-        </div>
-        
-        
-        <div className="landing-home">
-        <div className="homeCarousel">
-          <Carousel show={4} infiniteLoop>
-            {renderPosters()}
-          </Carousel>
+            <p>Connect with millions of movie buffs across the world </p>
+          </div>
         </div>
 
-        <div className="homeGenre">
-              <GenreFilter />
-              </div>
+        <div className="landing-home">
+          <div className="homeCarousel">
+            <Carousel show={4} infiniteLoop>
+              {renderPosters()}
+            </Carousel>
+          </div>
+
+          <div className="homeGenre">
+            <GenreFilter />
+          </div>
         </div>
-        </div>
-        </div>
-    
+      </div>
+    </div>
   );
 };
 
