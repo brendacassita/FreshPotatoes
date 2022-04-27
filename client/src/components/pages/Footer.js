@@ -12,10 +12,10 @@ import BackToTopButton from '../shared/scroll/BackToTopButton';
 
 const Footer = () => {
   return(
-<footer>
+<footer  className='footer'>
 <Box 
-  px={{ xs: 3, sm: 10}} 
-  py={{ xs: 5, sm: 10}}
+  // px={{ xs: 3, sm: 10}} 
+  // py={{ xs: 5, sm: 10}}
   bgcolor="#1F1D2B" 
   color="white"
   >

@@ -37,13 +37,19 @@ const SearchResults = () => {
     setFilteredMovies(MovieData)
   }
   return (
-    <div className='App'>
+    <div className='App1'>
       
       <div className='searchall' >
         <div className='sline' ></div>
       <h1 className='searchall2' > Search Result - All</h1>
       <div className='bline' ></div>
       </div>
+      
+      {/* <h1>Search Results</h1>
+      <div className='searchall2' >
+      <div className='line'>
+        </div>
+        </div> */}
       
       <div className='searchInputs1'>
           <input className=' searching' onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies...'></input>

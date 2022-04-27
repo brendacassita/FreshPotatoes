@@ -1,6 +1,7 @@
 import { fontSize } from "@mui/system"
 import React from "react"
-import {useEffect, useState } from "react"
+import {useEffect,useState} from "react"
+import '../../CssFIles/Other.css'
 import "../../../../src/App.css";
 
 const BackToTopButton = () =>{

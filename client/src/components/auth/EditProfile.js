@@ -18,7 +18,7 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import bwPic from '../../Images/blackwhitePotatoe.png'
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -59,7 +59,7 @@ function EditProfile() {
       console.log(files)
      // axios call
      try{
-        console.log('trying to update with data:')
+        
        let res = await axios.put('/api/update_image', data)
        setUser(res.data)
      } catch(err){
@@ -76,9 +76,10 @@ function EditProfile() {
    } catch(err){
        alert('error occured updating user info')
    } finally {
+     console.log('Password:',password)
      console.log(files)
      if(!files[0]){
-       console.log('ffff')
+       
        return 
      }
      handleImage()
@@ -87,15 +88,17 @@ function EditProfile() {
 
 
   return (
-    <div className="">
+    <div className="Appnow">
       <div className="borderfresh">
         
-      <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
-         <button className="profilechange" onClick={()=>setShowUpload(!showUpload)}> 
+        <form className="editprofile form" onSubmit={handleSubmit} >
+         
+         <button className="profilechange" type='button' onClick={()=>setShowUpload(!showUpload)}> 
 
-        {user.avatar && <img className="avataredit" src={user.avatar} width={150} />} 
-            </button>
-          {!user.avatar && <p>no image</p>}
+            {user.avatar && <img className="avataredit" src={user.avatar} width={150} />}</button>
+         
+          {!user.avatar && <button onClick={() => setShowUpload(!showUpload)} ><img src={bwPic} width='170px'></img></button>}
+          
           {/* <p>image:</p> */}
           <div className="fileupload">
         {showUpload && <FilePond
@@ -114,8 +117,9 @@ function EditProfile() {
         {/* <h5>Username: </h5><input value={username} onChange={(e)=> setUserName(e.target.value)} />  */}
         {/* to do have *name already exists pop up if there is already a name */}
         {/* <h6>*name already exists</h6>  */}
+           <div className="edit-all">
         
-          
+         
             <div className="editalign">
             <h5 className="fullname">{t("profile:name")}</h5>
               </div>
@@ -126,6 +130,7 @@ function EditProfile() {
               </div>
             <input className="editbox" value={email} onChange={(e) => setEmail(e.target.value)} /> 
             
+            
             <div className="editalign">
               <h5 className="fullname">{t("profile:password")}</h5>
               </div>
@@ -134,7 +139,7 @@ function EditProfile() {
               <h5 className="fullname">{t("profile:phone")}</h5>
               </div>
             <input className="editbox" value={phone} onChange={(e) => setPhone(e.target.value)} />  
-         
+       
           
         <br/>   
         <br/>   
@@ -144,12 +149,12 @@ function EditProfile() {
         <button className="editprofilebtn" type='submit'>{t("common:submit")}</button>
         
         <br />
-        
+        </div>
         {/* <button  type = 'button' onClick={()=>setShowUpload(!showUpload)}>Click to update profile image</button> */}
         
         </form>
         </div>
-    </div>
+     </div>
   );
 }
 

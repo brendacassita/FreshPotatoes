@@ -4,6 +4,7 @@ import { FilePond, registerPlugin } from "react-filepond";
 import { AuthContext } from "../../providers/AuthProvider";
 import {useTranslation, } from 'react-i18next'
 
+import bwPic from '../../Images/blackwhitePotatoe.png'
 
 
 
@@ -36,6 +37,7 @@ const Profile = () => {
   )
 }
   
+
 
 
   

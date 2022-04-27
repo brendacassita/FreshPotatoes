@@ -1,8 +1,9 @@
 .App1 {
 border: 75px solid #1F1D2B;
 background-color: #ffffff;
-padding: 10px;
+padding: 20px;
 text-align: center;
+position: relative;
 }
 
 .miniwording {
