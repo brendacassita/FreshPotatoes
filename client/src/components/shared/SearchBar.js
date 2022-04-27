@@ -94,7 +94,7 @@ const SearchBar = ({placeholder, data}) => {
           {filteredMovies.map((value) => {
             return (
               <a className='dataItem alink' href={`/movies/${value.id}`}>
-                 <img className='' src={value.poster} width={50} />
+                 <img className='' src={`https://image.tmdb.org/t/p/w500${value.poster_path}`} width={50} />
                 <p>{value.title}</p>
               </a>
             );

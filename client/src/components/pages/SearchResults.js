@@ -68,7 +68,7 @@ const SearchResults = () => {
                 <div className='movieInfoBox' >
                   <Link className='cards' to={`/movies/${movies.id}`}>
                     <figure className='card resultcard'>
-                      <img className='back result' src={`https://image.tmdb.org/t/p/w500${movies.poster}`} width={100} />
+                      <img className='back result' src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`} width={100} />
                       </figure>
                   </Link>
                     <div className='seperate'>

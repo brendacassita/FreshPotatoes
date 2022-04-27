@@ -5,6 +5,9 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Link } from '@mui/material';
 import BackToTopButton from '../shared/scroll/BackToTopButton';
+// import {useTranslation} from 'react-i18next'
+// import "../shared/localization/i18n"
+
 
 
 const Footer = () => {
@@ -23,12 +26,12 @@ const Footer = () => {
         <Box borderBottom={1}>Help</Box>
         <Box>
             <Link href="/contact_us" color="inherit">
-              Contact
+              Contact Us
             </Link> 
         </Box>
         <Box>
             <Link href="/about" color="inherit">
-              About
+              About Us
             </Link> 
         </Box>
         <Box>

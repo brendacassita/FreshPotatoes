@@ -10,7 +10,7 @@ import TextField from '@mui/material/TextField'
 //import useMediaQuery from "@mui/material/useMediaQuery";
 
 
-import background from '../CssFIles/background.jpg'
+import background from '../CssFIles/background.png'
 import phoneIcon from '../CssFIles/phone.svg'
 import emailIcon from '../CssFIles/email.svg'
 import airplane from '../CssFIles/send.svg'
@@ -165,7 +165,9 @@ const ContactForm = (props) => {
       </Grid>
       <Grid item container direction="column" style={{ maxWidth: "20em" }}>
         <Grid item style={{ marginBottom: "0.5em" }}>                                 
-                    <TextField 
+        
+          <TextField 
+                    
                      
           type="text"
             name="name"
@@ -203,6 +205,7 @@ const ContactForm = (props) => {
       <Grid item style={{maxWidth: "20em"}}>
         <TextField 
           value={message} 
+          placeholder={"[Type your message here]"}
           multiline 
           fullWidth
           rows={10} 

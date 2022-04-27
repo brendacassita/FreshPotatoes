@@ -1,3 +1,5 @@
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 import logo from "../../Images/Theotherlogo-01.png";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -22,10 +24,18 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [value, setValue] = useState(0);
+  const {i18n, t} = useTranslation(["common"])
 
   useEffect(() => {
     getMoviesFromApi();
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+			i18next.changeLanguage("en");
+		}
   }, []);
+
+  const handleLanguageChange = (e) => {
+		i18n.changeLanguage(e.target.value);
+	};
 
   const getMoviesFromApi = async () => {
     try {
@@ -51,76 +61,62 @@ const Navbar = () => {
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const renderRightNav = () => {
     if (user) {
-      return (
-        <div className="logout">
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleMenu}
-            // color="inherit"
-          >
-            {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
-
-            {/* <div className='avatar_circle' src={user }>
+      return(<div className="logout">
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              // color="inherit"
+            >
+              {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
+              {/* <div className='avatar_circle' src={user }>
                   <img className='avatar_circle' src={potatoe} width='60px'></img>
                 </div> */}
-
-            {/* {!user.avatar &&
+              {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
-
-            <img
-              className="avatar_circle"
-              src={user && user.avatar ? user.avatar : bwPic}
-              width="90px"
-            ></img>
-          </IconButton>
-
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
-            {/* DO NOT DELETE THESE */}
-            {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+            >
+              {/* DO NOT DELETE THESE */}
+              {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
-
-            <MenuItem className="profilelink" onClick={handleMenuClose}>
-              <div className="">
-                <Link className="profilelink" to="/profile">
-                  Profile
-                </Link>
-
-                <Link className="profilelink" to="/edit_profile">
-                  Edit Profile
-                </Link>
-
-                <Button
-                  className="btn2"
-                  variant="outlined"
-                  onClick={() => handleLogout()}
-                >
-                  Logout
-                </Button>
-              </div>
-            </MenuItem>
-          </Menu>
-        </div>
-      );
+              <MenuItem className="profilelink" onClick={handleMenuClose}>
+                <div className="">
+                  <Link className="profilelink" to="/profile">
+                    Profile
+                  </Link>
+                  <Link className="profilelink" to="/edit_profile">
+                    Edit Profile
+                  </Link>
+                  <Button
+                    className="btn2"
+                    variant="outlined"
+                    onClick={() => handleLogout()}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              </MenuItem>
+            </Menu>
+          </div>)
     }
     return (
       <>
@@ -135,7 +131,6 @@ const Navbar = () => {
       </>
     );
   };
-
   const renderLeft = () => {
     //if we have a user, return the links we want to show(if logged in)
     if (user) {
@@ -156,11 +151,42 @@ const Navbar = () => {
           <Link className="btn1" to="/SearchResults">
             Search
           </Link>
+          <button
+				className="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNav"
+				aria-controls="navbarNav"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span className="navbar-toggler-icon"></span>
+			</button>
+			<div className="collapse navbar-collapse" id="navbarNav">
+				<ul className="navbar-nav ml-auto">
+					<li className="nav-item">
+						<select
+							className="nav-link bg-dark border-0 ml-1 mr-2"
+							value={localStorage.getItem("i18nextLng")}
+							onChange={handleLanguageChange}
+						>
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="es">Español</option>
+						</select>
+					</li>
+					<li className="nav-item ml-2">
+						<Link className="nav-link" to="/profile">
+							{t("profile")}
+						</Link>
+					</li>
+				</ul>
+			</div>
         </>
+        
       );
     }
   };
-
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -169,19 +195,18 @@ const Navbar = () => {
             <img src={logo} width="190px"></img>
           </div>
         </Link>
-
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>{renderLeft()}</div>
-
+          <div>
+            {renderLeft()}
+          </div>
           <SearchBar
             className="searchfunction"
             placeholder="Search Movies..."
           />
-          {renderRightNav()}
+{renderRightNav()}
         </div>
       </Toolbar>
     </AppBar>
   );
 };
-
 export default Navbar;
