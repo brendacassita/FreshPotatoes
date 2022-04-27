@@ -140,18 +140,20 @@ const Navbar = () => {
         <>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
-          <Link className="btn1 navlist" to="/popular_potatoes">
-            PopularPotatoes
-          </Link>
-          <Link className="btn1" to="/popular_fries">
-            PopularFries
-          </Link>{" "}
-          {""}
+
+<Link className="btn1 navlist" to="/popular_potatoes">
+{t("common:popularpotatoes")}
+            </Link>
+            <Link className="btn1" to="/popular_fries">
+            {t("common:popularfries")}
+            </Link>{" "}
+            {""}
+
           <Link className="btn1" to="/genres">
-            Genres
+          {t("common:genres")}
           </Link>
           <Link className="btn1" to="/SearchResults">
-            Search
+          {t("common:search")}
           </Link>
      
 			<div className="collapse navbar-collapse" id="navbarNav">
@@ -200,7 +202,7 @@ const Navbar = () => {
             placeholder="Search Movies..."
           />
           <div>
-            <h2>Welcome {auth.user.name}!</h2>
+            <h2>{t("common:welcome")} {auth.user.name}!</h2>
           </div>
 {renderRightNav()}
         </div>

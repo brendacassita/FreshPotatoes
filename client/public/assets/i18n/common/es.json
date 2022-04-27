@@ -1,4 +1,27 @@
 {
   "submit": "Enviar",
-  "profile": "Perfil"
+  "profile": "Perfil",
+  "editprofile": "Editar perfil",
+  "search": "Buscar",
+  "welcome": "La bienvenida",
+  "genres": "Géneros",
+  "popularpotatoes": "Papas Populares", 
+  "popularfries": "Papas Fritas Populares",
+  "categories": "Categorías",
+  "searchresultall": "Resultado de búsqueda - Todos",
+  "searchmovies": "Buscar Películas...",
+  "all": "Todos",
+  "5minpotatoes": "Las películas necesitan un mínimo de 5 o más reseñas para aparecer en 'Papas Populares'",
+  "5minfries":"Las películas necesitan un mínimo de 5 o más reseñas para aparecer en 'Papas Fritas Populares'",
+  "help": "Ayudar",
+  "contactus": "Contacta con nosotras",
+  "aboutus": "Sobre nosotras",
+  "privacypolicy": "Política de privacidad",
+  "account": "Cuenta",
+  "pages": "Paginas"
+
+
+
+
+
 }
