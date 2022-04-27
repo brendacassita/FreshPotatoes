@@ -1,5 +1,5 @@
-import {useTranslation} from "react-i18next"
-import i18next from "i18next"
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 import logo from "../../Images/Theotherlogo-01.png";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -17,6 +17,7 @@ import axios from "axios";
 import "../CssFIles/SearchBar.css";
 import bwPic from "../../Images/blackwhitePotatoe.png";
 import potatoe from "../../Images/Potatoe.png";
+
 const Navbar = () => {
   const [allMovies, setAllMovies] = useState([]);
   const { handleLogout, user } = useContext(AuthContext);
@@ -29,7 +30,7 @@ const Navbar = () => {
     getMoviesFromApi();
     if (localStorage.getItem("i18nextLng")?.length > 2) {
 			i18next.changeLanguage("en");
-    }
+		}
   }, []);
 
   const handleLanguageChange = (e) => {
@@ -44,6 +45,7 @@ const Navbar = () => {
       alert("error getting movies");
     }
   };
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -145,7 +147,18 @@ const Navbar = () => {
           <Link className="btn1" to="/SearchResults">
             Search
           </Link>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <button
+				className="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNav"
+				aria-controls="navbarNav"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span className="navbar-toggler-icon"></span>
+			</button>
+			<div className="collapse navbar-collapse" id="navbarNav">
 				<ul className="navbar-nav ml-auto">
 					<li className="nav-item">
 						<select
@@ -165,9 +178,8 @@ const Navbar = () => {
 					</li>
 				</ul>
 			</div>
-
-
         </>
+        
       );
     }
   };
