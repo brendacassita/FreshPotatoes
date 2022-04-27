@@ -18,7 +18,9 @@ import "../CssFIles/SearchBar.css";
 import bwPic from "../../Images/blackwhitePotatoe.png";
 import potatoe from "../../Images/Potatoe.png";
 
+
 const Navbar = () => {
+  let auth = useContext(AuthContext)
   const [allMovies, setAllMovies] = useState([]);
   const { handleLogout, user } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -147,17 +149,7 @@ const Navbar = () => {
           <Link className="btn1" to="/SearchResults">
             Search
           </Link>
-          <button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span className="navbar-toggler-icon"></span>
-			</button>
+     
 			<div className="collapse navbar-collapse" id="navbarNav">
 				<ul className="navbar-nav ml-auto">
 					<li className="nav-item">
@@ -183,6 +175,10 @@ const Navbar = () => {
       );
     }
   };
+
+  if (!auth.user){
+    return <p>no user</p>
+  }
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -199,6 +195,9 @@ const Navbar = () => {
             className="searchfunction"
             placeholder="Search Movies..."
           />
+          <div>
+            <h2>Welcome {auth.user.name}!</h2>
+          </div>
 {renderRightNav()}
         </div>
       </Toolbar>
