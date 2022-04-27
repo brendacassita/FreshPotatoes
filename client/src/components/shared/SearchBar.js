@@ -27,7 +27,7 @@ const SearchBar = ({placeholder, data}) => {
   
   const options = {
     includeScore: true,
-    keys:['name', 'genre']
+    keys:['title', 'genre']
   }
   const fuse = new Fuse(allMovies,options)
   
@@ -35,7 +35,7 @@ const SearchBar = ({placeholder, data}) => {
     
     try {
       let res = await axios.get('/api/movies')
-      setAllMovies(res.data)
+      setAllMovies(res.data[0].results)
       
     } catch(err) {
       alert('error getting movies')
@@ -44,7 +44,7 @@ const SearchBar = ({placeholder, data}) => {
   const handleFilter = (event) => {
     const searchWord = event.target.value
     const newFilter = getMoviesFromApi.filter((value) => {
-      return value.name.includes(searchWord);
+      return value.title.includes(searchWord);
      
     });
      setFilteredMovies(newFilter)
@@ -95,7 +95,7 @@ const SearchBar = ({placeholder, data}) => {
             return (
               <a className='dataItem alink' href={`/movies/${value.id}`}>
                  <img className='' src={value.poster} width={50} />
-                <p>{value.name}</p>
+                <p>{value.title}</p>
               </a>
             );
           })}

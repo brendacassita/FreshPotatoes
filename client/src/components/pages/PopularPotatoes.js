@@ -23,11 +23,12 @@ const PopularPotatoes = () => {
     const movieInfo = await Promise.all(data.map(async(movie)=> {
       let res = await axios.get(`/api/movies/${movie.movie_id}`)
       const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`
+      const id = res.data.id
       const name = res.data.title
       const release = res.data.release_date
       const runtime = res.data.runtime
       const plot = res.data.overview
-      return {poster, name, release, runtime, plot, unwatched_rating:movie.unwatched_rating}
+      return {poster, id, name, release, runtime, plot, unwatched_rating:movie.unwatched_rating}
     }))
     return movieInfo
   }
@@ -85,7 +86,7 @@ const PopularPotatoes = () => {
                 release: {movie.release} runtime:{movie.runtime}
               </h6>
               <div>
-                <h6>pre-rating: {movie.unwatched_rating.toFixed(0)}%</h6>
+                <h6>pre-rating: {movie.unwatched_rating}%</h6>
               </div>
 
               <div id="container">

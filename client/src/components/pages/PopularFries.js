@@ -20,11 +20,12 @@ const PopularFries= ()=>{
     const movieInfo = await Promise.all(data.map(async(movie)=> {
       let res = await axios.get(`/api/movies/${movie.movie_id}`)
       const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`
+      const id = res.data.id
       const name = res.data.title
       const release = res.data.release_date
       const runtime = res.data.runtime
       const plot = res.data.overview
-      return {poster, name, release, runtime, plot, watched_rating:movie.watched_rating}
+      return {poster, id, name, release, runtime, plot, watched_rating:movie.watched_rating}
     }))
     return movieInfo
   }

@@ -11,6 +11,7 @@ const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
+  const [director, setDirector] = useState([]);
   const [trailer, setTrailer] = useState({});
   const params = useParams();
 
@@ -18,6 +19,7 @@ const MovieDetail = () => {
     getMovie();
     getVideos();
     getCast();
+    getCrew();
   }, []);
 
   const getMovie = async () => {
@@ -46,10 +48,43 @@ const MovieDetail = () => {
   };
 
   const getCast = async () => {
+    try {let res = await axios.get(`/api/movies/${params.id}/cast`);
+      setCast(res.data.cast);
+      console.log("CAST:", res.data.cast);
+    } catch (err) {
+      alert("Error in getting cast");
+    }
+  };
+
+  const renderCast = () => {
+    return cast.map((cast) => (
+      <div key={`${cast.id}`}>
+        <div>
+          <img src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`} width={50}/>
+          <h5>{cast.character}: {cast.name}</h5>
+        </div>
+      </div>
+    ))}
+
+  // const getLimitedCast = cast => {
+  //   let cas = []
+  //   for (let i = 0; i < 5; i++) {
+  //     const item = cast[i]
+  //     cas.push(<li key={item.id}>{item.cast}</li>)
+  //     console.log("Limited Cast:", cas)
+  //   }
+  //   return cas
+  // }
+
+  const getCrew = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
-      setCast(res.data);
-      console.log("CAST:", res.data);
+      setDirector(
+        res.data.crew.find((d)=> {
+          return d.job === "Director"
+        })
+      );
+      console.log("CREW:", res.data.crew);
     } catch (err) {
       alert("Error in getting cast");
     }
@@ -93,7 +128,12 @@ const MovieDetail = () => {
           <h6> {getString()}</h6>
         </div>
 
-        <Ratings />
+        {/* <Ratings /> */}
+
+        <div>
+          <p>{director.job}</p>
+          <p>{director.name}</p>
+        </div>
 
         <div id="container">
           <h4>Story Line</h4>
@@ -102,6 +142,11 @@ const MovieDetail = () => {
 
         <Review movieId={movie.id} />
         <div className="control"></div>
+        
+
+        <div>
+          {renderCast()}
+        </div>
       </div>
     );
   };

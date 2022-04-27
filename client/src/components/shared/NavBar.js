@@ -54,73 +54,82 @@ const Navbar = () => {
 
   const renderRightNav = () => {
     if (user) {
-      return(<div className="logout">
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              // color="inherit"
-            >
-              {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
+      return (
+        <div className="logout">
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenu}
+            // color="inherit"
+          >
+            {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
 
-              {/* <div className='avatar_circle' src={user }>
+            {/* <div className='avatar_circle' src={user }>
                   <img className='avatar_circle' src={potatoe} width='60px'></img>
                 </div> */}
 
-              {/* {!user.avatar &&
+            {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
 
-              <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
-            </IconButton>
+            <img
+              className="avatar_circle"
+              src={user && user.avatar ? user.avatar : bwPic}
+              width="90px"
+            ></img>
+          </IconButton>
 
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-            >
-              {/* DO NOT DELETE THESE */}
-              {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            {/* DO NOT DELETE THESE */}
+            {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
 
-              <MenuItem className="profilelink" onClick={handleMenuClose}>
-                <div className="">
-                  <Link className="profilelink" to="/profile">
-                    Profile
-                  </Link>
+            <MenuItem className="profilelink" onClick={handleMenuClose}>
+              <div className="">
+                <Link className="profilelink" to="/profile">
+                  Profile
+                </Link>
 
-                  <Link className="profilelink" to="/edit_profile">
-                    Edit Profile
-                  </Link>
+                <Link className="profilelink" to="/edit_profile">
+                  Edit Profile
+                </Link>
 
-                  <Button
-                    className="btn2"
-                    variant="outlined"
-                    onClick={() => handleLogout()}
-                  >
-                    Logout
-                  </Button>
-                </div>
-              </MenuItem>
-            </Menu>
-          </div>)
+                <Button
+                  className="btn2"
+                  variant="outlined"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </Button>
+              </div>
+            </MenuItem>
+          </Menu>
+        </div>
+      );
     }
     return (
       <>
-        
         <br />
-        <Button className="buttonRegister-nav" variant="outlined" href="/register">
+        <Button
+          className="buttonRegister-nav"
+          variant="outlined"
+          href="/register"
+        >
           Register
         </Button>
       </>
@@ -134,20 +143,19 @@ const Navbar = () => {
         <>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
-<Link className="btn1 navlist" to="/popular_potatoes">
-              PopularPotatoes
-            </Link>
-            <Link className="btn1" to="/popular_fries">
-              PopularFries
-            </Link>{" "}
-            {""}
+          <Link className="btn1 navlist" to="/popular_potatoes">
+            PopularPotatoes
+          </Link>
+          <Link className="btn1" to="/popular_fries">
+            PopularFries
+          </Link>{" "}
+          {""}
           <Link className="btn1" to="/genres">
             Genres
           </Link>
           <Link className="btn1" to="/SearchResults">
             Search
           </Link>
-          
         </>
       );
     }
@@ -163,17 +171,13 @@ const Navbar = () => {
         </Link>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            
-            {renderLeft()}
-          </div>
+          <div>{renderLeft()}</div>
 
           <SearchBar
             className="searchfunction"
             placeholder="Search Movies..."
           />
-{renderRightNav()}
-          
+          {renderRightNav()}
         </div>
       </Toolbar>
     </AppBar>

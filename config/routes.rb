@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :reviews
     resources :roles
     resources :users
-    resources :genres, except: :show
+    resources :genres
+      # , except: :show
 
     put '/update_image', to: "users#update_image"
 
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
     get 'newest', to: 'movies#newest'
 
     get 'genres/:name', to: 'genres#genre_show'
+    get 'genres/:id', to: 'genres#show'
 
     # MOST POPULAR MOVIES AND GENRES
     get '/popular/movies', to: 'movies#popular'
