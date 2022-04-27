@@ -33,4 +33,5 @@ margin: 24px;
 .App {
 border:solid #1F1D2B;
 border-width: 60px;
+position: absolute;
 }

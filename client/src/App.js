@@ -26,6 +26,7 @@ import Sandbox from './components/pages/Sandbox'
 import ContactForm from './components/pages/ContactForm';
 import Ratings from './components/shared/Ratings';
 
+import LandingPage from './components/shared/LandingPage';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -37,7 +38,8 @@ import Ratings from './components/shared/Ratings';
 
 function App() {
   return (
-    <div>
+    <div id='page-container'>
+      <div id='content-wrap' >
       <Navbar />
       {/* When our app first mounts FetchUser Runs */}
       <FetchUser>
@@ -49,7 +51,10 @@ function App() {
             <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
             <Route path='/contact_us' element={<ContactForm />}/>
             <Route path='/about' element={<About />}/>
-            <Route path='/' element={<Home />}/>
+            <Route path='/' element={<LandingPage />} />
+            {/* <Route path='/home' element={<LandingPage />} /> */}
+            
+            
             
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
@@ -76,9 +81,11 @@ function App() {
             <Route path='*' element={<NoMatch />}/>
           </Routes>
         </>
-      </FetchUser>
+        </FetchUser>
+        </div>
+      <div id='footer'>
       <Footer />
-
+</div>
     </div>
   );
 }
