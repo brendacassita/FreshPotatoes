@@ -72,22 +72,13 @@ def update
   end
 end 
 
-
 def destroy
   @movie.destroy
 end
 
 ### TOP POTATOES/FRIES ###
-def top3_potatoes
-  render json: Movie.top3_potatoes
-end
-
 def topPotatoes
   render json: Movie.topPotatoes
-end
-
-def top3_fries
-  render json: Movie.top3_fries
 end
 
 def topFries

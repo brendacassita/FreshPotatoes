@@ -24,6 +24,7 @@ import About from './components/pages/About';
 import Sandbox from './components/pages/Sandbox'
 
 import ContactForm from './components/pages/ContactForm';
+import Ratings from './components/shared/Ratings';
 
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
@@ -66,7 +67,10 @@ function App() {
             <Route path='/genres/:name' element={<GenreShow />}/>
             <Route path='/movies/:id/edit' element={<MovieForm/>}/>
             <Route path='/movies/new' element={<MovieForm />} />
+
+            {/* TESTING
             <Route path='/sandbox' element={<Sandbox />} />
+            <Route path='/movies/:id/ratings' element={<Ratings />} /> */}
               
             </Route>  
             <Route path='*' element={<NoMatch />}/>

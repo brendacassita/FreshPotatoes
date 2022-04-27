@@ -11,20 +11,19 @@ class Api::ReviewsController < ApplicationController
         render json: Review.where("movie_id = #{@movie.id}")
     end
 
-    def preWatched 
-        render json: Review.preWatched(@review.movie_id)
+    def pre 
+        render json: Review.pre(@movie.id)
     end
 
-    # def postWatched
-    # end
+    def post 
+        render json: Review.post(@movie.id)
+    end
 
     def unwatched
-        puts @movie.id
         render json: Review.unwatched(@movie.id)
     end
 
     def watched
-        puts @movie.id
         render json: Review.watched(@movie.id)
     end
 

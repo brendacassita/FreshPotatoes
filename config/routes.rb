@@ -5,8 +5,8 @@ Rails.application.routes.draw do
    namespace :api do 
     resources :movies do
       resources :casts
-      resources :reviews
     end
+    resources :reviews
     resources :roles
     resources :users
     resources :genres, except: :show
@@ -20,9 +20,7 @@ Rails.application.routes.draw do
     get 'movies/:id/unwatched', to: 'reviews#unwatched'
 
     # TOP 3 AND TOP 10 POTATOES/FRIES BASED ON SCORES
-    get 'top3/potatoes', to: 'movies#top3_potatoes'
     get 'top/potatoes', to: 'movies#topPotatoes'
-    get 'top3/fries', to: 'movies#top3_fries'
     get 'top/fries', to: 'movies#topFries'
     get 'pagetoppotatoes', to: 'movies#pageTopPotatoes'
     get 'pagetopfries', to: 'movies#pageTopFries'
@@ -38,12 +36,15 @@ Rails.application.routes.draw do
 
     # TMDB GENRE LIST
     get '/tmdb_genres', to: 'genres#tmdb_genres'
+
+    get 'movies/:id/reviews', to: 'reviews#index'
     
 #Create a review for a movie
 post 'movies/:id/reviews', to: 'reviews#create'
 
 #get all reviews for preWatched movies
-get 'movies/:id/prewatched', to: 'reviews#preWatched'
+get 'movies/:id/reviews/pre', to: 'reviews#pre'
+get 'movies/:id/reviews/post', to: 'reviews#post'
 #get 'movies/:id/reviews/pre', to: 'reviews#preWatched'
 
 get 'movies/:id/cast', to: 'casts#index'
