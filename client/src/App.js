@@ -1,3 +1,6 @@
+import {useTranslation} from 'react-i18next';
+import i18next from 'i18next';
+
 import './App.css';
 import Navbar from './components/shared/NavBar';
 import { Routes, Route, useParams} from 'react-router-dom';
@@ -24,6 +27,7 @@ import SearchBar from './components/shared/SearchBar';
 import About from './components/pages/About';
 import ContactForm from './components/pages/ContactForm';
 import LandingPage from './components/shared/LandingPage';
+import { Suspense } from 'react';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -33,6 +37,7 @@ import LandingPage from './components/shared/LandingPage';
 //after done checking it will proceed with render
 function App() {
   return (
+    <div><Suspense fallback={<div>Loading...</div>}>
     <div id='page-container'>
       <div id='content-wrap' >
       <Navbar />
@@ -73,6 +78,8 @@ function App() {
       <div id='footer'>
       <Footer />
 </div>
+    </div>
+    </Suspense>
     </div>
   );
 }
