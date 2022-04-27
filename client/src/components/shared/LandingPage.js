@@ -12,48 +12,51 @@ import { useNavigate } from "react-router-dom";
 import Carousel from "../pages/Carousel";
 import GenreFilter from "../pages/GenreFilter";
 import "../CssFIles/card.css";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import '../CssFIles/Other.css'
+
+import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+
+
 const LandingPage = () => {
   let auth = useContext(AuthContext);
   const [movies, setMovies] = useState([]);
 
   const navigate = useNavigate();
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
   let nav = useNavigate();
 
   useEffect(() => {
     getMovies();
   }, []);
 
-  const getMovies = async () => {
+  const getMovies = async () =>{
     //change the state when we start to load
     setLoading(true);
-    try {
-      let res = await axios.get("/api/newest/");
-      setMovies(res.data);
+    try{
+      let res = await axios.get('/api/newest/')
+      setMovies(res.data.results)
+      console.log(res.data.results)
       //set back to false because now we have the data
       setLoading(false);
-      console.log(res.data);
-    } catch (err) {
-      alert("error in getting movies");
+      // console.log(res.data)
+    }catch(err){
+    alert('error in getting movies')
     }
-  };
+  }
 
-  const renderPosters = () => {
-    return movies.map((movie) => (
-      <div>
-        <div style={{ padding: 8 }}>
-          <img
-            src={movie.poster}
-            onClick={() => nav(`/movies/${movie.id}`)}
-            style={{ width: "100%" }}
-          />
+    const renderPosters = () => {
+        return movies.map((movie) => (
+        <div key={`${movie.id}`}>
+            <div style={{padding: 8}}>
+                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.title}`}
+                onClick={()=>nav(`/movies/${movie.id}`)} 
+                style={{width: '100%'}} />
+            </div>
         </div>
-      </div>
-    ));
-  };
+        ))   
+    }
 
   return (
     <div className="landing-all ">
@@ -74,7 +77,7 @@ const LandingPage = () => {
         
         <div className="check-align"> 
           
-          <div className="check" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+          <div className="check" ><LocalMoviesIcon sx={{fontSize: 60}} />
             
             <h2>Search</h2>
           <p>Search all your favorite movies with a click of a mouse  </p>
