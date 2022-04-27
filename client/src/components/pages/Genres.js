@@ -7,65 +7,10 @@ import {useTranslation} from 'react-i18next'
 import i18next from 'i18next'
 
 
-const Genres = () => {
-  const [genres, setGenres] = useState([]);
-
-  useEffect(() => {
-    getGenres();
-  }, []);
-
-
 const Genres = ()=>{
   const [genres, setGenres] = useState([])
   const {i18n, t} = useTranslation(["common"])
 
-
-  const getGenres = async () => {
-    try {
-      let res = await axios.get("./api/genres");
-      setGenres(res.data);
-    } catch (err) {
-      alert("error getting genres");
-    }
-  };
-
-
-  const renderData = () => {
-    const genre = genres.map((g) => {
-      return (
-        <div key={g.id}>
-          <div className="wrapper">
-            <div className="cards ">
-              <Link to={`/genres/28`}>
-                <figure className="card ">
-                  <div className="centered">Action</div>
-
-                  <img
-                    alt="action"
-                    className="back"
-                    src="https://wwwimage-us.pplusstatic.com/thumbnails/photos/370-q80/movie_asset/87/18/37/wom_salone_poster_1400x2100.jpg"
-                  ></img>
-                </figure>
-              </Link>
-
-              <Link to={`/genres/${g.name}`} state={{ genre: g.name }}>
-                <figure className="card ">
-                  <div className="centered">{g.name}</div>
-
-                  <img alt="g.id" className="back" src={g.image}></img>
-                </figure>
-              </Link>
-            </div>
-          </div>
-        </div>
-      );
-    });
-    return genre;
-  };
-
- 
-  return genre
-}
    
      
       return(
@@ -77,15 +22,6 @@ const Genres = ()=>{
       <div className='bline' ></div>
       </div>
         
-
-          <div className="wrapper">
-            <div className="cards">
-              <figure className="card">
-                 <div className="centered">Movie</div>
-              <img className="back" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/westerns-12-1582066991.jpg" ></img>
-                </figure>
-            </div>
-          </div> */}
       <div className="rowdata">
         <div className="wrapper">
           <div className="cards ">
