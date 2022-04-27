@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
       </p>
 
       <p>
-        <b>How do I exercise my rights?</b> The easiest way to exercise your rights is by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.
+        <b>How do I exercise my rights?</b> The easiest way to exercise your rights is by <Link to="/contact_us"><b style={{color: 'red'}}>contacting us</b>.</Link> We will consider and act upon any request in accordance with applicable data protection laws.
       </p>
 
       <p>
@@ -100,7 +100,7 @@ const PrivacyPolicy = () => {
       </p>
 
       <p>
-        We collect personal information that you voluntarily provide to us when you register on the Services, express and interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.
+        We collect personal information that you voluntarily provide to us when you register on the Services, express and interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you <Link to="/contact_us"><b style={{color: 'red'}}>contact us</b>.</Link>
       </p>
 
       <p>

@@ -8,11 +8,17 @@ import '../CssFIles/card.css'
 import '../CssFIles/SearchBar.css'
 import '../CssFIles/searchResults.css'
 import SearchIcon from '@mui/icons-material/Search'
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
+
+
 const SearchResults = () => {
   const [allMovies,setAllMovies] = useState([])
   const [loading, setLoading] = useState(true)
   const [filteredMovies,setFilteredMovies]  = useState([])
   const [searchTerm,setSearchTerm]  = useState('')
+  const {i18n, t} = useTranslation(["common"])
+
   useEffect(() => {
     getMoviesFromApi()
   },[])
@@ -21,6 +27,7 @@ const SearchResults = () => {
     keys:['title', 'genre']
   }
   const fuse = new Fuse(allMovies, options)
+
   const getMoviesFromApi = async () => {
     try {
       let res = await axios.get('/api/movies')
@@ -30,6 +37,7 @@ const SearchResults = () => {
       alert('error getting movies')
     }
   }
+
   const handleSearchTermChange = (e) => {
     setSearchTerm(e.target.value)
     const result = fuse.search(e.target.value)
@@ -42,7 +50,7 @@ const SearchResults = () => {
       
       <div className='searchall' >
         <div className='sline' ></div>
-      <h1 className='searchall2' > Search Result - All</h1>
+      <h1 className='searchall2' >{t("common:searchresultall")}</h1>
       <div className='bline' ></div>
       </div>
       
@@ -53,7 +61,7 @@ const SearchResults = () => {
         </div> */}
       
       <div className='searchInputs1'>
-          <input className=' searching' onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder='search movies...'></input>
+          <input className=' searching' onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder={t("common:searchmovies")}></input>
           {/* <div className='searchiconall'>
          <SearchIcon />
       </div> */}
