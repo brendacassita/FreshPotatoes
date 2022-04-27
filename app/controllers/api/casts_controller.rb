@@ -1,9 +1,15 @@
 class Api::CastsController < ApplicationController
+    require 'rest-client'
+    BASE_URL = "https://api.themoviedb.org/3/movie/"
+    API_PARTIAL_URL = "?api_key=#{ENV['TMDB_API_KEY']}"
+    
     before_action :set_movie
     before_action :set_cast, only: [:update, :show, :destroy]
 
     def index
-        render json: Movie.cast(@movie.id)
+        puts @movie.id
+        response = RestClient.get("#{BASE_URL}#{@movie.id}/credits#{API_PARTIAL_URL}&language=en-US")
+        render json: response
     end
 
     def show
@@ -35,7 +41,8 @@ class Api::CastsController < ApplicationController
     private
 
     def set_movie
-        @movie = Movie.find(params[:movie_id])
+        TMDB::API.api_key = "b8780ae423693a3389766038fe49d728"
+        @movie = TMDB::Movie.id(params[:id])
     end
 
     def set_cast

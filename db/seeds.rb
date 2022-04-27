@@ -20,7 +20,6 @@ u4 = User.create(email:'sherlocked@test.com', password:123456, name:'Sherlock Ho
 
 u5 = User.create(email:'007@test.com', password:123456, name:'James Bond', username:'007', avatar:'https://static.wikia.nocookie.net/jamesbond/images/d/dc/James_Bond_%28Pierce_Brosnan%29_-_Profile.jpg/revision/latest?cb=20220207082851', phone:'801777777', role:'admin')
 
-
 ########## MOVIES ##########
 
 m1 = u1.movies.create(
@@ -146,13 +145,15 @@ m15 = u1.movies.create(
 
 ########## REVIEWS ##########
 
+movies_array = [414906, 634649, 799876, 508947, 606402, 675353, 406759, 294793, 919689, 568124, 823625, 340553, 335787, 696806, 833425, 676705, 760926, 760868, 585083, 928381]
+
 100.times do
 Review.create(
   rating: Faker::Number.between(from: 1, to: 5),
   watched: 'true',
   comment: Faker::ChuckNorris.fact,
   user_id: Faker::Number.between(from: 1, to: 5),
-  movie_id: Faker::Number.between(from: 1, to: 15)
+  movie_id: movies_array.sample
 )
 end
 
@@ -162,36 +163,10 @@ Review.create(
   watched: 'false',
   comment: Faker::ChuckNorris.fact,
   user_id: Faker::Number.between(from: 1, to: 5),
-  movie_id: Faker::Number.between(from: 1, to: 15)
+  movie_id: movies_array.sample
 )
 end
 
-
-########## CAST ##########
-
-Cast.create(
-  headshot:'https://m.media-amazon.com/images/M/MV5BMTQ0NjgzNzcwNV5BMl5BanBnXkFtZTcwODExMDYxOQ@@._V1_.jpg',
-  name:'Seth Rogen'
-)
-
-Cast.create(
-  headshot:'https://m.media-amazon.com/images/M/MV5BMjA4MzMzNDM5MF5BMl5BanBnXkFtZTgwMjQ0MDk0NDM@._V1_.jpg',
-  name:'James Franco'
-)
-
-########## ROLE ##########
-
-Role.create(
-  title:'Dale Denton',
-  cast_id:1,
-  movie_id:1,
-)
-
-Role.create(
-  title:'Saul Silver',
-  cast_id:2,
-  movie_id:1,
-)
 
 ##### GENRES #####
 

@@ -55,11 +55,10 @@ ActiveRecord::Schema.define(version: 2022_04_15_212948) do
     t.float "rating"
     t.boolean "watched"
     t.text "comment"
+    t.integer "movie_id"
     t.bigint "user_id", null: false
-    t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["movie_id"], name: "index_reviews_on_movie_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -108,7 +107,6 @@ ActiveRecord::Schema.define(version: 2022_04_15_212948) do
   add_foreign_key "genre_movies", "genres"
   add_foreign_key "genre_movies", "movies"
   add_foreign_key "movies", "users"
-  add_foreign_key "reviews", "movies"
   add_foreign_key "reviews", "users"
   add_foreign_key "roles", "casts"
   add_foreign_key "roles", "movies"

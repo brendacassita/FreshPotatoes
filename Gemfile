@@ -32,6 +32,7 @@ gem 'cloudinary'
 gem 'kaminari'
 
 gem "rest-client"
+gem 'tmdb', '~> 0.7.0'
 
 group :development, :test do
   gem 'dotenv-rails'

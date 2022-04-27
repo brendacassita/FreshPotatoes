@@ -167,6 +167,8 @@ const ContactForm = (props) => {
         <Grid item style={{ marginBottom: "0.5em" }}>                                 
         
           <TextField 
+                    
+                     
           type="text"
             name="name"
             label="Name" 

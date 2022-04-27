@@ -5,24 +5,23 @@ Rails.application.routes.draw do
    namespace :api do 
     resources :movies do
       resources :casts
-      resources :reviews
     end
+    resources :reviews
     resources :roles
     resources :users
-    resources :genres, except: :show
+    resources :genres
+      # , except: :show
 
     put '/update_image', to: "users#update_image"
 
     get 'all_users', to: 'movies#all_users'
 
     # GRABS RATINGS FOR WATCHED/UNWATCHED
-    get 'movies/:id/watched', to: 'movies#watched'
-    get 'movies/:id/unwatched', to: 'movies#unwatched'
+    get 'movies/:id/watched', to: 'reviews#watched'
+    get 'movies/:id/unwatched', to: 'reviews#unwatched'
 
     # TOP 3 AND TOP 10 POTATOES/FRIES BASED ON SCORES
-    get 'top3/potatoes', to: 'movies#top3_potatoes'
     get 'top/potatoes', to: 'movies#topPotatoes'
-    get 'top3/fries', to: 'movies#top3_fries'
     get 'top/fries', to: 'movies#topFries'
     get 'pagetoppotatoes', to: 'movies#pageTopPotatoes'
     get 'pagetopfries', to: 'movies#pageTopFries'
@@ -31,18 +30,28 @@ Rails.application.routes.draw do
     get 'newest', to: 'movies#newest'
 
     get 'genres/:name', to: 'genres#genre_show'
+    get 'genres/:id', to: 'genres#show'
 
     # MOST POPULAR MOVIES AND GENRES
     get '/popular/movies', to: 'movies#popular'
     get '/popular/genres', to: 'genres#popular'
 
+    # TMDB GENRE LIST
+    get '/tmdb_genres', to: 'genres#tmdb_genres'
+
+    get 'movies/:id/reviews', to: 'reviews#index'
     
 #Create a review for a movie
 post 'movies/:id/reviews', to: 'reviews#create'
 
 #get all reviews for preWatched movies
-get 'movies/:id/prewatched', to: 'reviews#preWatched'
+get 'movies/:id/reviews/pre', to: 'reviews#pre'
+get 'movies/:id/reviews/post', to: 'reviews#post'
 #get 'movies/:id/reviews/pre', to: 'reviews#preWatched'
+
+get 'movies/:id/cast', to: 'casts#index'
+
+get 'movies/:id/videos', to: 'movies#videos'
    
   end 
     get '*other', to: 'static#index'

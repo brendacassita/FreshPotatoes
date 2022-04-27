@@ -106,12 +106,12 @@ const GenreFilter = () => {
       {buttons &&
         buttons.map((genre, index) => (
       
-          <>
+          // <>
             
             <button className="genrebtn" key={index} value={genre.value} onClick={handleMovies}>
               {genre.name}
               </button>
-            </>
+            // </>
             
         ))}
       <div className="genreselect" style={{ display: "flex", flexDirection: "row" }}>
