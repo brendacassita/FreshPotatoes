@@ -7,10 +7,9 @@ import Grid from '@mui/material/Grid'
 import { Typography } from '@mui/material'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-//import useMediaQuery from "@mui/material/useMediaQuery";
 
 
-import background from '../CssFIles/background.png'
+import background from '../CssFIles/background.jpg'
 import phoneIcon from '../CssFIles/phone.svg'
 import emailIcon from '../CssFIles/email.svg'
 import airplane from '../CssFIles/send.svg'
