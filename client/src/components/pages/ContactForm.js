@@ -165,13 +165,8 @@ const ContactForm = (props) => {
       </Grid>
       <Grid item container direction="column" style={{ maxWidth: "20em" }}>
         <Grid item style={{ marginBottom: "0.5em" }}>                                 
-<<<<<<< HEAD
         
           <TextField 
-=======
-                    <TextField 
-                     
->>>>>>> dddb19885eb6002f48fe8f5d2963ed6416c54a44
           type="text"
             name="name"
             label="Name" 

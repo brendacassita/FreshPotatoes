@@ -5,9 +5,11 @@ import Carousel from "../pages/Carousel";
 import { AuthContext } from "../../providers/AuthProvider";
 import GenreFilter from "../pages/GenreFilter";
 import "../CssFIles/card.css";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   let auth = useContext(AuthContext);
+  const { t } = useTranslation(["home"]);
   const [movies, setMovies] = useState([]);
 
   const navigate = useNavigate();
@@ -18,6 +20,7 @@ const Home = () => {
   useEffect(() => {
     getMovies();
   }, []);
+
 
   const getMovies = async () => {
     //change the state when we start to load
@@ -33,48 +36,30 @@ const Home = () => {
     }
   };
 
-<<<<<<< HEAD
   const renderPosters = () => {
     return movies.map((movie) => (
-      <div>
+      <div key={movie.id}>
         <div style={{ padding: 8 }}>
           <img
             src={movie.poster}
             onClick={() => nav(`/movies/${movie.id}`)}
             style={{ width: "100%" }}
           />
-=======
-       return (
-         <div className='App1' >
-           {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
-           </div> */}
-           
-         <div className='homeCarousel' >
-            <Carousel
-                show={4}
-                infiniteLoop
-            > 
-            {renderPosters()}
-            </Carousel>
->>>>>>> dddb19885eb6002f48fe8f5d2963ed6416c54a44
         </div>
       </div>
     ));
   };
-  // if (!auth.user) {
-  //   return <p>no user</p>;
-  // }
+
   return (
-    <div className="App">
-      <div className="welcome">
-        {/* <h2 className="namehome">Welcome {auth.user.name}!</h2> */}
-      </div>
+    <div className="App1">
+      {/* <div className='welcome'><h2 className='namehome'>Welcome {auth.user.name}!</h2>
+           </div> */}
+
       <div className="homeCarousel">
         <Carousel show={4} infiniteLoop>
           {renderPosters()}
         </Carousel>
       </div>
-
       <div className="homeGenre">
         <GenreFilter />
       </div>
