@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../CssFIles/card.css";
@@ -7,7 +8,7 @@ import i18next from 'i18next'
 
 
 
-const Genres = ()=>{
+  const Genres = ()=>{
   const [genres, setGenres] = useState([])
   const {i18n, t} = useTranslation(["common"])
 
@@ -15,14 +16,11 @@ const Genres = ()=>{
      
       return(
         <div className="App1">
-       
           <div className='searchall' >
         <div className='sline' ></div>
       <h1 className='searchall2' > {t("common:genres")}</h1>
       <div className='bline' ></div>
       </div>
-        
-
       <div className="rowdata">
         <div className="wrapper">
           <div className="cards ">
@@ -223,4 +221,6 @@ const Genres = ()=>{
     </div>
   );
 };
+
 export default Genres;
+
