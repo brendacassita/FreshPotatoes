@@ -53,9 +53,9 @@ padding: 10px;
 }
 
 .searchbar {
-margin-left: 20px;
-margin-right: 20px;
-
+margin-left: 32px;
+    bottom: -14px;
+    position: relative;
 }
 
 

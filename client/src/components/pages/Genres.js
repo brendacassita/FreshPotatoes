@@ -1,25 +1,13 @@
 
-import axios from "axios"
-import {useEffect,useState} from "react"
-import '../CssFIles/card.css'
-import { Link } from 'react-router-dom'
-import {useTranslation} from 'react-i18next'
-import i18next from 'i18next'
-
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "../CssFIles/card.css";
+import { Link } from "react-router-dom";
 const Genres = () => {
   const [genres, setGenres] = useState([]);
-
   useEffect(() => {
     getGenres();
   }, []);
-
-
-const Genres = ()=>{
-  const [genres, setGenres] = useState([])
-  const {i18n, t} = useTranslation(["common"])
-
-
   const getGenres = async () => {
     try {
       let res = await axios.get("./api/genres");
@@ -28,8 +16,6 @@ const Genres = ()=>{
       alert("error getting genres");
     }
   };
-
-
   const renderData = () => {
     const genre = genres.map((g) => {
       return (
@@ -39,7 +25,6 @@ const Genres = ()=>{
               <Link to={`/genres/28`}>
                 <figure className="card ">
                   <div className="centered">Action</div>
-
                   <img
                     alt="action"
                     className="back"
@@ -47,11 +32,9 @@ const Genres = ()=>{
                   ></img>
                 </figure>
               </Link>
-
               <Link to={`/genres/${g.name}`} state={{ genre: g.name }}>
                 <figure className="card ">
                   <div className="centered">{g.name}</div>
-
                   <img alt="g.id" className="back" src={g.image}></img>
                 </figure>
               </Link>
@@ -62,22 +45,14 @@ const Genres = ()=>{
     });
     return genre;
   };
-
- 
-  return genre
-}
-   
-     
-      return(
-        <div className="App1">
-       
-          <div className='searchall' >
-        <div className='sline' ></div>
-      <h1 className='searchall2' > {t("common:genres")}</h1>
-      <div className='bline' ></div>
+  return (
+    <div className="App1">
+      <div className="searchall">
+        <div className="sline"></div>
+        <h1 className="searchall2"> Genres</h1>
+        <div className="bline"></div>
       </div>
-        
-
+      {/*
           <div className="wrapper">
             <div className="cards">
               <figure className="card">
@@ -89,7 +64,6 @@ const Genres = ()=>{
       <div className="rowdata">
         <div className="wrapper">
           <div className="cards ">
-            
             <Link to={`/genres/28`}>
               <figure className="card ">
                 <div className="centered">Action</div>
@@ -100,7 +74,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/12`}>
               <figure className="card ">
                 <div className="centered">Adventure</div>
@@ -111,7 +84,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/16`}>
               <figure className="card ">
                 <div className="centered">Animation</div>
@@ -122,7 +94,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/35`}>
               <figure className="card ">
                 <div className="centered">Comedy</div>
@@ -133,7 +104,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/80`}>
               <figure className="card ">
                 <div className="centered">Crime</div>
@@ -144,7 +114,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/99`}>
               <figure className="card ">
                 <div className="centered">Documentary</div>
@@ -155,7 +124,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/18`}>
               <figure className="card ">
                 <div className="centered">Drama</div>
@@ -166,7 +134,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/10751`}>
               <figure className="card ">
                 <div className="centered">Family</div>
@@ -177,7 +144,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/14`}>
               <figure className="card ">
                 <div className="centered">Fantasy</div>
@@ -188,7 +154,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/36`}>
               <figure className="card ">
                 <div className="centered">History</div>
@@ -199,7 +164,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/27`}>
               <figure className="card ">
                 <div className="centered">Horror</div>
@@ -210,7 +174,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/10402`}>
               <figure className="card ">
                 <div className="centered">Music</div>
@@ -221,7 +184,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/9648`}>
               <figure className="card ">
                 <div className="centered">Mystery</div>
@@ -232,7 +194,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/10749`}>
               <figure className="card ">
                 <div className="centered">Romance</div>
@@ -243,7 +204,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/878`}>
               <figure className="card ">
                 <div className="centered">Science Fiction</div>
@@ -254,7 +214,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/10770`}>
               <figure className="card ">
                 <div className="centered">TV Movie</div>
@@ -265,7 +224,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/53`}>
               <figure className="card ">
                 <div className="centered">Thriller</div>
@@ -276,7 +234,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/10752`}>
               <figure className="card ">
                 <div className="centered">War</div>
@@ -287,7 +244,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
             <Link to={`/genres/37`}>
               <figure className="card ">
                 <div className="centered">Western</div>
@@ -298,7 +254,6 @@ const Genres = ()=>{
                 ></img>
               </figure>
             </Link>
-
           </div>
         </div>
       </div>
@@ -306,5 +261,4 @@ const Genres = ()=>{
     </div>
   );
 };
-
 export default Genres;
