@@ -20,12 +20,13 @@ import Review from './components/pages/Review';
 import PopularPotatoes from './components/pages/PopularPotatoes';
 import PopularFries from './components/pages/PopularFries';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
-//import About from './components/pages/About';
 import GenreShow from './components/pages/GenreShow';
 import MovieForm from './components/forms/MovieForm';
 import SearchBar from './components/shared/SearchBar';
 import About from './components/pages/About';
 import ContactForm from './components/pages/ContactForm';
+import Ratings from './components/shared/Ratings';
+
 import LandingPage from './components/shared/LandingPage';
 import { Suspense } from 'react';
 //import RateForm from './components/pages/RateForm';
