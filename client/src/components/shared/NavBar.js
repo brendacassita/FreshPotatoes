@@ -15,7 +15,9 @@ import axios from 'axios';
 import '../CssFIles/SearchBar.css'
 import potatoe from "../../Images/Potatoe.png"
 
+
 const Navbar = () => {
+    let auth = useContext(AuthContext);
    const [allMovies,setAllMovies] = useState([])
   const { handleLogout, user} = useContext(AuthContext)
   const [anchorEl,setAnchorEl] = useState(null)
@@ -139,26 +141,40 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-  
+  if (!auth.user) {
+    return <p>no user</p>;
+  }
   return (
-    <AppBar className='AppBar' position='static' >
-      <Toolbar  className='AppBar1'>
-        
-        <Link to='./'>
-          <div className='logo'><img src={logo}width='190px' ></img></div>
-       </Link>
-      
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div>
-        <Link className="btn1 navlist" to="/popular_potatoes">PopularPotatoes</Link>
-        <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
-        {renderLeft()}
-     </div>
-      
-          
-          <SearchBar className='searchfunction' placeholder='Search Movies...' />
-          
-{/*           
+    <AppBar className="AppBar" position="static">
+      <Toolbar className="AppBar1">
+        <Link to="./">
+          <div className="logo">
+            <img src={logo} width="190px"></img>
+          </div>
+        </Link>
+
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <Link className="btn1 navlist" to="/popular_potatoes">
+              PopularPotatoes
+            </Link>
+            <Link className="btn1" to="/popular_fries">
+              PopularFries
+            </Link>{" "}
+            {""}
+            {renderLeft()}
+          </div>
+
+          <SearchBar
+            className="searchfunction"
+            placeholder="Search Movies..."
+          />
+
+          <div>
+            <h2 className="namehome">Welcome {auth.user.name}!</h2>
+          </div>
+
+          {/*           
           <Box className='box'>
            <Search className='box' >
             <SearchIconWrapper>
@@ -170,54 +186,49 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             />
           </Search>
           </Box> */}
-          
-          
-          
-          
-          <div className='logout' >
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
+
+          <div className="logout">
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
             >
-              
-              <Avatar className='avatar_circle' src={user && user.avatar} sx={{width: 56, height: "auto"}} />
-              
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleMenuClose}
->
-              
-             {/* DO NOT DELETE THESE */}
-                {/* { <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <Avatar
+                className="avatar_circle"
+                src={user && user.avatar}
+                sx={{ width: 56, height: "auto" }}
+              />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+            >
+              {/* DO NOT DELETE THESE */}
+              {/* { <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> } */}
 
-
-              <MenuItem className='profilelink' onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
-              </Menu>
-             
-            </div>
-         
-    
-      
+              <MenuItem className="profilelink" onClick={handleMenuClose}>
+                {renderRightNav()}
+              </MenuItem>
+            </Menu>
+          </div>
         </div>
-        </Toolbar>
-      </AppBar>
+      </Toolbar>
+    </AppBar>
   );
 };
 

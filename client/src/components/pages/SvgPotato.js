@@ -1,6 +1,8 @@
 import * as React from "react"
 
-const SvgComponent = (props) => (
+
+
+const SvgPotato = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249 288" {...props}>
     <defs>
       <style>
@@ -1668,4 +1670,4 @@ const SvgComponent = (props) => (
   </svg>
 )
 
-export default SvgComponent
+export default SvgPotato
