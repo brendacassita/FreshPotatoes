@@ -79,7 +79,7 @@ const Genres = () => {
                 <img
                   alt="action"
                   className="back"
-                  src="https://wwwimage-us.pplusstatic.com/thumbnails/photos/370-q80/movie_asset/87/18/37/wom_salone_poster_1400x2100.jpg"
+                  src="https://image.tmdb.org/t/p/w500/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg"
                 ></img>
               </figure>
             </Link>
@@ -88,9 +88,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Adventure</div>
                 <img
-                  alt="action"
+                  alt="adventure"
                   className="back"
-                  src="https://m.media-amazon.com/images/M/MV5BMjNkMzc2N2QtNjVlNS00ZTk5LTg0MTgtODY2MDAwNTMwZjBjXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg"
+                  src="https://image.tmdb.org/t/p/w500/aEGiJJP91HsKVTEPy1HhmN0wRLm.jpg"
                 ></img>
               </figure>
             </Link>
@@ -99,9 +99,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Animation</div>
                 <img
-                  alt="action"
+                  alt="animation"
                   className="back"
-                  src=""
+                  src="https://image.tmdb.org/t/p/w500/fOy2Jurz9k6RnJnMUMRDAgBwru2.jpg"
                 ></img>
               </figure>
             </Link>
@@ -110,9 +110,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Comedy</div>
                 <img
-                  alt="action"
+                  alt="comedy"
                   className="back"
-                  src="https://cdn.shopify.com/s/files/1/0057/3728/3618/products/7d40e55728cbd7f03444363572a830f5_bfcdfb95-e46e-4a48-b3a9-05c482802c01_500x.jpg?v=1573593901"
+                  src="https://image.tmdb.org/t/p/w500/gc3QFVNWeTCk2J7XuDIPPoGUWNx.jpg"
                 ></img>
               </figure>
             </Link>
@@ -121,9 +121,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Crime</div>
                 <img
-                  alt="action"
+                  alt="crime"
                   className="back"
-                  src="https://cpb-us-w2.wpmucdn.com/blogs.iu.edu/dist/f/65/files/2019/04/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_-1odtbn5.jpg"
+                  src="https://image.tmdb.org/t/p/w500/2n95p9isIi1LYTscTcGytlI4zYd.jpg"
                 ></img>
               </figure>
             </Link>
@@ -132,9 +132,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Documentary</div>
                 <img
-                  alt="action"
+                  alt="documentary"
                   className="back"
-                  src=""
+                  src="https://image.tmdb.org/t/p/w500/x8i57R0I8e4URRJ4MzK0YWSV48W.jpg"
                 ></img>
               </figure>
             </Link>
@@ -143,9 +143,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Drama</div>
                 <img
-                  alt="action"
+                  alt="drama"
                   className="back"
-                  src="https://m.media-amazon.com/images/I/51mTtUGvUCL.jpg"
+                  src="https://image.tmdb.org/t/p/w500/i9rEpTqC6aIQOWOc4PDEEAE3hFe.jpg"
                 ></img>
               </figure>
             </Link>
@@ -154,9 +154,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Family</div>
                 <img
-                  alt="action"
+                  alt="family"
                   className="back"
-                  src="https://waghostwriter.com/wp-content/uploads/2020/01/0x800.jpg"
+                  src="https://image.tmdb.org/t/p/w500/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg"
                 ></img>
               </figure>
             </Link>
@@ -165,9 +165,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Fantasy</div>
                 <img
-                  alt="action"
+                  alt="fantasy"
                   className="back"
-                  src="https://www.weekendnotes.com/im/008/05/movie-locations-fantasy-movies-film-travel5.JPG"
+                  src="https://image.tmdb.org/t/p/w500/wdjdHBDwmynWUrJcNzS24uegvK5.jpg"
                 ></img>
               </figure>
             </Link>
@@ -176,9 +176,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">History</div>
                 <img
-                  alt="action"
+                  alt="history"
                   className="back"
-                  src=""
+                  src="https://image.tmdb.org/t/p/w500/xGrTm3J0FTafmuQ85vF7ZCw94x6.jpg"
                 ></img>
               </figure>
             </Link>
@@ -187,9 +187,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Horror</div>
                 <img
-                  alt="action"
+                  alt="horror"
                   className="back"
-                  src=""
+                  src="https://image.tmdb.org/t/p/w500/33wnBK5NxvuKQv0Cxo3wMv0eR7F.jpg"
                 ></img>
               </figure>
             </Link>
@@ -198,9 +198,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Music</div>
                 <img
-                  alt="action"
+                  alt="music"
                   className="back"
-                  src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmji1ndyznzy2ml5bml5banbnxkftztgwodqwodczntmat-v1-1588868235.jpg?crop=0.9745419938139424xw:1xh;center,top&resize=480:*"
+                  src="https://image.tmdb.org/t/p/w500/6mJrgL7Mi13XjJeGYJFlD6UEVQw.jpg"
                 ></img>
               </figure>
             </Link>
@@ -209,9 +209,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Mystery</div>
                 <img
-                  alt="action"
+                  alt="mystery"
                   className="back"
-                  src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/115455159-1300x1733-1602867451.jpg?crop=0.910428158655109xw:1xh;center,top&resize=480:*"
+                  src="https://image.tmdb.org/t/p/w500/1QW1QHeeW3rZXl6FNKSuqb1kcl8.jpg"
                 ></img>
               </figure>
             </Link>
@@ -220,9 +220,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Romance</div>
                 <img
-                  alt="action"
+                  alt="romance"
                   className="back"
-                  src="https://m.media-amazon.com/images/M/MV5BMTMxMmRmMWUtNGNhZS00MWYxLTkwNzUtM2QwNzI4MGU1ZTI2XkEyXkFqcGdeQXVyNTQ3MjE4NTU@._V1_FMjpg_UX1000_.jpg"
+                  src="https://image.tmdb.org/t/p/w500/4rsomWxlqnHt3muGYK06auhOib6.jpg"
                 ></img>
               </figure>
             </Link>
@@ -231,9 +231,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Science Fiction</div>
                 <img
-                  alt="action"
+                  alt="science fiction"
                   className="back"
-                  src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmtexmzu0odcxndheqtjeqwpwz15bbwu4mde1oti4mzay-v1-1589813214.jpg?crop=1xw:0.960205078125xh;center,top&resize=480:*"
+                  src="https://image.tmdb.org/t/p/w500/x747ZvF0CcYYTTpPRCoUrxA2cYy.jpg"
                 ></img>
               </figure>
             </Link>
@@ -242,9 +242,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">TV Movie</div>
                 <img
-                  alt="action"
+                  alt="tv movie"
                   className="back"
-                  src=""
+                  src="https://image.tmdb.org/t/p/w500/fXFQnOSbybaU9h2kJ3jtRUU4OpA.jpg"
                 ></img>
               </figure>
             </Link>
@@ -253,9 +253,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Thriller</div>
                 <img
-                  alt="action"
+                  alt="thriller"
                   className="back"
-                  src="https://img.dtcn.com/image/themanual/rpllj2hpcoqmkfhtqute0mkeao2-500x500.jpg"
+                  src="https://image.tmdb.org/t/p/w500/5P8SmMzSNYikXpxil6BYzJ16611.jpg"
                 ></img>
               </figure>
             </Link>
@@ -264,9 +264,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">War</div>
                 <img
-                  alt="action"
+                  alt="war"
                   className="back"
-                  src=""
+                  src="https://image.tmdb.org/t/p/w500/kdbLf3aTQsEXqYlH9vA4fzmnSFz.jpg"
                 ></img>
               </figure>
             </Link>
@@ -275,9 +275,9 @@ const Genres = () => {
               <figure className="card ">
                 <div className="centered">Western</div>
                 <img
-                  alt="action"
+                  alt="western"
                   className="back"
-                  src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/westerns-12-1582066991.jpg"
+                  src="https://image.tmdb.org/t/p/w500/i5dUmY2xRzgkmjHJYKNj8kPX1Xx.jpg"
                 ></img>
               </figure>
             </Link>
