@@ -52,6 +52,7 @@ const PopularPotatoes = () => {
   }
 
   const renderMovies = () => {
+    
     return top10.map((movie) => (
       <div className="display">
         <li>
@@ -98,8 +99,12 @@ const PopularPotatoes = () => {
       </div>
       <p className='miniwording'>* Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
       <hr />
+      
       <br />
       <ol start={(currentPage - 1) * 10 + 1}>{renderMovies()}</ol>
+      
+      
+      
       <div>{renderButtons()}</div>
 
 
