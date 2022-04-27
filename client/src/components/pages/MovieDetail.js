@@ -128,7 +128,7 @@ const MovieDetail = () => {
           <h6> {getString()}</h6>
         </div>
 
-        {/* <Ratings /> */}
+        <Ratings />
 
         <div>
           <p>{director.job}</p>

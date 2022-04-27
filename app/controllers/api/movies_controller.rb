@@ -104,6 +104,7 @@ private
 def set_movie
     TMDB::API.api_key = "b8780ae423693a3389766038fe49d728"
     @movie = TMDB::Movie.id(params[:id])
+    puts @movie.id
 end
 
 def movie_params

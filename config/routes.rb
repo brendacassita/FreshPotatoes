@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     # NEWEST MOVIES BY DATE
     get 'newest', to: 'movies#newest'
 
-    get 'genres/:name', to: 'genres#genre_show'
+    # get 'genres/:name', to: 'genres#genre_show'
     get 'genres/:id', to: 'genres#show'
 
     # MOST POPULAR MOVIES AND GENRES
@@ -41,17 +41,17 @@ Rails.application.routes.draw do
 
     get 'movies/:id/reviews', to: 'reviews#index'
     
-#Create a review for a movie
-post 'movies/:id/reviews', to: 'reviews#create'
+    #Create a review for a movie
+    post 'movies/:id/reviews', to: 'reviews#create'
 
-#get all reviews for preWatched movies
-get 'movies/:id/reviews/pre', to: 'reviews#pre'
-get 'movies/:id/reviews/post', to: 'reviews#post'
-#get 'movies/:id/reviews/pre', to: 'reviews#preWatched'
+    # API Calls for Pre Reviews and Post Reviews based on Movie id
+    get 'movies/:id/reviews/pre', to: 'reviews#pre'
+    get 'movies/:id/reviews/post', to: 'reviews#post'
 
-get 'movies/:id/cast', to: 'casts#index'
 
-get 'movies/:id/videos', to: 'movies#videos'
+    get 'movies/:id/videos', to: 'movies#videos'
+
+    get 'movies/:id/cast', to:'casts#index'
    
   end 
     get '*other', to: 'static#index'
