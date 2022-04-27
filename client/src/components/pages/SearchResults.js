@@ -80,8 +80,8 @@ const SearchResults = () => {
      <hr></hr>
       {allMovies.map((m) => {
         return (
-          <div className='searchresults'>
-            <div key={m.id}>
+          <div key={m.id} className='searchresults'>
+            <div>
                 <h4>{m.name}</h4>
                 <div className='cards'>
                   <Link to={`/movies/${m.id}`}>

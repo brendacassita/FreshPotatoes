@@ -5,6 +5,9 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Link } from '@mui/material';
 import BackToTopButton from '../shared/scroll/BackToTopButton';
+// import {useTranslation} from 'react-i18next'
+// import "../shared/localization/i18n"
+
 
 
 const Footer = () => {

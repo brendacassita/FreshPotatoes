@@ -1,3 +1,6 @@
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+
 import logo from '../../Images/Theotherlogo-01.png'
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -15,18 +18,27 @@ import axios from 'axios';
 import '../CssFIles/SearchBar.css'
 
 
+
 const Navbar = () => {
    const [allMovies,setAllMovies] = useState([])
   const { handleLogout, user} = useContext(AuthContext)
   const [anchorEl,setAnchorEl] = useState(null)
   const [anchorElNav,setAnchorElNav] = useState(null)
   const [value,setValue] = useState(0)
+  const { i18n, t } = useTranslation(["common"]);
   
   useEffect(() => {
     getMoviesFromApi()
- 
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+			i18next.changeLanguage("en");
+		}
+    
   },[])
   
+  const handleLanguageChange = (e) => {
+		i18n.changeLanguage(e.target.value);
+  }
+
   const getMoviesFromApi = async () => {
     
     try {
@@ -61,10 +73,13 @@ const Navbar = () => {
         <Link className='profilelink' to='/profile'>Profile</Link>
         
         <Link className='profilelink' to='/edit_profile'>Edit Profile</Link>
+        
        
         <Button className='btn2'variant='outlined' onClick={handleLogout}>Logout</Button>
         
       </div> 
+      
+      
       
     }
     return (
@@ -88,7 +103,7 @@ const Navbar = () => {
            
           <Link className="btn1" to='/genres'>Genres</Link> 
           <Link className="btn1" to='/SearchResults'>Search</Link>
-          
+      
          
       
 
@@ -153,6 +168,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         <Link className="btn1 navlist" to="/popular_potatoes">PopularPotatoes</Link>
         <Link className="btn1" to='/popular_fries'>PopularFries</Link> {''}
         {renderLeft()}
+       
+	
      </div>
       
           
@@ -210,7 +227,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
               <MenuItem className='profilelink' onClick={handleMenuClose}>{renderRightNav()}</MenuItem>
+              <div className="collapse navbar-collapse" id="navbarNav">
+						<select 
+							className="nav-link bg-dark border-0 ml-1 mr-2 profilelink"
+							value={localStorage.getItem("i18nextLng")}
+							onChange={handleLanguageChange}
+						>
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="es">Español</option>
+						</select>
+					
+			</div>
               </Menu>
+              
             </div>
          
     

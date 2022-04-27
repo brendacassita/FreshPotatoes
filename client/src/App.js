@@ -1,3 +1,4 @@
+import { Suspense, useSuspense } from 'react';
 import './App.css';
 import Navbar from './components/shared/NavBar';
 import { Routes, Route, useParams} from 'react-router-dom';
@@ -36,8 +37,9 @@ import ContactForm from './components/pages/ContactForm';
 
 function App() {
   return (
-    <div>
+    <div><Suspense fallback={<div>Loading...</div>}>
       <Navbar />
+      
       {/* When our app first mounts FetchUser Runs */}
       <FetchUser>
         <>
@@ -79,7 +81,8 @@ function App() {
         </>
       </FetchUser>
       <Footer />
-
+      </Suspense>
+      
     </div>
   );
 }

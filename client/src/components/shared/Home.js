@@ -5,12 +5,14 @@ import Carousel from '../pages/Carousel'
 import {AuthContext} from '../../providers/AuthProvider'
 import GenreFilter from '../pages/GenreFilter'
 import '../CssFIles/card.css'
+import {useTranslation} from 'react-i18next'
 
 
 
 
 const Home = () => {
   let auth = useContext(AuthContext)
+  const {t} =  useTranslation(["home"])
     const [movies, setMovies] =  useState([])
 
     const navigate = useNavigate()
@@ -40,7 +42,7 @@ const Home = () => {
 
     const renderPosters = () => {
         return movies.map((movie) => (
-        <div>
+        <div key={movie.id}>
             <div style={{padding: 8}}>
                 <img src={movie.poster} onClick={()=>nav(`/movies/${movie.id}`)} style={{width: '100%'}} />
             </div>
