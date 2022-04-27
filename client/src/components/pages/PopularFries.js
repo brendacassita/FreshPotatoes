@@ -3,12 +3,15 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, Outlet } from 'react-router-dom'
 import '../CssFIles/Popular.css';
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 
 const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
   const [count, setCount] = useState(1)
   const [currentPage, setCurrentPage] = useState(1)
+  const {i18n, t} = useTranslation(["common"])
 
 
   useEffect(()=>{
@@ -99,10 +102,10 @@ const PopularFries= ()=>{
           <div className='searchall' >
       <div className='sline' ></div>
           <div className='titlename'></div>
-      <h1 className='searchall2' >Popular Fries</h1>
+      <h1 className='searchall2' >{t("common:popularfries")}</h1>
       <div className='bline' ></div>
       </div>
-      <p className='miniwording'>* Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <p className='miniwording'>* {t("common:5minfries")}</p>
       <hr/>
     <br/>
     

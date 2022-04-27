@@ -2,11 +2,15 @@ import axios from "axios"
 import {useEffect,useState} from "react"
 import '../CssFIles/card.css'
 import { Link } from 'react-router-dom'
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 
 
 
 const Genres = ()=>{
   const [genres, setGenres] = useState([])
+  const {i18n, t} = useTranslation(["common"])
+
 
   useEffect(()=>{
     getGenres()
@@ -55,7 +59,7 @@ const renderData = () => {
        
           <div className='searchall' >
         <div className='sline' ></div>
-      <h1 className='searchall2' > Genres</h1>
+      <h1 className='searchall2' > {t("common:genres")}</h1>
       <div className='bline' ></div>
       </div>
         

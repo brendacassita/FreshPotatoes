@@ -4,6 +4,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import '../CssFIles/card.css'
 import '../CssFIles/Popular.css';
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 
 const PopularPotatoes = () => {
   const [top10, setTop10] = useState([])
@@ -12,6 +14,8 @@ const PopularPotatoes = () => {
   const [casts, setCasts] = useState([])
   const [movies, setMovies] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
+  const {i18n, t} = useTranslation(["common"])
+
 
 
   useEffect(() => {
@@ -93,10 +97,10 @@ const PopularPotatoes = () => {
        <div className='searchall' >
       <div className='sline' ></div>
           <div className='titlename'></div>
-      <h1 className='searchall2' >Popular Potatoes</h1>
+      <h1 className='searchall2' >{t("common:popularpotatoes")}</h1>
       <div className='bline' ></div>
       </div>
-      <p className='miniwording'>* Movies need a minimum of 5 or more reviews to show up on the "Popular Potatoes"</p>
+      <p className='miniwording'>* {t("common:5minpotatoes")}</p>
       <hr />
       <br />
       <ol start={(currentPage - 1) * 10 + 1}>{renderMovies()}</ol>
