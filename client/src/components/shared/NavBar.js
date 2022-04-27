@@ -2,6 +2,30 @@ import logo from "../../Images/Theotherlogo-01.png";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+<<<<<<< HEAD
+import Button from '@mui/material/Button';
+import {styled,alpha} from '@mui/material/styles'
+import {AppBar,IconButton,InputBase,Toolbar,Box} from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem';
+import Avatar from '@mui/material/Avatar';
+import '../CssFIles/Navbar.css';
+import SearchBar from './SearchBar'
+import axios from 'axios';
+import '../CssFIles/SearchBar.css'
+import potatoe from "../../Images/Potatoe.png"
+
+
+const Navbar = () => {
+    let auth = useContext(AuthContext);
+   const [allMovies,setAllMovies] = useState([])
+  const { handleLogout, user} = useContext(AuthContext)
+  const [anchorEl,setAnchorEl] = useState(null)
+  const [anchorElNav,setAnchorElNav] = useState(null)
+  const [value,setValue] = useState(0)
+  
+=======
 import Button from "@mui/material/Button";
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, IconButton, InputBase, Toolbar, Box } from "@mui/material";
@@ -23,6 +47,7 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [value, setValue] = useState(0);
 
+>>>>>>> dddb19885eb6002f48fe8f5d2963ed6416c54a44
   useEffect(() => {
     getMoviesFromApi();
   }, []);
@@ -153,14 +178,126 @@ const Navbar = () => {
     }
   };
 
+<<<<<<< HEAD
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 1),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'black',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(3)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '22ch',
+      '&:focus': {
+        width: '30ch',
+      },
+    },
+  },
+}));
+  if (!auth.user) {
+    return <p>no user</p>;
+  }
+  return (
+    <AppBar className="AppBar" position="static">
+      <Toolbar className="AppBar1">
+        <Link to="./">
+=======
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
         <Link to={user ? "/home" : "/"}>
+>>>>>>> dddb19885eb6002f48fe8f5d2963ed6416c54a44
           <div className="logo">
             <img src={logo} width="190px"></img>
           </div>
         </Link>
+<<<<<<< HEAD
+
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <Link className="btn1 navlist" to="/popular_potatoes">
+              PopularPotatoes
+            </Link>
+            <Link className="btn1" to="/popular_fries">
+              PopularFries
+            </Link>{" "}
+            {""}
+            {renderLeft()}
+          </div>
+
+          <SearchBar
+            className="searchfunction"
+            placeholder="Search Movies..."
+          />
+
+          <div>
+            <h2 className="namehome">Welcome {auth.user.name}!</h2>
+          </div>
+
+          {/*           
+          <Box className='box'>
+           <Search className='box' >
+            <SearchIconWrapper>
+              <SearchIcon className="searchicon"/>
+            </SearchIconWrapper>
+              <StyledInputBase className="search"
+              placeholder="Search Movies…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
+          </Box> */}
+
+          <div className="logout">
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <Avatar
+                className="avatar_circle"
+                src={user && user.avatar}
+                sx={{ width: 56, height: "auto" }}
+              />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+            >
+              {/* DO NOT DELETE THESE */}
+              {/* { <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+              <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> } */}
+
+              <MenuItem className="profilelink" onClick={handleMenuClose}>
+                {renderRightNav()}
+              </MenuItem>
+            </Menu>
+          </div>
+=======
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
@@ -174,6 +311,7 @@ const Navbar = () => {
           />
 {renderRightNav()}
           
+>>>>>>> dddb19885eb6002f48fe8f5d2963ed6416c54a44
         </div>
       </Toolbar>
     </AppBar>

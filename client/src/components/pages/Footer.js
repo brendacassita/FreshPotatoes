@@ -23,12 +23,12 @@ const Footer = () => {
         <Box borderBottom={1}>Help</Box>
         <Box>
             <Link href="/contact_us" color="inherit">
-              Contact
+              Contact Us
             </Link> 
         </Box>
         <Box>
             <Link href="/about" color="inherit">
-              About
+              About Us
             </Link> 
         </Box>
         <Box>
