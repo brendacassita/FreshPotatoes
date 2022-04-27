@@ -16,13 +16,28 @@ const PopularFries= ()=>{
    console.log('in useeffect')
   },[])
 
+  const getPopular = async (data) => {
+    const movieInfo = await Promise.all(data.map(async(movie)=> {
+      let res = await axios.get(`/api/movies/${movie.movie_id}`)
+      const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`
+      const id = res.data.id
+      const name = res.data.title
+      const release = res.data.release_date
+      const runtime = res.data.runtime
+      const plot = res.data.overview
+      return {poster, id, name, release, runtime, plot, watched_rating:movie.watched_rating}
+    }))
+    return movieInfo
+  }
+
 
   const getTop10 = async () =>{
     try{
       let res = await axios.get('/api/pagetopfries/?per=10')
+      const mov = await getPopular(res.data.movie)
       setPer(res.data.per)
       setCount(res.data.count)
-      setTop10(res.data.movie)
+      setTop10(mov)
       console.log('res:', res)
     }catch(err){
     alert('error in getting top 10 movies')
@@ -32,8 +47,9 @@ const PopularFries= ()=>{
   const getMoreThanTop10 = async (page) =>{
     try{
       let res = await axios.get(`/api/pagetopfries/?page=${page}`)
+      const mov = await getPopular(res.data.movie)
       setCurrentPage (page)
-      setTop10(res.data.movie)
+      setTop10(mov)
     }catch(err){
     alert('error in getting more top movies')
     }
@@ -44,14 +60,14 @@ const PopularFries= ()=>{
     console.log('numPage:', numPage)
     const buttonArr = []
     for(let i = 1; i<=numPage; i++){
-      buttonArr.push(<button className='pagebutton' onClick={()=>{getMoreThanTop10(i)}}>{i}</button>)
+      buttonArr.push(<button key={i}className='pagebutton' onClick={()=>{getMoreThanTop10(i)}}>{i}</button>)
     }
     return buttonArr
   }
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div className="display">
+      <div key={movie.id}className="display">
        <li>
         <Link to={`/movies/${movie.id}`}><div>
         <img className='top10' src = {movie.poster}/></div>
@@ -64,7 +80,7 @@ const PopularFries= ()=>{
 
             <div>
               <h6>
-                year: {movie.year} | runtime:{movie.runtime}
+                release: {movie.release} | runtime:{movie.runtime}
               </h6>
               <div>
                 <h6>post-rating: {movie.watched_rating.toFixed(0)}%</h6>

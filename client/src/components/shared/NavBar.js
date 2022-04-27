@@ -1,3 +1,5 @@
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 import logo from "../../Images/Theotherlogo-01.png";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -16,16 +18,26 @@ import "../CssFIles/SearchBar.css";
 import bwPic from "../../Images/blackwhitePotatoe.png";
 import potatoe from "../../Images/Potatoe.png";
 
+
 const Navbar = () => {
+  let auth = useContext(AuthContext)
   const [allMovies, setAllMovies] = useState([]);
   const { handleLogout, user } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [value, setValue] = useState(0);
+  const {i18n, t} = useTranslation(["common"])
 
   useEffect(() => {
     getMoviesFromApi();
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+			i18next.changeLanguage("en");
+		}
   }, []);
+
+  const handleLanguageChange = (e) => {
+		i18n.changeLanguage(e.target.value);
+	};
 
   const getMoviesFromApi = async () => {
     try {
@@ -51,7 +63,6 @@ const Navbar = () => {
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const renderRightNav = () => {
     if (user) {
       return(<div className="logout">
@@ -64,17 +75,13 @@ const Navbar = () => {
               // color="inherit"
             >
               {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
-
               {/* <div className='avatar_circle' src={user }>
                   <img className='avatar_circle' src={potatoe} width='60px'></img>
                 </div> */}
-
               {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
-
               <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
             </IconButton>
-
             <Menu
               id="menu-appbar"
               anchorEl={anchorEl}
@@ -93,17 +100,14 @@ const Navbar = () => {
               {/* DO NOT DELETE THESE */}
               {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
-
               <MenuItem className="profilelink" onClick={handleMenuClose}>
                 <div className="">
                   <Link className="profilelink" to="/profile">
                     Profile
                   </Link>
-
                   <Link className="profilelink" to="/edit_profile">
                     Edit Profile
                   </Link>
-
                   <Button
                     className="btn2"
                     variant="outlined"
@@ -118,15 +122,17 @@ const Navbar = () => {
     }
     return (
       <>
-        
         <br />
-        <Button className="buttonRegister-nav" variant="outlined" href="/register">
+        <Button
+          className="buttonRegister-nav"
+          variant="outlined"
+          href="/register"
+        >
           Register
         </Button>
       </>
     );
   };
-
   const renderLeft = () => {
     //if we have a user, return the links we want to show(if logged in)
     if (user) {
@@ -134,25 +140,49 @@ const Navbar = () => {
         <>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
-<Link className="btn1 navlist" to="/popular_potatoes">
-              PopularPotatoes
-            </Link>
-            <Link className="btn1" to="/popular_fries">
-              PopularFries
-            </Link>{" "}
-            {""}
+          <Link className="btn1 navlist" to="/popular_potatoes">
+            PopularPotatoes
+          </Link>
+          <Link className="btn1" to="/popular_fries">
+            PopularFries
+          </Link>{" "}
+          {""}
           <Link className="btn1" to="/genres">
             Genres
           </Link>
           <Link className="btn1" to="/SearchResults">
             Search
           </Link>
-          
+     
+			<div className="collapse navbar-collapse" id="navbarNav">
+				<ul className="navbar-nav ml-auto">
+					<li className="nav-item">
+						<select
+							className="nav-link bg-dark border-0 ml-1 mr-2"
+							value={localStorage.getItem("i18nextLng")}
+							onChange={handleLanguageChange}
+						>
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="es">Español</option>
+						</select>
+					</li>
+					<li className="nav-item ml-2">
+						<Link className="nav-link" to="/profile">
+							{t("profile")}
+						</Link>
+					</li>
+				</ul>
+			</div>
         </>
+        
       );
     }
   };
 
+  if (!auth.user){
+    return <p>no user</p>
+  }
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -161,23 +191,21 @@ const Navbar = () => {
             <img src={logo} width="190px"></img>
           </div>
         </Link>
-
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
-            
             {renderLeft()}
           </div>
-
           <SearchBar
             className="searchfunction"
             placeholder="Search Movies..."
           />
+          <div>
+            <h2>Welcome {auth.user.name}!</h2>
+          </div>
 {renderRightNav()}
-          
         </div>
       </Toolbar>
     </AppBar>
   );
 };
-
 export default Navbar;
