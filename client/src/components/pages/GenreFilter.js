@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 
 const GenreFilter = () => {
   const [filteredMovies, setFilteredMovies] = useState(null);
+  const {i18n, t} = useTranslation(["common"])
+
   useEffect(() => {
     setFilteredMovies(getMovies());
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+			i18next.changeLanguage("en");
+    }
   }, []);
+  
+  const handleLanguageChange = (e) => {
+		i18n.changeLanguage(e.target.value);
+	};
 
   function handleMovies(e) {
     let genreMovie = e.target.value;
@@ -101,7 +112,7 @@ const GenreFilter = () => {
 
   return (
     <div>
-      <h4 className="genreCategories">Categories</h4>
+      <h4 className="genreCategories">{t("common:categories")}</h4>
       
       {buttons &&
         buttons.map((genre, index) => (

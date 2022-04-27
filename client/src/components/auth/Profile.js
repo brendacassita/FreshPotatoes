@@ -26,7 +26,7 @@ const Profile = () => {
 
      {user.avatar && <img src={user.avatar} width={200} />}
      < br/>
-     {user.name}
+     <p>{t("common:welcome")} {user.name}!</p>
       {/* {!user.avatar && <p>no image</p>} */}
       < br/>
       < br/>

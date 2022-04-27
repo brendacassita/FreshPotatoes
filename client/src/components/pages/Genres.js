@@ -1,7 +1,11 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import "../CssFIles/card.css";
-import { Link } from "react-router-dom";
+
+import axios from "axios"
+import {useEffect,useState} from "react"
+import '../CssFIles/card.css'
+import { Link } from 'react-router-dom'
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
+
 
 const Genres = () => {
   const [genres, setGenres] = useState([]);
@@ -9,6 +13,12 @@ const Genres = () => {
   useEffect(() => {
     getGenres();
   }, []);
+
+
+const Genres = ()=>{
+  const [genres, setGenres] = useState([])
+  const {i18n, t} = useTranslation(["common"])
+
 
   const getGenres = async () => {
     try {
@@ -18,6 +28,7 @@ const Genres = () => {
       alert("error getting genres");
     }
   };
+
 
   const renderData = () => {
     const genre = genres.map((g) => {
@@ -52,15 +63,21 @@ const Genres = () => {
     return genre;
   };
 
-  return (
-    <div className="App1">
-      <div className="searchall">
-        <div className="sline"></div>
-        <h1 className="searchall2"> Genres</h1>
-        <div className="bline"></div>
+ 
+  return genre
+}
+   
+     
+      return(
+        <div className="App1">
+       
+          <div className='searchall' >
+        <div className='sline' ></div>
+      <h1 className='searchall2' > {t("common:genres")}</h1>
+      <div className='bline' ></div>
       </div>
+        
 
-      {/*           
           <div className="wrapper">
             <div className="cards">
               <figure className="card">
