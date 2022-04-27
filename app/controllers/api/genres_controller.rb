@@ -4,6 +4,7 @@ class Api::GenresController < ApplicationController
     API_PARTIAL_URL = "?api_key=#{ENV['TMDB_API_KEY']}"
     
     before_action :set_genre, only: [:show, :update, :destroy]
+    # before_action :set_movie, only: [:show, :update, :destroy]
     # before_action :set_name, only: [:genre_show]
 
     def index
@@ -11,7 +12,7 @@ class Api::GenresController < ApplicationController
     end
 
     def show
-        response = RestClient.get("https://api.themoviedb.org/3/discover/movie#{API_PARTIAL_URL}&language=en-US&page=1&with_genres=#{@genre.id}")
+        response = RestClient.get("https://api.themoviedb.org/3/discover/movie#{API_PARTIAL_URL}&language=en-US&page=1&with_genres=#{params[:id]}")
         render json: response
     end
 
@@ -60,9 +61,15 @@ class Api::GenresController < ApplicationController
 
     def set_genre
         TMDB::API.api_key = "b8780ae423693a3389766038fe49d728"
-        @genre = TMDB::Genre.id(params[:id])
+        @genre = TMDB::Movie.id(params[:id])
         puts @genre.id
     end
+
+    # def set_genre
+    #     TMDB::API.api_key = "b8780ae423693a3389766038fe49d728"
+    #     @genre = TMDB::Genre.details(params(:id))
+    #     puts @genre.id
+    # end
 
     def genre_params
         params.require(:genre).permit(:name, :image)
