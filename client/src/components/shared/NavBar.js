@@ -123,7 +123,11 @@ const Navbar = () => {
     return (
       <>
         <br />
-        <Button className="buttonRegister-nav" variant="outlined" href="/register">
+        <Button
+          className="buttonRegister-nav"
+          variant="outlined"
+          href="/register"
+        >
           Register
         </Button>
       </>
@@ -136,6 +140,7 @@ const Navbar = () => {
         <>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
+
 <Link className="btn1 navlist" to="/popular_potatoes">
 {t("common:popularpotatoes")}
             </Link>
@@ -143,6 +148,7 @@ const Navbar = () => {
             {t("common:popularfries")}
             </Link>{" "}
             {""}
+
           <Link className="btn1" to="/genres">
           {t("common:genres")}
           </Link>
