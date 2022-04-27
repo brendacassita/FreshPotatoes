@@ -18,7 +18,9 @@ import "../CssFIles/SearchBar.css";
 import bwPic from "../../Images/blackwhitePotatoe.png";
 import potatoe from "../../Images/Potatoe.png";
 
+
 const Navbar = () => {
+  let auth = useContext(AuthContext)
   const [allMovies, setAllMovies] = useState([]);
   const { handleLogout, user } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -173,6 +175,10 @@ const Navbar = () => {
       );
     }
   };
+
+  if (!auth.user){
+    return <p>no user</p>
+  }
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -189,6 +195,9 @@ const Navbar = () => {
             className="searchfunction"
             placeholder="Search Movies..."
           />
+          <div>
+            <h2>Welcome {auth.user.name}!</h2>
+          </div>
 {renderRightNav()}
         </div>
       </Toolbar>
