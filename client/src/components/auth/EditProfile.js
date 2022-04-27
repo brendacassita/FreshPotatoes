@@ -1,5 +1,6 @@
 import React,{useContext,useEffect,useState} from "react";
 import '../CssFIles/editProfile.css'
+import {useTranslation} from 'react-i18next'
 
 
 // Import React FilePond
@@ -30,6 +31,7 @@ function EditProfile() {
   const [phone, setPhone] = useState(user.phone)
   const [password, setPassword] = useState(user.password)
   const [username, setUserName] = useState(user.username)
+  const {t} =  useTranslation(["profile", "common"])
 
 
   const [showUpload, setShowUpload] = useState(false)
@@ -119,34 +121,22 @@ function EditProfile() {
         
          
             <div className="editalign">
-              <div className="fullname ">
-            <h5 >Full Name</h5>
-             </div>
-            </div>
+            <h5 className="fullname">{t("profile:name")}</h5>
+              </div>
               <input className="editbox" value={name} onChange={(e) => setName(e.target.value)} /> 
             
-            
-            <div className="editalign">
-              <div className="fullname">
-                <h5 >Email</h5>
-                </div>
+            <div  className="editalign">
+              <h5 className="fullname">{t("profile:email")}</h5>
               </div>
             <input className="editbox" value={email} onChange={(e) => setEmail(e.target.value)} /> 
             
             
             <div className="editalign">
-              <div className="fullname">
-                <h5 >Password</h5>
-                </div>
-            </div>
-          <input className="editbox" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />  
-          
-            
-            
+              <h5 className="fullname">{t("profile:password")}</h5>
+              </div>
+            <input className="editbox" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />  
             <div className="editalign">
-              <div className="fullname">
-                <h5 >Phone number</h5>
-                </div>
+              <h5 className="fullname">{t("profile:phone")}</h5>
               </div>
             <input className="editbox" value={phone} onChange={(e) => setPhone(e.target.value)} />  
        
@@ -156,7 +146,7 @@ function EditProfile() {
 
        
         
-        <button className="editprofilebtn" type='submit'>Save Changes</button>
+        <button className="editprofilebtn" type='submit'>{t("common:submit")}</button>
         
         <br />
         </div>
