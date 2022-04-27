@@ -26,6 +26,7 @@ import SearchBar from './components/shared/SearchBar';
 import About from './components/pages/About';
 import ContactForm from './components/pages/ContactForm';
 import Ratings from './components/shared/Ratings';
+import {Helmet} from "react-helmet";
 
 import LandingPage from './components/shared/LandingPage';
 import { Suspense } from 'react';
@@ -38,49 +39,62 @@ import { Suspense } from 'react';
 //after done checking it will proceed with render
 function App() {
   return (
-    <div><Suspense fallback={<div>Loading...</div>}>
-    <div id='page-container'>
-      <div id='content-wrap' >
-      <Navbar />
-      {/* When our app first mounts FetchUser Runs */}
-      <FetchUser>
-        <>
-          <Routes>
-            {/* Unprotected */}
-            <Route path='/login' element={<Login />}/>
-            <Route path='/register' element={<Register />}/>
-            <Route path='/privacy_policy' element={<PrivacyPolicy />}/>
-            <Route path='/contact_us' element={<ContactForm />}/>
-            <Route path='/about' element={<About />}/>
-            <Route path='/' element={<LandingPage />} />
-            {/* <Route path='/home' element={<LandingPage />} /> */}
-                {/* protected in routes inside of here you need to logged in*/}
-                {/* else you go to login page*/}
-            <Route element={<ProtectedRoute />}>
-              <Route path='/home' element={<Home/>}/>
-              <Route path='/SearchResults' element={<SearchResults yo={'Search'} />}/>
-              <Route path='/Search' element={<SearchBar />}/>
-              <Route path='/profile' element={<Profile />}/>
-              <Route path='/edit_profile' element={<EditProfile />}/>
-              <Route path='/genres' element={<Genres />}/>
-              <Route path='/popular_potatoes' element={<PopularPotatoes/>}/>
-              <Route path='/popular_fries' element={<PopularFries />}/>
-              <Route path='/movies/:id' element={<MovieDetail />}/>
-              <Route path='/review' element={<Review />} />
-              <Route path='/genres/:id' element={<GenreShow />}/>
-              <Route path='/movies/:id/edit' element={<MovieForm/>}/>
-              <Route path='/movies/new' element={<MovieForm />} />
-            </Route>
-            <Route path='*' element={<NoMatch />}/>
-          </Routes>
-        </>
-        </FetchUser>
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div id="page-container">
+          <div id="content-wrap"> 
+            <Helmet>
+              <meta charSet="utf-8" />
+              <title>Fresh Potatoes</title>
+              <link rel="canonical" href="http://mysite.com/example" />
+              <meta name="description" content="A website to rate and review movies. Share your ratings and reviews with other movie-lovers." />
+            </Helmet>
+            <Navbar />
+            {/* When our app first mounts FetchUser Runs */}
+            <FetchUser>
+              <>
+                <Routes>
+                  {/* Unprotected */}
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+                  <Route path="/contact_us" element={<ContactForm />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/" element={<LandingPage />} />
+                  {/* <Route path='/home' element={<LandingPage />} /> */}
+                  {/* protected in routes inside of here you need to logged in*/}
+                  {/* else you go to login page*/}
+                  <Route element={<ProtectedRoute />}>
+                    <Route path="/home" element={<Home />} />
+                    <Route
+                      path="/SearchResults"
+                      element={<SearchResults yo={"Search"} />}
+                    />
+                    <Route path="/Search" element={<SearchBar />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/edit_profile" element={<EditProfile />} />
+                    <Route path="/genres" element={<Genres />} />
+                    <Route
+                      path="/popular_potatoes"
+                      element={<PopularPotatoes />}
+                    />
+                    <Route path="/popular_fries" element={<PopularFries />} />
+                    <Route path="/movies/:id" element={<MovieDetail />} />
+                    <Route path="/review" element={<Review />} />
+                    <Route path="/genres/:name" element={<GenreShow />} />
+                    <Route path="/movies/:id/edit" element={<MovieForm />} />
+                    <Route path="/movies/new" element={<MovieForm />} />
+                  </Route>
+                  <Route path="*" element={<NoMatch />} />
+                </Routes>
+              </>
+            </FetchUser>
+          </div>
+          <div id="footer">
+            <Footer />
+          </div>
         </div>
-      <div id='footer'>
-      <Footer />
-</div>
-    </div>
-    </Suspense>
+      </Suspense>
     </div>
   );
 }

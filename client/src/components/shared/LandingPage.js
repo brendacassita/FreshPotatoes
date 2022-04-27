@@ -12,8 +12,12 @@ import { useNavigate } from "react-router-dom";
 import Carousel from "../pages/Carousel";
 import GenreFilter from "../pages/GenreFilter";
 import "../CssFIles/card.css";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import '../CssFIles/Other.css'
+
+import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+
+
 const LandingPage = () => {
   let auth = useContext(AuthContext);
   const [movies, setMovies] = useState([]);
@@ -73,7 +77,7 @@ const LandingPage = () => {
         
         <div className="check-align"> 
           
-          <div className="check" ><CheckCircleOutlineIcon sx={{fontSize: 60}} />
+          <div className="check" ><LocalMoviesIcon sx={{fontSize: 60}} />
             
             <h2>Search</h2>
           <p>Search all your favorite movies with a click of a mouse  </p>

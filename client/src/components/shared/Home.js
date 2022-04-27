@@ -1,19 +1,16 @@
-import { useEffect, useState, useContext } from 'react'
-import axios from 'axios'
-import { useNavigate } from "react-router-dom"
-import Carousel from '../pages/Carousel'
-import { AuthContext } from '../../providers/AuthProvider'
-import GenreFilter from '../pages/GenreFilter'
-import '../CssFIles/card.css'
-import { useTranslation } from 'react-i18next'
-
-
-
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Carousel from "../pages/Carousel";
+import { AuthContext } from "../../providers/AuthProvider";
+import GenreFilter from "../pages/GenreFilter";
+import "../CssFIles/card.css";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  let auth = useContext(AuthContext)
-  const { t } = useTranslation(["home"])
-  const [movies, setMovies] = useState([])
+  let auth = useContext(AuthContext);
+  const { t } = useTranslation(["home"]);
+  const [movies, setMovies] = useState([]);
 
   const navigate = useNavigate();
 
@@ -65,7 +62,6 @@ const Home = () => {
           {renderPosters()}
         </Carousel>
       </div>
-
       <div className="homeGenre">
         <GenreFilter />
       </div>
