@@ -4,8 +4,8 @@ import "../../App.css";
 import { useParams } from "react-router-dom";
 
 const Ratings = () => {
-  const [unwatched, setUnwatched] = useState([]);
-  const [watched, setWatched] = useState([]);
+  const [unwatched, setUnwatched] = useState({});
+  const [watched, setWatched] = useState({});
 
   useEffect(() => {
     getUnwatched();
@@ -22,6 +22,7 @@ const Ratings = () => {
       console.log("Unwatched:", res.data);
     } catch (err) {
       alert("Error in getting unwatched reviews");
+      console.log(err)
     }
     return unwatched
   };
@@ -40,8 +41,8 @@ const Ratings = () => {
   return (
     <div>
       <div>
-        <h5 style={{ display: "flex", justifyContent: "center" }}>
-          pre: {unwatched.rating}% | post: {watched.rating}%
+          <h5 style={{ display: "flex", justifyContent: "center" }}>
+          pre: {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'} | post: {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
         </h5>
       </div>
     </div>
