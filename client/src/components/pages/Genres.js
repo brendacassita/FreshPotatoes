@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../CssFIles/card.css";
@@ -221,6 +220,5 @@ import i18next from 'i18next'
     </div>
   );
 };
-
 export default Genres;
 
