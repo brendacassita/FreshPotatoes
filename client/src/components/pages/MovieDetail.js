@@ -6,6 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
+import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 
 const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
@@ -48,7 +49,8 @@ const MovieDetail = () => {
   };
 
   const getCast = async () => {
-    try {let res = await axios.get(`/api/movies/${params.id}/cast`);
+    try {
+      let res = await axios.get(`/api/movies/${params.id}/cast`);
       setCast(res.data.cast);
       console.log("CAST:", res.data.cast);
     } catch (err) {
@@ -60,11 +62,19 @@ const MovieDetail = () => {
     return cast.map((cast) => (
       <div key={`${cast.id}`}>
         <div>
-          <img src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`} width={50}/>
-          <h5>{cast.character}: {cast.name}</h5>
+          <h5>{cast.character}</h5>
+          <h5>{cast.name}</h5>
+        </div>
+        <div>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+            onError={(event) => (event.target.style.display = "none")}
+            width={100}
+          />
         </div>
       </div>
-    ))}
+    ));
+  };
 
   // const getLimitedCast = cast => {
   //   let cas = []
@@ -80,8 +90,8 @@ const MovieDetail = () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
       setDirector(
-        res.data.crew.find((d)=> {
-          return d.job === "Director"
+        res.data.crew.find((d) => {
+          return d.job === "Director";
         })
       );
       console.log("CREW:", res.data.crew);
@@ -142,11 +152,8 @@ const MovieDetail = () => {
 
         <Review movieId={movie.id} />
         <div className="control"></div>
-        
 
-        <div>
-          {renderCast()}
-        </div>
+        <div>{renderCast()}</div>
       </div>
     );
   };
