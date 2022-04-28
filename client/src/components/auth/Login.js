@@ -69,7 +69,7 @@ const Login = ()=>{
                 
                 {!loading &&
                 <>
-              <div className="login-btns">
+              <div className="login-btns1">
                
                 <p className="acnt">Dont have an account?</p><Link href='/register'>SIGN UP HERE </Link>
                 {/* <Button

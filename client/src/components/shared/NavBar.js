@@ -103,17 +103,18 @@ const Navbar = () => {
               <MenuItem className="profilelink" onClick={handleMenuClose}>
                 <div className="">
                   <Link className="profilelink" to="/profile">
-                    Profile
+                  {t("common:profile")}
                   </Link>
                   <Link className="profilelink" to="/edit_profile">
-                    Edit Profile
+                  {t("common:editprofile")}
                   </Link>
                   <Button
                     className="btn2"
                     variant="outlined"
                     onClick={() => handleLogout()}
                   >
-                    Logout
+                  {t("common:logout")}
+
                   </Button>
                 </div>
               </MenuItem>
@@ -137,7 +138,7 @@ const Navbar = () => {
     //if we have a user, return the links we want to show(if logged in)
     if (user) {
       return (
-        <>
+        <div className='renderLeft'>
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
 
@@ -156,11 +157,14 @@ const Navbar = () => {
           {t("common:search")}
           </Link>
      
-			<div className="collapse navbar-collapse" id="navbarNav">
-				<ul className="navbar-nav ml-auto">
-					<li className="nav-item">
+          
+          
+          <div className='language'>
+			<div className="">
+				<ul className="">
+					<div className="">
 						<select
-							className="nav-link bg-dark border-0 ml-1 mr-2"
+							className="Language-drop"
 							value={localStorage.getItem("i18nextLng")}
 							onChange={handleLanguageChange}
 						>
@@ -168,23 +172,20 @@ const Navbar = () => {
 							<option value="fr">Français</option>
 							<option value="es">Español</option>
 						</select>
-					</li>
-					<li className="nav-item ml-2">
-						<Link className="nav-link" to="/profile">
-							{t("profile")}
-						</Link>
-					</li>
+					</div>
+				
 				</ul>
-			</div>
-        </>
+          </div>
+          </div>
+        </div>
         
       );
     }
   };
 
-  if (!auth.user){
-    return <p>no user</p>
-  }
+  // if (!auth.user){
+  //   return <p>no user</p>
+  // }
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -202,7 +203,8 @@ const Navbar = () => {
             placeholder="Search Movies..."
           />
           <div>
-            <h2>{t("common:welcome")} {auth.user.name}!</h2>
+
+            {/* <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2> */}
           </div>
 {renderRightNav()}
         </div>

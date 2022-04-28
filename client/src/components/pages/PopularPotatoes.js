@@ -73,6 +73,7 @@ const PopularPotatoes = () => {
   }
 
   const renderMovies = () => {
+    
     return top10.map((movie) => (
       <div key={movie.id} className="display">
         <li>
@@ -119,8 +120,12 @@ const PopularPotatoes = () => {
       </div>
       <p className='miniwording'>* {t("common:5minpotatoes")}</p>
       <hr />
+      
       <br />
       <ol start={(currentPage - 1) * 10 + 1}>{renderMovies()}</ol>
+      
+      
+      
       <div>{renderButtons()}</div>
 
 

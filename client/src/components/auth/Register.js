@@ -5,7 +5,7 @@ import '../CssFIles/Login-out.css';
 import {Link} from '@mui/material';
 
 import p from '../../Images/Potatoe.png'
-
+import fpf from '../../Images/FreshPotatoesFrylogo-01.png'
 
 let timeout;
 
@@ -41,7 +41,7 @@ const Register = ()=>{
       <div  className="logout-background " >
       <div className="logoutborder">
         <h1 className="signup-title">Sign-up </h1>
-        <img className="p" src={p} width='300'/>
+        <img className="p" src={fpf} width='300'/>
         <div className="logincard">
           
         <form className="signup-form" onSubmit={handleSubmit}>
@@ -67,7 +67,7 @@ const Register = ()=>{
                 </>
               }
               <Button
-            className="buttonlogin1 btnregister"
+            className="buttonregister btnregister"
             variant="contained" 
                         onClick={handleSubmit}
                         disabled={loading}>

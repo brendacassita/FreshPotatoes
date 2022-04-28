@@ -48,8 +48,8 @@ margin: 40px 10px;
 }
 .avatar_circle {
 width: auto!important;
-height: 60px!important;
-margin: -20px 20px  ;
+height: 70px!important;
+margin: -8px 20px  ;
 border-radius: 30px;
 /* filter: grayscale(100%); */
 /* -webkit-filter: grayscale(90%); */
@@ -97,4 +97,23 @@ top:0;
 left:0;
 width:100%;
 
+}
+.language {
+justify-content: end;
+    right: -651px;
+    width: 224px;
+    position: relative;
+    display: block;
+    top: -29px;
+}
+.Language-drop {
+border-radius: 15px;
+border: none;
+background-color: #1F1D2B;
+color: white;
+}
+.renderLeft {
+    align-items: baseline;
+    bottom: -19px;
+    position: relative;
 }
