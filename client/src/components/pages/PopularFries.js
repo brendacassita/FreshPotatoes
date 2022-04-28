@@ -19,8 +19,8 @@ const PopularFries= ()=>{
    console.log('in useeffect')
   },[])
 
-  const getPopular = async (data) => {
-    const movieInfo = await Promise.all(data.map(async(movie)=> {
+  const getPopular = async (data, page) => {
+    const movieInfo = await Promise.all(data.map(async(movie, ind)=> {
       let res = await axios.get(`/api/movies/${movie.movie_id}`)
       const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`
       const id = res.data.id
@@ -28,7 +28,9 @@ const PopularFries= ()=>{
       const release = res.data.release_date
       const runtime = res.data.runtime
       const plot = res.data.overview
-      return {poster, id, name, release, runtime, plot, watched_rating:movie.watched_rating}
+      const index = ind+((page-1)*10+1)
+      
+      return {poster, id, name, release, runtime, plot, watched_rating:movie.watched_rating, index}
     }))
     return movieInfo
   }
@@ -37,7 +39,7 @@ const PopularFries= ()=>{
   const getTop10 = async () =>{
     try{
       let res = await axios.get('/api/pagetopfries/?per=10')
-      const mov = await getPopular(res.data.movie)
+      const mov = await getPopular(res.data.movie, 1)
       setPer(res.data.per)
       setCount(res.data.count)
       setTop10(mov)
@@ -50,7 +52,7 @@ const PopularFries= ()=>{
   const getMoreThanTop10 = async (page) =>{
     try{
       let res = await axios.get(`/api/pagetopfries/?page=${page}`)
-      const mov = await getPopular(res.data.movie)
+      const mov = await getPopular(res.data.movie, page)
       setCurrentPage (page)
       setTop10(mov)
     }catch(err){
@@ -75,6 +77,8 @@ const PopularFries= ()=>{
         
         <div className='movie-details'>
           <li className='Popular-P'>
+            <h2 className='order'>#{movie.index}</h2>
+            
             <div className='cards'>
               <Link to={`/movies/${movie.id}`}>
                 <figure className='card'>
