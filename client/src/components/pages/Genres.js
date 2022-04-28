@@ -2,7 +2,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../CssFIles/card.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import '../../App.css'
 const Genres = () => {
   const [genres, setGenres] = useState([]);
   useEffect(() => {

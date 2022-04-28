@@ -69,16 +69,14 @@ const Login = ()=>{
                 
                 {!loading &&
                 <>
-              <div className="login-btns1">
+              <div className="login-btns1 btnlogin">
                
                 <p className="acnt">Dont have an account?</p><Link href='/register'>SIGN UP HERE </Link>
-                {/* <Button
-                  className='buttonlogin btnsignup'
-                   type="button" variant='outlined' href='/register'>Sign-up</Button> */}
+              
                    </div>
                 </>
               }
-               <Button className='buttonlogin1 btnlogin'
+               <Button className='btnlogin buttonlogin1'
            
             variant="contained"
             type="button"

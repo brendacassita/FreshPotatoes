@@ -5,7 +5,7 @@ import { Link, Outlet } from 'react-router-dom'
 import '../CssFIles/Popular.css';
 import {useTranslation} from 'react-i18next'
 import i18next from 'i18next'
-
+import frylogo from '../../Images/fryLogo.png'
 const PopularFries= ()=>{
   const [top10, setTop10] =  useState([])
   const [per, setPer] = useState(10)
@@ -70,37 +70,52 @@ const PopularFries= ()=>{
  
   const renderMovies = ()=>{
     return top10.map((movie)=>(
-      <div key={movie.id}className="display">
-       <li>
-        <Link to={`/movies/${movie.id}`}><div>
-        <img className='top10' src = {movie.poster}/></div>
-        </Link>
-        <div></div>
-        <h4>{movie.name}</h4>
-        <div key={movie.id}>
+      <div key={movie.id} className="display">
+        
+        
+        <div className='movie-details'>
+          <li className='Popular-P'>
+            <div className='cards'>
+              <Link to={`/movies/${movie.id}`}>
+                <figure className='card'>
+                    <img className='Top-10' src={movie.poster} />
+                  </figure>
+              </Link>
+              </div>
             
+            <div className='potatoe-rating'>
+            <img src={frylogo} width='50px'/>
+              <div className='rating-number'>
+                <h5>post-rating:</h5>
+                <h3>{movie.watched_rating.toFixed(0)}%</h3>
+              </div>
             </div>
-
-            <div>
-              <h6>
+            
+            <div className='movie-details' key={movie.id} >
+            
+              <div>
+                <h2 className='movie-title'>{movie.name}</h2>
+              </div>
+              
+              <h6 className='release'>
                 release: {movie.release} | runtime:{movie.runtime}
               </h6>
-              <div>
-                <h6>post-rating: {movie.watched_rating.toFixed(0)}%</h6>
+              
+              <div className='story-line'>
+              <h4 className='story-title'>Story Line</h4>
+                <p className='information'>{movie.plot}</p>
               </div>
-              <div id="container">
-                <h4>Story Line</h4>
-                <p>{movie.plot}</p>
-              </div>
-              <hr/>
-
+              
             </div>
+            
+       
           
 
 
           <br />
 
-        </li>
+          </li>
+          </div>
       </div>
       
     ))
