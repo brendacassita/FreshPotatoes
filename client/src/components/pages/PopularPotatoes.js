@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -14,7 +15,7 @@ const PopularPotatoes = () => {
   const [casts, setCasts] = useState([])
   const [movies, setMovies] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const {i18n, t} = useTranslation(["common"])
+  const {i18n, t} = useTranslation(["common"],{ useSuspense: false })
 
 
 
