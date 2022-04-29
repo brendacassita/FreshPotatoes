@@ -95,6 +95,13 @@ const SearchResults = () => {
     }
     
   };
+  
+  
+  
+  
+  
+  
+  
 
   return (
     <div className="App1">

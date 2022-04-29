@@ -80,7 +80,10 @@ const Navbar = () => {
                 </div> */}
               {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
-              <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
+          <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
+           <div className='name-nav'>
+              <p >{auth.user.name}</p>
+              </div>
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -156,7 +159,9 @@ const Navbar = () => {
           <Link className="btn1" to="/SearchResults">
           {t("common:search")}
           </Link>
-     
+     <Link className="btn1" to="/About">
+          {t("common:About")}
+          </Link>
           
           
           <div className='language'>
@@ -203,7 +208,7 @@ const Navbar = () => {
             placeholder="Search Movies..."
           />
           <div>
-
+           
             {/* <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2> */}
           </div>
 {renderRightNav()}
