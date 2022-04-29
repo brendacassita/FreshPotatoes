@@ -80,8 +80,8 @@ position: relative;
 }
 .login-btns1 {
 position:relative;
-display:inline-flex;
-margin: 40px!important;
+display:inline-flex; 
+ margin: 40px!important;
 left: 98px;
 align-items: center;
 width: 300px;
@@ -89,15 +89,15 @@ width: 300px;
 
 
 .acnt {
-display: flex;
+ display: flex;
 justify-content: center;
 flex-wrap: wrap;
-margin: 9px;
+margin: 9px; 
 }
 .buttonlogin1{
-background-color: #EC4E20!important;
-top: -60px;
-left: -191px;
+ background-color: #EC4E20!important;
+top: -64px;
+left: -182px; 
 }
 .buttonregister{
 background-color: #EC4E20!important;
@@ -111,6 +111,9 @@ background-color: #ec5020b8!important;
 }
 .buttonRegister-nav {
 background-color: #EC4E20!important;
+display: flex;
+right: -19px;
+bottom: -14px;
 color: white!important;
 border: none!important;
 }
@@ -136,3 +139,4 @@ display: block;
 position: static;;
 margin-top: 13px;
 }
+

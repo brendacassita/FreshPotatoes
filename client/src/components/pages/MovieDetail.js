@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
 import Reviews from "./AllReviews"
+import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 
 const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
@@ -14,6 +15,7 @@ const MovieDetail = () => {
   const [cast, setCast] = useState([]);
   const [director, setDirector] = useState([]);
   const [trailer, setTrailer] = useState({});
+  const [copied, setCopied] = useState(false);
   const params = useParams();
 
   useEffect(() => {
@@ -49,7 +51,8 @@ const MovieDetail = () => {
   };
 
   const getCast = async () => {
-    try {let res = await axios.get(`/api/movies/${params.id}/cast`);
+    try {
+      let res = await axios.get(`/api/movies/${params.id}/cast`);
       setCast(res.data.cast);
       console.log("CAST:", res.data.cast);
     } catch (err) {
@@ -61,11 +64,19 @@ const MovieDetail = () => {
     return cast.map((cast) => (
       <div key={`${cast.id}`}>
         <div>
-          <img src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`} width={50}/>
-          <h5>{cast.character}: {cast.name}</h5>
+          <h5>{cast.character}</h5>
+          <h5>{cast.name}</h5>
+        </div>
+        <div>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+            onError={(event) => (event.target.style.display = "none")}
+            width={100}
+          />
         </div>
       </div>
-    ))}
+    ));
+  };
 
   // const getLimitedCast = cast => {
   //   let cas = []
@@ -81,8 +92,8 @@ const MovieDetail = () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
       setDirector(
-        res.data.crew.find((d)=> {
-          return d.job === "Director"
+        res.data.crew.find((d) => {
+          return d.job === "Director";
         })
       );
       console.log("CREW:", res.data.crew);
@@ -107,6 +118,19 @@ const MovieDetail = () => {
     },
   };
 
+  const copyURL = () => {
+    const e = document.createElement("input");
+    e.value = window.location.href;
+    document.body.appendChild(e);
+    e.select();
+    document.execCommand("copy");
+    document.body.removeChild(e);
+    setCopied(true);
+  };
+  
+
+ 
+
   if (!movie) {
     return <p>"Loading"</p>;
   }
@@ -116,7 +140,7 @@ const MovieDetail = () => {
       return <p>"Loading"</p>;
     }
     return (
-      <div className="App2">
+      <div className="App1">
         <h1>{movie.title}</h1>
         <div className="movieCard">
           <img
@@ -131,10 +155,11 @@ const MovieDetail = () => {
 
         <Ratings />
 
-        <div>
-          <p>{director.job}</p>
-          <p>{director.name}</p>
-        </div>
+        <button className="shareButton" onClick={copyURL}>
+        {!copied ? "Click here to share this page" : "Page Copied!"}
+        </button>
+
+       
 
         <div id="container">
           <h4>Story Line</h4>
@@ -142,13 +167,14 @@ const MovieDetail = () => {
         </div>
 
         <Review movieId={movie.id} />
-        <Reviews movieId={movie.id}/>
+        {/* <Reviews movieId={movie.id}/> */}
+        {/* <Review/> */}
         <div className="control"></div>
-        
-
         <div>
-          {renderCast()}
+          <p>{director.job}</p>
+          <p>{director.name}</p><br/>
         </div>
+        <div>{renderCast()}</div>
       </div>
     );
   };

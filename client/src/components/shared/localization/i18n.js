@@ -24,7 +24,7 @@ i18n.use(Backend)
 			formatSeparator: ",",
 		},
 		react: {
-			wait: true,
+			// wait: false,
 		},
 	});
 
