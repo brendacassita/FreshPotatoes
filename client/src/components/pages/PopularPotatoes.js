@@ -7,6 +7,7 @@ import '../CssFIles/card.css'
 import '../CssFIles/Popular.css';
 import {useTranslation} from 'react-i18next'
 import i18next from 'i18next'
+import potatoe from '../../Images/Potatoe.png'
 
 const PopularPotatoes = () => {
   const [top10, setTop10] = useState([])
@@ -24,8 +25,8 @@ const PopularPotatoes = () => {
     console.log('in useeffect')
   }, [])
 
-  const getPopular = async (data) => {
-    const movieInfo = await Promise.all(data.map(async(movie)=> {
+  const getPopular = async (data, page) => {
+    const movieInfo = await Promise.all(data.map(async(movie, ind)=> {
       let res = await axios.get(`/api/movies/${movie.movie_id}`)
       const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`
       const id = res.data.id
@@ -33,7 +34,8 @@ const PopularPotatoes = () => {
       const release = res.data.release_date
       const runtime = res.data.runtime
       const plot = res.data.overview
-      return {poster, id, name, release, runtime, plot, unwatched_rating:movie.unwatched_rating}
+      const index = ind+((page-1)*10+1)
+      return {poster, id, name, release, runtime, plot, unwatched_rating:movie.unwatched_rating, index}
     }))
     return movieInfo
   }
@@ -41,12 +43,12 @@ const PopularPotatoes = () => {
   const getTop10 = async () => {
     try {
       let res = await axios.get('/api/pagetoppotatoes/?per=10')
-      const mov = await getPopular(res.data.movie)
+      const mov = await getPopular(res.data.movie, 1)
       setPer(res.data.per)
       setCount(res.data.count)
       setTop10(mov)
-      console.log(res)
-      console.log(mov)
+      // console.log(res)
+      // console.log(mov)
     } catch (err) {
       alert('error in getting top 10 movies')
     }
@@ -55,7 +57,7 @@ const PopularPotatoes = () => {
   const getMoreThanTop10 = async (page) => {
     try {
       let res = await axios.get(`/api/pagetoppotatoes/?page=${page}`)
-      const mov = await getPopular(res.data.movie)
+      const mov = await getPopular(res.data.movie, page)
       setCurrentPage(page)
       setTop10(mov)
     } catch (err) {
@@ -76,34 +78,56 @@ const PopularPotatoes = () => {
   const renderMovies = () => {
     
     return top10.map((movie) => (
-      <div key={movie.id} className="display">
-        <li>
-          <Link to={`/movies/${movie.id}`}>
-            <img className='top10' src={movie.poster} />
-          </Link>
-          <h4>{movie.name} <br /></h4>
-          <div key={movie.id}>
-            <div className="movieCard">
-            </div>
-
-            <div>
-              <h6>
+      <div key={movie.id} >
+        
+        
+          
+          
+           
+       <div className='movie-details'>
+          <li className='Popular-P'>
+            <h2 className='order'>#{movie.index}</h2>
+            
+            <div className="cards "> 
+            <Link to={`/movies/${movie.id}`}>
+              <figure className="card ">
+                <img className='Top-10' src={movie.poster} />
+                </figure>
+              </Link>
+              </div>
+              
+              
+            <div className='potatoe-rating'>
+            <img src={potatoe} width='50px' />
+            <div className='rating-number'>
+                <h5>pre-rating: </h5>
+              <h3 className='pop-percent'>{movie.unwatched_rating}%</h3> 
+              </div>
+              </div>
+          
+          <div className='movie-details' key={movie.id}>
+           <div className=''>
+          <h2 className='movie-title'>{movie.name} </h2>
+           </div>
+             
+              <h6 className='release'>
                 {" "}
                 release: {movie.release} runtime:{movie.runtime}
               </h6>
-              <div>
-                <h6>pre-rating: {movie.unwatched_rating}%</h6>
-              </div>
+             
 
-              <div id="container">
-                <h4>Story Line</h4>
+              <div className='story-line'>
+                <h4 className='story-title'>Story Line</h4>
                 <p className="information">{movie.plot}</p>
               </div>
-              <hr />
+            
+            
             </div>
-          </div>
+          
           <br />
-        </li>
+          </li>
+          </div>
+         
       </div>
 
     ))
@@ -123,13 +147,13 @@ const PopularPotatoes = () => {
       <hr />
       
       <br />
-      <ol start={(currentPage - 1) * 10 + 1}>{renderMovies()}</ol>
       
+     
+     {renderMovies()}
+
       
       
       <div>{renderButtons()}</div>
-
-
 
       {casts.map((cast) => {
         console.log("cast data:", cast.name);

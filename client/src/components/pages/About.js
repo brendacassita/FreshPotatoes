@@ -13,9 +13,10 @@ import gmail from '../CssFIles/images/gmail.png'
 import fb from '../CssFIles/images/fb.png'
 import jess from '../../Images/Jess.jpg'
 import fresh from '../../Images/Potatoe.png'
-import sharayah from '../../Images/sharayah.jpg'
+import sharayah from '../../Images/sharayah.png'
 import trina from '../../Images/Trina.jpg'
 import brenda from '../../Images/SELFIE.JPG'
+import Kat from '../../Images/Katherine.jpg'
 import {Link} from 'react-router-dom';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -620,7 +621,7 @@ export default function MediaCard()
             <h1 className='name-team'>Katherine</h1>
       <div className="card1 profile-two">
         <div className="card-image profile-img--two">
-      <img src='' width='100%' alt="profile-two"/>
+      <img src={Kat} width='100%' alt="profile-two"/>
         </div>
 
             <ul className="social-icons">
