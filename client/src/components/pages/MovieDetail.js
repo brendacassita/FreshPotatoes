@@ -125,7 +125,7 @@ const MovieDetail = () => {
       return <p>"Loading"</p>;
     }
     return (
-      <div className="App2">
+      <div className="App1">
         <h1>{movie.title}</h1>
         <div className="movieCard">
           <img

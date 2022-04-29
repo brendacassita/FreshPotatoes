@@ -34,7 +34,8 @@ z-index: 1;
 }
 .logout {
 position: absolute!important;
-right: 0px!important;
+right: 15px!important;
+top: 19px;
 }
 .profilelink {
 display: flex!important;
@@ -44,7 +45,7 @@ margin: 2px;
 
 }
 #menu-appbar {
-margin: 40px 10px;
+margin:80px 10px;
 }
 .avatar_circle {
 width: auto!important;
@@ -100,11 +101,12 @@ width:100%;
 }
 .language {
 justify-content: end;
-    right: -651px;
-    width: 224px;
-    position: relative;
+      left: -148px;
+    width: 71px;
+    position: absolute;
     display: block;
-    top: -29px;
+    z-index: 1;
+    top: 53px;
 }
 .Language-drop {
 border-radius: 15px;
