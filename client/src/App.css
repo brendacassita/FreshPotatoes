@@ -340,3 +340,22 @@ background-color: #d24318;
 
 }
 
+.shareButton{
+background-color: #EC4E20;
+color: white;
+font-size: 14px;
+font-weight: bold;
+border-radius: 0px;
+width: 120px;
+height: 40px;
+text-align: center;
+border: solid white .5px;
+margin: 20px;
+border: none;
+}
+
+.shareButton:hover {
+background-color: #d24318;
+
+}
+

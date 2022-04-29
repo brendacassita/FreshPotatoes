@@ -43,8 +43,8 @@ const Ratings = () => {
   return (
     <div>
       <div>
-          <h3 style={{ display: "flex", justifyContent: "center" }}>
-          <img src={Potatoe} height={40}/> {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'} | <img src={Fry} height={40}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
+          <h3 style={{ background: "white", display: "flex", justifyContent: "center" }}>
+          <img src={Potatoe} height={60}/> {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'}  <img src={Fry} height={60}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
         </h3>
       </div>
     </div>

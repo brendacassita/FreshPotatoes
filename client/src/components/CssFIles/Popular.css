@@ -4,6 +4,7 @@ background-color: #ffffff;
 padding: 20px;
 text-align: center;
 position: relative;
+height: 100%;
 }
 
 .miniwording {
@@ -67,5 +68,77 @@ overflow: hidden;
 }
 
 
+.Popular-P {
+display: flex;
+position: relative; 
+flex-direction: row;
+margin: 50px 0px;
+background-color: #efefef;
+
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.movie-title {
+height: fit-content;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
 
 
+}
+
+.potatoe-rating {
+   display: flex;
+    justify-content: flex-start;
+
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  bottom: -16px;
+}
+
+.Top-10{
+         height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+.rating-number {
+width: 77px;
+}
+
+.story-line {
+display: flex;
+    flex-direction: column;
+    width: fit-content;
+    top: -49px;
+    justify-content: center;
+    position: relative;
+    margin: 52px;
+}
+.story-title {
+margin: 22px;
+    margin-bottom: -4px;
+}
+.release {
+display: flex;
+    position: relative;
+    justify-content: center;
+   
+
+}
+
+.popular-container {
+border: #d24318;
+}
+.pop-percent {
+color: #EC4E20;
+
+}
+
+.order {
+margin: 10px;
+}

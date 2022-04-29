@@ -6,6 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
+import Reviews from "./AllReviews"
 import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 
 const MovieDetail = () => {
@@ -14,6 +15,7 @@ const MovieDetail = () => {
   const [cast, setCast] = useState([]);
   const [director, setDirector] = useState([]);
   const [trailer, setTrailer] = useState({});
+  const [copied, setCopied] = useState(false);
   const params = useParams();
 
   useEffect(() => {
@@ -116,6 +118,19 @@ const MovieDetail = () => {
     },
   };
 
+  const copyURL = () => {
+    const e = document.createElement("input");
+    e.value = window.location.href;
+    document.body.appendChild(e);
+    e.select();
+    document.execCommand("copy");
+    document.body.removeChild(e);
+    setCopied(true);
+  };
+  
+
+ 
+
   if (!movie) {
     return <p>"Loading"</p>;
   }
@@ -126,7 +141,7 @@ const MovieDetail = () => {
     }
     
     return (
-      <div className="App2">
+      <div className="App1">
         <h1>{movie.title}</h1>
         <div className="movieCard">
           <img
@@ -141,10 +156,11 @@ const MovieDetail = () => {
 
         <Ratings />
 
-        <div>
-          <p>{director.job}</p>
-          <p>{director.name}</p>
-        </div>
+        <button className="shareButton" onClick={copyURL}>
+        {!copied ? "Click here to share this page" : "Page Copied!"}
+        </button>
+
+       
 
         <div id="container">
           <h4>Story Line</h4>
@@ -152,8 +168,13 @@ const MovieDetail = () => {
         </div>
 
         <Review movieId={movie.id} />
+        {/* <Reviews movieId={movie.id}/> */}
+        {/* <Review/> */}
         <div className="control"></div>
-
+        <div>
+          <p>{director.job}</p>
+          <p>{director.name}</p><br/>
+        </div>
         <div>{renderCast()}</div>
       </div>
     );

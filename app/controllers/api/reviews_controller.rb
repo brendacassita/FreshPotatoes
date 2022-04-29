@@ -5,8 +5,7 @@ class Api::ReviewsController < ApplicationController
     
     before_action :authenticate_user!, only: [:create]
     before_action :set_review, only: [:update, :show, :destroy]
-    before_action :set_movie, only: [:index]
-
+    before_action :set_movie, only: [:index, :pre, :post, :unwatched, :watched]
     def index
         render json: Review.where("movie_id = #{@movie.id}")
     end
