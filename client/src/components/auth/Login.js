@@ -67,7 +67,10 @@ const Login = ()=>{
             <div className='buttonlogin'>
          
                 
-                
+
+
+
+
                 <>
               <div className="login-btns1 btnlogin">
                
@@ -75,8 +78,10 @@ const Login = ()=>{
               
                    </div>
                 </>
-              
-               <Button className='btnlogin buttonlogin1'
+
+               <Button className='buttonlogin1 btnlogin'
+
+
            
             variant="contained"
             type="button"
