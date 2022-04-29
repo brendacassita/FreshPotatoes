@@ -154,8 +154,8 @@ const MovieDetail = () => {
 
         <Ratings />
 
-        <button  onClick={copyURL}>
-        {!copied ? "Share this page" : "Link Copied!"}
+        <button className="shareButton" onClick={copyURL}>
+        {!copied ? "Click here to share this page" : "Page Copied!"}
         </button>
 
        
@@ -165,7 +165,7 @@ const MovieDetail = () => {
           <p className="information">{movie.overview}</p>
         </div>
 
-        {/* <Review movieId={movie.id} /> */}
+        <Review/>
         <div className="control"></div>
         <div>
           <p>{director.job}</p>
