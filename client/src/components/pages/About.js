@@ -626,13 +626,13 @@ export default function MediaCard()
             <ul className="social-icons">
               
           <li>
-            <a href="https://github.com/SharayahDesigns">
+            <a href="https://github.com/katbrenda">
               <GitHubIcon sx={{ fontSize: 40 }}className="fab Linked-in" width='200px'/>
             </a>
               </li>
               
               <li>    
-                <a href="https://www.linkedin.com/in/sharayahhefner/">
+                <a href="https://www.linkedin.com/in/katherine-gaylord-4368b837/">
                   <LinkedIn
                     sx={{ fontSize: 40 }}className="fab Linked-in" width='200px' />
                 </a>
