@@ -22,10 +22,11 @@ const Profile = () => {
   return(
     <div className="App1">
      <h1>{t("common:profile")}</h1>
-     {/* <h1>profile</h1> */}
-
-      {!user.avatar ? <img src={bwPic} width={200}/> : <img src={user.avatar}/>}
+      {/* <h1>profile</h1> */}
       
+<div className="">
+      {!user.avatar ? <img className="profile-pic-profile" src={bwPic} /> : <img className="profile-pic-profile" src={user.avatar}/>}
+    </div>  
       {/* {user.avatar && <img src={user.avatar} width={200} />} */}
      < br/>
      <p>{t("common:welcome")} {user.name}!</p>

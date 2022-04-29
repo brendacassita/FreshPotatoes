@@ -281,3 +281,10 @@ z-index: 9999;
   opacity: 1;
 }
 
+.profile-pic-profile {
+position: relative;
+width: 200px;
+justify-content: center;
+height: auto;
+border-radius: 100px;
+}
