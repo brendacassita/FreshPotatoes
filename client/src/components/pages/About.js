@@ -576,7 +576,7 @@ export default function MediaCard()
               </li>
               
               <li>    
-                <a href="https://www.linkedin.com/in/brenda-cassita-7387191bb
+                <a href="https://www.linkedin.com/in/brendacassita/
 ">
                   <LinkedIn
                     sx={{ fontSize: 40 }}className="fab Linked-in" width='200px' />
@@ -584,12 +584,12 @@ export default function MediaCard()
               </li>
               
           <li>
-            <a href="">
+            <a href="mailto:brendacassita@gmail.com">
             <AlternateEmailIcon sx={{ fontSize: 40 }}className="fab Linked-in" width='200px'/>
             </a>
           </li>
           <li>
-            <a href="">
+          <a href="https://www.instagram.com/bebecassita/">
             <InstagramIcon sx={{ fontSize: 40 }}className="fab Linked-in" width='200px'/>
             </a>
           </li>
