@@ -40,15 +40,17 @@ const Home = () => {
   const renderPosters = () => {
     return movies.map((movie) => (
       <div key={`${movie.id}`}>
-        <div style={{ padding: 8 }}>
-          <img
+        <div style={{padding: 8}}>
+          
+          <img className=""
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={`${movie.title}`}
             onClick={() => nav(`/movies/${movie.id}`)}
             style={{ width: "100%" }}
-          />
+            />
+            </div>
         </div>
-      </div>
+      
     ));
   };
 
