@@ -14,6 +14,7 @@ const MovieDetail = () => {
   const [cast, setCast] = useState([]);
   const [director, setDirector] = useState([]);
   const [trailer, setTrailer] = useState({});
+  const [copied, setCopied] = useState(false);
   const params = useParams();
 
   useEffect(() => {
@@ -116,6 +117,19 @@ const MovieDetail = () => {
     },
   };
 
+  const copyURL = () => {
+    const e = document.createElement("input");
+    e.value = window.location.href;
+    document.body.appendChild(e);
+    e.select();
+    document.execCommand("copy");
+    document.body.removeChild(e);
+    setCopied(true);
+  };
+  
+
+ 
+
   if (!movie) {
     return <p>"Loading"</p>;
   }
@@ -140,19 +154,23 @@ const MovieDetail = () => {
 
         <Ratings />
 
-        <div>
-          <p>{director.job}</p>
-          <p>{director.name}</p>
-        </div>
+        <button  onClick={copyURL}>
+        {!copied ? "Share this page" : "Link Copied!"}
+        </button>
+
+       
 
         <div id="container">
           <h4>Story Line</h4>
           <p className="information">{movie.overview}</p>
         </div>
 
-        <Review movieId={movie.id} />
+        {/* <Review movieId={movie.id} /> */}
         <div className="control"></div>
-
+        <div>
+          <p>{director.job}</p>
+          <p>{director.name}</p><br/>
+        </div>
         <div>{renderCast()}</div>
       </div>
     );
