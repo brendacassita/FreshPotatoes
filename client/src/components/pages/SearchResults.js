@@ -42,8 +42,8 @@ const SearchResults = () => {
     try {
       let res = await axios.get("/api/movies/");
       console.log(res.data);
-      setAllMovies(res.data[0].results);
-      console.log("Set Movies:", res.data[0].results);
+      setAllMovies(res.data.results);
+      console.log("Set Movies:", res.data.results);
     } catch (err) {
       alert("error getting movies");
     }

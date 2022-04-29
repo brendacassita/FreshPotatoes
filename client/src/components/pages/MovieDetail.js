@@ -6,7 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
-import Reviews from "./AllReviews"
+import AllReviews from "./AllReviews"
 import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 
 const MovieDetail = () => {
@@ -139,6 +139,7 @@ const MovieDetail = () => {
     if (loading) {
       return <p>"Loading"</p>;
     }
+    
     return (
       <div className="App1">
         <h1>{movie.title}</h1>
@@ -147,7 +148,7 @@ const MovieDetail = () => {
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             width={250}
           />
-          <YouTube videoId={trailer.key} opts={opts} width={500} />
+          {trailer && trailer.key && <YouTube videoId={trailer.key} opts={opts} width={500} />}
         </div>
         <div>
           <h6> {getString()}</h6>
@@ -166,9 +167,9 @@ const MovieDetail = () => {
           <p className="information">{movie.overview}</p>
         </div>
 
-        <Review movieId={movie.id} />
-        {/* <Reviews movieId={movie.id}/> */}
-        {/* <Review/> */}
+        {/* <Review movieId={movie.id} /> */}
+        <AllReviews movieId={movie.id}/>
+        <Review/>
         <div className="control"></div>
         <div>
           <p>{director.job}</p>

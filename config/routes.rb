@@ -57,6 +57,8 @@ Rails.application.routes.draw do
     get 'movies/:id/videos', to: 'movies#videos'
 
     get 'movies/:id/cast', to:'casts#index'
+
+    get 'reviews/:id', to: 'reviews#show'
    
   end 
     get '*other', to: 'static#index'
