@@ -86,6 +86,10 @@ function App() {
                     <Route path="/genres/:id" element={<GenreShow />} />
                     <Route path="/movies/:id/edit" element={<MovieForm />} />
                     <Route path="/movies/new" element={<MovieForm />} />
+
+                    {/* TESTING */}
+                    <Route path="/ratings" element={<Ratings />} />
+
                   </Route>
                   <Route path="*" element={<NoMatch />} />
                 </Routes>

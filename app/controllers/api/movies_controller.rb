@@ -8,15 +8,8 @@ class Api::MoviesController < ApplicationController
 
 def index 
     # render json: Movie.all
-    url_list = ["#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=1"
-    # ,"#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=2","#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=3"
-  ]
-    # RestClient.get("#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=1")
-    responses = []
-    url_list.each do |url|
-      responses << JSON.parse(RestClient::Request.execute(method: :get, url: url))
-    end
-    render json: responses, layout: nil
+    response = RestClient.get("https://api.themoviedb.org/3/discover/movie#{API_PARTIAL_URL}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&with_watch_monetization_types=flatrate")
+    render json: response
 end
 
 def show
@@ -46,7 +39,7 @@ end
 
 ### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
 def popular
-  response = RestClient.get(BASE_URL + "popular" + API_PARTIAL_URL + "&language=en-US&page=1")
+  response = RestClient.get("https://api.themoviedb.org/3/discover/movie#{API_PARTIAL_URL}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_original_language=en&with_watch_monetization_types=flatrate")
   render json: response
 end
 
@@ -122,7 +115,7 @@ end
 
 def page
   @page = params[:page] || 1
-  @per = params[:per] || 3
+  @per = params[:per] || 10
 end
 
 end

@@ -35,7 +35,7 @@ const GenreShow = () => {
     return movies.map((movie) => (
       <div key={`${movie.id}`}>
         <div>
-          <figure className="card ">
+          <figure className="card">
             <Link to={`/movies/${movie.id}`}>
               <img className="genreShow genreImage"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
@@ -49,7 +49,7 @@ const GenreShow = () => {
 
   const getGenre = async () => {
     try {
-      let res = await axios.get(`/api/tmdb_genres`);
+      let res = await axios.get(`/api/genres`);
       setGenre(
         res.data.genres.find((genre) => {
           return genre.id == `${params.id}`;
@@ -59,14 +59,6 @@ const GenreShow = () => {
     } catch (err) {
       alert("Error getting genre id");
     }
-  };
-
-  const renderGenre = () => {
-    return (
-      <div>
-        <h1>{genre.name}</h1>
-      </div>
-    );
   };
 
   const params = useParams();

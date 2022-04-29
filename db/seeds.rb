@@ -19,7 +19,12 @@ u5 = User.create(email:'007@test.com', password:123456, name:'James Bond', usern
 
 ########## REVIEWS ##########
 
-movies_array = [414906, 634649, 799876, 508947, 606402, 675353, 406759, 294793, 919689, 568124, 823625, 340553, 335787, 696806, 833425, 676705, 760926, 760868, 585083, 928381]
+movies_array = [414906, 634649, 799876, 508947, 335787, 675353, 406759, 294793, 823625, 568124, 919689, 696806, 833425, 760926, 585083, 818750, 580489, 524434, 774825, 338953, 799876, 453395, 639933, 810693, 767825, 522444, 626735, 760104, 545611, 361743, 671043, 818397, 738652, 592695, 820446, 751237, 648579, 778814, 745881, 635731]
+### OUR PICKS
+
+pop_movies_array = [611291, 372058, 496243, 155, 556574, 27205, 1891, 324857, 122, 680, 550, 603, 98, 105, 313106, 207, 274, 348, 522518, 4348]
+
+[]
 
 100.times do
 Review.create(
@@ -40,6 +45,26 @@ Review.create(
   movie_id: movies_array.sample
 )
 end
+
+100.times do
+  Review.create(
+    rating: Faker::Number.between(from: 1, to: 5),
+    watched: 'true',
+    comment: Faker::ChuckNorris.fact,
+    user_id: Faker::Number.between(from: 1, to: 5),
+    movie_id: pop_movies_array.sample
+  )
+  end
+
+  100.times do
+  Review.create(
+    rating: Faker::Number.between(from: 1, to: 5),
+    watched: 'false',
+    comment: Faker::ChuckNorris.fact,
+    user_id: Faker::Number.between(from: 1, to: 5),
+    movie_id: pop_movies_array.sample
+  )
+  end
 
 
 ##### PUTS #####

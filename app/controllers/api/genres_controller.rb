@@ -8,17 +8,12 @@ class Api::GenresController < ApplicationController
     # before_action :set_name, only: [:genre_show]
 
     def index
-        render json: Genre.all
-    end
-
-    def show
-        response = RestClient.get("https://api.themoviedb.org/3/discover/movie#{API_PARTIAL_URL}&language=en-US&page=1&with_genres=#{params[:id]}")
+        response = RestClient.get("https://api.themoviedb.org/3/genre/movie/list#{API_PARTIAL_URL}&language=en-US")
         render json: response
     end
 
-    def tmdb_genres
-        url = "https://api.themoviedb.org/3/genre/movie/list?api_key=b8780ae423693a3389766038fe49d728&language=en-US"
-        response = RestClient.get(url)
+    def show
+        response = RestClient.get("https://api.themoviedb.org/3/discover/movie?api_key=b8780ae423693a3389766038fe49d728&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=#{params[:id]}&without_keywords=158436%2C%20445%2C%20180340%2C%20283206%2C%207344%2C%2018321%2C%20195997&with_original_language=en")
         render json: response
     end
 
