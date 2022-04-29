@@ -26,4 +26,6 @@ class Genre < ApplicationRecord
     LIMIT 3")
   end
 
+
+
 end

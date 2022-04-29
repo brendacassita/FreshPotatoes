@@ -1,40 +1,32 @@
 class Api::MoviesController < ApplicationController
   require 'rest-client'
+  BASE_URL = "https://api.themoviedb.org/3/movie/"
+  API_PARTIAL_URL = "?api_key=#{ENV['TMDB_API_KEY']}"
 
-  before_action :set_movie, only: [:show, :details, :watched, :unwatched, :cast, :update, :destroy]
+  before_action :set_movie, only: [:show, :videos, :watched, :unwatched, :cast, :update, :destroy]
   before_action :page, only: [:pageTopPotatoes, :pageTopFries]
 
-#authenticate_user! - anyone can go there, even if not signed in
- # before_action :authenticate_user!, except: [:all_users]
-
-
-#TODO: for later use, movies visible for all users, even those not logged in
-# def all_users
-#     render json: Movie.all
-# end 
-
-# /api/movies
 def index 
-    render json: Movie.all
+    # render json: Movie.all
+    url_list = ["#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=1"
+    # ,"#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=2","#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=3"
+  ]
+    # RestClient.get("#{BASE_URL}popular#{API_PARTIAL_URL}&language=en-US&page=1")
+    responses = []
+    url_list.each do |url|
+      responses << JSON.parse(RestClient::Request.execute(method: :get, url: url))
+    end
+    render json: responses, layout: nil
 end
 
-#/api/movies/1
-# def show 
-#   render json: @movie
-# end 
-
-#TODO: for an auth user 
-# def create
-#   movie = current_user.movies.new(movie_params)
-#   if movie.save 
-#     render json: movie
-#   else 
-#     render json: {}
-#   end 
-# end 
-
 def show
-  render json: Movie.details(@movie.id)
+  response = RestClient.get("#{BASE_URL}#{@movie.id}#{API_PARTIAL_URL}")
+  render json: response
+end
+
+def videos
+  response = RestClient.get("#{BASE_URL}#{@movie.id}/videos#{API_PARTIAL_URL}&language=en-US")
+  render json: response
 end
 
 ### WATCHED/UNWATCHED RATINGS ###
@@ -46,14 +38,16 @@ def unwatched
   render json: Movie.unwatched(@movie.id)
 end
 
-### NEWEST 5 MOVIES BY YEAR ###
+### NEWEST MOVIES ###
 def newest
-  render json: Movie.newest
+  response = RestClient.get(BASE_URL + "upcoming" + API_PARTIAL_URL)
+  render json: response
 end
 
 ### MOST POPULAR BY REVIEW COUNT 35+ REVIEWS ###
 def popular
-  response = HTTParty.get('https://api.themoviedb.org/3/movie/popular?api_key='+ ENV["TMDB_API_KEY"])
+  response = RestClient.get(BASE_URL + "popular" + API_PARTIAL_URL + "&language=en-US&page=1")
+  render json: response
 end
 
 ### CAST LIST BY MOVIE ID ###
@@ -78,22 +72,13 @@ def update
   end
 end 
 
-
 def destroy
   @movie.destroy
 end
 
 ### TOP POTATOES/FRIES ###
-def top3_potatoes
-  render json: Movie.top3_potatoes
-end
-
 def topPotatoes
   render json: Movie.topPotatoes
-end
-
-def top3_fries
-  render json: Movie.top3_fries
 end
 
 def topFries
@@ -110,14 +95,16 @@ end
 def pageTopFries
   count = Movie.topFries.count
   movies = Movie.topFries
-  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count}
+  render json: {movie: Kaminari.paginate_array(movies).page(@page).per(@per), per:@per, count:count, page:@page}
 end
 
 ### PRIVATE ###
 private 
 
 def set_movie
-    @movie = Movie.find(params[:id])
+    TMDB::API.api_key = "b8780ae423693a3389766038fe49d728"
+    @movie = TMDB::Movie.id(params[:id])
+    puts @movie.id
 end
 
 def movie_params

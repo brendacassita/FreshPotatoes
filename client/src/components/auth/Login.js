@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import '../CssFIles/Login-out.css';
 import p from '../../Images/Potatoe.png'
 import f from '../../Images/fry.png'
+import {Link} from '@mui/material';
 
 
 //revert the state after 2 seconds pass so not contantly in loading state 
@@ -45,10 +46,11 @@ const Login = ()=>{
     },[])
 
     // with devise these are required
-    return (
+  return (
+      <div className="login-background " >
         <div className='loginborder'>
         <div className='logincard'>
-          <img className='potatoe'src={p}></img>
+          {/* <img className='potatoe'src={p}></img> */}
          
           
           <h1>Login</h1>
@@ -57,24 +59,29 @@ const Login = ()=>{
         <form onSubmit={handleSubmit}>
           
             <p className="loginnames">Email</p>
-                <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                <input className="login-btn" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 
             <p className="loginnames">Password</p>
-                <input value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
+                <input className="login-btn" value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
           
             <div className='buttonlogin'>
          
                 
-                {!loading &&
+
+
+
+
                 <>
-                    <div className="alt-text">
-                </div>
-                <Button
-                  className='buttonlogin btnsignup'
-                   type="button" variant='outlined' href='/register'>Sign-up</Button>
+              <div className="login-btns1 btnlogin">
+               
+                <p className="acnt">Dont have an account?</p><Link href='/register'>SIGN UP HERE </Link>
+              
+                   </div>
                 </>
-              }
-               <Button className='buttonlogin btnlogin'
+
+               <Button className='buttonlogin1 btnlogin'
+
+
            
             variant="contained"
             type="button"
@@ -85,7 +92,8 @@ const Login = ()=>{
                    </div>
             </form>
            </div>
-        </div>
+      </div>
+      </div>
     )
 }
 export default Login

@@ -33,4 +33,16 @@ margin: 24px;
 .App {
 border:solid #1F1D2B;
 border-width: 60px;
+position: absolute;
+}
+.lil-logo {
+margin:  0px 10px 0px ;
+display: flex;
+height: 40px;
+}
+.rating-logos {
+display: flex;
+justify-content: flex-start;
+top: -15px;
+position: relative;
 }

@@ -53,9 +53,9 @@ padding: 10px;
 }
 
 .searchbar {
-margin-left: 20px;
-margin-right: 20px;
-
+margin-left: 32px;
+    bottom: -14px;
+    position: relative;
 }
 
 
@@ -113,17 +113,21 @@ cursor: pointer;
 }
 
 .sline {
-background-color: red;
-width: 60px;
-margin-left: 80px;
-
+background-color: #EC4E20;
+width: 12px;
+margin-left: 61px;
+    margin-right: -259px
 }
+
 .bline {
-background-color: red;
-width: 700px;
+background-color: #EC4E20;
+width: 1200px;
 overflow: hidden;
-
+margin-left: 253px;
 }
+
+
+
 
 
 .searching {
@@ -157,9 +161,22 @@ margin-top: 80px;
 .searchall2{
 justify-content: flex-start;
 margin-top: -5px!important;
-margin: 30px;
+margin: 44px;
+margin: 95px;
+padding: 0 22px;
+    font-size: 32px!important;
+    position: absolute;
+    background-color: white;
+    border-width: 51px;
+    border-color: white;
 
-font-size: 32px!important;
+}
+
+.searchiconall {
+    display: flex;
+    top: 41px;
+    right: 206px;
+    position: relative;
 }
 /* .searchiconall{
 margin-top: -36px;
@@ -189,4 +206,19 @@ margin-top: -60px!important;
 
 .moviesearch {
 margin-top: 70px;
+}
+.line {
+display: flex;
+width: 1200px;
+height: 30px;
+background-color: #EC4E20;
+justify-content: flex-start;
+/* overflow: hidden!important; */
+
+}
+.searchwidth {
+width: 700px;
+display: flex;
+justify-content: flex-start;
+overflow: hidden!important;
 }

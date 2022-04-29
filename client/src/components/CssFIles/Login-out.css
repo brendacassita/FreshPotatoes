@@ -16,14 +16,26 @@ font-weight: bold;
 margin: 15px;
 }
 .loginborder {
-box-shadow: 0 15px 30px 1px rgb(182, 180, 180);
+
+box-shadow: 0 5px 10px 1px rgb(182, 180, 180);
 	background: rgba(255, 255, 255, 0.90);
 	text-align: center;
 	border-radius: 15px;
 	overflow: hidden;
 	margin: 45px auto;
-	height: auto;
-	width: 320px;
+	height: 394px;
+	width: 360px;
+}
+.logoutborder {
+
+box-shadow: 0 5px 10px 1px rgb(182, 180, 180);
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 15px;
+	overflow: hidden;
+	margin: 45px auto;
+	height: 494px;
+	width: 560px;
 }
 .potatoe {
 display: flex;
@@ -34,7 +46,7 @@ padding: 5px -190px;
 }
 
 .btnlogin {
-margin: 5px!important;
+margin: 62px!important;
 }
 .btnsignup {
 margin: 5px!important;
@@ -45,3 +57,86 @@ margin: 15px!important;
 .btnloginhere {
 margin: 15px!important;
 }
+
+.login-background {
+display: flex;
+background-color: #1F1D2B;
+width: 100%;
+height: 100%;
+}
+.logout-background {
+display: flex;
+background-color: #1F1D2B;
+width: 100%;
+height: 100%;
+}
+.login-btns {
+position: relative;
+    display: flex;
+    margin: 100px!important;
+    left: -32px;
+    align-items: center;
+    width: 300px;
+}
+.login-btns1 {
+position:relative;
+display:inline-flex; 
+ margin: 40px!important;
+left: 98px;
+align-items: center;
+width: 300px;
+}
+
+
+.acnt {
+ display: flex;
+justify-content: center;
+flex-wrap: wrap;
+margin: 9px; 
+}
+.buttonlogin1{
+ background-color: #EC4E20!important;
+top: -64px;
+left: -182px; 
+}
+.buttonregister{
+background-color: #EC4E20!important;
+    top: -1px;
+    left: -249px;
+    width: 300;
+    height: 40px
+}
+.buttonlogin1:hover{
+background-color: #ec5020b8!important;
+}
+.buttonRegister-nav {
+background-color: #EC4E20!important;
+display: flex;
+right: -19px;
+bottom: -14px;
+color: white!important;
+border: none!important;
+}
+.buttonRegister-nav:hover{
+background-color: #ec5020d3!important;
+
+}
+.login-btn {
+text-align: center;
+width: 160px;
+height: 30px;
+border-radius: 15px;
+border: 1px solid #ec5020d3;
+}
+.p {
+display: block;
+}
+.signup-form {
+    margin-top: -219px;
+    margin-left: 258px;
+}
+.signup-title {
+position: static;;
+margin-top: 13px;
+}
+

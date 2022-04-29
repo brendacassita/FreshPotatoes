@@ -2,70 +2,50 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "../../App.css";
 import { useParams } from "react-router-dom";
+import Potatoe from '../../Images/Potatoe.png'
+import Fry from '../../Images/FryLogo-06.png'
 
 const Ratings = () => {
-  const [unwatched, setUnwatched] = useState([]);
-  const [watched, setWatched] = useState([]);
+  const [unwatched, setUnwatched] = useState({});
+  const [watched, setWatched] = useState({});
 
   useEffect(() => {
     getUnwatched();
-  }, []);
-
-  useEffect(() => {
     getWatched();
   }, []);
+
+  const params = useParams();
 
   //TODO: need to make 2 separate api calls, one for watched and one for unwatched
   const getUnwatched = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/unwatched`);
-      setUnwatched(res.data);
-      console.log(res.data);
+      setUnwatched(res.data[0]);
+      console.log("Unwatched:", res.data);
     } catch (err) {
-      alert("error in getting unwatched reviews");
+      alert("Error in getting unwatched reviews");
+      console.log(err)
     }
+    return unwatched
   };
 
   const getWatched = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/watched`);
-      setWatched(res.data);
-      console.log(res.data);
+      setWatched(res.data[0]);
+      console.log("Watched:", res.data);
     } catch (err) {
-      alert("error in getting unwatched reviews");
+      alert("Error in getting watched reviews");
     }
-  };
-
-  const params = useParams();
-
-  const renderUnwatched = () => {
-    const uw = unwatched.map((uw) => {
-      return (
-        <div>
-          {uw.unwatched_rating.toFixed(0)}
-        </div>
-      );
-    });
-    console.log(uw.unwatched_rating);
-    return uw;
-  };
-
-  const renderWatched = () => {
-    const w = watched.map((w) => {
-      return (
-        <div>
-          {w.watched_rating.toFixed(0)}
-        </div>
-      );
-    });
-    console.log(w.watched_rating);
-    return w;
+    return watched
   };
 
   return (
-    <div className="App">
+    <div>
       <div>
-        <h5 style={{display: 'flex', justifyContent: 'center'}}>pre: {renderUnwatched()}% | post: {renderWatched()}%</h5>   
+          <h3 style={{ display: "flex", justifyContent: "center" }}>
+          <img src={Potatoe} height={40}/> {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'} | <img src={Fry} height={40}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
+        </h3>
       </div>
     </div>
   );

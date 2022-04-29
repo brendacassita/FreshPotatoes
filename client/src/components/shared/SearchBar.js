@@ -10,6 +10,8 @@ import {AppBar,IconButton,InputBase,Toolbar,Box} from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
 import '../CssFIles/SearchBar.css'
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 
 
 
@@ -19,6 +21,8 @@ const SearchBar = ({placeholder, data}) => {
   const [filteredMovies,setFilteredMovies]  = useState([])
   const [searchTerm,setSearchTerm] = useState('')
   const [focus,setFocus]  = useState(false)
+  const {i18n, t} = useTranslation(["common"])
+
   
   useEffect(() => {
     getMoviesFromApi()
@@ -27,7 +31,7 @@ const SearchBar = ({placeholder, data}) => {
   
   const options = {
     includeScore: true,
-    keys:['name', 'genre']
+    keys:['title', 'genre']
   }
   const fuse = new Fuse(allMovies,options)
   
@@ -35,7 +39,7 @@ const SearchBar = ({placeholder, data}) => {
     
     try {
       let res = await axios.get('/api/movies')
-      setAllMovies(res.data)
+      setAllMovies(res.data[0].results)
       
     } catch(err) {
       alert('error getting movies')
@@ -44,7 +48,7 @@ const SearchBar = ({placeholder, data}) => {
   const handleFilter = (event) => {
     const searchWord = event.target.value
     const newFilter = getMoviesFromApi.filter((value) => {
-      return value.name.includes(searchWord);
+      return value.title.includes(searchWord);
      
     });
      setFilteredMovies(newFilter)
@@ -78,7 +82,7 @@ const SearchBar = ({placeholder, data}) => {
       <div className='searchInputs'>
         <div className='search-wrapper'>
           
-        <input className='searchbox' type='text' placeholder='Search Movies...' onChange={handleSearchTermChange} value={searchTerm}>
+        <input className='searchbox' type='text' placeholder={t("common:searchmovies")} onChange={handleSearchTermChange} value={searchTerm}>
         </input>  
         
           <div className='searchicon'>
@@ -94,8 +98,8 @@ const SearchBar = ({placeholder, data}) => {
           {filteredMovies.map((value) => {
             return (
               <a className='dataItem alink' href={`/movies/${value.id}`}>
-                 <img className='' src={value.poster} width={50} />
-                <p>{value.name}</p>
+                 <img className='' src={`https://image.tmdb.org/t/p/w500${value.poster_path}`} width={50} />
+                <p>{value.title}</p>
               </a>
             );
           })}

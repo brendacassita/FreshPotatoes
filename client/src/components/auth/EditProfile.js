@@ -1,5 +1,6 @@
-import React,{useContext,useState} from "react";
+import React,{useContext,useEffect,useState} from "react";
 import '../CssFIles/editProfile.css'
+import {useTranslation} from 'react-i18next'
 
 
 // Import React FilePond
@@ -17,7 +18,7 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import bwPic from '../../Images/blackwhitePotatoe.png'
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -30,11 +31,12 @@ function EditProfile() {
   const [phone, setPhone] = useState(user.phone)
   const [password, setPassword] = useState(user.password)
   const [username, setUserName] = useState(user.username)
+  const {t} =  useTranslation(["profile", "common"])
 
 
   const [showUpload, setShowUpload] = useState(false)
 
-
+                                                                                                             
 
   const upload = () =>{
     if(showUpload){
@@ -57,7 +59,7 @@ function EditProfile() {
       console.log(files)
      // axios call
      try{
-        console.log('trying to update with data:')
+        
        let res = await axios.put('/api/update_image', data)
        setUser(res.data)
      } catch(err){
@@ -70,12 +72,14 @@ function EditProfile() {
    try{
       console.log('trying to update with data:')
      let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
+    setUser(res.data)
    } catch(err){
        alert('error occured updating user info')
    } finally {
+     console.log('Password:',password)
      console.log(files)
      if(!files[0]){
-       console.log('ffff')
+       
        return 
      }
      handleImage()
@@ -84,15 +88,17 @@ function EditProfile() {
 
 
   return (
-    <div className="App1">
-      <div className="">
+    <div className="Appnow">
+      <div className="borderfresh">
         
-      <form className="editprofile form" onSubmit={handleSubmit} style={{width: '900px',margin: 'auto',padding: '20px',border: '1px solid'}}>
-         <button className="profilechange" onClick={()=>setShowUpload(!showUpload)}> 
+        <form className="editprofile form" onSubmit={handleSubmit} >
+         
+         <button className="profilechange" type='button' onClick={()=>setShowUpload(!showUpload)}> 
 
-        {user.avatar && <img className="avataredit" src={user.avatar} width={150} />} 
-            </button>
-          {!user.avatar && <p>no image</p>}
+            {user.avatar && <img className="avataredit" src={user.avatar} width={150} />}</button>
+         
+          {!user.avatar && <button onClick={() => setShowUpload(!showUpload)} ><img src={bwPic} width='170px'></img></button>}
+          
           {/* <p>image:</p> */}
           <div className="fileupload">
         {showUpload && <FilePond
@@ -111,42 +117,44 @@ function EditProfile() {
         {/* <h5>Username: </h5><input value={username} onChange={(e)=> setUserName(e.target.value)} />  */}
         {/* to do have *name already exists pop up if there is already a name */}
         {/* <h6>*name already exists</h6>  */}
+           <div className="edit-all">
         
-          <div>
-            <div className="align">
-            <h5 className="fullname">Full Name</h5>
+         
+            <div className="editalign">
+            <h5 className="fullname">{t("profile:name")}</h5>
               </div>
               <input className="editbox" value={name} onChange={(e) => setName(e.target.value)} /> 
             
-            <div  className="align">
-              <h5 className="fullname">Email</h5>
+            <div  className="editalign">
+              <h5 className="fullname">{t("profile:email")}</h5>
               </div>
             <input className="editbox" value={email} onChange={(e) => setEmail(e.target.value)} /> 
             
-            <div className="align">
-              <h5 className="fullname">Password</h5>
+            
+            <div className="editalign">
+              <h5 className="fullname">{t("profile:password")}</h5>
               </div>
             <input className="editbox" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />  
-            <div className="align">
-              <h5 className="fullname">Phone number</h5>
+            <div className="editalign">
+              <h5 className="fullname">{t("profile:phone")}</h5>
               </div>
             <input className="editbox" value={phone} onChange={(e) => setPhone(e.target.value)} />  
-          </div>   
+       
           
         <br/>   
         <br/>   
 
        
         
-        <button className="editprofilebtn" type='submit'>Save Changes</button>
+        <button className="editprofilebtn" type='submit'>{t("common:submit")}</button>
         
         <br />
-        
+        </div>
         {/* <button  type = 'button' onClick={()=>setShowUpload(!showUpload)}>Click to update profile image</button> */}
         
         </form>
         </div>
-    </div>
+     </div>
   );
 }
 

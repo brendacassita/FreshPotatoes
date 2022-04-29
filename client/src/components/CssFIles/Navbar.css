@@ -2,9 +2,10 @@
 background-color: #1F1D2B!important;
 border-width: 5px;
 }
-.AppBar1 {
+
+/* .AppBar1 {
 border-bottom:  solid white;
-}
+} */
 
 .btn1 {
 justify-content: space-between;
@@ -33,23 +34,37 @@ z-index: 1;
 }
 .logout {
 position: absolute!important;
-right: 0px!important;
+right: 15px!important;
+top: 19px;
 }
 .profilelink {
 display: flex!important;
-justify-content: center!important;
 text-decoration: none;
 color: black;
-margin: 3px;
-font-weight: bold;
+margin: 2px;
+
 }
 #menu-appbar {
-margin: 40px 10px;
+margin:80px 10px;
 }
 .avatar_circle {
-/* width: 100px; */
-margin: -25px 10px  ;
+width: auto!important;
+height: 70px!important;
+margin: -8px 20px  ;
+border-radius: 30px;
+/* filter: grayscale(100%); */
+/* -webkit-filter: grayscale(90%); */
+/* -webkit-transition: all 1s ease; */
 }
+
+/* .avatar_circle:hover {
+filter: grayscale(10%);
+filter: rgb(235, 28, 28);
+-webkit-filter: grayscale(50%);
+filter: none;
+transition: 1s ease;
+} */
+
 .box {
 position: absolute;
 right: 40px!important;
@@ -83,4 +98,24 @@ top:0;
 left:0;
 width:100%;
 
+}
+.language {
+justify-content: end;
+      left: -148px;
+    width: 71px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    top: 53px;
+}
+.Language-drop {
+border-radius: 15px;
+border: none;
+background-color: #1F1D2B;
+color: white;
+}
+.renderLeft {
+    align-items: baseline;
+    bottom: -19px;
+    position: relative;
 }

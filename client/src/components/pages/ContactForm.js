@@ -7,13 +7,14 @@ import Grid from '@mui/material/Grid'
 import { Typography } from '@mui/material'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-//import useMediaQuery from "@mui/material/useMediaQuery";
 
 
 import background from '../CssFIles/background.jpg'
 import phoneIcon from '../CssFIles/phone.svg'
 import emailIcon from '../CssFIles/email.svg'
 import airplane from '../CssFIles/send.svg'
+import {useTranslation} from 'react-i18next'
+import i18next from 'i18next'
 
  
 
@@ -58,6 +59,8 @@ const ContactForm = (props) => {
   const [phoneHelper, setPhoneHelper] = useState('');
   
   const [message, setMessage] = useState('')
+  const {i18n, t} = useTranslation(["common","profile"])
+
   const onChange = event => {
     let valid;
 
@@ -92,8 +95,12 @@ const ContactForm = (props) => {
 
 
   return(
- <Grid container direction="row">
-     <Grid 
+    
+      
+    <form action="https://submit-form.com/TIGURCmb">
+ <Grid container direction="row" className='App1'>
+    <div className='contactpic'>
+          <Grid 
         item 
         container 
         direction="column" 
@@ -109,22 +116,26 @@ const ContactForm = (props) => {
             
             variant="h2" 
             style={{lineHeight: 1, marginTop: "1em"}}> 
-              Contact Us
+              {t("common:contactus")}
           </Typography>
           <Typography style={{marginTop: "1em"}}
             variant="body1"
         
             >
-              We'd love to hear from you!
+              {t("common:love2hear")}
+!
             </Typography>
         </Grid>
         <Grid item container style={{ marginTop: "2em" }}>
-          <Grid item>
-            <img 
+                  <Grid item>
+                    
+            <img id='phone-icon'
               src={phoneIcon} 
-              alt="phone" 
-              style={{marginRight: "0.5em"}}
-               /> 
+                      alt="phone" 
+                  
+                      style={{marginRight: "0.5em"}}
+                      /> 
+                      
           </Grid>
           <Grid item>
           <a href= "tel:5555555555"> (555) 555-5555</a>
@@ -140,7 +151,8 @@ const ContactForm = (props) => {
       
       <Grid item container style={{ marginBottom: "2em" }}>
           <Grid item>
-            <img 
+                    <img 
+                      className='email-icon'
               src={emailIcon} 
               alt="envelope" 
               style={{marginRight: "0.5em", verticalAlign: "bottom"}} 
@@ -157,9 +169,11 @@ const ContactForm = (props) => {
       </Grid>
       <Grid item container direction="column" style={{ maxWidth: "20em" }}>
         <Grid item style={{ marginBottom: "0.5em" }}>                                 
-          <TextField 
-            
-            label="Name" 
+        
+          <TextField       
+            type="text"
+            name="name"
+            label= {t("profile:name")}
             id="name" 
             fullWidth 
             value={name}
@@ -167,8 +181,9 @@ const ContactForm = (props) => {
           />
         </Grid>
         <Grid item style={{ marginBottom: "0.5em" }}>
-          <TextField 
-            label="Email" 
+          <TextField
+            name="email"
+            label= {t("profile:email")}
             fullWidth
             error={emailHelper.length !== 0 }
             helperText={emailHelper}
@@ -178,7 +193,8 @@ const ContactForm = (props) => {
         </Grid>
         <Grid item style={{ marginBottom: "0.5em" }}>
           <TextField 
-            label="Phone" 
+            label={t("profile:phone")}
+            name="phone"
             fullWidth
             error={phoneHelper.length !== 0 }
             helperText={phoneHelper}
@@ -191,15 +207,17 @@ const ContactForm = (props) => {
       <Grid item style={{maxWidth: "20em"}}>
         <TextField 
           value={message} 
+          placeholder={t(["common:typehere"])}
           multiline 
           fullWidth
           rows={10} 
           id="message" 
+          name="message"
           onChange={(event) =>setMessage(event.target.value)}  
         />
       </Grid>
       <Grid item container justify="center" style={{marginTop: "2em" }} >
-          <Button 
+          <Button type = "submit"
             disabled={
               name.length === 0 || 
               message.length === 0 ||
@@ -210,7 +228,7 @@ const ContactForm = (props) => {
             style={{ marginBottom: "1em" }} 
             className={classes.sendButton}
             >
-              Send Message
+              {t(["common:sendmessage"])}
           <img 
             src={airplane} 
             alt="paper airplane"
@@ -220,9 +238,12 @@ const ContactForm = (props) => {
       </Grid>
           </Grid>
         </Grid>
-   </Grid>
-      <Grid item container className={classes.background} lg={9}></Grid>
+      </Grid>
+     
+        <Grid item container className={classes.background} lg={9}></Grid>
+       </div>
     </Grid>
+    </form>
   )
 }
 
