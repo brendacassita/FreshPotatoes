@@ -39,7 +39,7 @@ const SearchBar = ({placeholder, data}) => {
     
     try {
       let res = await axios.get('/api/movies')
-      setAllMovies(res.data[0].results)
+      setAllMovies(res.data.results)
       
     } catch(err) {
       alert('error getting movies')

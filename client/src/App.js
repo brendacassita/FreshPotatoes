@@ -30,6 +30,7 @@ import {Helmet} from "react-helmet";
 
 import LandingPage from './components/shared/LandingPage';
 import { Suspense } from 'react';
+import GenreFilter from './components/pages/GenreFilter';
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -84,6 +85,10 @@ function App() {
                     <Route path="/genres/:id" element={<GenreShow />} />
                     <Route path="/movies/:id/edit" element={<MovieForm />} />
                     <Route path="/movies/new" element={<MovieForm />} />
+
+                    {/* TESTING */}
+                    <Route path="/ratings" element={<Ratings />} />
+
                   </Route>
                   <Route path="*" element={<NoMatch />} />
                 </Routes>

@@ -1,141 +1,118 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {useTranslation} from 'react-i18next'
-import i18next from 'i18next'
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const GenreFilter = () => {
-  const [filteredMovies, setFilteredMovies] = useState(null);
-  const {i18n, t} = useTranslation(["common"])
+  const [popular, setPopular] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+  const { i18n, t } = useTranslation(["common"]);
 
   useEffect(() => {
-    setFilteredMovies(getMovies());
     if (localStorage.getItem("i18nextLng")?.length > 2) {
-			i18next.changeLanguage("en");
+      i18next.changeLanguage("en");
     }
   }, []);
-  
+
+  useEffect(() => {
+    getPopular();
+    // getGenres()
+  }, []);
+
   const handleLanguageChange = (e) => {
-		i18n.changeLanguage(e.target.value);
-	};
+    i18n.changeLanguage(e.target.value);
+  };
 
   function handleMovies(e) {
     let genreMovie = e.target.value;
+    console.log(genreMovie);
     genreMovie !== "all"
       ? setFilteredMovies(filterMovies(genreMovie))
-      : setFilteredMovies(getMovies());
+      : setFilteredMovies(popular);
   }
 
-  // const [popular, setPopular] = useState([]);
+  const getPopular = async () => {
+    try {
+      let res = await axios.get("/api/popular/movies");
+      setPopular(res.data.results);
+      setFilteredMovies(res.data.results);
+      console.log("POPULAR:", res.data.results);
+    } catch (err) {
+      alert("Error in getting popular");
+    }
+  };
 
-  // useEffect(() => {
-  //   getPopular();
-  // }, []);
-
-  // const getPopular = async () => {
-  //   try {
-  //     let res = await axios.get('/api/popular')
-  //     setPopular(res.data)
-  //     console.log(res.data)
-  //   } catch (err) {
-  //     alert("error in getting popular")
-  //   }
-  // }
 
   ///// HARD CODED DATA FOR NOW /////
-  const movies = [
-    {
-      id: 8,
-      name: "The Crow",
-      genre: "drama",
-      poster: "https://m.media-amazon.com/images/I/71pdrpHZUfL._AC_SL1500_.jpg",
-    },
-    {
-      id: 4,
-      name: "Knives Out",
-      genre: "drama",
-      poster: "https://m.media-amazon.com/images/I/71enm1zeBvL._AC_SL1500_.jpg",
-    },
-    {
-      id: 13,
-      name: "Earth Girls Are Easy",
-      genre: "comedy",
-      poster: "https://m.media-amazon.com/images/I/51Bw3Zfm97L.jpg",
-    },
-    {
-      id: 11,
-      name: "The Three Amigos!",
-      genre: "comedy",
-      poster: "https://m.media-amazon.com/images/I/51pC6YFqfqL._AC_.jpg",
-    },
-    {
-      id: 15,
-      name: "Man of Steel",
-      genre: "adventure",
-      poster: "https://m.media-amazon.com/images/I/81wbOkjaZ+L._AC_SL1458_.jpg",
-    },
-    {
-      id: 9,
-      name: "Labyrinth",
-      genre: "adventure",
-      poster: "https://m.media-amazon.com/images/I/619yt12HbSL._AC_SL1001_.jpg",
-    },
-  ];
-
   const buttons = [
     {
       name: "All",
       value: "all",
     },
     {
-      name: "Adventure",
-      value: "adventure",
+      name: "Action",
+      value: 12,
     },
     {
       name: "Comedy",
-      value: "comedy",
+      value: 35,
     },
     {
       name: "Drama",
-      value: "drama",
+      value: 18,
+    },
+    {
+      name: "Family",
+      value: 10751,
+    },
+    {
+      name: "Thriller",
+      value: 53,
     },
   ];
 
-  function getMovies() {
-    const moviesList = movies;
-    return moviesList;
-  }
-
   function filterMovies(movGenre) {
-    let filteredMovies = getMovies().filter((mov) => mov.genre === movGenre);
+    let filteredMovies = popular.filter((mov) => {
+      return mov.genre_ids.includes(parseInt(movGenre));
+    });
+    console.log("FIlter:", filteredMovies);
     return filteredMovies;
   }
 
   return (
     <div>
       <h4 className="genreCategories">{t("common:categories")}</h4>
-      
+
       {buttons &&
         buttons.map((genre, index) => (
-      
           // <>
-            
-            <button className="genrebtn" key={index} value={genre.value} onClick={handleMovies}>
-              {genre.name}
-              </button>
-            // </>
-            
+
+          <button
+            className="genrebtn"
+            key={index}
+            value={genre.value}
+            onClick={handleMovies}
+          >
+            {genre.name}
+          </button>
+          // </>
         ))}
-      <div className="genreselect" style={{ display: "flex", flexDirection: "row" }}>
-        {filteredMovies &&
+      <div
+        className="genreselect"
+        style={{ display: "flex", flexDirection: "row" }}
+      >
+        {filteredMovies.length > 0 &&
           filteredMovies.map((mov) => (
             <div key={mov.id}>
-              <img className="imgGenreFilter" src={mov.poster} style={{ height: "200px" }} />
-              <h5 style={{ textAlign: "center" }}>{mov.name}</h5>
+              <img className="imgGenreFilter" src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`} style={{ height: "200px" }} />
+              <h5 style={{ textAlign: "center" }}>
+                {mov.title}
+              </h5>
             </div>
           ))}
       </div>
     </div>
-    
   );
 };
 

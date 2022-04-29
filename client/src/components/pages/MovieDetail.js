@@ -124,6 +124,7 @@ const MovieDetail = () => {
     if (loading) {
       return <p>"Loading"</p>;
     }
+    
     return (
       <div className="App2">
         <h1>{movie.title}</h1>
@@ -132,7 +133,7 @@ const MovieDetail = () => {
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             width={250}
           />
-          <YouTube videoId={trailer.key} opts={opts} width={500} />
+          {trailer && trailer.key && <YouTube videoId={trailer.key} opts={opts} width={500} />}
         </div>
         <div>
           <h6> {getString()}</h6>
