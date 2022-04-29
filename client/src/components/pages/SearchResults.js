@@ -119,9 +119,9 @@ const SearchResults = () => {
         
         <input className=' searching'  onChange={handleSearchTermChange} value={searchTerm} type='text' placeholder={t("common:searchmovies")}></input>
         
-          {/* <div className='searchiconall'>
+          <div className='searchiconall'>
          <SearchIcon />
-      </div> */}
+      </div>
       </div>
       <br />
       <div className='moviesearch' >
@@ -153,7 +153,7 @@ const SearchResults = () => {
             <img src={potatoe} width='50px' />
             <div className='rating-number'>
                 <h5>pre-rating: </h5>
-                      <h3 className='pop-percent'>{movies.unwatched}%</h3> 
+                      <h3 className='pop-percent'>{unwatched}%</h3> 
                       
                     </div>
             <img src={fry} width='40px' />

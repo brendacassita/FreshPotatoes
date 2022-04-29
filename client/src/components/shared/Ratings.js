@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "../../App.css";
 import { useParams } from "react-router-dom";
+import Potatoe from '../../Images/Potatoe.png'
+import Fry from '../../Images/FryLogo-06.png'
 
 const Ratings = () => {
   const [unwatched, setUnwatched] = useState({});
@@ -41,9 +43,9 @@ const Ratings = () => {
   return (
     <div>
       <div>
-          <h5 style={{ display: "flex", justifyContent: "center" }}>
-          pre: {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'} | post: {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
-        </h5>
+          <h3 style={{ display: "flex", justifyContent: "center" }}>
+          <img src={Potatoe} height={40}/> {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'} | <img src={Fry} height={40}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
+        </h3>
       </div>
     </div>
   );
