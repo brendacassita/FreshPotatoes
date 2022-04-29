@@ -16,6 +16,7 @@ import fresh from '../../Images/Potatoe.png'
 import sharayah from '../../Images/sharayah.jpg'
 import trina from '../../Images/Trina.jpg'
 import brenda from '../../Images/SELFIE.JPG'
+import Kat from '../../Images/Katherine.jpg'
 import {Link} from 'react-router-dom';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -620,19 +621,19 @@ export default function MediaCard()
             <h1 className='name-team'>Katherine</h1>
       <div className="card1 profile-two">
         <div className="card-image profile-img--two">
-      <img src='' width='100%' alt="profile-two"/>
+      <img src={Kat} width='100%' alt="profile-two"/>
         </div>
 
             <ul className="social-icons">
               
           <li>
-            <a href="https://github.com/SharayahDesigns">
+            <a href="https://github.com/katbrenda">
               <GitHubIcon sx={{ fontSize: 40 }}className="fab Linked-in" width='200px'/>
             </a>
               </li>
               
               <li>    
-                <a href="https://www.linkedin.com/in/sharayahhefner/">
+                <a href="https://www.linkedin.com/in/katherine-gaylord-4368b837/">
                   <LinkedIn
                     sx={{ fontSize: 40 }}className="fab Linked-in" width='200px' />
                 </a>

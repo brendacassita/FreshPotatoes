@@ -91,7 +91,7 @@ const PopularFries= ()=>{
             <img src={frylogo} width='50px'/>
               <div className='rating-number'>
                 <h5>post-rating:</h5>
-                <h3>{movie.watched_rating.toFixed(0)}%</h3>
+                <h3 className='pop-percent'>{movie.watched_rating.toFixed(0)}%</h3>
               </div>
             </div>
             
