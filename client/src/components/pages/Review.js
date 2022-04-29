@@ -31,7 +31,7 @@ const Review = (props) => {
   const [hover, setHover] = useState(null);
   const params = useParams();
   const [watched, setWatched] = useState("false");
-  console.log(typeof watched)
+  
 
  
 
@@ -51,15 +51,15 @@ const Review = (props) => {
       alert("error occurred posting review");
     }
   };
-  const getReviews = async () => {
-    try {
-      let res = await axios.get(`/api/movies/${params.id}/reviews`);
-      setAllReviews(res.data);
-      console.log(res.data);
-    } catch (err) {
-      alert("error in getting reviews");
-    }
-  };
+  // const getReviews = async () => {
+  //   try {
+  //     let res = await axios.get(`/api/movies/${params.id}/reviews`);
+  //     setAllReviews(res.data);
+  //     console.log(res.data);
+  //   } catch (err) {
+  //     alert("error in getting reviews");
+  //   }
+  // };
   function getLabelText(value) {
     return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
   }
@@ -71,15 +71,15 @@ const Review = (props) => {
   // }
 
   return (
-    <div>
+    <div style={{backgroundColor:"white"}}>
       <h2>Leave a review</h2>
       <div className="reviewRating">
         <Rating
           icon={
             watched == "true" ? (
-              <SvgFries style={{ left: "10px", width: "120px", height: "120px" }} />
+              <SvgFries style={{ left: "100px", width: "100px", height: "120px" }} />
             ) : (
-              <SvgPotato style={{ width: "120px", height: "120px" }} />
+              <SvgPotato style={{ width: "100px", height: "100px" }} />
             )
           }
           name="hover-feedback"
@@ -94,11 +94,11 @@ const Review = (props) => {
           }}
           emptyIcon={ watched == "true" ? 
             <SvgFries
-              style={{ width: "120px", height: "120px", opacity: 0.55 }}
+              style={{ width: "100px", height: "100px", opacity: 0.55 }}
               fontSize="inherit"
             />:
             <SvgPotato
-              style={{ width: "120px", height: "120px", opacity: 0.55 }}
+            style={{ width: "100px", height: "100px", opacity: 0.55 }}
               fontSize="inherit"
             />
           }
