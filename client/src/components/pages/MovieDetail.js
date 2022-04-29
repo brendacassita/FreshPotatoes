@@ -167,9 +167,8 @@ const MovieDetail = () => {
           <p className="information">{movie.overview}</p>
         </div>
 
-        {/* <Review movieId={movie.id} /> */}
+        <Review movieId={movie.id} />
         <AllReviews movieId={movie.id}/>
-        <Review/>
         <div className="control"></div>
         <div>
           <p>{director.job}</p>

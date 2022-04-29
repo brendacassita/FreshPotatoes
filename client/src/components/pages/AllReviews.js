@@ -1,42 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-
+import { DataContext } from "../../providers/DataProvider";
+// use data provider to get the reviews; 
 const AllReviews = (props) => {
   const [reviews, setReviews] = useState ([]); 
-  const [preReviews, setPreReviews] = useState ([])
-  const [postReviews, setPostReviews] = useState ([])
-  
-  const params = useParams();
 
+  const params = useParams();
+const {preReviews, postReviews, getPostReviews, getPreReviews} = useContext(DataContext)
 useEffect(()=> {
-getPreReviews();
-getPostReviews();
+getPreReviews(params.id);
+getPostReviews(params.id);
 
 }, [])
 
-const getPreReviews = async () => {
-  try {
 
-    let res = await axios.get(`/api/movies/${params.id}/reviews/pre`);
-    setPreReviews(res.data);
-   
-    console.log("pre: ", res.data);
-
-  } catch (err) {
-    alert("error in getting reviews");
-  }
-};
-
-const getPostReviews = async () => {
-  try {
-    let res = await axios.get(`/api/movies/${params.id}/reviews/post`);
-    setPostReviews(res.data);
-    console.log("post: " , res.data);
-  } catch (err) {
-    alert("error in getting reviews");
-  }
-};
 
 const renderPreReviews = () => {
   return preReviews.map((review) => (

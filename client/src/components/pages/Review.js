@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Box from "@mui/material/Box";
@@ -15,6 +15,8 @@ import {
 } from "@mui/material";
 import SvgPotato from "./SvgPotato";
 import SvgFries from "./SvgFries";
+import { DataContext} from "../../providers/DataProvider";
+
 
 const labels = {
   1: "Worst Movie Ever.",
@@ -31,10 +33,11 @@ const Review = (props) => {
   const [hover, setHover] = useState(null);
   const params = useParams();
   const [watched, setWatched] = useState("false");
+  const {addPreReview, addPostReview} = useContext(DataContext)
   
 
  
-
+// check if doing watched or unwatched; conditional 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newReview = { comment: review, watched, rating: value, movie_id: props.movieId };
@@ -44,9 +47,11 @@ const Review = (props) => {
         `/api/movies/${props.movieId}/reviews`,
         newReview
       );
-      setReview(res.data);
-      console.log(res.data);
-      console.log(watched);
+    if(watched == "false" ){
+      addPreReview(newReview)
+    }else{
+      addPostReview(newReview)
+  }
     } catch (err) {
       alert("error occurred posting review");
     }
