@@ -26,7 +26,7 @@ const labels = {
 
 const Review = (props) => {
   const [allReviews, setAllReviews] = useState([]);
-  const [review, setReview] = useState(null);
+  const [review, setReview] = useState();
   const [value, setValue] = useState(null);
   const [hover, setHover] = useState(null);
   const params = useParams();
