@@ -6,7 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
-import Reviews from "./Reviews"
+import Reviews from "./AllReviews"
 
 const MovieDetail = () => {
   const [loading, setLoading] = useState(true);

@@ -46,8 +46,8 @@ Rails.application.routes.draw do
 
     #
     get 'reviews/:id', to: 'reviews#show'
-    put 'reviews/:id', to: 'reviews#show'
-    destroy 'reviews/:id', to: 'reviews#show'
+    # put 'reviews/:id', to: 'reviews#show'
+    # destroy 'reviews/:id', to: 'reviews#show'
 
     # API Calls for Pre Reviews and Post Reviews based on Movie id
     get 'movies/:id/reviews/pre', to: 'reviews#pre'
