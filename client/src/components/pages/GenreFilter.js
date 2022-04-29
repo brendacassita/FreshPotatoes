@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import { useNavigate } from "react-router-dom";
 
 const GenreFilter = () => {
   const [popular, setPopular] = useState([]);
   const [genres, setGenres] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const { i18n, t } = useTranslation(["common"]);
+
+  const navigate = useNavigate()
+  let nav = useNavigate()
 
   useEffect(() => {
     if (localStorage.getItem("i18nextLng")?.length > 2) {
@@ -105,7 +109,7 @@ const GenreFilter = () => {
         {filteredMovies.length > 0 &&
           filteredMovies.map((mov) => (
             <div key={mov.id}>
-              <img className="imgGenreFilter" src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`} style={{ height: "200px" }} />
+              <img className="imgGenreFilter" src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`} style={{ height: "200px" }} onClick={() => nav(`/movies/${mov.id}`)} />
               <h5 style={{ textAlign: "center" }}>
                 {mov.title}
               </h5>
