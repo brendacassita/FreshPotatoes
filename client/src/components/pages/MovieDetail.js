@@ -6,7 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
-import Reviews from "./AllReviews"
+import AllReviews from "./AllReviews"
 import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 
 const MovieDetail = () => {
@@ -179,8 +179,7 @@ const MovieDetail = () => {
         </div>
 
         <Review movieId={movie.id} />
-        {/* <Reviews movieId={movie.id}/> */}
-        {/* <Review/> */}
+        <AllReviews movieId={movie.id}/>
         <div className="control"></div>
         <div>
           <p>{director.job}</p>

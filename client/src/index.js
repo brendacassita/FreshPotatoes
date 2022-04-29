@@ -7,18 +7,20 @@ import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./providers/AuthProvider";
 import { initMiddleware } from 'devise-axios';
 import "./components/shared/localization/i18n"
+import DataProvider from "./providers/DataProvider";
 
 initMiddleware();
 
 
 ReactDOM.render(
-  
   <BrowserRouter>
     <AuthProvider>
-      <App />
+      <DataProvider>
+        <App />
+      </DataProvider>
     </AuthProvider>
   </BrowserRouter>,
- 
+
   document.getElementById("root")
 );
 

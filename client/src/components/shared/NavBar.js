@@ -147,8 +147,6 @@ const Navbar = () => {
           <Link className="btn1" to="/popular_fries">
             {t("common:popularfries")}
           </Link>{" "}
-          <Link className="btn1" to="/reviews">Reviews
-          </Link>{" "}
           {""}
           <Link className="btn1" to="/genres">
             {t("common:genres")}
