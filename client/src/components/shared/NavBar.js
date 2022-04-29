@@ -138,47 +138,42 @@ const Navbar = () => {
     //if we have a user, return the links we want to show(if logged in)
     if (user) {
       return (
-        <div className='renderLeft'>
+        <div className="renderLeft">
           {/* <Link className="Nav-link" to="/home">Home Protected</Link> */}
           {/* <Badge onClick={auth.handleLogout }>Logout</Badge> */}
-
-<Link className="btn1 navlist" to="/popular_potatoes">
-{t("common:popularpotatoes")}
-            </Link>
-            <Link className="btn1" to="/popular_fries">
+          <Link className="btn1 navlist" to="/popular_potatoes">
+            {t("common:popularpotatoes")}
+          </Link>
+          <Link className="btn1" to="/popular_fries">
             {t("common:popularfries")}
-            </Link>{" "}
-            {""}
-
+          </Link>{" "}
+          <Link className="btn1" to="/reviews">Reviews
+          </Link>{" "}
+          {""}
           <Link className="btn1" to="/genres">
-          {t("common:genres")}
+            {t("common:genres")}
           </Link>
           <Link className="btn1" to="/SearchResults">
-          {t("common:search")}
+            {t("common:search")}
           </Link>
-     
-          
-          
-          <div className='language'>
-			<div className="">
-				<ul className="">
-					<div className="">
-						<select
-							className="Language-drop"
-							value={localStorage.getItem("i18nextLng")}
-							onChange={handleLanguageChange}
-						>
-							<option value="en">English</option>
-							<option value="fr">Français</option>
-							<option value="es">Español</option>
-						</select>
-					</div>
-				
-				</ul>
-          </div>
+          <div className="language">
+            <div className="">
+              <ul className="">
+                <div className="">
+                  <select
+                    className="Language-drop"
+                    value={localStorage.getItem("i18nextLng")}
+                    onChange={handleLanguageChange}
+                  >
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                  </select>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
-        
       );
     }
   };
