@@ -53,13 +53,28 @@ const MovieDetail = () => {
   const getCast = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
-      setCast(res.data.cast);
+      setCast(res.data.cast.length >= 5 ? res.data.cast.slice(0,5) : res.data.cast);
+      console.log("5", res.data.cast.slice(0,5))
       console.log("CAST:", res.data.cast);
     } catch (err) {
       alert("Error in getting cast");
     }
   };
 
+   const limitCast = cast.forEach(function(cas, i) {
+
+  })
+
+  // const getLimitedCast = cast => {
+  //   let cas = []
+  //   for (let i = 0; i < 5; i++) {
+  //     const item = cast[i]
+  //     cas.push(<li key={item.id}>{item.cast}</li>)
+  //     console.log("Limited Cast:", cas)
+  //   }
+  //   return cas
+  // }
+  
   const renderCast = () => {
     return cast.map((cast) => (
       <div key={`${cast.id}`}>
@@ -78,15 +93,11 @@ const MovieDetail = () => {
     ));
   };
 
-  // const getLimitedCast = cast => {
-  //   let cas = []
-  //   for (let i = 0; i < 5; i++) {
-  //     const item = cast[i]
-  //     cas.push(<li key={item.id}>{item.cast}</li>)
-  //     console.log("Limited Cast:", cas)
-  //   }
-  //   return cas
-  // }
+
+
+  const renderLimitedCast = () => {
+    return
+  }
 
   const getCrew = async () => {
     try {
