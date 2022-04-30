@@ -59,36 +59,32 @@ const Login = ()=>{
         <form onSubmit={handleSubmit}>
           
             <p className="loginnames">Email</p>
-                <input className="login-btn" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                <input 
+                    className="login-btn" 
+                    value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 
             <p className="loginnames">Password</p>
-                <input className="login-btn" value={password} type='password' onChange={(e)=> setPassword(e.target.value)}/>
-          
+                <input 
+                    className="login-btn" 
+                    value={password} 
+                    type='password' 
+                    onChange={(e)=> setPassword(e.target.value)}/>
+            
             <div className='buttonlogin'>
-         
-                
-
-
-
-
                 <>
-              <div className="login-btns1 btnlogin">
-               
-                <p className="acnt">Dont have an account?</p><Link href='/register'>SIGN UP HERE </Link>
-              
-                   </div>
+            <div className="login-btns1 btnlogin">
+                <p className="acnt">Dont have an account?</p>
+                <Link href='/register'>Sign-up</Link>
+            </div>
                 </>
 
                <Button className='buttonlogin1 btnlogin'
-
-
-           
-            variant="contained"
-            type="button"
-           onClick={handleSubmit}
-            disabled={loading}>
-            {loading ? 'Loading...' : 'Login'}
-          </Button>
+                    variant="contained"
+                    type="button"
+                    onClick={handleSubmit}
+                    disabled={loading}>
+                    {loading ? 'Loading...' : 'Login'}
+              </Button>
                    </div>
             </form>
            </div>
