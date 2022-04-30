@@ -217,7 +217,8 @@ const ContactForm = (props) => {
         />
       </Grid>
       <Grid item container justify="center" style={{marginTop: "2em" }} >
-          <Button type = "submit"
+          <Button 
+            type = "submit"
             disabled={
               name.length === 0 || 
               message.length === 0 ||
