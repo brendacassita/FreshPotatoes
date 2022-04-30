@@ -1,6 +1,4 @@
-import * as React from "react"
-
-
+import * as React from "react";
 
 const SvgPotato = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249 288" {...props}>
@@ -1668,6 +1666,6 @@ const SvgPotato = (props) => (
       d="M176.21 166.74s-6.48-2.16-11.87 1.62c0 0-8.1 12.42-9.72 11.88l-5.7 3s11.64-1.88 13.8-4.58 3.77-6.48 8.63-9.18ZM182.15 163s3.78-2.7 9.18 0 9.72 4.32 9.72 4.32-14.58-4.32-16.74-2.7-2.16-1.62-2.16-1.62Z"
     />
   </svg>
-)
+);
 
-export default SvgPotato
+export default SvgPotato;

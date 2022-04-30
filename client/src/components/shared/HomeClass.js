@@ -1,7 +1,6 @@
 import React from "react";
 import { AuthConsumer } from "../../providers/AuthProvider";
 
-
 class HomeClass extends React.Component {
   render() {
     return (
@@ -17,12 +16,11 @@ class HomeClass extends React.Component {
 // instead of using useContext(AuthContext)
 // wrap my component in my AuthConsumer
 
-const ConnectedHomeClass = (props)=>{
-    return (
-        <AuthConsumer>
-          { value => <HomeClass {...props} {...value}/>}
-        </AuthConsumer>
-    )
-
-}
-export default ConnectedHomeClass
+const ConnectedHomeClass = (props) => {
+  return (
+    <AuthConsumer>
+      {(value) => <HomeClass {...props} {...value} />}
+    </AuthConsumer>
+  );
+};
+export default ConnectedHomeClass;
