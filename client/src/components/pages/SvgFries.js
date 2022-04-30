@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 const SvgFries = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 466" {...props}>
@@ -232,4 +232,4 @@ const SvgFries = (props) => (
   </svg>
 );
 
-export default SvgFries; 
+export default SvgFries;

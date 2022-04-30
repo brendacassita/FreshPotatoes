@@ -6,7 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
-import AllReviews from "./AllReviews"
+import AllReviews from "./AllReviews";
 import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 
 const MovieDetail = () => {
@@ -53,28 +53,16 @@ const MovieDetail = () => {
   const getCast = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
-      setCast(res.data.cast.length >= 5 ? res.data.cast.slice(0,5) : res.data.cast);
-      console.log("5", res.data.cast.slice(0,5))
+      setCast(
+        res.data.cast.length >= 5 ? res.data.cast.slice(0, 5) : res.data.cast
+      );
+      console.log("5", res.data.cast.slice(0, 5));
       console.log("CAST:", res.data.cast);
     } catch (err) {
       alert("Error in getting cast");
     }
   };
 
-   const limitCast = cast.forEach(function(cas, i) {
-
-  })
-
-  // const getLimitedCast = cast => {
-  //   let cas = []
-  //   for (let i = 0; i < 5; i++) {
-  //     const item = cast[i]
-  //     cas.push(<li key={item.id}>{item.cast}</li>)
-  //     console.log("Limited Cast:", cas)
-  //   }
-  //   return cas
-  // }
-  
   const renderCast = () => {
     return cast.map((cast) => (
       <div key={`${cast.id}`}>
@@ -92,12 +80,6 @@ const MovieDetail = () => {
       </div>
     ));
   };
-
-
-
-  const renderLimitedCast = () => {
-    return
-  }
 
   const getCrew = async () => {
     try {
@@ -138,9 +120,6 @@ const MovieDetail = () => {
     document.body.removeChild(e);
     setCopied(true);
   };
-  
-
- 
 
   if (!movie) {
     return <p>"Loading"</p>;
@@ -150,7 +129,7 @@ const MovieDetail = () => {
     if (loading) {
       return <p>"Loading"</p>;
     }
-    
+
     return (
       <div className="App1">
         <h1>{movie.title}</h1>
@@ -159,7 +138,9 @@ const MovieDetail = () => {
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             width={250}
           />
-          {trailer && trailer.key && <YouTube videoId={trailer.key} opts={opts} width={500} />}
+          {trailer && trailer.key && (
+            <YouTube videoId={trailer.key} opts={opts} width={500} />
+          )}
         </div>
         <div>
           <h6> {getString()}</h6>
@@ -168,10 +149,8 @@ const MovieDetail = () => {
         <Ratings />
 
         <button className="shareButton" onClick={copyURL}>
-        {!copied ? "Click here to share this page" : "Page Copied!"}
+          {!copied ? "Click here to share this page" : "Page Copied!"}
         </button>
-
-       
 
         <div id="container">
           <h4>Story Line</h4>
@@ -179,11 +158,12 @@ const MovieDetail = () => {
         </div>
 
         <Review movieId={movie.id} />
-        <AllReviews movieId={movie.id}/>
+        <AllReviews movieId={movie.id} />
         <div className="control"></div>
         <div>
           <p>{director.job}</p>
-          <p>{director.name}</p><br/>
+          <p>{director.name}</p>
+          <br />
         </div>
         <div>{renderCast()}</div>
       </div>
