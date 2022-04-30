@@ -1,0 +1,359 @@
+.movie-trailer {
+display: flex;
+justify-content: center;
+height: fit-content;
+}
+
+.black-back {
+display: flex;
+    position: relative;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    background: black;
+    width: 100%;
+    height: 444px;
+    overflow: hidden;
+     box-shadow: 0 -30px 50px rgba(119, 119, 119, 0.478) inset;
+   
+}
+
+
+.movie-trailer1 {
+justify-content: center;
+display: flex;
+position: relative;
+}
+.movieCard1 {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    justify-content: flex-start;
+display: flex;
+position: relative;
+    
+}
+.Popular-MD {
+/* display: flex; */
+position: relative; 
+/* flex-direction: column; */
+align-items: center;
+justify-content: center;
+margin: 50px 0px;
+width: 50%;
+background-color: #efefef;
+flex-wrap: wrap;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 10px;
+text-align: center;
+}
+.App--1 {
+border: 75px solid #1F1D2B ;
+background-color: white;
+/* justify-content: center; */
+/* padding: 20px; */
+/* text-align: center; */
+/* display: flex; */
+/* flex-direction: column; */
+height: 100%;
+overflow: auto;
+border-top: 2px solid white;
+}
+.fucker {
+display: flex;
+justify-content: center;
+}
+.Big-Line {
+/* display: flex; */
+    /* position: relative; */
+    /* justify-content: center; */
+    width: 824px;
+    /* margin-right: 101px; */
+    background-color:#EC4E20;
+    height: 32px;
+    top: 28px;
+
+}
+.rating-stuff {
+justify-content: flex-start;
+display: flex;
+}
+.movie-info {
+position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    background-color: white;
+    width: 100%;
+}
+.button-back {
+background-color: black;
+}
+.Director {
+position: relative;
+top: -15px;
+}
+.logo-rate{
+align-items: center;
+margin: 15px;
+}
+.Movie-Info {
+         background-color: #efefef;
+    display: flex;
+    width: 273px;
+    margin: 9px;
+    position: relative;
+    
+    justify-content: center;
+}
+.Theater-Icon {
+      position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    top: -51px;
+    left: 17px;
+}
+.Movie-Info-all {
+position: relative;
+right: 100px;
+}
+
+
+.flex-box-container {
+display: flex;
+justify-content: center;
+}
+.movie-item {
+/* width: 200px; */
+margin-right: 50px;
+margin-left: 50px;
+/* border: 3px solid black; */
+/* text-align: center; */
+width: 365px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.movie-box1 {
+width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.movie-box2 {
+width: 100%;
+margin: 10px;
+/* position: relative; */
+/* width: 700px; */
+}
+.movie-overview {
+width: 782px;
+    height: auto;
+    margin: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* justify-content: center; */
+    justify-content: flex-start;
+}
+.Movie-info2 {
+
+}
+.Cast-name {
+display: flex;
+    flex-wrap: wrap;
+    position: relative;
+        width: 784px;
+}
+
+.name-flex {
+display: flex;
+/* width: 700px; */
+position: relative;
+flex-wrap: wrap;
+/* flex-direction: column; */
+height: 30px;
+}
+.movie-overview2 {
+width: 782px;
+    height: auto;
+    margin: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* justify-content: center; */
+position: relative;
+    justify-content: flex-start;
+bottom: 55px;
+}
+.photo-flex {
+/* display: flex; */
+
+/* width: 700px; */
+/* position: relative; */
+flex-wrap: wrap;
+/* flex-direction: column; */
+/* height: 30px; */
+}
+.Cast-photo {
+display: flex;
+    flex-wrap: wrap;
+    position: relative;
+        width: 784px;
+}
+.movie-button {
+background-color:  #d1a82e;
+text-decoration: none;
+border: none;
+margin: 5px;
+color: white;
+border-radius: 9px;
+width: 100px;
+height: 30px;
+}
+.photo-round {
+border-radius: 15px;
+margin: 10px;
+}
+.movie-review {
+display: flex;
+justify-content: center;
+text-align: center;
+}
+.movie-review2 {
+display: flex;
+/* justify-content: center; */
+/* text-align: center; */
+}
+.Review-box1 {
+width: auto;
+margin: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+/* height: 300px; */
+}
+.user-photo-review 
+{
+border-radius: 100px;
+}
+.Review-box2 {
+width: auto;
+margin: 10px;
+/* height: 300px; */
+}
+.flex-box-container1 {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px;
+}
+.red-text {
+color: #EC4E20;
+}
+.Popular-MD {
+/* display: flex; */
+position: relative; 
+/* flex-direction: column; */
+align-items: center;
+justify-content: center;
+margin: 50px 0px;
+width: 50%;
+background-color: #efefef;
+flex-wrap: wrap;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 10px;
+text-align: center;
+}
+
+.the-logos {
+display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    top: 154px;
+    position: relative;
+    z-index: 1;
+
+}
+.logo1 {
+height: auto;
+    display: flex;
+    position: relative;
+    /* flex-direction: row; */
+    margin-right: 639px;
+    left: -101px;
+}
+.logo2 {
+display: flex;
+justify-content: space-between;
+position: relative;
+flex-direction: row;
+margin-left: 10px;
+    margin-left: -546px;
+}
+.bubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  width: 200px;
+  background: #EC4E20;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(246, 243, 243);
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  
+
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #EC4E20;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #EC4E20;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}
+.Pre-post {
+display: flex;
+background-color: #f9f8fa;
+justify-content: space-between;
+    justify-content: space-around;
+}
+.POST {
+      background-color: #1F1D2B;
+    color: white;
+    width: 301px;
+    justify-content: center;
+    text-align: center;
+    /* height: fit-content; */
+    height: 79px;
+    border-top-width: 10px;
+    margin-left: 101px;
+    border-radius: 10px;
+    top: 59px;
+    position: relative;
+}
+.PRE {
+background-color:#1F1D2B;
+color: #EC4E20;
+width: 200px;
+justify-content: center;
+text-align: center;
+/* height: fit-content; */
+margin-right: 100px;
+}
+.text-color {
+color: #EC4E20;
+}
+.movie-button:hover {
+background-color: #ec5020;
+cursor: pointer;
+}

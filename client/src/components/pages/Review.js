@@ -77,9 +77,9 @@ const Review = (props) => {
         <Rating
           icon={
             watched == "true" ? (
-              <SvgFries style={{ left: "100px", width: "100px", height: "120px" }} />
+              <SvgFries style={{ left: "100px", width: "70px", height: "70px" }} />
             ) : (
-              <SvgPotato style={{ width: "100px", height: "100px" }} />
+              <SvgPotato style={{ width: "70px", height: "70px" }} />
             )
           }
           name="hover-feedback"
@@ -94,11 +94,11 @@ const Review = (props) => {
           }}
           emptyIcon={ watched == "true" ? 
             <SvgFries
-              style={{ width: "100px", height: "100px", opacity: 0.55 }}
+              style={{ width: "70px", height: "70px", opacity: 0.55 }}
               fontSize="inherit"
             />:
             <SvgPotato
-            style={{ width: "100px", height: "100px", opacity: 0.55 }}
+            style={{ width: "70px", height: "70px", opacity: 0.55 }}
               fontSize="inherit"
             />
           }
@@ -107,12 +107,13 @@ const Review = (props) => {
           <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
         )}
       </div>
-      <hr></hr>
+      
       {/* sets the state so that prewatched is the default radio button value
         update the category when we select a different value
         use onchange to do this; use setCategory to update the state
         so set it to pre or post  */}
       <FormControl>
+        <br/>
         <FormLabel>Have you seen this movie? </FormLabel>
         <RadioGroup
           value={watched}
@@ -130,14 +131,14 @@ const Review = (props) => {
             // placeholder={"What do you think of the movie? (optional)"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
-            cols="75"
-            rows="15"
+            cols="55"
+            rows="10"
           ></textarea>
         </div>
         <button className="editprofilebtn">Submit Review</button>
       </form>
 
-      <hr></hr>
+      
       {/* {allReviews.map((r)=> {
   console.log(allReviews)
   return(

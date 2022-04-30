@@ -43,9 +43,9 @@ const Ratings = () => {
   return (
     <div>
       <div>
-          <h3 style={{ background: "white", display: "flex", justifyContent: "center" }}>
-          <img src={Potatoe} height={60}/> {unwatched && unwatched.rating ? `${unwatched.rating}%` : 'No rating'}  <img src={Fry} height={60}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
-        </h3>
+          <h2 className="logo-rate" style={{ background: "white", display: "flex", justifyContent: "center" }}> 
+          <img src={Potatoe} height={70}/>  {unwatched && unwatched.rating ? ` ${unwatched.rating}%` : 'No rating'}  <img src={Fry} height={70}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
+        </h2>
       </div>
     </div>
   );
