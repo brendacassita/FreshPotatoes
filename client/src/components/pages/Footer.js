@@ -89,6 +89,7 @@ const Footer = () => {
           </Grid>
           <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
             Fresh Potatoes &reg; {new Date().getFullYear()}
+            <Link href='https://www.themoviedb.org/documentation/api' style={{ color: '#EC4E20' }}><h4>Movie Data provided by TMDB</h4></Link>
             <BackToTopButton />
           </Box>
         </Container>

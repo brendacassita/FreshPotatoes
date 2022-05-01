@@ -103,7 +103,7 @@ const GenreFilter = () => {
         ))}
       <div
         className="genreselect"
-        style={{ display: "flex", flexDirection: "row" }}
+        style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap'}}
       >
         {filteredMovies.length > 0 &&
           filteredMovies.map((mov) => (
