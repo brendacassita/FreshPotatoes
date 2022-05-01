@@ -22,7 +22,7 @@ const SearchResults = () => {
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const { i18n, t } = useTranslation(["common"]);
-  const [unwatched, setUnwatched] = useState('');
+  const [unwatched, setUnwatched] = useState("");
   const [watched, setWatched] = useState({});
   const params = useParams();
 
@@ -82,7 +82,6 @@ const SearchResults = () => {
       alert("Error in getting unwatched reviews");
       console.log(err);
     }
-    
   };
 
   const getWatched = async () => {
@@ -93,8 +92,14 @@ const SearchResults = () => {
     } catch (err) {
       alert("Error in getting watched reviews");
     }
-    
   };
+  
+  
+  
+  
+  
+  
+  
 
   return (
     <div className="App1">

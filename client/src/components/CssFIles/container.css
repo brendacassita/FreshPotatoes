@@ -177,13 +177,22 @@ font-family: 'EB Garamond', serif;
 .product-image:hover img {transform: scale(1.2, 1.2);}
 
 .genreShow {
-display:inline-block;
+/* display:inline-block;
 flex-wrap: wrap;
 flex-direction: row;
 justify-content: flex-start;
 margin: 10px 15px;
 width: 180px;
-height: auto;
+height: auto; */
+
+display: inline-block;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: -1px 6px;
+    width: 161px;
+    height: auto;
+
 }
 .genretitle {
 display: flex;

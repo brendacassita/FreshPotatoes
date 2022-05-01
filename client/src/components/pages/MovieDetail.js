@@ -6,8 +6,14 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
-import AllReviews from "./AllReviews"
+import AllReviews from "./AllReviews";
 import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
+import '../CssFIles/MovieDetail.css'
+import TheatersIcon from '@mui/icons-material/Theaters';
+import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import fry from '../../Images/fryLogo.png'
+import potatoe from '../../Images/Potatoe.png'
+
 
 const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
@@ -15,7 +21,8 @@ const MovieDetail = () => {
   const [cast, setCast] = useState([]);
   const [director, setDirector] = useState([]);
   const [trailer, setTrailer] = useState({});
-  const [copied, setCopied] = useState(false);
+  const [copied,setCopied] = useState(false);
+  const [show, setShow] = useState(false)
   const params = useParams();
 
   useEffect(() => {
@@ -53,51 +60,65 @@ const MovieDetail = () => {
   const getCast = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
-      setCast(res.data.cast.length >= 5 ? res.data.cast.slice(0,5) : res.data.cast);
-      console.log("5", res.data.cast.slice(0,5))
+      setCast(
+        res.data.cast.length >= 5 ? res.data.cast.slice(0, 5) : res.data.cast
+      );
+      console.log("5", res.data.cast.slice(0, 5));
       console.log("CAST:", res.data.cast);
     } catch (err) {
       alert("Error in getting cast");
     }
   };
 
-   const limitCast = cast.forEach(function(cas, i) {
-
-  })
-
-  // const getLimitedCast = cast => {
-  //   let cas = []
-  //   for (let i = 0; i < 5; i++) {
-  //     const item = cast[i]
-  //     cas.push(<li key={item.id}>{item.cast}</li>)
-  //     console.log("Limited Cast:", cas)
-  //   }
-  //   return cas
-  // }
+  // const renderCast = () => {
+  //   return cast.map((cast) => (
+  //     <div key={`${cast.id}`}>
+  //       <div>
+  //         <h5>{cast.character}</h5>
+  //         <h5>{cast.name}</h5>
+  //       </div>
+  //       <div>
+  //         <img
+  //           src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+  //           onError={(event) => (event.target.style.display = "none")}
+  //           width={100}
+  //         />
+  //       </div>
+  //     </div>
+  //   ));
+  // };
+  
   
   const renderCast = () => {
     return cast.map((cast) => (
-      <div key={`${cast.id}`}>
-        <div>
-          <h5>{cast.character}</h5>
-          <h5>{cast.name}</h5>
-        </div>
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
-            onError={(event) => (event.target.style.display = "none")}
-            width={100}
-          />
-        </div>
+      <div className="name-flex" key={`${cast.id}`}>
+       
+          {/* <h5>{cast.character}</h5> */}
+          <h5  >{cast.name},</h5>
+        
+        
       </div>
     ));
   };
-
-
-
-  const renderLimitedCast = () => {
-    return
-  }
+  
+  const renderCastPictures = () => {
+    return cast.map((cast) => (
+      <div className="photo-flex" key={`${cast.id}`}>
+       
+        <h5>{cast.character}</h5>
+         <img className="photo-round"
+            src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+            onError={(event) => (event.target.style.display = "none")}
+            width={100}
+           />
+          {/* <h5  >{cast.name},</h5> */}
+        
+        
+      </div>
+    ));
+  };
+  
+  
 
   const getCrew = async () => {
     try {
@@ -115,7 +136,16 @@ const MovieDetail = () => {
 
   const getString = () => {
     if (movie)
-      return `${movie.release_date} | ${movie.runtime} min | ${movie.genres
+      return `${movie.release_date} | ${movie.runtime} min `;
+  };
+  const getTime = () => {
+    if (movie)
+      return ` ${movie.runtime} min `;
+  };
+  
+    const getGenre = () => {
+    if (movie)
+      return `${movie.genres
         .map((g) => g.name)
         .join(", ")}`;
   };
@@ -138,9 +168,6 @@ const MovieDetail = () => {
     document.body.removeChild(e);
     setCopied(true);
   };
-  
-
- 
 
   if (!movie) {
     return <p>"Loading"</p>;
@@ -150,46 +177,123 @@ const MovieDetail = () => {
     if (loading) {
       return <p>"Loading"</p>;
     }
-    
+
     return (
-      <div className="App1">
-        <h1>{movie.title}</h1>
-        <div className="movieCard">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            width={250}
-          />
-          {trailer && trailer.key && <YouTube videoId={trailer.key} opts={opts} width={500} />}
-        </div>
-        <div>
-          <h6> {getString()}</h6>
-        </div>
-
-        <Ratings />
-
+      <div className="App--1">
+        <div className="button-back" >
         <button className="shareButton" onClick={copyURL}>
-        {!copied ? "Click here to share this page" : "Page Copied!"}
+        {!copied ? "Click here to share" : "Page Copied!"}
         </button>
+        </div>
+        
+        
+        <div className="black-back" >
+           <img className="movie-trailer"
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            width={260}
+          />
+          {trailer && trailer.key && (
+            <YouTube videoId={trailer.key} opts={opts} width={500} />
+          )}
+        </div>
+        <div className="flex-box-container">
+          <div className="movie-item Popular-MD1" >
+            <h1 >{movie.title}</h1>
+        <h4 className="text-color">{getGenre()}</h4>
+            <h6> {getString()}</h6>
+            <Ratings  />
+          </div>
+          <div className="movie-box2  movie-item"  >
+            <div className="Big-Line">
+              <h1 className="Movie-Info">Overview</h1>
+<div className="Theater-Icon">
+                <TheatersIcon sx={{ fontSize: 40 }}/>
+                </div>
+            </div>
+         <div className="movie-overview" >    
+        
+             
+          <p >{movie.overview}</p>
+            </div>
+            <div className="Big-Line">
+              <h1 className="Movie-Info">Movie Info</h1>
+              <div className="Theater-Icon">
+                <TheaterComedyIcon sx={{ fontSize: 40 }}/>
+                </div>
+            </div>
+            <div className="movie-overvie" >
+              <h4>{director.job} : {director.name} </h4> 
+            </div>
+            <div className="movie-overview3">
+              <h4> Genre: {getGenre()}</h4>
+              <div className='movie-overview3'>
+              
+            <h4>Time: {getTime()}</h4>
+              </div>
+              
+              
+              <h4 className="Cast-name">Cast: {renderCast()}</h4>
+              
+              {show?<h4 className="Cast-photo">{renderCastPictures()}</h4>:null
+              }
+              
+              <button className="movie-button" onClick={()=>setShow(true)}>Show Cast</button>
+              <button className="movie-button" onClick={()=>setShow(false)}>Hide Cast</button>
+            </div>
+             
+          </div>
+        </div>
+        
+     
+        
+          {/* <div className="Movie-info-all">
+              
+              
+            </div> */}
+        
+        
+       
+        
+      
 
        
-
-        <div id="container">
-          <h4>Story Line</h4>
-          <p className="information">{movie.overview}</p>
+        <div className="movie-review" >
+          <Review movieId={movie.id} />
         </div>
-
-        <Review movieId={movie.id} />
-        <AllReviews movieId={movie.id}/>
-        <div className="control"></div>
-        <div>
-          <p>{director.job}</p>
-          <p>{director.name}</p><br/>
+        
+        
+        <div className="the-logos">
+          <div className="logo1" >
+          <img  src={potatoe} width='140px'height='auto' />
+          
+          </div>
+          
+          <div className="logo2">
+          <img  src={fry} width='70px'height='auto' />
+          
+          
+          </div>
         </div>
-        <div>{renderCast()}</div>
+        
+        <div className="Pre-post" >
+          <div className="POST"><h1>Potatoes </h1></div>
+          <div className="POST"><h1>Fries </h1></div>
+        </div>
+        
+        
+        <div className="">
+          
+            <AllReviews movieId={movie.id}/>
+         
+        </div>
+        
+       
+       
       </div>
     );
   };
-  return <div>{render()}</div>;
+  return <div>{render()}</div>
+    ;
 };
 
 export default MovieDetail;

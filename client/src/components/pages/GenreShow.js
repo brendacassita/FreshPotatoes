@@ -37,8 +37,10 @@ const GenreShow = () => {
         <div>
           <figure className="card">
             <Link to={`/movies/${movie.id}`}>
-              <img className="genreShow genreImage"
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+              <img
+                className="genreShow genreImage"
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              />
             </Link>
           </figure>
           <h4 className="genreShow">{movie.title}</h4>

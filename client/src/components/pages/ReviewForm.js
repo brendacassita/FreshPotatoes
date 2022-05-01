@@ -27,8 +27,8 @@ const ReviewForm = (props) => {
         console.log("res.data:", res.data);
         addReview(res.data);
       }
-      // TODO: where should we route to? 
-      navigate("/reviews"); 
+      // TODO: where should we route to?
+      navigate("/reviews");
     } catch (err) {
       // alerts if there is an error
       alert("err");
@@ -39,7 +39,6 @@ const ReviewForm = (props) => {
     <div className="border">
       <h1>{params.id ? "Edit" : "New"}Review</h1>
       <form onSubmit={handleSubmit}>
-  
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
         <button className="button">{params.id ? "Update" : "Create"}</button>
       </form>
