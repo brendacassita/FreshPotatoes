@@ -123,7 +123,7 @@ const PopularPotatoes = () => {
 
               <h6 className="release">
                 {" "}
-                release: {movie.release} runtime:{movie.runtime}
+                Release: {movie.release} Runtime: {movie.runtime} min
               </h6>
 
               <div className="story-line">
