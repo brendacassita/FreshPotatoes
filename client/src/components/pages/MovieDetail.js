@@ -264,20 +264,20 @@ const MovieDetail = () => {
         
         <div className="the-logos">
           <div className="logo1" >
-          <img  src={fry} width='70px'height='auto' />
+          <img  src={potatoe} width='140px'height='auto' />
           
           </div>
           
           <div className="logo2">
-          <img  src={potatoe} width='140px'height='auto' />
+          <img  src={fry} width='70px'height='auto' />
           
           
           </div>
         </div>
         
         <div className="Pre-post" >
-          <div className="POST"><h1>POST </h1></div>
-          <div className="POST"><h1>PRE </h1></div>
+          <div className="POST"><h1>Potatoes </h1></div>
+          <div className="POST"><h1>Fries </h1></div>
         </div>
         
         
