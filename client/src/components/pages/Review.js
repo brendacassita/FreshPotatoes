@@ -80,7 +80,11 @@ const Review = (props) => {
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <h1 style={{ color: '#EC4E20' }}>Leave a review</h1>
+      <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1>
+      <h4>
+        Your review helps others find great movies to watch. <br></br>
+        Please share what you liked or disliked.
+      </h4>
       <div className="reviewRating">
         <Rating
           icon={
@@ -129,7 +133,7 @@ const Review = (props) => {
         <br />
         <FormLabel>
           {" "}
-          <h3 style={{ color: '#868686' }}>Have you seen this movie?</h3>{" "}
+          <h3 style={{ color: "#868686" }}>Have you seen this movie?</h3>{" "}
         </FormLabel>
         <RadioGroup
           value={watched}
@@ -151,9 +155,7 @@ const Review = (props) => {
       <form onSubmit={handleSubmit}>
         <div>
           <textarea
-           name="review" 
-           required
-            // placeholder={"What do you think of the movie? (optional)"}
+            placeholder={"What did you think of the movie?"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
@@ -161,16 +163,18 @@ const Review = (props) => {
           ></textarea>
         </div>
 
-        <div style={{ display: 'flex', paddingTop: '10px', marginLeft: '375px'}}>
-        <Button
-          className="buttonlogin1 btnlogin"
-          variant="contained"
-          type="button"
-          onClick={handleSubmit}
-          disabled={loading}
+        <div
+          style={{ display: "flex", paddingTop: "10px", marginLeft: "375px" }}
         >
-          {loading ? "Loading..." : "Submit Review"}
-        </Button>
+          <Button
+            className="buttonlogin1 btnlogin"
+            variant="contained"
+            type="button"
+            onClick={handleSubmit}
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Submit Review"}
+          </Button>
         </div>
         {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
