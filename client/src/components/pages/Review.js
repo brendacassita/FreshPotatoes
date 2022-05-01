@@ -80,16 +80,16 @@ const Review = (props) => {
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <h1>Leave a review</h1>
+      <h1 style={{ color: '#EC4E20' }}>Leave a review</h1>
       <div className="reviewRating">
         <Rating
           icon={
             watched == "true" ? (
               <SvgFries
-                style={{ left: "100px", width: "70px", height: "70px" }}
+                style={{ left: "100px", width: "50px", height: "50px" }}
               />
             ) : (
-              <SvgPotato style={{ width: "70px", height: "70px" }} />
+              <SvgPotato style={{ width: "50px", height: "50px" }} />
             )
           }
           name="hover-feedback"
@@ -105,12 +105,12 @@ const Review = (props) => {
           emptyIcon={
             watched == "true" ? (
               <SvgFries
-                style={{ width: "70px", height: "70px", opacity: 0.55 }}
+                style={{ width: "50px", height: "50px", opacity: 0.55 }}
                 fontSize="inherit"
               />
             ) : (
               <SvgPotato
-                style={{ width: "70px", height: "70px", opacity: 0.55 }}
+                style={{ width: "50px", height: "50px", opacity: 0.55 }}
                 fontSize="inherit"
               />
             )
@@ -129,7 +129,7 @@ const Review = (props) => {
         <br />
         <FormLabel>
           {" "}
-          <h2>Have you seen this movie?</h2>{" "}
+          <h3 style={{ color: '#868686' }}>Have you seen this movie?</h3>{" "}
         </FormLabel>
         <RadioGroup
           value={watched}
@@ -157,10 +157,11 @@ const Review = (props) => {
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
-            rows="10"
+            rows="8"
           ></textarea>
         </div>
 
+        <div style={{ display: 'flex', paddingTop: '10px', marginLeft: '375px'}}>
         <Button
           className="buttonlogin1 btnlogin"
           variant="contained"
@@ -170,6 +171,7 @@ const Review = (props) => {
         >
           {loading ? "Loading..." : "Submit Review"}
         </Button>
+        </div>
         {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
 
