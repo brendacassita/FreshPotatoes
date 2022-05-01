@@ -238,8 +238,16 @@ const MovieDetail = () => {
               {/* <button className="movie-button" onClick={() => setShow(true)}>
                 Show Cast
               </button> */}
-              <button className="movie-button" onClick={() => setShow(false)}>
-                Hide Cast
+               
+              <button className="movie-button" type="button" onClick={() => setShow(!show)}>
+              {loading ? "Show Cast" : "Hide Cast"}
+           
+          
+             
+            
+  
+
+
               </button>
             </div>
           </div>
