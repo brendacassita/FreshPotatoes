@@ -28,7 +28,7 @@ const labels = {
 let timeout; 
 const Review = (props) => {
   const [allReviews, setAllReviews] = useState([]);
-  const [review, setReview] = useState();
+  const [review, setReview] = useState(null);
   const [value, setValue] = useState(null);
   const [hover, setHover] = useState(null);
   const params = useParams();

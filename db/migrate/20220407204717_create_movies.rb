@@ -7,6 +7,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.text :plot
       t.string :runtime
       t.integer :year
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end
