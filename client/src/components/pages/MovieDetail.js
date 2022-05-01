@@ -231,13 +231,13 @@ const MovieDetail = () => {
 
               <h4 className="Cast-name">Cast: {renderCast()}</h4>
 
-              {show ? (
+              {!show ? (
                 <h4 className="Cast-photo">{renderCastPictures()}</h4>
               ) : null}
 
-              <button className="movie-button" onClick={() => setShow(true)}>
+              {/* <button className="movie-button" onClick={() => setShow(true)}>
                 Show Cast
-              </button>
+              </button> */}
               <button className="movie-button" onClick={() => setShow(false)}>
                 Hide Cast
               </button>
@@ -249,13 +249,22 @@ const MovieDetail = () => {
               
               
             </div> */}
+   <div className="review-box2  review-item">
+            <div className="Big-Line">
+              <h1 className="Movie-Info">Leave Review</h1>
+              <div className="Theater-Icon">
+              <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
+              </div>
+            </div>
+            </div>
 
-        <div className="Big-Line">
+
+        {/* <div className="Big-Line">
           <h1 className="Movie-Info">Leave Review</h1>
           <div className="Theater-Icon">
             <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
           </div>
-        </div>
+        </div> */}
 
         <div className="movie-review">
           <Review movieId={movie.id} />
