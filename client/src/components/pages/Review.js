@@ -1,4 +1,4 @@
-import React, {  useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Box from "@mui/material/Box";
@@ -15,8 +15,6 @@ import {
 } from "@mui/material";
 import SvgPotato from "./SvgPotato";
 import SvgFries from "./SvgFries";
-import { DataContext} from "../../providers/DataProvider";
-
 
 const labels = {
   1: "Worst Movie Ever.",
@@ -28,16 +26,15 @@ const labels = {
 
 const Review = (props) => {
   const [allReviews, setAllReviews] = useState([]);
-  const [review, setReview] = useState();
+  const [review, setReview] = useState(null);
   const [value, setValue] = useState(null);
   const [hover, setHover] = useState(null);
   const params = useParams();
   const [watched, setWatched] = useState("false");
-  const {addPreReview, addPostReview} = useContext(DataContext)
-  
+  console.log(typeof watched)
 
  
-// check if doing watched or unwatched; conditional 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newReview = { comment: review, watched, rating: value, movie_id: props.movieId };
@@ -47,24 +44,22 @@ const Review = (props) => {
         `/api/movies/${props.movieId}/reviews`,
         newReview
       );
-    if(watched == "false" ){
-      addPreReview(newReview)
-    }else{
-      addPostReview(newReview)
-  }
+      setReview(res.data);
+      console.log(res.data);
+      console.log(watched);
     } catch (err) {
       alert("error occurred posting review");
     }
   };
-  // const getReviews = async () => {
-  //   try {
-  //     let res = await axios.get(`/api/movies/${params.id}/reviews`);
-  //     setAllReviews(res.data);
-  //     console.log(res.data);
-  //   } catch (err) {
-  //     alert("error in getting reviews");
-  //   }
-  // };
+  const getReviews = async () => {
+    try {
+      let res = await axios.get(`/api/movies/${params.id}/reviews`);
+      setAllReviews(res.data);
+      console.log(res.data);
+    } catch (err) {
+      alert("error in getting reviews");
+    }
+  };
   function getLabelText(value) {
     return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
   }
@@ -76,15 +71,15 @@ const Review = (props) => {
   // }
 
   return (
-    <div style={{backgroundColor:"white"}}>
+    <div>
       <h2>Leave a review</h2>
       <div className="reviewRating">
         <Rating
           icon={
             watched == "true" ? (
-              <SvgFries style={{ left: "100px", width: "100px", height: "120px" }} />
+              <SvgFries style={{ left: "10px", width: "120px", height: "120px" }} />
             ) : (
-              <SvgPotato style={{ width: "100px", height: "100px" }} />
+              <SvgPotato style={{ width: "120px", height: "120px" }} />
             )
           }
           name="hover-feedback"
@@ -99,11 +94,11 @@ const Review = (props) => {
           }}
           emptyIcon={ watched == "true" ? 
             <SvgFries
-              style={{ width: "100px", height: "100px", opacity: 0.55 }}
+              style={{ width: "120px", height: "120px", opacity: 0.55 }}
               fontSize="inherit"
             />:
             <SvgPotato
-            style={{ width: "100px", height: "100px", opacity: 0.55 }}
+              style={{ width: "120px", height: "120px", opacity: 0.55 }}
               fontSize="inherit"
             />
           }

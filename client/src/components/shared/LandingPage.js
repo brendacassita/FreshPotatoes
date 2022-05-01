@@ -67,7 +67,7 @@ const LandingPage = () => {
       </div>
 
       <p className="text-landing">
-        Exclusive reviews by movie lovers, like you.
+        Exclusive reviews by movie lovers.
       </p>
 
       <div className="btn-all">

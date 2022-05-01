@@ -176,9 +176,9 @@ const Navbar = () => {
     }
   };
 
-  // if (!auth.user){
-  //   return <p>no user</p>
-  // }
+  if (!auth.user){
+    return <p>no user</p>
+  }
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -197,7 +197,7 @@ const Navbar = () => {
           />
           <div>
 
-            {/* <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2> */}
+            <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2>
           </div>
 {renderRightNav()}
         </div>
