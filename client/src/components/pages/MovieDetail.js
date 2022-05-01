@@ -267,6 +267,7 @@ const MovieDetail = () => {
             <img src={potatoe} height="65px" width="auto" style={{ paddingRight: '15px' }}/>
             <h1>Potatoes </h1>
           </div>
+          
           <div className="POST" style={{ display: 'flex', flexDirection: 'row' }}>            
             <img src={fry} height="65px" width="auto" style={{ paddingRight: '15px' }}/>
             <h1>Fries </h1>

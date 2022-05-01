@@ -135,7 +135,6 @@ function EditProfile() {
           <h2 className="usernameedit">{user.name}</h2>
           <p className="useremailedit"> {user.email}</p>
 
-
           {/* <h5>Username: </h5><input value={username} onChange={(e)=> setUserName(e.target.value)} />  */}
           {/* to do have *name already exists pop up if there is already a name */}
           {/* <h6>*name already exists</h6>  */}
@@ -143,57 +142,65 @@ function EditProfile() {
             <div className="editalign">
               <h5 className="fullname">{t("profile:name")}</h5>
             </div>
-            <input
-              className="editbox"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+          
+            
+              <input
+                className="editbox"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
 
-            <div className="editalign">
-              <h5 className="fullname">{t("profile:email")}</h5>
-            </div>
-            <input
-              className="editbox"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+              <div className="editalign">
+                <h5 className="fullname">{t("profile:email")}</h5>
+              </div>
+              <input
+                className="editbox"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-            <div className="editalign">
-              <h5 className="fullname">{t("profile:password")}</h5>
-            </div>
-            <input
-              className="editbox"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="editalign">
-              <h5 className="fullname">{t("profile:phone")}</h5>
-            </div>
-            <input
-              className="editbox"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-
+              <div className="editalign">
+                <h5 className="fullname">{t("profile:password")}</h5>
+              </div>
+              <input
+                className="editbox"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div className="editalign">
+                <h5 className="fullname">{t("profile:phone")}</h5>
+              </div>
+              <input
+                className="editbox"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            
             <br />
             <br />
             {/* <MuiSnackbar /> */}
-            <Button
-              className="buttonlogin1 btnlogin"
-              variant="contained"
-              type="button"
-              onClick={handleSubmit}
-              disabled={loading}
+            <div
+              style={{
+                display: "flex",
+                paddingTop: "10px",
+                marginLeft: "375px",
+              }}
             >
-              {loading ? "Loading..." : "Update Profile"}
-            </Button>
-      
-      
-      {/* {
+              <Button
+                className="buttonlogin1 btnlogin"
+                variant="contained"
+                type="button"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? "Loading..." : "Update Profile"}
+              </Button>
+            </div>
+
+            {/* {
           success ? <FlashMessage message={message}/> : ''
       } */}
-        
 
             {/* BRENDA: here is the section I couldn't get the loading state from above to work */}
             {/* <button className="editprofilebtn" type="submit">
