@@ -183,7 +183,7 @@ width: 100%;
 .logolanding {
 position:absolute;
 width: 450px;
-margin: 50px;
+margin: 105px;
 -webkit-filter: drop-shadow(5px 5px 5px #222);
 z-index: 2;
 }
@@ -194,7 +194,7 @@ display: flex;
 justify-content: center;
 width: 300px;
 color: white;
-margin: 250px;
+margin: 296px;
 text-shadow: 2px 1px black;
 align-items: center;
 }
@@ -286,7 +286,7 @@ position: absolute;
 /* z-index: 1; */
 display: flex;
 justify-content: center;
-margin: 294px;
+margin: 341px;
 }
 
 

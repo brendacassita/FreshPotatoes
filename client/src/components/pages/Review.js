@@ -12,6 +12,7 @@ import {
   FormControlLabel,
   FormLabel,
   RadioGroup,
+  Button
 } from "@mui/material";
 import SvgPotato from "./SvgPotato";
 import SvgFries from "./SvgFries";
@@ -24,7 +25,7 @@ const labels = {
   4: "Awesome!",
   5: "Absolute must-see!",
 };
-
+let timeout; 
 const Review = (props) => {
   const [allReviews, setAllReviews] = useState([]);
   const [review, setReview] = useState();
@@ -33,10 +34,16 @@ const Review = (props) => {
   const params = useParams();
   const [watched, setWatched] = useState("false");
   const { addPreReview, addPostReview } = useContext(DataContext);
+  const [loading, setLoading] = useState();
 
   // check if doing watched or unwatched; conditional
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
     let newReview = {
       comment: review,
       watched,
@@ -58,33 +65,29 @@ const Review = (props) => {
       alert("error occurred posting review");
     }
   };
-  // const getReviews = async () => {
-  //   try {
-  //     let res = await axios.get(`/api/movies/${params.id}/reviews`);
-  //     setAllReviews(res.data);
-  //     console.log(res.data);
-  //   } catch (err) {
-  //     alert("error in getting reviews");
-  //   }
-  // };
+  
   function getLabelText(value) {
     return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
   }
 
-  // const renderReviews = () => {
-  //   return review.map(r => {
-  //         return <Review key={review.id} {...review} />
-  //   })
-  // }
+    useEffect(() => {
+      return () => {
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      };
+    }, []);
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <h2>Leave a review</h2>
+      <h1>Leave a review</h1>
       <div className="reviewRating">
         <Rating
           icon={
             watched == "true" ? (
-              <SvgFries style={{ left: "100px", width: "70px", height: "70px" }} />
+              <SvgFries
+                style={{ left: "100px", width: "70px", height: "70px" }}
+              />
             ) : (
               <SvgPotato style={{ width: "70px", height: "70px" }} />
             )
@@ -99,42 +102,57 @@ const Review = (props) => {
           onChangeActive={(event, newHover) => {
             setHover(newHover);
           }}
-          emptyIcon={ watched == "true" ? 
-            <SvgFries
-              style={{ width: "70px", height: "70px", opacity: 0.55 }}
-              fontSize="inherit"
-            />:
-            <SvgPotato
-            style={{ width: "70px", height: "70px", opacity: 0.55 }}
-              fontSize="inherit"
-            />
+          emptyIcon={
+            watched == "true" ? (
+              <SvgFries
+                style={{ width: "70px", height: "70px", opacity: 0.55 }}
+                fontSize="inherit"
+              />
+            ) : (
+              <SvgPotato
+                style={{ width: "70px", height: "70px", opacity: 0.55 }}
+                fontSize="inherit"
+              />
+            )
           }
         />
         {value !== null && (
           <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
         )}
       </div>
-      
+
       {/* sets the state so that prewatched is the default radio button value
         update the category when we select a different value
         use onchange to do this; use setCategory to update the state
         so set it to pre or post  */}
       <FormControl>
-        <br/>
-        <FormLabel>Have you seen this movie? </FormLabel>
+        <br />
+        <FormLabel>
+          {" "}
+          <h2>Have you seen this movie?</h2>{" "}
+        </FormLabel>
         <RadioGroup
           value={watched}
           onChange={(e) => setWatched(e.target.value)}
-          row
         >
-          <FormControlLabel value={false} control={<Radio />} label="No" />
-          <FormControlLabel value={true} control={<Radio />} label="Yes" />
+          <FormControlLabel
+            value={false}
+            control={<Radio />}
+            label="No, I've never seen this movie"
+          />
+          <FormControlLabel
+            value={true}
+            control={<Radio />}
+            label="Yes, I've seen it "
+          />
         </RadioGroup>
       </FormControl>
 
       <form onSubmit={handleSubmit}>
         <div>
           <textarea
+           name="review" 
+           required
             // placeholder={"What do you think of the movie? (optional)"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
@@ -142,10 +160,19 @@ const Review = (props) => {
             rows="10"
           ></textarea>
         </div>
-        <button className="editprofilebtn">Submit Review</button>
+
+        <Button
+          className="buttonlogin1 btnlogin"
+          variant="contained"
+          type="button"
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? "Loading..." : "Submit Review"}
+        </Button>
+        {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
 
-      
       {/* {allReviews.map((r)=> {
   console.log(allReviews)
   return(
@@ -155,8 +182,6 @@ const Review = (props) => {
   )
 })
 } */}
-
-      <div>{JSON.stringify(review)}</div>
     </div>
   );
 };
