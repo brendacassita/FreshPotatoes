@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "../../App.css";
 import { useParams } from "react-router-dom";
-import Potatoe from '../../Images/Potatoe.png'
-import Fry from '../../Images/FryLogo-06.png'
+import Potatoe from "../../Images/Potatoe.png";
+import Fry from "../../Images/FryLogo-06.png";
 
 const Ratings = () => {
   const [unwatched, setUnwatched] = useState({});
@@ -24,9 +24,9 @@ const Ratings = () => {
       console.log("Unwatched:", res.data);
     } catch (err) {
       alert("Error in getting unwatched reviews");
-      console.log(err)
+      console.log(err);
     }
-    return unwatched
+    return unwatched;
   };
 
   const getWatched = async () => {
@@ -37,15 +37,24 @@ const Ratings = () => {
     } catch (err) {
       alert("Error in getting watched reviews");
     }
-    return watched
+    return watched;
   };
 
   return (
     <div>
       <div>
-          <h2 className="logo-rate" style={{ background: "white", display: "flex", justifyContent: "center" }}> 
-          <img src={Potatoe} height={70}/>  {unwatched && unwatched.rating ? ` ${unwatched.rating}%` : 'No rating'}  <img src={Fry} height={70}/> {watched && watched.rating ? `${watched.rating}%` : 'No rating'}
-        </h2>
+        <h3
+          style={{
+            background: "white",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <img src={Potatoe} height={60} />{" "}
+          {unwatched && unwatched.rating ? `${unwatched.rating}%` : "No rating"}{" "}
+          <img src={Fry} height={60} />{" "}
+          {watched && watched.rating ? `${watched.rating}%` : "No rating"}
+        </h3>
       </div>
     </div>
   );

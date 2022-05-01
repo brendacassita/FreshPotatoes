@@ -21,7 +21,6 @@ const Home = () => {
     getMovies();
   }, []);
 
-
   const getMovies = async () => {
     //change the state when we start to load
     setLoading(true);

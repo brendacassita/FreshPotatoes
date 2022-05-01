@@ -1,5 +1,5 @@
-import {useTranslation} from 'react-i18next'
-import i18next from 'i18next'
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 import logo from "../../Images/Theotherlogo-01.png";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -18,26 +18,25 @@ import "../CssFIles/SearchBar.css";
 import bwPic from "../../Images/blackwhitePotatoe.png";
 import potatoe from "../../Images/Potatoe.png";
 
-
 const Navbar = () => {
-  let auth = useContext(AuthContext)
+  let auth = useContext(AuthContext);
   const [allMovies, setAllMovies] = useState([]);
   const { handleLogout, user } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [value, setValue] = useState(0);
-  const {i18n, t} = useTranslation(["common"])
+  const { i18n, t } = useTranslation(["common"]);
 
   useEffect(() => {
     getMoviesFromApi();
     if (localStorage.getItem("i18nextLng")?.length > 2) {
-			i18next.changeLanguage("en");
-		}
+      i18next.changeLanguage("en");
+    }
   }, []);
 
   const handleLanguageChange = (e) => {
-		i18n.changeLanguage(e.target.value);
-	};
+    i18n.changeLanguage(e.target.value);
+  };
 
   const getMoviesFromApi = async () => {
     try {
@@ -65,64 +64,66 @@ const Navbar = () => {
   };
   const renderRightNav = () => {
     if (user) {
-      return(<div className="logout">
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              // color="inherit"
-            >
-              {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
-              {/* <div className='avatar_circle' src={user }>
+      return (
+        <div className="logout">
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenu}
+            // color="inherit"
+          >
+            {/* <Avatar className="avatar_circle" src={user && user.avatar} /> */}
+            {/* <div className='avatar_circle' src={user }>
                   <img className='avatar_circle' src={potatoe} width='60px'></img>
                 </div> */}
-              {/* {!user.avatar &&
+            {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
-          <img className='avatar_circle' src={user && user.avatar ? user.avatar : bwPic} width='90px'></img>
-           <div className='name-nav'>
-              <p >{auth.user.name}</p>
-              </div>
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-            >
-              {/* DO NOT DELETE THESE */}
-              {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
+            <img
+              className="avatar_circle"
+              src={user && user.avatar ? user.avatar : bwPic}
+              width="90px"
+            ></img>
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            {/* DO NOT DELETE THESE */}
+            {/* <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/profile'>Profile</Link></MenuItem>
               <MenuItem onClick={handleMenuClose}><Link className='profilelink' to='/edit_profile'>Edit Profile</Link></MenuItem> */}
-              <MenuItem className="profilelink" onClick={handleMenuClose}>
-                <div className="">
-                  <Link className="profilelink" to="/profile">
+            <MenuItem className="profilelink" onClick={handleMenuClose}>
+              <div className="">
+                <Link className="profilelink" to="/profile">
                   {t("common:profile")}
-                  </Link>
-                  <Link className="profilelink" to="/edit_profile">
+                </Link>
+                <Link className="profilelink" to="/edit_profile">
                   {t("common:editprofile")}
-                  </Link>
-                  <Button
-                    className="btn2"
-                    variant="outlined"
-                    onClick={() => handleLogout()}
-                  >
+                </Link>
+                <Button
+                  className="btn2"
+                  variant="outlined"
+                  onClick={() => handleLogout()}
+                >
                   {t("common:logout")}
-
-                  </Button>
-                </div>
-              </MenuItem>
-            </Menu>
-          </div>)
+                </Button>
+              </div>
+            </MenuItem>
+          </Menu>
+        </div>
+      );
     }
     return (
       <>
@@ -149,8 +150,6 @@ const Navbar = () => {
           </Link>
           <Link className="btn1" to="/popular_fries">
             {t("common:popularfries")}
-          </Link>{" "}
-          <Link className="btn1" to="/reviews">Reviews
           </Link>{" "}
           {""}
           <Link className="btn1" to="/genres">
@@ -199,18 +198,15 @@ const Navbar = () => {
           </div>
         </Link>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            {renderLeft()}
-          </div>
+          <div>{renderLeft()}</div>
           <SearchBar
             className="searchfunction"
             placeholder="Search Movies..."
           />
           <div>
-           
             {/* <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2> */}
           </div>
-{renderRightNav()}
+          {renderRightNav()}
         </div>
       </Toolbar>
     </AppBar>

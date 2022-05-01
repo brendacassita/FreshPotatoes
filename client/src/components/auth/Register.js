@@ -12,8 +12,8 @@ let timeout;
 const Register = ()=>{
     const [email, setEmail] = useState('test1@test.com')
     const [password, setPassword] = useState('123456')
-  const [loading,setLoading] = useState(false);
-  const [name, setName] = useState()
+    const [loading,setLoading] = useState(false);
+    const [name, setName] = useState()
 
     // const [confirmPassword, setConfirmPassword] = useState('') // not need but nice for UX
 
@@ -40,17 +40,17 @@ const Register = ()=>{
   return (
       <div  className="logout-background " >
       <div className="logoutborder">
-        <h1 className="signup-title">Sign-up </h1>
+        <h1 className="signup-title">Sign-up for Fresh Potatoes </h1>
         <img className="p" src={fpf} width='300' />
         {/* <img className='signup-logo' src={logo} width='300'/> */}
         <div className="logincard">
           
         <form className="signup-form" onSubmit={handleSubmit}>
-          <p className='loginnames'>Name:</p>
+          <p className='loginnames'>Name</p>
           <input className="login-btn" value={name} onChange={(e)=> setName(e.target.value)}/>
-                <p className="loginnames">Email: </p>
+                <p className="loginnames">Email </p>
                 <input className="login-btn" value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                <p className="loginnames">Password: </p>
+                <p className="loginnames">Password </p>
           <input className="login-btn" value={password} type='password' onChange={(e) => setPassword(e.target.value)} />
           
           
@@ -60,7 +60,7 @@ const Register = ()=>{
                 <>
                   <div className="login-btns">
                
-                <p className="acnt">Already have an account?</p><Link href='/login'>LOGIN </Link>
+                <p className="acnt">Already have an account?</p><Link href='/login'>Login here</Link>
                 </div>
                 
                     {/* <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button> */}

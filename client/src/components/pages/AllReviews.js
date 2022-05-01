@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
@@ -5,6 +6,8 @@ import {AuthContext} from "../../providers/AuthProvider"
 import {useTranslation,} from 'react-i18next'
 import bwPic from '../../Images/blackwhitePotatoe.png'
 import fry from '../../Images/fryLogo.png'
+import { DataContext } from "../../providers/DataProvider";
+
 
 const AllReviews = (props) => {
   const [name,setName] = useState('')
@@ -12,39 +15,27 @@ const AllReviews = (props) => {
   const {user,setUser} = useContext(AuthContext)
   const {t} =  useTranslation(["common", "profile"])
   const [reviews, setReviews] = useState ([]); 
-  const [preReviews, setPreReviews] = useState ([])
-  const [postReviews, setPostReviews] = useState ([])
+  // const [preReviews, setPreReviews] = useState ([])
+  // const [postReviews, setPostReviews] = useState ([])
   
+
+
   const params = useParams();
+  const { preReviews, postReviews, getPostReviews, getPreReviews } =
+    useContext(DataContext);
+  
+  useEffect(() => {
+    getPreReviews(params.id);
+    getPostReviews(params.id);
+  }, []);
 
-useEffect(()=> {
-getPreReviews();
-getPostReviews();
+// useEffect(()=> {
+// getPreReviews();
+// getPostReviews();
 
-}, [])
+// }, [])
 
-const getPreReviews = async () => {
-  try {
 
-    let res = await axios.get(`/api/movies/${params.id}/reviews/pre`);
-    setPreReviews(res.data);
-   
-    console.log("pre: ", res.data);
-
-  } catch (err) {
-    alert("error in getting reviews");
-  }
-};
-
-const getPostReviews = async () => {
-  try {
-    let res = await axios.get(`/api/movies/${params.id}/reviews/post`);
-    setPostReviews(res.data);
-    console.log("post: " , res.data);
-  } catch (err) {
-    alert("error in getting reviews");
-  }
-};
 
 const renderPreReviews = () => {
   return preReviews.map((review) => (
@@ -83,9 +74,9 @@ const renderPostReviews = () => {
         </h5>
       
       </div>
-    </div>
-  ));
-};
+      </div>
+    ));
+  };
 
   return (
     <div className="movie-review2 ">
@@ -99,6 +90,5 @@ const renderPostReviews = () => {
     </div>
   );
 };
-  
-export default AllReviews; 
 
+export default AllReviews;

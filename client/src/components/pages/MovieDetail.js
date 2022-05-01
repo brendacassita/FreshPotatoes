@@ -6,7 +6,7 @@ import "../CssFIles/container.css";
 import { useParams } from "react-router-dom";
 import Ratings from "../shared/Ratings";
 import Review from "./Review";
-import AllReviews from "./AllReviews"
+import AllReviews from "./AllReviews";
 import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 import '../CssFIles/MovieDetail.css'
 import TheatersIcon from '@mui/icons-material/Theaters';
@@ -60,7 +60,10 @@ const MovieDetail = () => {
   const getCast = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
-      setCast(res.data.cast);
+      setCast(
+        res.data.cast.length >= 5 ? res.data.cast.slice(0, 5) : res.data.cast
+      );
+      console.log("5", res.data.cast.slice(0, 5));
       console.log("CAST:", res.data.cast);
     } catch (err) {
       alert("Error in getting cast");
@@ -117,16 +120,6 @@ const MovieDetail = () => {
   
   
 
-  // const getLimitedCast = cast => {
-  //   let cas = []
-  //   for (let i = 0; i < 5; i++) {
-  //     const item = cast[i]
-  //     cas.push(<li key={item.id}>{item.cast}</li>)
-  //     console.log("Limited Cast:", cas)
-  //   }
-  //   return cas
-  // }
-
   const getCrew = async () => {
     try {
       let res = await axios.get(`/api/movies/${params.id}/cast`);
@@ -175,9 +168,6 @@ const MovieDetail = () => {
     document.body.removeChild(e);
     setCopied(true);
   };
-  
-
- 
 
   if (!movie) {
     return <p>"Loading"</p>;
@@ -187,7 +177,7 @@ const MovieDetail = () => {
     if (loading) {
       return <p>"Loading"</p>;
     }
-    
+
     return (
       <div className="App--1">
         <div className="button-back" >
@@ -202,7 +192,9 @@ const MovieDetail = () => {
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             width={260}
           />
-          {trailer && trailer.key && <YouTube videoId={trailer.key} opts={opts} width={500} />}
+          {trailer && trailer.key && (
+            <YouTube videoId={trailer.key} opts={opts} width={500} />
+          )}
         </div>
         <div className="flex-box-container">
           <div className="movie-item Popular-MD1" >
