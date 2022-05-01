@@ -11,6 +11,8 @@ import defaultPotatoe from "../../Images/blackwhitePotatoe.png";
 import "../CssFIles/MovieDetail.css";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
+import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 import fry from "../../Images/fryLogo.png";
 import potatoe from "../../Images/Potatoe.png";
 
@@ -248,6 +250,13 @@ const MovieDetail = () => {
               
             </div> */}
 
+        <div className="Big-Line">
+          <h1 className="Movie-Info">Leave Review</h1>
+          <div className="Theater-Icon">
+            <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
+          </div>
+        </div>
+
         <div className="movie-review">
           <Review movieId={movie.id} />
         </div>
@@ -261,6 +270,13 @@ const MovieDetail = () => {
             <img src={fry} height="75px" width="auto" />
           </div>
         </div> */}
+
+        <div className="Big-Line">
+          <h1 className="Movie-Info">All Reviews</h1>
+          <div className="Theater-Icon">
+            <ReviewsIcon sx={{ fontSize: 40 }} />
+          </div>
+        </div>
 
         <div className="Pre-post">
           <div className="POST" style={{ display: 'flex', flexDirection: 'row' }}>
