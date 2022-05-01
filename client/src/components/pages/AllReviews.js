@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import { DataContext } from "../../providers/DataProvider";
 // use data provider to get the reviews; 
 const AllReviews = (props) => {
-  const [reviews, setReviews] = useState ([]); 
-
-  const params = useParams();
+const [reviews, setReviews] = useState ([]); 
+const params = useParams();
 const {preReviews, postReviews, getPostReviews, getPreReviews} = useContext(DataContext)
+
 useEffect(()=> {
 getPreReviews(params.id);
 getPostReviews(params.id);

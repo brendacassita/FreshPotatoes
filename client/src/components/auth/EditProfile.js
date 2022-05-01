@@ -2,13 +2,15 @@ import React,{useContext,useEffect,useState} from "react";
 import '../CssFIles/editProfile.css'
 import {useTranslation} from 'react-i18next'
 import Button from "@mui/material/Button";
-
 // Import React FilePond
 import { FilePond, registerPlugin } from "react-filepond";
 import { AuthContext } from "../../providers/AuthProvider";
-
+//import FlashMessage, { MuiSnackbar } from "../pages/FlashMessage";
 // Import FilePond styles
 import "filepond/dist/filepond.min.css";
+// import Snackbar from "@mui/material/Snackbar";
+// import Alert from "@mui/material/Alert"; 
+
 
 // Import the Image EXIF Orientation and Image Preview plugins
 // Note: These need to be installed separately
@@ -17,7 +19,6 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import bwPic from '../../Images/blackwhitePotatoe.png'
 
 // Register the plugins
@@ -33,11 +34,12 @@ function EditProfile() {
   const [username, setUserName] = useState(user.username)
   const {t} =  useTranslation(["profile", "common"])
   const [loading, setLoading] = useState(false);
-
+  // const [open, setOpen] = React.useState(true);
   const [showUpload, setShowUpload] = useState(false)
-
+  // const [success, setSuccess] = useState(false);
+  // const [message, setMessage] = useState('');
                                                                                                              
-
+  
   const upload = () =>{
     if(showUpload){
       return ////// ??????  how to return whole form upload box
@@ -45,58 +47,59 @@ function EditProfile() {
       return 
     }
   }
-
-
+  
   //   A file has been added or removed, receives a list of file items
   const handleUpdate = (files)=>{
-      setFiles(files)      
+    setFiles(files)      
   }
-
+  
   const handleImage = async (e)=>{
-      let data = new FormData()
-      data.append('fileYO', files[0].file)
-      data.append('name', name)
-     // axios call
-     try{
-        
-       let res = await axios.put('/api/update_image', data)
-       setUser(res.data)
-     } catch(err){
-         alert('error occured updating image')
-     }
-  }
-
-  const handleSubmit = async (e)=>{
-    e.preventDefault()
-         setLoading(true);
-
-         timeout = setTimeout(() => {
-           setLoading(false);
-         }, 1000);
-       
-   try{
-     let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
-    setUser(res.data)
-    
-   } catch(err){
-       alert('error occured updating user info')
-   } finally {
-     if(!files[0]){  
-       return 
-     }
-     handleImage()
-   }
-}
-
-useEffect(() => {
-  return () => {
-    if(timeout){
-        clearTimeout(timeout);
+    let data = new FormData()
+    data.append('fileYO', files[0].file)
+    data.append('name', name)
+    // axios call
+    try{
+      
+      let res = await axios.put('/api/update_image', data)
+      setUser(res.data)
+    } catch(err){
+      alert('error occured updating image')
     }
   }
-},[])
-
-
+  
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+    setLoading(true);
+    
+    timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    
+    try{
+      let res = await axios.put(`/api/users/${user.id}`, {name, email, phone, password, username})
+      setUser(res.data)
+      // setMessage(res.data)
+      // console.log(res.data)
+      // setSuccess(true)
+    } catch(err){
+      alert('error occured updating user info')
+    } finally {
+      if(!files[0]){  
+        return 
+      }
+      handleImage()
+    }
+    // setSuccess(false)
+  }
+  
+  useEffect(() => {
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  }, []);
+  
   return (
     <div className="Appnow">
       <div className="borderfresh">
@@ -132,7 +135,6 @@ useEffect(() => {
           <h2 className="usernameedit">{user.name}</h2>
           <p className="useremailedit"> {user.email}</p>
 
-          {/* <p>{JSON.stringify(user)}</p> */}
 
           {/* <h5>Username: </h5><input value={username} onChange={(e)=> setUserName(e.target.value)} />  */}
           {/* to do have *name already exists pop up if there is already a name */}
@@ -176,6 +178,7 @@ useEffect(() => {
 
             <br />
             <br />
+            {/* <MuiSnackbar /> */}
             <Button
               className="buttonlogin1 btnlogin"
               variant="contained"
@@ -185,6 +188,12 @@ useEffect(() => {
             >
               {loading ? "Loading..." : "Update Profile"}
             </Button>
+      
+      
+      {/* {
+          success ? <FlashMessage message={message}/> : ''
+      } */}
+        
 
             {/* BRENDA: here is the section I couldn't get the loading state from above to work */}
             {/* <button className="editprofilebtn" type="submit">

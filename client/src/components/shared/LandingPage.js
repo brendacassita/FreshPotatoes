@@ -71,9 +71,9 @@ const LandingPage = () => {
       </p>
 
       <div className="btn-all">
-        <Link className="landingbtn1" href="/login">
+        <Link className="landingbtn1" href="/register">
           {" "}
-          Sign in Fresh Potatoes
+         New Users: Get Started
         </Link>
 
         <div className="check-align">

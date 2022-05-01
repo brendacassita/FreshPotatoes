@@ -61,8 +61,8 @@ function App() {
                   <Route path="/privacy_policy" element={<PrivacyPolicy />} />
                   <Route path="/contact_us" element={<ContactForm />} />
                   <Route path="/movies/:id/reviews" element={<AllReviews />} />
+            <Route path="/" element={<LandingPage />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/" element={<LandingPage />} />
                   {/* <Route path='/home' element={<LandingPage />} /> */}
                   {/* protected in routes inside of here you need to logged in*/}
                   {/* else you go to login page*/}
@@ -82,7 +82,6 @@ function App() {
                     />
                     <Route path="/popular_fries" element={<PopularFries />} />
                     <Route path="/movies/:id" element={<MovieDetail />} />
-                    <Route path="/review" element={<Review />} />
                     <Route path="/genres/:id" element={<GenreShow />} />
                     <Route path="/movies/:id/edit" element={<MovieForm />} />
                     <Route path="/movies/new" element={<MovieForm />} />
