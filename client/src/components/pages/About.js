@@ -26,12 +26,15 @@ import LinkedIn from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import freshPF from "../../Images/FreshPotatoesFrylogo-01.png";
+import TheatersIcon from "@mui/icons-material/Theaters";
+import camera from "../../Images/camera.png"
+
 
 
 export default function MediaCard() {
   return (
     <div className="App1">
-      <img component="img" height="250" src={freshPF} alt="team" />
+      {/* <img component="img" height="250" src={freshPF} alt="team" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           The Freshest
@@ -67,13 +70,67 @@ export default function MediaCard() {
           />
         )}
       </CardContent>
-      <CardActions></CardActions>
+      <CardActions></CardActions> */}
 
-      <h1>The Fresh Potatoes Team!</h1>
+                {/* *****TESTING TEAM CARD - IDK HOW TO CHANGE THE BG****** */}
+      <h1> <img src={camera} width="3.5%"/>The Fresh Potatoes Team
+      <TheatersIcon sx={{ fontSize: 35 }} /> </h1>
+
+       {/* ------------------      team  -----------------*/}
+       <div className="the-team">
+        <div class="container">
+          <div className="card-wrapper">
+            <h1 className="name-team">The Freshest</h1>
+            <div className="card1 profile-two">
+              <div className="card-image profile-img--two">
+                <img src={freshPF} width="100%" alt="profile-two" />
+              </div>
+
+              <ul className="social-icons">
+                <li>
+                  <a href="https://github.com/brendacassita/FreshPotatoes">
+                    <GitHubIcon
+                      sx={{ fontSize: 40 }}
+                      className="fab Linked-in"
+                      width="200px"
+                    />
+                  </a>
+                </li>
+
+              
+
+                <li>
+                <a href="mailto:freshpotatoes@gmail.com">
+                    <AlternateEmailIcon
+                      sx={{ fontSize: 40 }}
+                      className="fab Linked-in"
+                      width="200px"
+                    />
+                  </a>
+                </li>
+               
+              </ul>
+
+              <div className="details jane">
+                <h2>
+                  Fresh Potatoes
+                  <br />
+                  <span className="job-title">freshpotatoes@gmail.com</span>
+                  <br />
+                </h2>
+              </div>
+            </div>
+          </div>
+          {/* <!-- END box wrapper --> */}
+        </div>
+        {/* <!-- END container --> */}
+
+
+
+
 
       {/* ------------------      JESSICA  -----------------*/}
-      <div className="the-team">
-        <div class="container">
+      <div class="container">
           <div className="card-wrapper">
             <h1 className="name-team">Jess</h1>
             <div className="card1 profile-two">
@@ -344,7 +401,7 @@ export default function MediaCard() {
             <h1 className="name-team">Katherine</h1>
             <div className="card1 profile-two">
               <div className="card-image profile-img--two">
-                <img src={Kat} width="100%" alt="profile-two" />
+                <img src={Kat} width="102%" height="100%" alt="profile-two" />
               </div>
 
               <ul className="social-icons">
@@ -403,5 +460,6 @@ export default function MediaCard() {
         {/* <!-- END container --> */}
       </div>
     </div>
+    
   );
 }
