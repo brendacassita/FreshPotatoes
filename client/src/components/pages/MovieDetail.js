@@ -94,7 +94,7 @@ const MovieDetail = () => {
       <div className="name-flex" key={`${cast.id}`}>
        
           {/* <h5>{cast.character}</h5> */}
-          <h5  >{cast.name},</h5>
+          <h5>{cast.name}, &nbsp;</h5>
         
         
       </div>
@@ -104,14 +104,22 @@ const MovieDetail = () => {
   const renderCastPictures = () => {
     return cast.map((cast) => (
       <div className="photo-flex" key={`${cast.id}`}>
-       
-        <h5>{cast.character}</h5>
-         <img className="photo-round"
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ padding: '5px' }}>
+           <img className="photo-round"
             src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
             onError={(event) => (event.target.style.display = "none")}
             width={100}
            />
+          </div>
+          <div>
+            <h5>{cast.name}
+            <br/>
+            <div style={{ color: '#868686' }}>as {cast.character}</div></h5>
+            {/* <h6>as {cast.character}</h6> */}
+          </div>
           {/* <h5  >{cast.name},</h5> */}
+        </div>
         
         
       </div>
