@@ -158,22 +158,28 @@ const Navbar = () => {
           <Link className="btn1" to="/SearchResults">
             {t("common:search")}
           </Link>
-          <div className="language">
-            <div className="">
-              <ul className="">
-                <div className="">
-                  <select
-                    className="Language-drop"
-                    value={localStorage.getItem("i18nextLng")}
-                    onChange={handleLanguageChange}
-                  >
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="es">Español</option>
-                  </select>
-                </div>
-              </ul>
-            </div>
+     <Link className="btn1" to="/About">
+          {t("common:About")}
+          </Link>
+          
+          
+          <div className='language'>
+			<div className="">
+				<ul className="">
+					<div className="">
+						<select
+							className="Language-drop"
+							value={localStorage.getItem("i18nextLng")}
+							onChange={handleLanguageChange}
+						>
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="es">Español</option>
+						</select>
+					</div>
+				
+				</ul>
+          </div>
           </div>
         </div>
       );

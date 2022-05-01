@@ -93,6 +93,13 @@ const SearchResults = () => {
       alert("Error in getting watched reviews");
     }
   };
+  
+  
+  
+  
+  
+  
+  
 
   return (
     <div className="App1">

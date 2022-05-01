@@ -48,8 +48,9 @@ margin: 2px;
 margin:80px 10px;
 }
 .avatar_circle {
+
 width: auto!important;
-height: 70px!important;
+height: 50px!important;
 margin: -8px 20px  ;
 border-radius: 30px;
 /* filter: grayscale(100%); */
@@ -118,4 +119,13 @@ color: white;
     align-items: baseline;
     bottom: -19px;
     position: relative;
+}
+.name-nav {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    color: white;
+    font-size: 15px;
+    bottom: -34px;
+    left: -73px;
 }
