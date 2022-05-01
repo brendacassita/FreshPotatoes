@@ -1,158 +1,159 @@
-
-import React from 'react'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import '../CssFIles/card.css'
-import '../CssFIles/Popular.css';
-import {useTranslation} from 'react-i18next'
-import i18next from 'i18next'
-import potatoe from '../../Images/Potatoe.png'
+import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../CssFIles/card.css";
+import "../CssFIles/Popular.css";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import potatoe from "../../Images/Potatoe.png";
 
 const PopularPotatoes = () => {
-  const [top10, setTop10] = useState([])
-  const [per, setPer] = useState(10)
-  const [count, setCount] = useState(1)
-  const [casts, setCasts] = useState([])
-  const [movies, setMovies] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const {i18n, t} = useTranslation(["common"],{ useSuspense: false })
-
-
+  const [top10, setTop10] = useState([]);
+  const [per, setPer] = useState(10);
+  const [count, setCount] = useState(1);
+  const [casts, setCasts] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { i18n, t } = useTranslation(["common"], { useSuspense: false });
 
   useEffect(() => {
-    getTop10()
-    console.log('in useeffect')
-  }, [])
+    getTop10();
+    console.log("in useeffect");
+  }, []);
 
   const getPopular = async (data, page) => {
-    const movieInfo = await Promise.all(data.map(async(movie, ind)=> {
-      let res = await axios.get(`/api/movies/${movie.movie_id}`)
-      const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`
-      const id = res.data.id
-      const name = res.data.title
-      const release = res.data.release_date
-      const runtime = res.data.runtime
-      const plot = res.data.overview
-      const index = ind+((page-1)*10+1)
-      return {poster, id, name, release, runtime, plot, unwatched_rating:movie.unwatched_rating, index}
-    }))
-    return movieInfo
-  }
+    const movieInfo = await Promise.all(
+      data.map(async (movie, ind) => {
+        let res = await axios.get(`/api/movies/${movie.movie_id}`);
+        const poster = `https://image.tmdb.org/t/p/w500${res.data.poster_path}`;
+        const id = res.data.id;
+        const name = res.data.title;
+        const release = res.data.release_date;
+        const runtime = res.data.runtime;
+        const plot = res.data.overview;
+        const index = ind + ((page - 1) * 10 + 1);
+        return {
+          poster,
+          id,
+          name,
+          release,
+          runtime,
+          plot,
+          unwatched_rating: movie.unwatched_rating,
+          index,
+        };
+      })
+    );
+    return movieInfo;
+  };
 
   const getTop10 = async () => {
     try {
-      let res = await axios.get('/api/pagetoppotatoes/?per=10')
-      const mov = await getPopular(res.data.movie, 1)
-      setPer(res.data.per)
-      setCount(res.data.count)
-      setTop10(mov)
+      let res = await axios.get("/api/pagetoppotatoes/?per=10");
+      const mov = await getPopular(res.data.movie, 1);
+      setPer(res.data.per);
+      setCount(res.data.count);
+      setTop10(mov);
       // console.log(res)
       // console.log(mov)
     } catch (err) {
-      alert('error in getting top 10 movies')
+      alert("error in getting top 10 movies");
     }
-  }
+  };
 
   const getMoreThanTop10 = async (page) => {
     try {
-      let res = await axios.get(`/api/pagetoppotatoes/?page=${page}`)
-      const mov = await getPopular(res.data.movie, page)
-      setCurrentPage(page)
-      setTop10(mov)
+      let res = await axios.get(`/api/pagetoppotatoes/?page=${page}`);
+      const mov = await getPopular(res.data.movie, page);
+      setCurrentPage(page);
+      setTop10(mov);
     } catch (err) {
-      alert('error in getting more top movies')
+      alert("error in getting more top movies");
     }
-  }
+  };
 
   const renderButtons = () => {
-    const numPage = Math.ceil(count / per)
-    console.log(numPage)
-    const buttonArr = []
+    const numPage = Math.ceil(count / per);
+    console.log(numPage);
+    const buttonArr = [];
     for (let i = 1; i <= numPage; i++) {
-      buttonArr.push(<button key={i} className='pagebutton' onClick={() => { getMoreThanTop10(i) }}>{i}</button>)
+      buttonArr.push(
+        <button
+          key={i}
+          className="pagebutton"
+          onClick={() => {
+            getMoreThanTop10(i);
+          }}
+        >
+          {i}
+        </button>
+      );
     }
-    return buttonArr
-  }
+    return buttonArr;
+  };
 
   const renderMovies = () => {
-    
     return top10.map((movie) => (
-      <div key={movie.id} >
-        
-        
-          
-          
-           
-       <div className='movie-details'>
-          <li className='Popular-P'>
-            <h2 className='order'>#{movie.index}</h2>
-            
-            <div className="cards "> 
-            <Link to={`/movies/${movie.id}`}>
-              <figure className="card ">
-                <img className='Top-10' src={movie.poster} />
+      <div key={movie.id}>
+        <div className="movie-details">
+          <li className="Popular-P">
+            <h2 className="order">#{movie.index}</h2>
+
+            <div className="cards ">
+              <Link to={`/movies/${movie.id}`}>
+                <figure className="card ">
+                  <img className="Top-10" src={movie.poster} />
                 </figure>
               </Link>
-              </div>
-              
-              
-            <div className='potatoe-rating'>
-            <img src={potatoe} width='50px' />
-            <div className='rating-number'>
+            </div>
+
+            <div className="potatoe-rating">
+              <img src={potatoe} width="50px" />
+              <div className="rating-number">
                 <h5>pre-rating: </h5>
-              <h3 className='pop-percent'>{movie.unwatched_rating}%</h3> 
+                <h3 className="pop-percent">{movie.unwatched_rating}%</h3>
               </div>
+            </div>
+
+            <div className="movie-details" key={movie.id}>
+              <div className="">
+                <h2 className="movie-title">{movie.name} </h2>
               </div>
-          
-          <div className='movie-details' key={movie.id}>
-           <div className=''>
-          <h2 className='movie-title'>{movie.name} </h2>
-           </div>
-             
-              <h6 className='release'>
+
+              <h6 className="release">
                 {" "}
                 release: {movie.release} runtime:{movie.runtime}
               </h6>
-             
 
-              <div className='story-line'>
-                <h4 className='story-title'>Story Line</h4>
+              <div className="story-line">
+                <h4 className="story-title">Story Line</h4>
                 <p className="information">{movie.plot}</p>
               </div>
-            
-            
             </div>
-          
-          <br />
+
+            <br />
           </li>
-          </div>
-         
+        </div>
       </div>
-
-    ))
-  }
-
+    ));
+  };
 
   return (
-    <div className='App1'>
-      
-       <div className='searchall' >
-      <div className='sline' ></div>
-          <div className='titlename'></div>
-      <h1 className='searchall2' >{t("common:popularpotatoes")}</h1>
-      <div className='bline' ></div>
+    <div className="App1">
+      <div className="searchall">
+        <div className="sline"></div>
+        <div className="titlename"></div>
+        <h1 className="searchall2">{t("common:popularpotatoes")}</h1>
+        <div className="bline"></div>
       </div>
-      <p className='miniwording'>* {t("common:5minpotatoes")}</p>
+      <p className="miniwording">* {t("common:5minpotatoes")}</p>
       <hr />
-      
-      <br />
-      
-     
-     {renderMovies()}
 
-      
-      
+      <br />
+
+      {renderMovies()}
+
       <div>{renderButtons()}</div>
 
       {casts.map((cast) => {
@@ -160,15 +161,17 @@ const PopularPotatoes = () => {
         return (
           <div key={cast.id}>
             <img src={cast.headshot} width={100} />
-            <p><b>{cast.title}</b></p>
-            <p><i>{cast.name}</i></p>
+            <p>
+              <b>{cast.title}</b>
+            </p>
+            <p>
+              <i>{cast.name}</i>
+            </p>
           </div>
         );
       })}
-
     </div>
   );
-}
+};
 
-
-export default PopularPotatoes
+export default PopularPotatoes;

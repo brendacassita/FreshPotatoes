@@ -1,4 +1,4 @@
-import React, {  useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Box from "@mui/material/Box";
@@ -15,8 +15,7 @@ import {
 } from "@mui/material";
 import SvgPotato from "./SvgPotato";
 import SvgFries from "./SvgFries";
-import { DataContext} from "../../providers/DataProvider";
-
+import { DataContext } from "../../providers/DataProvider";
 
 const labels = {
   1: "Worst Movie Ever.",
@@ -33,25 +32,28 @@ const Review = (props) => {
   const [hover, setHover] = useState(null);
   const params = useParams();
   const [watched, setWatched] = useState("false");
-  const {addPreReview, addPostReview} = useContext(DataContext)
-  
+  const { addPreReview, addPostReview } = useContext(DataContext);
 
- 
-// check if doing watched or unwatched; conditional 
+  // check if doing watched or unwatched; conditional
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let newReview = { comment: review, watched, rating: value, movie_id: props.movieId };
+    let newReview = {
+      comment: review,
+      watched,
+      rating: value,
+      movie_id: props.movieId,
+    };
 
     try {
       let res = await axios.post(
         `/api/movies/${props.movieId}/reviews`,
         newReview
       );
-    if(watched == "false" ){
-      addPreReview(newReview)
-    }else{
-      addPostReview(newReview)
-  }
+      if (watched == "false") {
+        addPreReview(newReview);
+      } else {
+        addPostReview(newReview);
+      }
     } catch (err) {
       alert("error occurred posting review");
     }
@@ -76,15 +78,15 @@ const Review = (props) => {
   // }
 
   return (
-    <div style={{backgroundColor:"white"}}>
+    <div style={{ backgroundColor: "white" }}>
       <h2>Leave a review</h2>
       <div className="reviewRating">
         <Rating
           icon={
             watched == "true" ? (
-              <SvgFries style={{ left: "100px", width: "100px", height: "120px" }} />
+              <SvgFries style={{ left: "100px", width: "70px", height: "70px" }} />
             ) : (
-              <SvgPotato style={{ width: "100px", height: "100px" }} />
+              <SvgPotato style={{ width: "70px", height: "70px" }} />
             )
           }
           name="hover-feedback"
@@ -99,11 +101,11 @@ const Review = (props) => {
           }}
           emptyIcon={ watched == "true" ? 
             <SvgFries
-              style={{ width: "100px", height: "100px", opacity: 0.55 }}
+              style={{ width: "70px", height: "70px", opacity: 0.55 }}
               fontSize="inherit"
             />:
             <SvgPotato
-            style={{ width: "100px", height: "100px", opacity: 0.55 }}
+            style={{ width: "70px", height: "70px", opacity: 0.55 }}
               fontSize="inherit"
             />
           }
@@ -112,20 +114,21 @@ const Review = (props) => {
           <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
         )}
       </div>
-      <hr></hr>
+      
       {/* sets the state so that prewatched is the default radio button value
         update the category when we select a different value
         use onchange to do this; use setCategory to update the state
         so set it to pre or post  */}
       <FormControl>
+        <br/>
         <FormLabel>Have you seen this movie? </FormLabel>
         <RadioGroup
           value={watched}
           onChange={(e) => setWatched(e.target.value)}
           row
         >
-          <FormControlLabel value= {false} control={<Radio />} label="No" />
-          <FormControlLabel value= {true} control={<Radio />} label="Yes" />
+          <FormControlLabel value={false} control={<Radio />} label="No" />
+          <FormControlLabel value={true} control={<Radio />} label="Yes" />
         </RadioGroup>
       </FormControl>
 
@@ -135,14 +138,14 @@ const Review = (props) => {
             // placeholder={"What do you think of the movie? (optional)"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
-            cols="75"
-            rows="15"
+            cols="55"
+            rows="10"
           ></textarea>
         </div>
         <button className="editprofilebtn">Submit Review</button>
       </form>
 
-      <hr></hr>
+      
       {/* {allReviews.map((r)=> {
   console.log(allReviews)
   return(
