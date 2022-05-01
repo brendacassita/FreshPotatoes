@@ -27,7 +27,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import freshPF from "../../Images/FreshPotatoesFrylogo-01.png";
 import TheatersIcon from "@mui/icons-material/Theaters";
-import camera from "../../Images/camera.png"
+import camera from "../CssFIles/images/camera.png";
+import clapper from "../CssFIles/images/clapper.png";
+
+// import clapper from "../../Images/clapper.png";
+
 
 
 
@@ -73,8 +77,12 @@ export default function MediaCard() {
       <CardActions></CardActions> */}
 
                 {/* *****TESTING TEAM CARD - IDK HOW TO CHANGE THE BG****** */}
-      <h1> <img src={camera} width="3.5%"/>The Fresh Potatoes Team
-      <TheatersIcon sx={{ fontSize: 35 }} /> </h1>
+      <h1> <img src={clapper} width="3.5%"/>The Fresh Potatoes Team
+      <img src={camera} width="3.5%"/>
+      <TheatersIcon sx={{ fontSize: 30 }} />
+
+      {/* <img src={clapper}width="3.5%"/> */}
+    </h1>
 
        {/* ------------------      team  -----------------*/}
        <div className="the-team">
