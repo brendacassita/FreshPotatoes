@@ -204,12 +204,7 @@ const Navbar = () => {
             placeholder="Search Movies..."
           />
           <div>
-<<<<<<< HEAD
-
-            <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2>
-=======
             {/* <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2> */}
->>>>>>> e0b3bb98e3532acbb162f2e0914f6f264d51af52
           </div>
           {renderRightNav()}
         </div>
