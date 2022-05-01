@@ -230,7 +230,7 @@ display: flex;
 }
 .Review-box1 {
 width: auto;
-margin: 10px;
+margin-right: 50px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -296,8 +296,8 @@ margin-left: 10px;
 }
 .bubble {
   position: relative;
-  font-family: sans-serif;
-  font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
   line-height: 20px;
   width: 200px;
   background: #EC4E20;
@@ -323,7 +323,6 @@ margin-left: 10px;
 }
 .Pre-post {
 display: flex;
-background-color: #f9f8fa;
 justify-content: space-between;
     justify-content: space-around;
 }

@@ -40,12 +40,10 @@ const AllReviews = (props) => {
 const renderPreReviews = () => {
   return preReviews.map((review) => (
     <div className="flex-box-container1">
-      <div className="Review-box1" >
-        
-        {!review.avatar ? <img src={bwPic} width='50px' /> : <img className="user-photo-review" src={review.avatar} width='50px' />}
-        
-        <h4>{review.username}</h4>
-        <h5 className="red-text" >Rating: {review.rating}</h5>
+      <div className="Review-box1" style={{ paddingBottom: '15px' }}>
+        {!review.avatar ? <img src={bwPic} width='75px' /> : <img className="user-photo-review" src={review.avatar} width='75px' style={{ marginBottom: '-15px', marginTop: '30px'}} />}
+        <h5 style={{ marginBottom: '-20px'}}>{review.username}</h5>
+        <h4 className="red-text" >Rating: {review.rating}</h4>
       </div>
       <div className="bubble bubble-bottom-left" >
       <h5>{review.comment} </h5>
@@ -58,12 +56,10 @@ const renderPreReviews = () => {
 const renderPostReviews = () => {
   return postReviews.map((review) => (
     <div className="flex-box-container1 ">
-      
-      <div className="Review-box1 " >
-      {!review.avatar ? <img  src={bwPic} width='50px'/> :<img className="user-photo-review" src={review.avatar}width='50px'/> }
-        
-        <h4>{review.username}</h4>
-        <h5 className="red-text">Rating: {review.rating}</h5>
+      <div className="Review-box1 " style={{ paddingBottom: '15px' }}>
+      {!review.avatar ? <img  src={bwPic} width='75px'/> :<img className="user-photo-review" src={review.avatar}width='75px' style={{ marginBottom: '-15px', marginTop: '30px'}} /> }
+        <h5 style={{ marginBottom: '-20px'}}>{review.username}</h5>
+        <h4 className="red-text">Rating: {review.rating}</h4>
       
       </div>
       

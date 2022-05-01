@@ -80,16 +80,20 @@ const Review = (props) => {
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <h1>Leave a review</h1>
+      {/* <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1> */}
+      <h4>
+        Your review helps others find great movies to watch. <br></br>
+        Please share what you liked or disliked.
+      </h4>
       <div className="reviewRating">
         <Rating
           icon={
             watched == "true" ? (
               <SvgFries
-                style={{ left: "100px", width: "70px", height: "70px" }}
+                style={{ left: "100px", width: "50px", height: "50px" }}
               />
             ) : (
-              <SvgPotato style={{ width: "70px", height: "70px" }} />
+              <SvgPotato style={{ width: "50px", height: "50px" }} />
             )
           }
           name="hover-feedback"
@@ -105,12 +109,12 @@ const Review = (props) => {
           emptyIcon={
             watched == "true" ? (
               <SvgFries
-                style={{ width: "70px", height: "70px", opacity: 0.55 }}
+                style={{ width: "50px", height: "50px", opacity: 0.55 }}
                 fontSize="inherit"
               />
             ) : (
               <SvgPotato
-                style={{ width: "70px", height: "70px", opacity: 0.55 }}
+                style={{ width: "50px", height: "50px", opacity: 0.55 }}
                 fontSize="inherit"
               />
             )
@@ -129,7 +133,7 @@ const Review = (props) => {
         <br />
         <FormLabel>
           {" "}
-          <h2>Have you seen this movie?</h2>{" "}
+          <h3 style={{ color: "#868686" }}>Have you seen this movie?</h3>{" "}
         </FormLabel>
         <RadioGroup
           value={watched}
@@ -151,25 +155,27 @@ const Review = (props) => {
       <form onSubmit={handleSubmit}>
         <div>
           <textarea
-           name="review" 
-           required
-            // placeholder={"What do you think of the movie? (optional)"}
+            placeholder={"What did you think of the movie?"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
-            rows="10"
+            rows="8"
           ></textarea>
         </div>
 
-        <Button
-          className="buttonlogin1 btnlogin"
-          variant="contained"
-          type="button"
-          onClick={handleSubmit}
-          disabled={loading}
+        <div
+          style={{ display: "flex", paddingTop: "10px", marginLeft: "375px" }}
         >
-          {loading ? "Loading..." : "Submit Review"}
-        </Button>
+          <Button
+            className="buttonlogin1 btnlogin"
+            variant="contained"
+            type="button"
+            onClick={handleSubmit}
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Submit Review"}
+          </Button>
+        </div>
         {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
 
