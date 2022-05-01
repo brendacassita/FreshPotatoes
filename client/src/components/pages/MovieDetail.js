@@ -240,7 +240,7 @@ const MovieDetail = () => {
               </button> */}
                
               <button className="movie-button" type="button" onClick={() => setShow(!show)}>
-              {loading ? "Show Cast" : "Hide Cast"}
+              {!show ? "Hide Cast" : "Show Cast"}
            
           
              
