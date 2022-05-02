@@ -87,9 +87,10 @@ const Review = (props) => {
         Please share what you liked or disliked.
       </h4> */}
       <h3>Give it a rating, and then submit a review below!</h3>
-      <h5>
-        <Link to="/freshmeter">How do ratings work?</Link>
-      </h5>
+
+      <p><Link to="/freshmeter"><b style={{ color: "#ec4e20" }}>How do ratings work?</b></Link></p><br/>
+
+
       <div className="reviewRating">
         <Rating
           icon={
@@ -158,9 +159,13 @@ const Review = (props) => {
       <form onSubmit={handleSubmit}>
         <div>
           <textarea
+
+         
+
             placeholder={
               "Your review helps others find great movies to watch. Please share what you liked or disliked."
             }
+
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
@@ -186,6 +191,7 @@ const Review = (props) => {
           >
             {loading ? "Loading..." : "Submit Review"}
           </Button>
+
         </div>
         {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
