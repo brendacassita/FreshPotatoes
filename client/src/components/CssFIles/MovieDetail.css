@@ -377,3 +377,32 @@ position: relative;
     text-align: end;
     padding-right: 44px;
 }
+.movie-item1 {
+    /* width: 200px; */
+    margin-right: 50px;
+    margin-left: 50px;
+    /* border: 3px solid black; */
+    /* text-align: center; */
+    /* width: 365px; */
+    margin-right: 50px;
+    margin-left: 50px;
+    justify-content: center;
+    display: flex;
+}
+.Movie-Info1 {
+    background-color: #efefef;
+    display: flex;
+    width: 327px;
+    margin: 9px;
+    position: relative;
+    justify-content: center;
+    top: -9px;
+}
+.Theater-Icon1 {
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    top: -57px;
+    left: 29px;
+}
