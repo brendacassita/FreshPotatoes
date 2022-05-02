@@ -105,3 +105,10 @@ width: 100%;
 height:auto;
 
 }
+.homeGenre1 {
+display: flex;
+    position: relative;
+    width: 974px;
+    height: 400px;
+    overflow: scroll;
+}
