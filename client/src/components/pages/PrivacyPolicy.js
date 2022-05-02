@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
         policies and practices, please do not use our Services. If you still
         have any questions or concerns, please{" "}
         <Link to="/contact_us">
-          <b style={{ color: "red" }}>contact us</b>.
+          <b style={{ color: "#EC4E20" }}>contact us</b>.
         </Link>
       </p>
 
@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
           </b>
           {/* ,but you can find out more details about any of these topics by clicking the link following 
           each key point or by using our table of contents below to find the section you are looking for. 
-          You can also click <b style={{color:'red'}}>here</b> 
+          You can also click <b style={{color:'#EC4E20'}}>here</b> 
           to go directly to our table of contents.</i></b> */}
         </p>
 
@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
           or navigate our Services, we may process personal information
           depending on hwo you interact with Fresh Potatoes and the Services,
           the choices you make, and the products and features you use.
-          {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
+          {/* Click <b style={{color:'#EC4E20'}}>here</b> to learn more. */}
         </p>
 
         <p>
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
           also process your information for other purposes with your consent. We
           process your information only when we have a valid legal reason to do
           so.
-          {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
+          {/* Click <b style={{color:'#EC4E20'}}>here</b> to learn more. */}
         </p>
 
         <p>
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
           </b>{" "}
           We may share information in specific situations and with specific
           third parties.
-          {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
+          {/* Click <b style={{color:'#EC4E20'}}>here</b> to learn more. */}
         </p>
 
         <p>
@@ -95,21 +95,21 @@ const PrivacyPolicy = () => {
           cyber-criminals, or other unauthorized third parties will not be able
           to defeat our security and improperly collect, access, steal, or
           modify your information.
-          {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
+          {/* Click <b style={{color:'#EC4E20'}}>here</b> to learn more. */}
         </p>
 
         <p>
           <b>What are your rights?</b> Depending on where you are located
           geographically, the applicable privacy law may mean you have certain
           rights regarding your personal information.
-          {/* Click <b style={{color:'red'}}>here</b> to learn more. */}
+          {/* Click <b style={{color:'#EC4E20'}}>here</b> to learn more. */}
         </p>
 
         <p>
           <b>How do I exercise my rights?</b> The easiest way to exercise your
           rights is by{" "}
           <Link to="/contact_us">
-            <b style={{ color: "red" }}>contacting us</b>.
+            <b style={{ color: "#EC4E20" }}>contacting us</b>.
           </Link>{" "}
           We will consider and act upon any request in accordance with
           applicable data protection laws.
@@ -118,14 +118,14 @@ const PrivacyPolicy = () => {
         <p>
           Want to learn more about what Fresh Potatoes does with any information
           we collect?
-          {/* Click <b style={{color:'red'}}>here</b> to review the notice in full */}
+          {/* Click <b style={{color:'#EC4E20'}}>here</b> to review the notice in full */}
         </p>
       </p>
 
       <h3 id="table_of_contents">TABLE OF CONTENTS</h3>
       <p>
         <ol>
-          <b style={{ color: "red" }}>
+          <b style={{ color: "#EC4E20" }}>
             <li>WHAT INFORMATION DO WE COLLECT?</li>
             <li>HOW DO WE PROCESS YOUR INFORMATION?</li>
             <li>WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</li>
@@ -161,7 +161,7 @@ const PrivacyPolicy = () => {
           information about us or our products and Services, when you
           participate in activities on the Services, or otherwise when you{" "}
           <Link to="/contact_us">
-            <b style={{ color: "red" }}>contact us</b>.
+            <b style={{ color: "#EC4E20" }}>contact us</b>.
           </Link>
         </p>
 
@@ -331,7 +331,7 @@ const PrivacyPolicy = () => {
           the applicable law, you have the right to withdraw your consent at any
           time. You can withdraw your consent at any time by{" "}
           <Link to="/contact_us">
-            <b style={{ color: "red" }}>contacting us</b>.
+            <b style={{ color: "#EC4E20" }}>contacting us</b>.
           </Link>
         </p>
 
@@ -411,7 +411,7 @@ const PrivacyPolicy = () => {
       <p>
         If you have questions or comments about this notice, you may{" "}
         <Link to="/contact_us">
-          <b style={{ color: "red" }}>contact us</b>.
+          <b style={{ color: "#EC4E20" }}>contact us</b>.
         </Link>
       </p>
 
@@ -425,7 +425,7 @@ const PrivacyPolicy = () => {
         that information, or delete it in some circumstances. To request to
         review, update, or delete your personal information, please{" "}
         <Link to="/contact_us">
-          <b style={{ color: "red" }}>contact us</b>
+          <b style={{ color: "#EC4E20" }}>contact us</b>
         </Link>
         .
       </p>
