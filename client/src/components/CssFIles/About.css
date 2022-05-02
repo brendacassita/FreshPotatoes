@@ -185,6 +185,7 @@ transform: perspective(600px) rotateY(0deg);
   width: 300px;
   height: 400px;
   position: relative;
+  flex-basis: 33%; 
 }
 
 .card1 {
