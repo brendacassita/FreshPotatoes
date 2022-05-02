@@ -209,7 +209,7 @@ function EditProfile() {
             <input
               className="editbox"
               name="phone"
-              error={phoneHelper.length !== 0}
+              // error={phoneHelper.length !== 0}
               helperText={phoneHelper}
               id="phone"
               value={phone}
