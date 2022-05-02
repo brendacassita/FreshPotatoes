@@ -83,7 +83,7 @@ const Review = (props) => {
       {/* <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1> */}
       <h4>
         Your review helps others find great movies to watch. <br></br>
-        Please share what you liked or disliked.
+        Please share what you liked or disliked. <br/>First select a rating and then submit a review below!
       </h4>
       <div className="reviewRating">
         <Rating

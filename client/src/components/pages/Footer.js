@@ -38,6 +38,11 @@ const Footer = () => {
                   {t("common:privacypolicy")}
                 </Link>
               </Box>
+              <Box>
+                <Link href="/freshmeter" color="inherit">
+                  What's the Freshmeter?&reg;
+                </Link>
+              </Box>
             </Grid>
             <Grid item xs={12} sm={4}>
               <Box borderBottom={1}>{t("common:account")}</Box>
