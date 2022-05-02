@@ -5,11 +5,11 @@ import Button from "@mui/material/Button";
 // Import React FilePond
 import { FilePond, registerPlugin } from "react-filepond";
 import { AuthContext } from "../../providers/AuthProvider";
-//import FlashMessage, { MuiSnackbar } from "../pages/FlashMessage";
+import FlashMessage, { MuiSnackbar } from "../pages/FlashMessage";
 // Import FilePond styles
 import "filepond/dist/filepond.min.css";
-// import Snackbar from "@mui/material/Snackbar";
-// import Alert from "@mui/material/Alert"; 
+ import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert"; 
 
 
 // Import the Image EXIF Orientation and Image Preview plugins
@@ -28,8 +28,13 @@ function EditProfile() {
   const [files, setFiles] = useState([]);
   const {  user, setUser } = useContext(AuthContext)
   const [name, setName] = useState(user.name)
+  
   const [email, setEmail] = useState(user.email)
+  const [emailHelper, setEmailHelper] = useState(user.email)
+  
   const [phone, setPhone] = useState(user.phone)
+  const [phoneHelper, setPhoneHelper] = useState(user.phone)
+  
   const [password, setPassword] = useState(user.password)
   const [username, setUserName] = useState(user.username)
   const {t} =  useTranslation(["profile", "common"])
@@ -39,7 +44,38 @@ function EditProfile() {
   // const [success, setSuccess] = useState(false);
   // const [message, setMessage] = useState('');
                                                                                                              
-  
+  const onChange = (event) => {
+    let valid;
+
+    switch (event.target.id) {
+      case "email":
+        setEmail(event.target.value);
+        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+          event.target.value
+        );
+
+        if (!valid) {
+          setEmailHelper("Invalid email");
+        } else {
+          setEmailHelper("");
+        }
+        break;
+      case "phone":
+        setPhone(event.target.value);
+        valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
+          event.target.value
+        );
+
+        if (!valid) {
+          setPhoneHelper("Invalid Phone");
+        } else {
+          setPhoneHelper("");
+        }
+        break;
+      default:
+        break;
+    }
+  };
   const upload = () =>{
     if(showUpload){
       return ////// ??????  how to return whole form upload box
@@ -142,60 +178,64 @@ function EditProfile() {
             <div className="editalign">
               <h5 className="fullname">{t("profile:name")}</h5>
             </div>
-          
-            
-              <input
-                className="editbox"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
 
-              <div className="editalign">
-                <h5 className="fullname">{t("profile:email")}</h5>
-              </div>
-              <input
-                className="editbox"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+            <input
+              className="editbox"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-              <div className="editalign">
-                <h5 className="fullname">{t("profile:password")}</h5>
-              </div>
-              <input
-                className="editbox"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <div className="editalign">
-                <h5 className="fullname">{t("profile:phone")}</h5>
-              </div>
-              <input
-                className="editbox"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            
+            <div className="editalign">
+              <h5 className="fullname">{t("profile:email")}</h5>
+            </div>
+            <input
+              className="editbox"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <div className="editalign">
+              <h5 className="fullname">{t("profile:password")}</h5>
+            </div>
+            <input
+              className="editbox"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="editalign">
+              <h5 className="fullname">{t("profile:phone")}</h5>
+            </div>
+            <input
+              className="editbox"
+              name="phone"
+              error={phoneHelper.length !== 0}
+              helperText={phoneHelper}
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+
             <br />
             <br />
             {/* <MuiSnackbar /> */}
             <div
-              style={{
-                display: "flex",
-                paddingTop: "10px",
-                marginLeft: "375px",
-              }}
+              // style={{
+              //   display: "flex",
+              //   paddingTop: "10px",
+              //   marginLeft: "375px",
+              // }}
             >
-              <Button
-                className="buttonlogin1 btnlogin"
+
+              <button className="editprofilebtn"
+                // className="buttonlogin1 btnlogin"
                 variant="contained"
                 type="button"
                 onClick={handleSubmit}
                 disabled={loading}
               >
                 {loading ? "Loading..." : "Update Profile"}
-              </Button>
+              </button>
             </div>
 
             {/* {

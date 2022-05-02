@@ -48,7 +48,7 @@ padding: 10px;
 text-align: center;
 }
 .App--1 {
-border: 75px solid #1F1D2B ;
+border: 49px solid #1F1D2B ;
 background-color: white;
 /* justify-content: center; */
 /* padding: 20px; */
@@ -100,7 +100,7 @@ margin: 15px;
 .Movie-Info {
          background-color: #efefef;
     display: flex;
-    width: 273px;
+    width: 327px;
     margin: 9px;
     position: relative;
     
@@ -255,6 +255,11 @@ margin: 10px;
 }
 .red-text {
 color: #EC4E20;
+}
+
+.red-text-rating {
+    color: #EC4E20;
+    font-size: 14px;
 }
 .Popular-MD {
 /* display: flex; */
