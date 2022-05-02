@@ -33,6 +33,7 @@ import { Suspense } from "react";
 import AllReviews from "./components/pages/AllReviews";
 import action from './Images/action.gif'
 import Loader from "./components/Loader/loader";
+import Freshmeter from "./components/pages/Freshmeter";
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.
@@ -68,6 +69,8 @@ function App() {
                   <Route path="/movies/:id/reviews" element={<AllReviews />} />
             <Route path="/" element={<LandingPage />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/freshmeter" element={<Freshmeter />} />
+
                   {/* <Route path='/home' element={<LandingPage />} /> */}
                   {/* protected in routes inside of here you need to logged in*/}
                   {/* else you go to login page*/}
