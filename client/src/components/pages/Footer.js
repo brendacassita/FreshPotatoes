@@ -70,7 +70,7 @@ const Footer = () => {
             <Grid item xs={12} sm={4}>
               <Box borderBottom={1}>{t("common:pages")}</Box>
               <Box>
-                <Link href="/" color="inherit">
+                <Link href="/home" color="inherit">
                   {t("home:home")}
                 </Link>
               </Box>
