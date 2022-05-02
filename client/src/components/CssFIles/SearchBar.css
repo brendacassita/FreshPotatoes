@@ -12,7 +12,8 @@ font-size: 18px;
 padding: 15px;
 height: 5px;
 width: 200px;
-
+position: relative;
+top: -15px;
 }
 
 .searchicon {
@@ -32,7 +33,7 @@ position: relative;
 .search-wrapper .searchicon {
 position: absolute;
 align-items: center;
-top: 0px;
+top: -16px;
 left: 5px;
 
 }
