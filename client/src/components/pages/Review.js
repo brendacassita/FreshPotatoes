@@ -84,7 +84,7 @@ const Review = (props) => {
       <h4>
         Your review helps others find great movies to watch. <br></br>
         Please share what you liked or disliked.
-        <h3>Give it a rating!</h3>
+        <h3>Give it a rating, and then submit a review below!</h3>
       </h4>
       <div className="reviewRating">
         <Rating

@@ -280,29 +280,35 @@ const MovieDetail = () => {
         <div className="movie-review">
           <Review movieId={movie.id} />
           
-          
-          
-          
+      
           
         </div>
-
-        {/* <div className="the-logos">
-          <div className="logo1">
-            <img src={potatoe} height="75px" width="auto" />
+<div className="flex-box-container">
+          <div className="movie-item Popular-MD1">
+            <h1></h1>
+            <h4 className="text-color"></h4>
+           
+            
           </div>
-
-          <div className="logo2">
-            <img src={fry} height="75px" width="auto" />
+          <div className="movie-box2  movie-item">
+           
+            
+            
+           
+            <div className="movie-overview3">
+              
+  
+              
+              <div className="Big-Line">
+              <h1 className="Movie-Info-Review">All Reviews</h1>
+              <div className="Theater-Icon">
+                <ReviewsIcon sx={{ fontSize: 40 }} />
+              </div>
+            </div>
+            </div>
           </div>
-        </div> */}
-<div className="movie-item Popular-MD1" >
-        <div className="Big-Line">
-          <h1 className="Movie-Info">All Reviews</h1>
-          <div className="Theater-Icon">
-            <ReviewsIcon sx={{ fontSize: 40 }} />
-          </div>
-          </div>
-          </div>
+        </div>
+      
 
         <div className="Pre-post">
           <div className="POST" style={{ display: 'flex', flexDirection: 'row' }}>
