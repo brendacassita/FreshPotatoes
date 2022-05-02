@@ -84,6 +84,7 @@ const Review = (props) => {
       <h4>
         Your review helps others find great movies to watch. <br></br>
         Please share what you liked or disliked.
+        <h3>Give it a rating!</h3>
       </h4>
       <div className="reviewRating">
         <Rating
@@ -154,9 +155,8 @@ const Review = (props) => {
 
       <form onSubmit={handleSubmit}>
         <div>
-
-        <textarea
-            placeholder={"What did you think of the movie?"}
+          <textarea
+            placeholder={"What did you think of the movie?(required)"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
