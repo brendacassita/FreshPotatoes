@@ -55,7 +55,7 @@ const renderPreReviews = () => {
         <h5 style={{ marginBottom: "-20px" }}>{review.username}</h5>
         <h4 className="red-text-rating">
           {" "}
-          <img src={potatoe} width="30px" />Rating: <br></br>{review.rating}/5
+          <img src={potatoe} width="30px" />Rating: <br></br>  {review.rating}/5
         </h4>
       </div>
       <div className="bubble bubble-bottom-left">

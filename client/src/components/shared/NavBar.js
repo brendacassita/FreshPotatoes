@@ -80,6 +80,10 @@ const Navbar = () => {
                 </div> */}
             {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
+          <SearchBar
+            className="searchfunction"
+            placeholder="Search Movies..."
+          />
             <img
               className="avatar_circle"
               src={user && user.avatar ? user.avatar : bwPic}
@@ -131,9 +135,9 @@ const Navbar = () => {
         <Button
           className="buttonRegister-nav"
           variant="outlined"
-          href="/register"
+          href="/login"
         >
-          Register
+          Login
         </Button>
       </>
     );
@@ -158,37 +162,34 @@ const Navbar = () => {
           <Link className="btn1" to="/SearchResults">
             {t("common:search")}
           </Link>
-     <Link className="btn1" to="/About">
-          {t("common:About")}
+          <Link className="btn1" to="/About">
+            {t("common:About")}
           </Link>
-          
-          
-          <div className='language'>
-			<div className="">
-				<ul className="">
-					<div className="">
-						<select
-							className="Language-drop"
-							value={localStorage.getItem("i18nextLng")}
-							onChange={handleLanguageChange}
-						>
-							<option value="en">English</option>
-							<option value="fr">Français</option>
-							<option value="es">Español</option>
-						</select>
-					</div>
-				
-				</ul>
-          </div>
+          <div className="language">
+            <div className="">
+              <ul className="">
+                <div className="">
+                  <select
+                    className="Language-drop"
+                    value={localStorage.getItem("i18nextLng")}
+                    onChange={handleLanguageChange}
+                  >
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                  </select>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
       );
     }
   };
 
-  if (!auth.user){
-    return <p className="no-user"></p>
-  }
+  // if (!auth.user){
+  //   return <p className="no-user"></p>
+  // }
   return (
     <AppBar className="AppBar" position="static">
       <Toolbar className="AppBar1">
@@ -199,10 +200,10 @@ const Navbar = () => {
         </Link>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>{renderLeft()}</div>
-          <SearchBar
+          {/* <SearchBar
             className="searchfunction"
             placeholder="Search Movies..."
-          />
+          /> */}
           <div>
             {/* <h2>Welcome {auth.user.name ? auth.user.name : 'nouser'}!</h2> */}
           </div>

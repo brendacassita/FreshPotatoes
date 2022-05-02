@@ -55,8 +55,8 @@ const Register = ()=>{
           
           
            <div className='buttonlogin'>
-          
-                {!loading &&
+{/*           
+                {!loading &&  */}
                 <>
                   <div className="login-btns">
                
@@ -66,7 +66,7 @@ const Register = ()=>{
                     {/* <Button className="buttonlogin btnloginhere" type="button"  variant='outlined' href='/login'>Login</Button> */}
 
                 </>
-              }
+              {/* } */}
               <Button
             className="buttonregister btnregister"
             variant="contained" 
