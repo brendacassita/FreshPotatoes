@@ -2,6 +2,8 @@ import Card from "@mui/material/Card";
 import potatoe from "../../Images/Potatoe.png";
 import fry from "../../Images/fry.png";
 import logo from "../../Images/Theotherlogo-01.png";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -25,7 +27,11 @@ const Freshmeter = () =>{
          
         after it receives at least five reviews. <br/>Our  <img src={potatoe} width="15px" /> (potato) icon represents pre ratings and reviews, 
          
-        your opinion prior to seeing the movie. <br/>Our <img src={fry} width="15px" /> (fry)  icon represents post viewings. 
+              
+        your opinion prior to seeing the movie
+        <Link to={'/popular_potatoes'}><b style={{ color: "red" }}>(Popular Potatoes)</b></Link>.
+        <br/>Our <img src={fry} width="15px" /> (fry)  icon represents post viewings. 
+        <Link to={'/popular_fries'}><b style={{ color: "red" }}>(Popular Fries)</b></Link>.
         <br/> So sit back, grab some popcorn and tell us 
         all about your favorite or not so favorite movies. 
       </p>
