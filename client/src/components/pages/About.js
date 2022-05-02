@@ -29,7 +29,7 @@ import freshPF from "../../Images/FreshPotatoesFrylogo-01.png";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import camera from "../CssFIles/images/camera.png";
 import clapper from "../CssFIles/images/clapper.png";
-
+import emailIcon from "../CssFIles/email.svg";
 // import clapper from "../../Images/clapper.png";
 
 
@@ -76,16 +76,18 @@ export default function MediaCard() {
       </CardContent>
       <CardActions></CardActions> */}
 
-                {/* *****TESTING TEAM CARD - IDK HOW TO CHANGE THE BG****** */}
-      <h1> <img src={clapper} width="3.5%"/>The Fresh Potatoes Team
-      <img src={camera} width="3.5%"/>
-      <TheatersIcon sx={{ fontSize: 30 }} />
+      {/* *****TESTING TEAM CARD - IDK HOW TO CHANGE THE BG****** */}
+      <h1>
+        {" "}
+        <img src={clapper} width="3.5%" />
+        The Fresh Potatoes Team
+        <img src={camera} width="3.5%" />
+        <TheatersIcon sx={{ fontSize: 30 }} />
+        {/* <img src={clapper}width="3.5%"/> */}
+      </h1>
 
-      {/* <img src={clapper}width="3.5%"/> */}
-    </h1>
-
-       {/* ------------------      team  -----------------*/}
-       <div className="the-team">
+      {/* ------------------      team  -----------------*/}
+      <div className="the-team">
         <div class="container">
           <div className="card-wrapper">
             <h1 className="name-team">The Freshest</h1>
@@ -105,10 +107,8 @@ export default function MediaCard() {
                   </a>
                 </li>
 
-              
-
                 <li>
-                <a href="mailto:freshpotatoes@gmail.com">
+                  <a href="mailto:freshpotatoes@gmail.com">
                     <AlternateEmailIcon
                       sx={{ fontSize: 40 }}
                       className="fab Linked-in"
@@ -116,14 +116,14 @@ export default function MediaCard() {
                     />
                   </a>
                 </li>
-               
               </ul>
 
               <div className="details jane">
                 <h2>
-                  Fresh Potatoes
+                  {" "}
+                  <Link to="/contact_us"><img src={emailIcon}/> Contact Fresh Potatoes</Link>
                   <br />
-                  <span className="job-title">freshpotatoes@gmail.com</span>
+                  <span className="job-title"> </span>
                   <br />
                 </h2>
               </div>
@@ -133,12 +133,8 @@ export default function MediaCard() {
         </div>
         {/* <!-- END container --> */}
 
-
-
-
-
-      {/* ------------------      JESSICA  -----------------*/}
-      <div class="container">
+        {/* ------------------      JESSICA  -----------------*/}
+        <div class="container">
           <div className="card-wrapper">
             <h1 className="name-team">Jess</h1>
             <div className="card1 profile-two">
@@ -168,7 +164,7 @@ export default function MediaCard() {
                 </li>
 
                 <li>
-                  <a href="">
+                  <a href="mailto:jessica.stevens2115@gmail.com">
                     <AlternateEmailIcon
                       sx={{ fontSize: 40 }}
                       className="fab Linked-in"
@@ -233,7 +229,7 @@ export default function MediaCard() {
                 </li>
 
                 <li>
-                  <a href="">
+                  <a href="mailto:trinanixon7@gmail.com">
                     <AlternateEmailIcon
                       sx={{ fontSize: 40 }}
                       className="fab Linked-in"
@@ -468,6 +464,5 @@ export default function MediaCard() {
         {/* <!-- END container --> */}
       </div>
     </div>
-    
   );
 }
