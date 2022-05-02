@@ -5,7 +5,7 @@ const NoMatch = () => (
     <h3>
       Page not found - return to
       <Link to="/">
-        <b style={{ color: "red" }}> HOME</b>
+        <b style={{ color: "#EC4E20" }}> HOME</b>
       </Link>
     </h3>
   </div>
