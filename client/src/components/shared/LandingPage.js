@@ -113,7 +113,7 @@ const LandingPage = () => {
             </Carousel>
           </div>
 
-          <div className="homeGenre">
+          <div className="homeGenre1">
             <GenreFilter />
           </div>
         </div>

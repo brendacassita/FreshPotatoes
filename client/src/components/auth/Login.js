@@ -5,7 +5,7 @@ import '../CssFIles/Login-out.css';
 import p from '../../Images/Potatoe.png'
 import f from '../../Images/fry.png'
 import {Link} from '@mui/material';
-
+import action from '../../Images/action.gif'
 
 //revert the state after 2 seconds pass so not contantly in loading state 
 let timeout;
@@ -83,7 +83,7 @@ const Login = ()=>{
                     type="button"
                     onClick={handleSubmit}
                     disabled={loading}>
-                    {loading ? 'Loading...' : 'Login'}
+                    {loading ? '...loading': 'Login'}
               </Button>
                    </div>
             </form>

@@ -187,7 +187,7 @@ const Navbar = () => {
   };
 
   if (!auth.user){
-    return <p>no user</p>
+    return <p className="no-user"></p>
   }
   return (
     <AppBar className="AppBar" position="static">

@@ -15,6 +15,7 @@ import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import fry from "../../Images/fryLogo.png";
 import potatoe from "../../Images/Potatoe.png";
+import Loader from "../Loader/loader";
 
 const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
@@ -169,12 +170,12 @@ const MovieDetail = () => {
   };
 
   if (!movie) {
-    return <p>"Loading"</p>;
+    return <Loader/>;
   }
 
   const render = () => {
     if (loading) {
-      return <p>"Loading"</p>;
+      return <Loader />;
     }
 
     return (
@@ -239,6 +240,7 @@ const MovieDetail = () => {
                 Show Cast
               </button> */}
                
+              
               <button className="movie-button" type="button" onClick={() => setShow(!show)}>
               {!show ? "Hide Cast" : "Show Cast"}
            
@@ -249,6 +251,14 @@ const MovieDetail = () => {
 
 
               </button>
+              
+              
+              <div className="Big-Line">
+              <h1 className="Movie-Info-Review">Leave Review</h1>
+              <div className="Theater-Icon">
+                <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -257,14 +267,7 @@ const MovieDetail = () => {
               
               
             </div> */}
-   <div className="review-box2  review-item">
-            <div className="Big-Line">
-              <h1 className="Movie-Info">Leave Review</h1>
-              <div className="Theater-Icon">
-              <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
-              </div>
-            </div>
-            </div>
+   
 
 
         {/* <div className="Big-Line">
@@ -276,6 +279,11 @@ const MovieDetail = () => {
 
         <div className="movie-review">
           <Review movieId={movie.id} />
+          
+          
+          
+          
+          
         </div>
 
         {/* <div className="the-logos">
@@ -287,13 +295,14 @@ const MovieDetail = () => {
             <img src={fry} height="75px" width="auto" />
           </div>
         </div> */}
-
+<div className="movie-item Popular-MD1" >
         <div className="Big-Line">
           <h1 className="Movie-Info">All Reviews</h1>
           <div className="Theater-Icon">
             <ReviewsIcon sx={{ fontSize: 40 }} />
           </div>
-        </div>
+          </div>
+          </div>
 
         <div className="Pre-post">
           <div className="POST" style={{ display: 'flex', flexDirection: 'row' }}>

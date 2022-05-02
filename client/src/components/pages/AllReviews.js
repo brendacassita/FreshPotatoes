@@ -97,11 +97,11 @@ const renderPostReviews = () => {
   return (
     <div className="movie-review2 ">
       <h3 className="Popular-MD" >
-        {preReviews.length == 0 ? <p>no reviews</p> : renderPreReviews()}
-        
+       
+        {postReviews.length == 0 ? <p>no reviews</p> : renderPreReviews()}
       </h3>
       <h3 className="Popular-MD "> 
-      {postReviews.length == 0 ? <p>no reviews</p> : renderPostReviews()}
+      {preReviews.length == 0 ? <p>no reviews</p> : renderPostReviews()}
       </h3>
     </div>
   );

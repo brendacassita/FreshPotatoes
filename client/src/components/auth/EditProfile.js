@@ -227,7 +227,7 @@ function EditProfile() {
               // }}
             >
 
-              <Button className="editprofilebtn:hover"
+              <button className="editprofilebtn"
                 // className="buttonlogin1 btnlogin"
                 variant="contained"
                 type="button"
@@ -235,7 +235,7 @@ function EditProfile() {
                 disabled={loading}
               >
                 {loading ? "Loading..." : "Update Profile"}
-              </Button>
+              </button>
             </div>
 
             {/* {
