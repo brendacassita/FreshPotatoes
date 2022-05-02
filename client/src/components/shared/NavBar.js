@@ -80,10 +80,7 @@ const Navbar = () => {
                 </div> */}
             {/* {!user.avatar &&
             <button ><img src={bwPic} width='170px'></img></button>} */}
-          <SearchBar
-            className="searchfunction"
-            placeholder="Search Movies..."
-          />
+            
             <img
               className="avatar_circle"
               src={user && user.avatar ? user.avatar : bwPic}
@@ -165,6 +162,12 @@ const Navbar = () => {
           <Link className="btn1" to="/About">
             {t("common:About")}
           </Link>
+          
+           <SearchBar
+            className="searchfunction"
+            placeholder="Search Movies..."
+              />
+              
           <div className="language">
             <div className="">
               <ul className="">
@@ -182,6 +185,7 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
+         
         </div>
       );
     }

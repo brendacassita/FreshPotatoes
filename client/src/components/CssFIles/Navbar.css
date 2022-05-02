@@ -119,6 +119,7 @@ color: white;
     align-items: baseline;
     bottom: -19px;
     position: relative;
+display: flex;
 }
 .name-nav {
     display: flex;
