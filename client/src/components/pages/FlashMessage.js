@@ -20,9 +20,9 @@ const handleClose = (event, reason) => {
     <>
 
       <Button
-        onClick={() => setOpen(true)}>Submit</Button>
+        onClick={() => setOpen(true)}>Update Profile</Button>
       <Snackbar
-        message="Form submitted successfully!"
+        message="Profile updated successfully"
         autoHideDuration={4000}
         open={open}
         onClose={handleClose}
