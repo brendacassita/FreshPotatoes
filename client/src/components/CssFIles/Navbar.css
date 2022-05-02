@@ -129,3 +129,8 @@ color: white;
     bottom: -34px;
     left: -73px;
 }
+.no-user {
+background-color: #1F1D2B;
+border: none;
+margin: 0px; 
+}

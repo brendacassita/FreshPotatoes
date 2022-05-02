@@ -28,7 +28,7 @@ const labels = {
 let timeout; 
 const Review = (props) => {
   const [allReviews, setAllReviews] = useState([]);
-  const [review, setReview] = useState();
+  const [review, setReview] = useState(null);
   const [value, setValue] = useState(null);
   const [hover, setHover] = useState(null);
   const params = useParams();
@@ -80,7 +80,7 @@ const Review = (props) => {
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1>
+      {/* <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1> */}
       <h4>
         Your review helps others find great movies to watch. <br></br>
         Please share what you liked or disliked.

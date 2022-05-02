@@ -31,6 +31,7 @@ import { Helmet } from "react-helmet";
 import LandingPage from "./components/shared/LandingPage";
 import { Suspense } from "react";
 import AllReviews from "./components/pages/AllReviews";
+import action from './Images/action.gif'
 //import RateForm from './components/pages/RateForm';
 //Fetch User: going to see if the user is logged in(valid user?)
 //before we render our routes, it's going to check for user.

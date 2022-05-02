@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const PrivacyPolicy = () => {
   return (
     <div className="App1">
+      <div style={{ marginTop: '50px', marginBottom: '50px', marginLeft: '100px', marginRight: '100px' }}>
       <h1>PRIVACY NOTICE</h1>
       <h5>Last updated April 13, 2022</h5>
       <p>
@@ -142,6 +143,8 @@ const PrivacyPolicy = () => {
         </ol>
       </p>
 
+      <br/>
+
       <h3>1. WHAT INFORMATION DO WE COLLECT?</h3>
       <h4>Personal information you disclose to us</h4>
       <p>
@@ -188,6 +191,8 @@ const PrivacyPolicy = () => {
         </p>
       </p>
 
+      <br/>
+
       <h3>2. HOW DO WE PROCESS YOUR INFORMATION?</h3>
 
       <p>
@@ -218,6 +223,8 @@ const PrivacyPolicy = () => {
           </ul>
         </p>
       </p>
+      
+      <br/>
 
       <h3>3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h3>
 
@@ -242,6 +249,8 @@ const PrivacyPolicy = () => {
           </ul>
         </p>
       </p>
+
+      <br/>
 
       <h3>4. HOW LONG DO WE KEEP YOUR INFORMATION?</h3>
 
@@ -273,6 +282,8 @@ const PrivacyPolicy = () => {
         </p>
       </p>
 
+      <br/>
+
       <h3>5. HOW DO WE KEEP YOUR INFORMATION SAFE?</h3>
 
       <p>
@@ -298,6 +309,8 @@ const PrivacyPolicy = () => {
           within a secure environment.
         </p>
       </p>
+
+      <br/>
 
       <h3>6. WHAT ARE YOUR PRIVACY RIGHTS?</h3>
 
@@ -351,6 +364,8 @@ const PrivacyPolicy = () => {
         </p>
       </p>
 
+      <br/>
+
       <h3>7. CONTROLS FOR DO-NOT-TRACK FEATURES</h3>
 
       <p>
@@ -365,6 +380,8 @@ const PrivacyPolicy = () => {
         adopted that we must follow in the future, we will inform you about the
         practice in a revised version of this privacy notice.
       </p>
+
+      <br/>
 
       <h3>8. DO WE MAKE UPDATES TO THIS NOTICE?</h3>
 
@@ -387,6 +404,8 @@ const PrivacyPolicy = () => {
         </p>
       </p>
 
+      <br/>
+
       <h3>9. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h3>
 
       <p>
@@ -396,9 +415,9 @@ const PrivacyPolicy = () => {
         </Link>
       </p>
 
-      <h3>
-        10. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
-      </h3>
+      <br/>
+
+      <h3>10. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h3>
 
       <p>
         Based on the applicable laws of your country, you may have the right to
@@ -410,6 +429,7 @@ const PrivacyPolicy = () => {
         </Link>
         .
       </p>
+      </div>
     </div>
   );
 };
