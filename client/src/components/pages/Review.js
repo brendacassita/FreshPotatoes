@@ -28,7 +28,7 @@ const labels = {
 let timeout; 
 const Review = (props) => {
   const [allReviews, setAllReviews] = useState([]);
-  const [review, setReview] = useState(null);
+  const [review, setReview] = useState("");
   const [value, setValue] = useState(null);
   const [hover, setHover] = useState(null);
   const params = useParams();
@@ -154,13 +154,22 @@ const Review = (props) => {
 
       <form onSubmit={handleSubmit}>
         <div>
-          <textarea
+
+        <textarea
             placeholder={"What did you think of the movie?"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
             rows="8"
           ></textarea>
+
+          {/* <input type="text" required
+            placeholder={"What did you think of the movie?"}
+            style={{ marginTop: "2.5em", opacity: 0.55 }}
+            onChange={(e) => setReview(e.target.value)}
+            cols="55"
+            rows="8"
+          ></input> */}
         </div>
 
         <div
@@ -169,9 +178,8 @@ const Review = (props) => {
           <Button
             className="buttonlogin1 btnlogin"
             variant="contained"
-            type="button"
             onClick={handleSubmit}
-            disabled={loading}
+            disabled={value === null || review.length === 0}
           >
             {loading ? "Loading..." : "Submit Review"}
           </Button>

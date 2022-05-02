@@ -114,7 +114,7 @@ const GenreFilter = () => {
                 style={{ height: "200px" }}
                 onClick={() => nav(`/movies/${mov.id}`)}
               />
-              <h5 style={{ textAlign: "center" }}>{mov.title}</h5>
+              {/* <h5 style={{ textAlign: "center" }}>{mov.title}</h5> */}
             </div>
           ))}
       </div>
