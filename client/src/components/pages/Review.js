@@ -17,6 +17,7 @@ import {
 import SvgPotato from "./SvgPotato";
 import SvgFries from "./SvgFries";
 import { DataContext } from "../../providers/DataProvider";
+import { Link } from "react-router-dom";
 
 const labels = {
   1: "Worst Movie Ever.",
@@ -83,8 +84,9 @@ const Review = (props) => {
       {/* <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1> */}
       <h4>
         Your review helps others find great movies to watch. <br></br>
-        Please share what you liked or disliked. <br/>First select a rating and then submit a review below!
+        Please share what you liked or disliked.
       </h4>
+      <h3>Give it a rating*, and then submit a review below!</h3>
       <div className="reviewRating">
         <Rating
           icon={
@@ -124,7 +126,6 @@ const Review = (props) => {
           <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
         )}
       </div>
-
       {/* sets the state so that prewatched is the default radio button value
         update the category when we select a different value
         use onchange to do this; use setCategory to update the state
@@ -151,18 +152,15 @@ const Review = (props) => {
           />
         </RadioGroup>
       </FormControl>
-
       <form onSubmit={handleSubmit}>
         <div>
-
-        <textarea
-            placeholder={"What did you think of the movie?"}
+          <textarea
+            placeholder={"What did you think of the movie?(required)"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
             rows="8"
           ></textarea>
-
           {/* <input type="text" required
             placeholder={"What did you think of the movie?"}
             style={{ marginTop: "2.5em", opacity: 0.55 }}
@@ -183,10 +181,13 @@ const Review = (props) => {
           >
             {loading ? "Loading..." : "Submit Review"}
           </Button>
+
+          <h5>
+            <Link to="/freshmeter">*How do ratings work?</Link>
+          </h5>
         </div>
         {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
-
       {/* {allReviews.map((r)=> {
   console.log(allReviews)
   return(

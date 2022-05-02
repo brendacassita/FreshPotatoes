@@ -239,26 +239,21 @@ const MovieDetail = () => {
               {/* <button className="movie-button" onClick={() => setShow(true)}>
                 Show Cast
               </button> */}
-               
-              
-              <button className="movie-button" type="button" onClick={() => setShow(!show)}>
-              {!show ? "Hide Cast" : "Show Cast"}
-           
-          
-             
-            
-  
 
-
+              <button
+                className="movie-button"
+                type="button"
+                onClick={() => setShow(!show)}
+              >
+                {!show ? "Hide Cast" : "Show Cast"}
               </button>
-              
-              
+
               <div className="Big-Line">
-              <h1 className="Movie-Info-Review">Leave Review</h1>
-              <div className="Theater-Icon">
-                <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
+                <h1 className="Movie-Info-Review">Leave Review</h1>
+                <div className="Theater-Icon">
+                  <ThumbsUpDownIcon sx={{ fontSize: 40 }} />
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -267,8 +262,6 @@ const MovieDetail = () => {
               
               
             </div> */}
-   
-
 
         {/* <div className="Big-Line">
           <h1 className="Movie-Info">Leave Review</h1>
@@ -279,45 +272,49 @@ const MovieDetail = () => {
 
         <div className="movie-review">
           <Review movieId={movie.id} />
-          
-      
-          
         </div>
-<div className="flex-box-container">
+        <div className="flex-box-container">
           <div className="movie-item Popular-MD1">
             <h1></h1>
             <h4 className="text-color"></h4>
-           
-            
           </div>
           <div className="movie-box2  movie-item">
-           
-            
-            
-           
             <div className="movie-overview3">
-              
-  
-              
               <div className="Big-Line">
-              <h1 className="Movie-Info-Review">All Reviews</h1>
-              <div className="Theater-Icon">
-                <ReviewsIcon sx={{ fontSize: 40 }} />
+                <h1 className="Movie-Info-Review">All Reviews</h1>
+                
+                <div className="Theater-Icon">
+                  <ReviewsIcon sx={{ fontSize: 40 }} />
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
-      
 
         <div className="Pre-post">
-          <div className="POST" style={{ display: 'flex', flexDirection: 'row' }}>
-            <img src={potatoe} height="65px" width="auto" style={{ paddingRight: '15px' }}/>
+          <div
+            className="POST"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
+            <img
+              src={potatoe}
+              height="65px"
+              width="auto"
+              style={{ paddingRight: "15px" }}
+            />
             <h1>Potatoes </h1>
           </div>
-          
-          <div className="POST" style={{ display: 'flex', flexDirection: 'row' }}>            
-            <img src={fry} height="65px" width="auto" style={{ paddingRight: '15px' }}/>
+
+          <div
+            className="POST"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
+            <img
+              src={fry}
+              height="65px"
+              width="auto"
+              style={{ paddingRight: "15px" }}
+            />
             <h1>Fries </h1>
           </div>
         </div>
