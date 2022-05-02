@@ -82,11 +82,14 @@ const Review = (props) => {
   return (
     <div style={{ backgroundColor: "white" }}>
       {/* <h1 style={{ backgroundColor: "black", color: "white" }}>Leave a review</h1> */}
-      <h4>
+      {/* <h4>
         Your review helps others find great movies to watch. <br></br>
         Please share what you liked or disliked.
-      </h4>
-      <h3>Give it a rating*, and then submit a review below!</h3>
+      </h4> */}
+      <h3>Give it a rating, and then submit a review below!</h3>
+      <h5>
+        <Link to="/freshmeter">How do ratings work?</Link>
+      </h5>
       <div className="reviewRating">
         <Rating
           icon={
@@ -155,7 +158,9 @@ const Review = (props) => {
       <form onSubmit={handleSubmit}>
         <div>
           <textarea
-            placeholder={"What did you think of the movie?(required)"}
+            placeholder={
+              "Your review helps others find great movies to watch. Please share what you liked or disliked."
+            }
             style={{ marginTop: "2.5em", opacity: 0.55 }}
             onChange={(e) => setReview(e.target.value)}
             cols="55"
@@ -181,10 +186,6 @@ const Review = (props) => {
           >
             {loading ? "Loading..." : "Submit Review"}
           </Button>
-
-          <h5>
-            <Link to="/freshmeter">*How do ratings work?</Link>
-          </h5>
         </div>
         {/* <button className="editprofilebtn">Submit Review</button> */}
       </form>
