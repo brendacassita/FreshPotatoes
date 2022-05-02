@@ -43,12 +43,12 @@ const renderPreReviews = () => {
     <div className="flex-box-container1">
       <div className="Review-box1" style={{ paddingBottom: "15px" }}>
         {!review.avatar ? (
-          <img src={bwPic} width="75px" />
+          <img src={bwPic} alt='avatar'width="75px" />
         ) : (
           <img
             className="user-photo-review"
             src={review.avatar}
-            width="75px"
+            width="55px"
             style={{ marginBottom: "-15px", marginTop: "30px" }}
           />
         )}
