@@ -42,7 +42,7 @@ const Freshmeter = () =>{
         Let us know all your expectations about a movie based on trailers and how much you already love the fandom.
         <br />We have an entire page devoted to the best of all Potatoes.
         <br />These are all the hottest films that were anticipated by our users.
-        <Link to={'/popular_potatoes'}><b style={{ color: "red" }}>(Popular Potatoes)</b></Link>.<br />
+        <Link to={'/popular_potatoes'}><b style={{ color: "#ec4e20" }}>(Popular Potatoes)</b></Link>.<br />
         You can visit the page of each movie by clicking on the poster.
         <br />This will bring you to all the details you’ll ever need to know for that specific movie.
 
@@ -54,7 +54,7 @@ const Freshmeter = () =>{
         After watching the movie, come back again to rate it based on how you actually liked it.
         <br />We have another page dedicated to the best Fries on our site.
         These are the films that have maintained their status after being watched.<br />
-        <Link to={'/popular_fries'}><b style={{ color: "red" }}>(Popular Fries)</b></Link>.
+        <Link to={'/popular_fries'}><b style={{ color: "#ec4e20" }}>(Popular Fries)</b></Link>.
 
 
 

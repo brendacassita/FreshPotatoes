@@ -87,7 +87,7 @@ const Review = (props) => {
         Please share what you liked or disliked.
       </h4> */}
       <h3>Give it a rating, and then submit a review below!</h3>
-      <p><Link to="/freshmeter"><b style={{ color: "red" }}>How do ratings work?</b></Link></p><br/>
+      <p><Link to="/freshmeter"><b style={{ color: "#ec4e20" }}>How do ratings work?</b></Link></p><br/>
 
       <div className="reviewRating">
         <Rating
