@@ -213,6 +213,8 @@ color: white;
 border-radius: 9px;
 width: 100px;
 height: 30px;
+margin-bottom: 30px;
+/* padding-bottom: 10px; */
 }
 .photo-round {
 border-radius: 15px;
@@ -355,4 +357,18 @@ color: #EC4E20;
 .movie-button:hover {
 background-color: #ec5020;
 cursor: pointer;
+}
+.leave-review{
+justify-content: center;
+position: relative;
+}
+.Movie-Info-Review {
+     background-color: #efefef;
+    /* display: flex; */
+    width: 273px;
+    margin: 9px;
+    position: relative;
+    justify-content: center;
+    text-align: end;
+    padding-right: 44px;
 }

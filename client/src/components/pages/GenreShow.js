@@ -5,9 +5,10 @@ import "../CssFIles/container.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import Loader from "../Loader/loader";
 
 const GenreShow = () => {
-  // const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
   const [genre, setGenre] = useState([]);
   const [movies, setMovies] = useState([]);
   const location = useLocation();
@@ -24,7 +25,7 @@ const GenreShow = () => {
     try {
       let res = await axios.get(`/api/genres/${params.id}`);
       setMovies(res.data.results);
-      // setLoading(false)
+      setLoading(false)
       console.log("MOVIES:", res.data.results);
     } catch (err) {
       alert("Error in getting movies");
@@ -62,34 +63,45 @@ const GenreShow = () => {
       alert("Error getting genre id");
     }
   };
-
   const params = useParams();
+  
+  if(!movies) {
+    return <Loader />;
+  }
+  const render = () => {
+    if(loading) {
+      return <Loader />;
+    }
+  
 
-  return (
-    <div className="App1">
-      <div className="searchall">
-        <div className="sline"></div>
-        <h1 className="searchall2"> {t(`common:${genre.name}`)}</h1>
-        <div className="bline"></div>
-      </div>
-      <div className="rowdata">
-        <div className="wrapper">
-          {/* ADDED IN IN-LINE STYLING TO FIX, NOT SURE WHERE THIS GOES IN THE CSS FILE */}
-          <div
-            className="cards "
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly",
-            }}
-          >
-            {renderMovie()}
+
+    return (
+      <div className="App1">
+        <div className="searchall">
+          <div className="sline"></div>
+          <h1 className="searchall2"> {t(`common:${genre.name}`)}</h1>
+          <div className="bline"></div>
+        </div>
+        <div className="rowdata">
+          <div className="wrapper">
+            {/* ADDED IN IN-LINE STYLING TO FIX, NOT SURE WHERE THIS GOES IN THE CSS FILE */}
+            <div
+              className="cards "
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                justifyContent: "space-evenly",
+              }}
+            >
+              {renderMovie()}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+  return <div>{render()}</div>
 };
 
 export default GenreShow;
