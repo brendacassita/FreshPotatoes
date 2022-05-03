@@ -160,7 +160,8 @@ const Navbar = () => {
             {t("common:search")}
           </Link>
           <Link className="btn1" to="/About">
-            {t("common:About")}
+          {t("common:about")}
+
           </Link>
           
            <SearchBar
