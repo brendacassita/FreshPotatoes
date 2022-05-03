@@ -164,6 +164,7 @@ border-width: 5px;
 .genreselect {
 overflow: hidden;
 flex-wrap: wrap;
+justify-content: center;
 }
 .imgGenreFilter {
 margin: 5px;
