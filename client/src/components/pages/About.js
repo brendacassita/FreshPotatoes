@@ -78,7 +78,7 @@ export default function MediaCard() {
 
       {/* *****TESTING TEAM CARD - IDK HOW TO CHANGE THE BG****** */}
       
-      <div className="bline">
+     
         <h1>
           {" "}
            <img src={clapper} width="3.5%" /> 
@@ -88,7 +88,7 @@ export default function MediaCard() {
          
           {/* <img src={clapper}width="3.5%"/> */}
         </h1>
-      </div>
+      
 
       {/* ------------------      team  -----------------*/}
       <div className="the-team">
