@@ -30,7 +30,9 @@ import TheatersIcon from "@mui/icons-material/Theaters";
 import camera from "../CssFIles/images/camera.png";
 import clapper from "../CssFIles/images/clapper.png";
 import emailIcon from "../CssFIles/email.svg";
-// import clapper from "../../Images/clapper.png";
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import YouTube from "@mui/icons-material/YouTube";
+
 
 
 
@@ -104,6 +106,16 @@ export default function MediaCard() {
                 <li>
                   <a href="https://github.com/brendacassita/FreshPotatoes">
                     <GitHubIcon
+                      sx={{ fontSize: 40 }}
+                      className="fab Linked-in"
+                      width="200px"
+                    />
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="https://www.youtube.com/watch?v=O8HqIBAohis">
+                    <YouTubeIcon
                       sx={{ fontSize: 40 }}
                       className="fab Linked-in"
                       width="200px"
