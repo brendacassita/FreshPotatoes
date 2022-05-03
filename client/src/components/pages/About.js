@@ -77,14 +77,18 @@ export default function MediaCard() {
       <CardActions></CardActions> */}
 
       {/* *****TESTING TEAM CARD - IDK HOW TO CHANGE THE BG****** */}
-      <h1>
-        {" "}
-        <img src={clapper} width="3.5%" />
-        The Fresh Potatoes Team
-        <img src={camera} width="3.5%" />
-        <TheatersIcon sx={{ fontSize: 30 }} />
-        {/* <img src={clapper}width="3.5%"/> */}
-      </h1>
+      
+      <div className="bline">
+        <h1>
+          {" "}
+           <img src={clapper} width="3.5%" /> 
+          The Fresh Potatoes Team
+           <img src={camera} width="3.5%" /> 
+          {/* <TheatersIcon sx={{ fontSize: 30 }} /> */}
+         
+          {/* <img src={clapper}width="3.5%"/> */}
+        </h1>
+      </div>
 
       {/* ------------------      team  -----------------*/}
       <div className="the-team">
@@ -121,7 +125,9 @@ export default function MediaCard() {
               <div className="details jane">
                 <h2>
                   {" "}
-                  <Link to="/contact_us"><img src={emailIcon}/> Contact Fresh Potatoes</Link>
+                  <Link to="/contact_us">
+                    <img src={emailIcon} /> Contact Fresh Potatoes
+                  </Link>
                   <br />
                   <span className="job-title"> </span>
                   <br />
