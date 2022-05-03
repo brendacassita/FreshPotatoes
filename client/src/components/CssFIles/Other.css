@@ -69,6 +69,7 @@ top: 330px;
 .landing-home {
     max-width: 2200px;
 min-width: 1000px;
+text-align: center;
 /* height: 1000px; */
 width: 100%;
     background-color: white;
